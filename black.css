@@ -2,15 +2,15 @@
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
 :root {
-	--background: #1a1e21;   /* CONTROLS MAIN BACKGROUND COLOR */
-	--hover: #273036;        /* CONTROLS MAIN HOVER COLOR */
-	--card: rgb(44, 54, 60); /* CONTROLS MAIN CARD COLOR */
-	--accent: #565f65;       /* CONTROLS BORDER/SEPERATOR COLOR */
-	--text: #fcfcfc;         /* CONTROLS TEXT COLOR */
-	--buttonRadius: 12px;    /* CONTROLS BUTTON RADIUS */
+	--background: #000000;   /* CONTROLS MAIN BACKGROUND COLOR */
+	--hover: rgba(255, 255, 255, .03);        /* CONTROLS MAIN HOVER COLOR */
+	--card: #232323;         /* CONTROLS MAIN CARD COLOR */
+	--accent: #ffffff20;       /* CONTROLS BORDER/SEPERATOR COLOR */
+	--text: #fbfbfb;         /* CONTROLS TEXT COLOR */
+	--buttonRadius: 999px;    /* CONTROLS BUTTON RADIUS */
 	--profileRadius: 24px;   /* CONTROLS BUTTON RADIUS */
-	--cardRadius: 12px;      /* CONTROLS BUTTON RADIUS */
-	--cardShadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2); /* CONTROLS CARD BOX SHADOW */
+	--cardRadius: 6px;      /* CONTROLS BUTTON RADIUS */
+	--cardShadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
 }
 body {
     background-color: var(--background) !important;

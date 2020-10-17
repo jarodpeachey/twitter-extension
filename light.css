@@ -2,22 +2,33 @@
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
 :root {
-	--dark: #1a1e21;
-	--mid: #273036;
-	--light: rgb(44, 54, 60);
-	--lighter: #565f65;
+	--background: #f7f7f7;   /* CONTROLS MAIN BACKGROUND COLOR */
+	--hover: #fafafa;        /* CONTROLS MAIN HOVER COLOR */
+	--card: #ffffff;         /* CONTROLS MAIN CARD COLOR */
+	--accent: #e8e8e8;       /* CONTROLS BORDER/SEPERATOR COLOR */
+	--text: #444444;         /* CONTROLS TEXT COLOR */
+	--buttonRadius: 12px;    /* CONTROLS BUTTON RADIUS */
+	--profileRadius: 24px;   /* CONTROLS BUTTON RADIUS */
+	--cardRadius: 12px;      /* CONTROLS BUTTON RADIUS */
+	--cardShadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
 }
 body {
-    background-color: var(--dark) !important;
+    background-color: var(--background) !important;
     padding-top: 30px !important;
-    max-width: 960px !important;
+    max-width: 769px !important;
     margin: 0 auto !important;
 }
+@media(min-width: 960px) {
+	main {
+		margin-left: 24px !important;
+		margin-right: 24px !important;
+	}
+}
 .r-hkyrab {
-	color: #ffffff !important;
+	color: var(--text) !important;
 }
 .r-1re7ezh {
-	color: #ffffff !important;
+	color: var(--text) !important;
 }
 
 /******************************************************************
@@ -26,52 +37,93 @@ body {
 /* TWEET BORDERS */
 .css-1dbjc4n.r-my5ep6.r-qklmqi.r-1adg3ll.r-1ny4l3l, [aria-modal="true"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
 	/*background-color: orange !important;*/
-	border-bottom: 1px solid var(--lighter) !important;
+	border-bottom: 1px solid var(--accent) !important;
 }
 /* RANDOM MENU ITEM SEPERATOR */
 .css-1dbjc4n.r-e84r5y.r-109y4c4.r-hrzydr {
-	background: var(--lighter);
+	background: var(--accent);
 }
 /* MAIN SECTION SEPERATORS */
 .css-1dbjc4n.r-e84r5y.r-1or9b2r {
-	background-color: var(--lighter) !important;
+	background-color: var(--accent) !important;
 }
 /* SETTINGS LINKS */
 a[href*="/settings"] {
-	border-bottom: 1px solid var(--lighter) !important;
+	border-bottom: 1px solid var(--accent) !important;
 }
 a[href*="/settings/about"] {
 	border-bottom: none !important;
 }
 
-/* MAIN FEED WRAPPER */
+/******************************************************************
+ ***************             TWEET BOX             ****************
+ ******************************************************************/
+/* TWEET BOX INNER */
+[data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:nth-child(2) {
+	background-color: transparent !important;
+}
+/* TWEET BOX TOOLBAR */
+[data-testid="toolBar"] {
+	background-color: transparent;
+}
+[data-testid="toolBar"] svg {
+	color: var(--text) !important;
+}
+
+
+/******************************************************************
+ ***************            TWEETS STUFF           ****************
+ ******************************************************************/
+/* TWEET WRAPPERS */
+article[role="article"]:hover {
+	background-color: var(--hover) !important;
+}
+/* TWEET IMAGE */
+article[role="article"] .css-4rbku5.css-18t94o4.css-1dbjc4n.r-sdzlij.r-1loqt21.r-1adg3ll.r-ahm1il.r-1ny4l3l.r-1udh08x.r-o7ynqc.r-6416eg.r-13qz1uu, article[role="article"] .css-4rbku5.css-18t94o4.css-1dbjc4n.r-sdzlij.r-1loqt21.r-1adg3ll.r-ahm1il.r-1ny4l3l.r-1udh08x.r-o7ynqc.r-6416eg.r-13qz1uu div {
+	/*border-radius: 12px !important;*/
+}
+[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div {
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+[aria-label="Timeline: Your Home Timeline"] article {
+    border: none !important;
+    padding: 16px 8px !important;
+}
+[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div {
+    border: none !important;
+}
+[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div > div:first-child:empty {
+    padding: 0 !important;
+}
+/* TWEET IMAGE */
+.css-1dbjc4n.r-9x6qib.r-1ylenci.r-1phboty.r-rs99b7.r-156q2ks.r-1ny4l3l.r-1udh08x, [data-testid="card.wrapper"] {
+	border-color: var(--accent) !important;
+}
+
+
+/******************************************************************
+ ***************             MAIN LAYOUT           ****************
+ ******************************************************************/
 main {
 	margin-right: 10px !important;
 	margin-left: 10px !important;
 }
-
 main > div:first-child {
 	max-width: 100% !important;
 }
-
 main > div:first-child > div:first-child > div:first-child {
 	border: none !important;
 }
-
 [data-testid="primaryColumn"], [data-testid="primaryColumn"] div:first-child > div:nth-child(4), [data-testid="primaryColumn"] div:first-child > div:nth-child(2) {
 	max-width: 9999px !important;
 }
+[data-testid="primaryColumn"] > div > div:nth-child(3) {
+    display: none !important;
+}
 
+/* MESSAGES DRAWER */
 [data-testid="DMDrawer"] {
 	display: none !important;
-}
-
-[data-testid="toolBar"] {
-	background-color: transparent;
-}
-
-[data-testid="toolBar"] svg {
-	color: #ffffff !important;
 }
 
 /******************************************************************
@@ -80,7 +132,7 @@ main > div:first-child > div:first-child > div:first-child {
  [aria-labelledby="modal-header"] > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:nth-child(3) [role="button"], [aria-labelledby="modal-header"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(9) [role="button"] {
  	background-color: rgb(29, 161, 242) !important;
     opacity: 1 !important;
-    border-radius: 4px !important;
+    border-radius: var(--buttonRadius) !important;
     color: white !important;
  }
 [aria-labelledby="modal-header"] > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:nth-child(3) [role="button"]:hover, [aria-labelledby="modal-header"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(9) [role="button"]:hover, [data-testid="SideNav_NewTweet_Button"]:hover {
@@ -92,8 +144,26 @@ main > div:first-child > div:first-child > div:first-child {
 [data-testid="SideNav_NewTweet_Button"] {
 	background-color: rgb(29, 161, 242) !important;
     opacity: 1 !important;
-    border-radius: 4px !important;
+    border-radius: var(--buttonRadius) !important;
     color: white !important;
+}
+/* NAVIGATION TWEET BUTTON */
+header > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child > a {
+    border-radius: var(--buttonRadius) !important;
+}
+/* TWEET BUTTON */
+[data-testid="tweetButtonInline"], [data-testid="tweetButton"] {
+    background-color: rgb(29, 161, 242) !important;
+    opacity: 1 !important;
+    border-radius: var(--buttonRadius) !important;
+}
+[data-testid="tweetButtonInline"]:hover, [data-testid="tweetButton"]:hover {
+    cursor: pointer !important;
+    background-color: rgb(26, 145, 218) !important;
+}
+/* OTHER */
+[role="button"] {
+	border-radius: var(--buttonRadius);
 }
 
 /******************************************************************
@@ -107,9 +177,9 @@ main > div:first-child > div:first-child > div:first-child {
 /* NAVIGATION CARD WRAPPER */
 header > div > div > div > div:first-child {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
     border: none;
 }
@@ -131,8 +201,11 @@ header > div:first-child > div:first-child > div:first-child {
  ******************************************************************/
  /* BANNER BACKGROUND */
  [data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child, [data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child {
- 	border-top-right-radius: 6px !important;
- 	border-top-left-radius: 6px !important;
+ 	border-top-right-radius: var(--cardRadius) !important;
+ 	border-top-left-radius: var(--cardRadius) !important;
+ }
+ a[href$="/photo"],  a[href$="/photo"] div {
+ 	border-radius: var(--profileRadius) !important;
  }
 
 /******************************************************************
@@ -149,7 +222,7 @@ nav[aria-label="Primary"] > a {
 	cursor: pointer !important;
 	background-color: transparent !important;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
-	border-radius: 4px !important;
+	border-radius: var(--buttonRadius) !important;
 	margin: 4px !important;
 	margin-top: 8px !important;
 	margin-bottom: -4px !important;
@@ -167,7 +240,7 @@ nav[aria-label="Primary"] > a > div, nav[aria-label="Primary"] > div > div {
 	padding: 12px !important;
 	text-align: center !important;
 	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
-	border-radius: 4px !important;
+	border-radius: var(--buttonRadius) !important;
 	margin: 4px !important;
 }
 nav[aria-label="Primary"] > a:hover > div, nav[aria-label="Primary"] > div:hover > div, [aria-label="Twitter"]:hover {
@@ -187,7 +260,7 @@ nav[aria-label="Primary"] > a:nth-child(2) {
 
     /* DESKTOP NAV LINKS */
     nav[aria-label="Primary"] > a > div, nav[aria-label="Primary"] > div > div {
-        border-radius: 4px !important;
+        border-radius: var(--buttonRadius) !important;
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
@@ -202,16 +275,12 @@ nav[aria-label="Primary"] > a:nth-child(2) {
         margin-left: 8px !important;
         margin-top: 8px !important;
     }
-    
-    /* TWEET BUTTON WRAPPER */
+
+    /* NAVIGATION TWEET BUTTON WRAPPER */
     header > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child {
         width: calc(100% - 16px) !important;
     }
     
-    /* TWEET BUTTON */
-    header > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child > a {
-        border-radius: 4px !important;
-    }
 }
 
 /* TWEET BUTTON WRAPPER */
@@ -226,9 +295,9 @@ header > div:first-child > div:first-child > div:first-child > div:first-child >
  ******************************************************************/
 /* PAGE INDICATOR CARD */
 [data-testid="primaryColumn"] > div:first-child > div:first-child {
-	background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+	background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin:0 0 8px 0 !important;
     border: none !important;
 }
@@ -236,9 +305,9 @@ header > div:first-child > div:first-child > div:first-child > div:first-child >
 /* MESSAGES INDICATOR CARD */
 main > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
     border: none;
 }
@@ -246,9 +315,9 @@ main > div:first-child > div:first-child > div:first-child > div:first-child > d
 /* PROFILE BUTTON CARD */
 header > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
     border: none;
 }
@@ -256,9 +325,9 @@ header > div:first-child > div:first-child > div:first-child > div:nth-child(2) 
 /* TWEET BOX CARD */
 [data-testid="primaryColumn"] > div > div:nth-child(2) {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
     border: none;
 }
@@ -266,9 +335,9 @@ header > div:first-child > div:first-child > div:first-child > div:nth-child(2) 
 /* MESSAGES SEARCH AND DISPLAY CARD */
 main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin: 16px 0 8px 0 !important;
     border: none;
 }
@@ -276,9 +345,9 @@ main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
 /* MAIN FEED CARD */
 [data-testid="primaryColumn"] > div > div:nth-child(4) {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
     border: none;
 }
@@ -291,22 +360,35 @@ main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
 /******************************************************************
  ***************                 TABS              ****************
  ******************************************************************/
+/* DEFAULT STYLING */
+nav {
+	border: none !important;
+}
+[aria-label="Notifications timelines"] {
+	border: none !important;
+}
+nav [role="presentation"]:first-child a {
+	border-bottom-left-radius: var(--cardRadius) !important;
+}
+nav [role="presentation"]:last-child a {
+	border-bottom-right-radius: var(--cardRadius) !important;
+}
 /* TAB WRAPPER */
 [data-testid="primaryColumn"] > div:first-child > div:first-child > div:nth-child(2) {
 	background-color: transparent !important;
 }
 [role="tabs"] {
-	border-bottom-left-radius: 6px !important;
+	border-bottom-left-radius: var(--cardRadius) !important;
 }
 /* INDIVIDUAL TAB */
 [role="tab"]:hover {
-	background-color: var(--mid) !important;
+	background-color: var(--hover) !important;
 }
 
 /* PROFILE PAGE TABS */
 nav[aria-label="Profile timelines"] [role="tablist"] {
-	border-top: 1px solid var(--lighter);
-	border-bottom: 1px solid var(--lighter);
+	border-top: 1px solid var(--accent);
+	border-bottom: 1px solid var(--accent);
 }
 nav[aria-label="Profile timelines"] [role="tablist"] a:first-child {
 	border-bottom-left-radius: 0px !important;
@@ -315,39 +397,41 @@ nav[aria-label="Profile timelines"] [role="tablist"] a:first-child {
 [role="progressbar"] {
 	display: none !important;
 }
-
-
-/* TWEET BOX INNER */
-[data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:nth-child(2) {
-	background-color: transparent !important;
+/* NOTIFICATION TABS */
+[aria-label="Timeline: Notifications"] > div:first-child > div:first-child > div:first-child article {
+	border-top-right-radius: var(--cardRadius) !important;
+	border-top-left-radius: var(--cardRadius) !important;
 }
 
 
 
+/******************************************************************
+ ***************                MESSAGES           ****************
+ ******************************************************************/
 /* DESKTOP MESSAGES WRAPPER */
 main > div:first-child > div:first-child > div:first-child > section:first-child {
-    background-color: var(--light) !important;
-    border-radius: 6px;
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
 }
 main > div:first-child > div:first-child > div:first-child > section:nth-child(2) {
-    background-color: var(--light) !important;
-    border-radius: 6px;
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
 }
  /* MESSAGE */
  [data-testid="conversation"] {
  	background-color: transparent !important;
- 	border-bottom: 1px solid var(--lighter) !important;
+ 	border-bottom: 1px solid var(--accent) !important;
  }
  [data-testid="conversation"]:hover {
- 	background-color: var(--mid) !important;
+ 	background-color: var(--hover) !important;
  }
  /* MESSAGES REQUESTS AND SEARCH */
  main > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div {
  	background-color: transparent !important;
- 	border-bottom: 1px solid var(--lighter) !important;
+ 	border-bottom: 1px solid var(--accent) !important;
  }
  main > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div:first-child a:hover {
- 	background-color: var(--mid) !important;
+ 	background-color: var(--hover) !important;
  }
 
 /* MAIN PAGES TOP BAR CHILD */
@@ -366,143 +450,73 @@ main > div:first-child > div:first-child > div:first-child > div:first-child, [d
 	margin: 0 !important;
 }
 
-/* FEED WRAPPER */
-main > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child, [data-testid="primaryColumn"] > div > div:nth-child(1), main > div:first-child > div:first-child > div:first-child > div:nth-child(1) > div:first-child {
-    margin-top: 0px !important;
-}
-[data-testid="primaryColumn"] > div > div:nth-child(3) {
-    display: none !important;
-}
-
 /* PROFILE BUTTON */
 header > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
     background-color: transparent !important;
 }
 [data-testid="SideNav_AccountSwitcher_Button"] {
-    border-radius: 4px !important;
-}
-/* TWEET WRAPPERS */
-[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div {
-    border-bottom: 1px solid #e8e8e8 !important;
-}
-[aria-label="Timeline: Your Home Timeline"] article {
-    border: none !important;
-    padding: 16px 8px !important;
-}
-[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div {
-    border: none !important;
-}
-[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div > div:first-child:empty {
-    padding: 0 !important;
-}
-/* TWEET BUTTON */
-[data-testid="tweetButtonInline"], [data-testid="tweetButton"] {
-    background-color: rgb(29, 161, 242) !important;
-    opacity: 1 !important;
-    border-radius: 4px !important;
-}
-[data-testid="tweetButtonInline"]:hover, [data-testid="tweetButton"]:hover {
-    cursor: pointer !important;
-    background-color: rgb(26, 145, 218) !important;
+    border-radius: var(--buttonRadius) !important;
 }
 
-/* SEARCH CARD */
-[data-testid="sidebarColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child {
-    padding: 0px !important;
-    overflow: visible !important;
-}
-[data-testid="sidebarColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > form:first-child > div:first-child > div:first-child {
-    border-radius: 4px !important;
-    background-color: initial !important;
-}
 
-[data-testid="sidebarColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child + div {
-    display: none !important;
-    margin-top: 0px !important;
-    height: 0px !important;
-}
 
 /* MESSAGES CARD */
 main > div:first-child {
     margin-top: 8px !important;
 }
 
-/* NOTIFICATION TABS */
-nav {
-	border: none !important;
-}
-
-[aria-label="Notifications timelines"] {
-	border: none !important;
-}
-
-nav [role="presentation"]:first-child a {
-	border-bottom-left-radius: 6px !important;
-}
-
-nav [role="presentation"]:last-child a {
-	border-bottom-right-radius: 6px !important;
-}
-
-[aria-label="Timeline: Notifications"] > div:first-child > div:first-child > div:first-child article {
-	border-top-right-radius: 6px !important;
-	border-top-left-radius: 6px !important;
-}
-
-/* TWEET IMAGE */
-
-.css-1dbjc4n.r-9x6qib.r-1ylenci.r-1phboty.r-rs99b7.r-156q2ks.r-1ny4l3l.r-1udh08x, [data-testid="card.wrapper"] {
-	border-color: var(--lighter) !important;
-}
-
-/*POPUPS*/
+/******************************************************************
+ ***************          POPUPS AND MENUS         ****************
+ ******************************************************************/
 [aria-modal="true"] {
 	overflow: visible !important;
 }
 [aria-modal="true"] > div:first-child {
-	box-shadow: rgba(0, 0, 0, 1) 10px 25px 80px 0px;
+	box-shadow: rgba(0, 0, 0, .2) 10px 25px 80px 0px;
 	position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
     margin: 8px 0;
     border: none;
 }
 [aria-modal="true"] > div:first-child > div:nth-child(3) > div:first-child > div:first-child > div:first-child, [aria-modal="true"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
 	background-color: transparent !important;
 }
-
 /* MENU POPUP */
 [role="menu"] {
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 1) 10px 25px 80px 0px;
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: rgba(0, 0, 0, .2) 10px 25px 80px 0px;
     margin: 8px 0;
     border: none;
-    background-color: var(--light) !important;	
+    background-color: var(--card) !important;	
 }
 [role="menu"] a[role="link"]:hover {
-	background-color: var(--mid) !important;
+	background-color: var(--hover) !important;
 }
 
 /* PROFILE POPUP */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--light) !important;
-    border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 1) 10px 25px 80px 0px;
+    background-color: var(--card) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: rgba(0, 0, 0, .2) 10px 25px 80px 0px;
     margin: 8px 0;
     border: none;
-    background-color: var(--light) !important;
+    background-color: var(--card) !important;
 }
-/* LINKS */
+/* PROFILE POPUP LINKS */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child a:hover {
-	background-color: var(--mid) !important;
+	background-color: var(--hover) !important;
 }
-/* BORDER */
+/* PROFILE POPUP BORDER */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child .css-1dbjc4n.r-e84r5y.r-109y4c4 {
-	background-color: var(--lighter);
+	background-color: var(--accent);
 }
 .css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child li {
-	border-bottom: 1px solid var(--lighter) !important;
+	border-bottom: 1px solid var(--accent) !important;
 }
-
+/* FEED WRAPPER */
+main > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child, [data-testid="primaryColumn"] > div > div:nth-child(1), main > div:first-child > div:first-child > div:first-child > div:nth-child(1) > div:first-child {
+    margin-top: 0px !important;
+}
