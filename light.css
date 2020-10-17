@@ -10,13 +10,45 @@
 	--buttonRadius: 12px;    /* CONTROLS BUTTON RADIUS */
 	--profileRadius: 24px;   /* CONTROLS BUTTON RADIUS */
 	--cardRadius: 12px;      /* CONTROLS BUTTON RADIUS */
+	--inputRadius: 4px;
+	--inputBorder: #d8d8d8;
+	--inputBorderHover: #c8c8c8;
+	--inputBackground: #ffffff;
 	--cardShadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
+  --scrollbarBackground: #565f65;
+	--scrollbarColor: #aaaaaa;
 }
+
+
+/******************************************************************
+ ***************             MAIN LAYOUT           ****************
+ ******************************************************************/
 body {
-    background-color: var(--background) !important;
-    padding-top: 30px !important;
-    max-width: 769px !important;
-    margin: 0 auto !important;
+  background-color: var(--background) !important;
+  padding-top: 30px !important;
+  max-width: 769px !important;
+  margin: 0 auto !important;
+}
+main {
+	margin-right: 10px !important;
+	margin-left: 10px !important;
+}
+main > div:first-child, [data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
+	max-width: 100% !important;
+}
+main > div:first-child > div:first-child > div:first-child {
+	border: none !important;
+}
+[data-testid="primaryColumn"], [data-testid="primaryColumn"] div:first-child > div:nth-child(4), [data-testid="primaryColumn"] div:first-child > div:nth-child(2) {
+	max-width: 9999px !important;
+}
+[data-testid="primaryColumn"] > div > div:nth-child(3) {
+    display: none !important;
+}
+
+/* MESSAGES DRAWER */
+[data-testid="DMDrawer"] {
+	display: none !important;
 }
 @media(min-width: 960px) {
 	main {
@@ -25,12 +57,9 @@ body {
 	}
 }
 @media(min-width: 1004px) {
-	main {
-		margin-left: 36px !important;
-		margin-right: 36px !important;
-	}
 	body {
-		max-width: 960px !important;
+		max-width: 1200px !important;
+    width: 90%;
 	}
 }
 .r-hkyrab {
@@ -111,31 +140,6 @@ article[role="article"] .css-4rbku5.css-18t94o4.css-1dbjc4n.r-sdzlij.r-1loqt21.r
 
 
 /******************************************************************
- ***************             MAIN LAYOUT           ****************
- ******************************************************************/
-main {
-	margin-right: 10px !important;
-	margin-left: 10px !important;
-}
-main > div:first-child {
-	max-width: 100% !important;
-}
-main > div:first-child > div:first-child > div:first-child {
-	border: none !important;
-}
-[data-testid="primaryColumn"], [data-testid="primaryColumn"] div:first-child > div:nth-child(4), [data-testid="primaryColumn"] div:first-child > div:nth-child(2) {
-	max-width: 9999px !important;
-}
-[data-testid="primaryColumn"] > div > div:nth-child(3) {
-    display: none !important;
-}
-
-/* MESSAGES DRAWER */
-[data-testid="DMDrawer"] {
-	display: none !important;
-}
-
-/******************************************************************
  ***************          GLOBAL BUTTONS           ****************
  ******************************************************************/
  [aria-labelledby="modal-header"] > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:nth-child(3) [role="button"], [aria-labelledby="modal-header"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(9) [role="button"] {
@@ -174,6 +178,29 @@ header > div:first-child > div:first-child > div:first-child > div:first-child >
 [role="button"] {
 	border-radius: var(--buttonRadius);
 }
+
+/******************************************************************
+ ***************           GLOBAL INPUTS           ****************
+ ******************************************************************/
+ label {
+ 	border: none !important;
+ 	background: transparent !important;
+ 	padding: 0 !important;
+ }
+ label [dir="auto"] {
+ 	padding-left: 0 !important;
+ 	margin-bottom: 8px !important;
+ }
+ input[type="password"], input[type="text"] {
+ 	border-radius: var(--inputRadius) !important;
+ 	background-color: var(--inputBackground) !important;
+ 	border: 1px solid var(--inputBorder) !important;
+ 	padding: 12px 10px !important;
+ 	font-size: 16px !important;
+ }
+ input[type="password"]:focus, input[type="text"]:focus {
+ 	border: 1px solid var(--inputBorderHover) !important;
+ }
 
 /******************************************************************
  ***************              SIDEBARS             ****************
@@ -215,6 +242,10 @@ header > div:first-child > div:first-child > div:first-child {
  }
  a[href$="/photo"],  a[href$="/photo"] div {
  	border-radius: var(--profileRadius) !important;
+ }
+ a[href$="header_photo"] .r-1adg3ll.r-13qz1uu {
+ 	border-top-right-radius: var(--cardRadius) !important;
+ 	border-top-left-radius: var(--cardRadius) !important;
  }
 
 /******************************************************************
