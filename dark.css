@@ -1,0 +1,498 @@
+/******************************************************************
+ ***************         MAIN LAYOUT STUFF         ****************
+ ******************************************************************/
+:root {
+	--background: #1a1e21;   /* CONTROLS MAIN BACKGROUND COLOR */
+	--hover: #273036;        /* CONTROLS MAIN HOVER COLOR */
+	--card: rgb(44, 54, 60); /* CONTROLS MAIN CARD COLOR */
+	--accent: #565f65;       /* CONTROLS BORDER/SEPERATOR COLOR */
+}
+body {
+    background-color: var(--background) !important;
+    padding-top: 30px !important;
+    max-width: 960px !important;
+    margin: 0 auto !important;
+}
+.r-hkyrab {
+	color: #ffffff !important;
+}
+.r-1re7ezh {
+	color: #ffffff !important;
+}
+
+/******************************************************************
+ ***************         BORDERS/SEPERATORS        ****************
+ ******************************************************************/
+/* TWEET BORDERS */
+.css-1dbjc4n.r-my5ep6.r-qklmqi.r-1adg3ll.r-1ny4l3l, [aria-modal="true"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
+	/*background-color: orange !important;*/
+	border-bottom: 1px solid var(--accent) !important;
+}
+/* RANDOM MENU ITEM SEPERATOR */
+.css-1dbjc4n.r-e84r5y.r-109y4c4.r-hrzydr {
+	background: var(--accent);
+}
+/* MAIN SECTION SEPERATORS */
+.css-1dbjc4n.r-e84r5y.r-1or9b2r {
+	background-color: var(--accent) !important;
+}
+/* SETTINGS LINKS */
+a[href*="/settings"] {
+	border-bottom: 1px solid var(--accent) !important;
+}
+a[href*="/settings/about"] {
+	border-bottom: none !important;
+}
+
+/******************************************************************
+ ***************             TWEET BOX             ****************
+ ******************************************************************/
+/* TWEET BOX INNER */
+[data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:nth-child(2) {
+	background-color: transparent !important;
+}
+/* TWEET BOX TOOLBAR */
+[data-testid="toolBar"] {
+	background-color: transparent;
+}
+[data-testid="toolBar"] svg {
+	color: #ffffff !important;
+}
+
+
+/******************************************************************
+ ***************            TWEETS STUFF           ****************
+ ******************************************************************/
+/* TWEET WRAPPERS */
+[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div {
+    border-bottom: 1px solid #e8e8e8 !important;
+}
+[aria-label="Timeline: Your Home Timeline"] article {
+    border: none !important;
+    padding: 16px 8px !important;
+}
+[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div {
+    border: none !important;
+}
+[aria-label="Timeline: Your Home Timeline"] > div:first-child > div:first-child > div > div:first-child:empty {
+    padding: 0 !important;
+}
+/* TWEET IMAGE */
+.css-1dbjc4n.r-9x6qib.r-1ylenci.r-1phboty.r-rs99b7.r-156q2ks.r-1ny4l3l.r-1udh08x, [data-testid="card.wrapper"] {
+	border-color: var(--accent) !important;
+}
+
+
+/******************************************************************
+ ***************             MAIN LAYOUT           ****************
+ ******************************************************************/
+main {
+	margin-right: 10px !important;
+	margin-left: 10px !important;
+}
+main > div:first-child {
+	max-width: 100% !important;
+}
+main > div:first-child > div:first-child > div:first-child {
+	border: none !important;
+}
+[data-testid="primaryColumn"], [data-testid="primaryColumn"] div:first-child > div:nth-child(4), [data-testid="primaryColumn"] div:first-child > div:nth-child(2) {
+	max-width: 9999px !important;
+}
+/* FEED WRAPPER */
+main > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child, [data-testid="primaryColumn"] > div > div:nth-child(1), main > div:first-child > div:first-child > div:first-child > div:nth-child(1) > div:first-child {
+    margin-top: 0px !important;
+}
+[data-testid="primaryColumn"] > div > div:nth-child(3) {
+    display: none !important;
+}
+
+/* MESSAGES DRAWER */
+[data-testid="DMDrawer"] {
+	display: none !important;
+}
+
+/******************************************************************
+ ***************          GLOBAL BUTTONS           ****************
+ ******************************************************************/
+ [aria-labelledby="modal-header"] > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:nth-child(3) [role="button"], [aria-labelledby="modal-header"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(9) [role="button"] {
+ 	background-color: rgb(29, 161, 242) !important;
+    opacity: 1 !important;
+    border-radius: 4px !important;
+    color: white !important;
+ }
+[aria-labelledby="modal-header"] > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:nth-child(3) [role="button"]:hover, [aria-labelledby="modal-header"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(9) [role="button"]:hover, [data-testid="SideNav_NewTweet_Button"]:hover {
+	cursor: pointer !important;
+    background-color: rgb(26, 145, 218) !important;
+    color: white !important;
+}
+/* MOBILE TWEET BUTTON */
+[data-testid="SideNav_NewTweet_Button"] {
+	background-color: rgb(29, 161, 242) !important;
+    opacity: 1 !important;
+    border-radius: 4px !important;
+    color: white !important;
+}
+/* NAVIGATION TWEET BUTTON */
+header > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child > a {
+    border-radius: 4px !important;
+}
+/* TWEET BUTTON */
+[data-testid="tweetButtonInline"], [data-testid="tweetButton"] {
+    background-color: rgb(29, 161, 242) !important;
+    opacity: 1 !important;
+    border-radius: 4px !important;
+}
+[data-testid="tweetButtonInline"]:hover, [data-testid="tweetButton"]:hover {
+    cursor: pointer !important;
+    background-color: rgb(26, 145, 218) !important;
+}
+
+/******************************************************************
+ ***************              SIDEBARS             ****************
+ ******************************************************************/
+/* HIDE RIGHT SIDEBAR */
+[data-testid="primaryColumn"] ~ div {
+	display: none !important;
+}
+
+/* NAVIGATION CARD WRAPPER */
+header > div > div > div > div:first-child {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin: 8px 0;
+    border: none;
+}
+
+/* LEFT/RIGHT FIXED SIDEBAR WRAPPER */
+header > div:first-child > div:first-child, [data-testid="sidebarColumn"] > div:first-child > div:nth-child(2) {
+    top: 30px !important;
+    position: fixed !important;
+}
+
+/* LEFT SIDEBAR FLEX WRAPPER */
+header > div:first-child > div:first-child > div:first-child {
+    justify-content: flex-start !important;
+}
+
+
+/******************************************************************
+ ***************           PROFILE PAGE            ****************
+ ******************************************************************/
+ /* BANNER BACKGROUND */
+ [data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child, [data-testid="primaryColumn"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child {
+ 	border-top-right-radius: 6px !important;
+ 	border-top-left-radius: 6px !important;
+ }
+
+/******************************************************************
+ ***************       PRIMARY NAVIGATION          ****************
+ ******************************************************************/
+/* NAV WRAPPER */
+nav[aria-label="Primary"] > a {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* TWITTER LINK */
+[aria-label="Twitter"] {
+	cursor: pointer !important;
+	background-color: transparent !important;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+	border-radius: 4px !important;
+	margin: 4px !important;
+	margin-top: 8px !important;
+	margin-bottom: -4px !important;
+}
+
+/* NAV LINKS */
+nav[aria-label="Primary"] > a > div, nav[aria-label="Primary"] > div > div {
+	cursor: pointer !important;
+	position: relative !important;
+	align-items: center !important;
+	justify-content: center !important;
+	text-decoration: none !important;
+	background-color: transparent !important;
+	flex: 0 0 auto;
+	padding: 12px !important;
+	text-align: center !important;
+	transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms !important;
+	border-radius: 4px !important;
+	margin: 4px !important;
+}
+nav[aria-label="Primary"] > a:hover > div, nav[aria-label="Primary"] > div:hover > div, [aria-label="Twitter"]:hover {
+    background-color: rgba(29, 161, 242, 0.1) !important;
+}
+
+/* HIDE EXPLORE TAB */
+nav[aria-label="Primary"] > a:nth-child(2) {
+	display: none !important;
+}
+
+@media (min-width: 1280px) {
+	/* DESKTOP NAV COLUMN */
+    nav[aria-label="Primary"] > a, nav[aria-label="Primary"] > div {
+        padding: 0px 8px !important;
+    }
+
+    /* DESKTOP NAV LINKS */
+    nav[aria-label="Primary"] > a > div, nav[aria-label="Primary"] > div > div {
+        border-radius: 4px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        justify-content: flex-start !important;
+    }
+    
+    /* TWITTER ICON */
+    header > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
+        margin-left: 8px !important;
+        margin-top: 8px !important;
+    }
+
+    /* NAVIGATION TWEET BUTTON WRAPPER */
+    header > div:first-child > div:first-child > div:first-child > div:first-child > div:last-child {
+        width: calc(100% - 16px) !important;
+    }
+    
+}
+
+/* TWEET BUTTON WRAPPER */
+header > div:first-child > div:first-child > div:first-child > div:first-child > div:nth-child(3) {
+    margin-right: 8px !important;
+    margin-left: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+/******************************************************************
+ ***************                CARDS              ****************
+ ******************************************************************/
+/* PAGE INDICATOR CARD */
+[data-testid="primaryColumn"] > div:first-child > div:first-child {
+	background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin:0 0 8px 0 !important;
+    border: none !important;
+}
+
+/* MESSAGES INDICATOR CARD */
+main > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin: 8px 0;
+    border: none;
+}
+
+/* PROFILE BUTTON CARD */
+header > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin: 8px 0;
+    border: none;
+}
+
+/* TWEET BOX CARD */
+[data-testid="primaryColumn"] > div > div:nth-child(2) {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin: 8px 0;
+    border: none;
+}
+
+/* MESSAGES SEARCH AND DISPLAY CARD */
+main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin: 16px 0 8px 0 !important;
+    border: none;
+}
+
+/* MAIN FEED CARD */
+[data-testid="primaryColumn"] > div > div:nth-child(4) {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2);
+    margin: 8px 0;
+    border: none;
+}
+
+
+
+
+
+
+/******************************************************************
+ ***************                 TABS              ****************
+ ******************************************************************/
+/* DEFAULT STYLING */
+nav {
+	border: none !important;
+}
+[aria-label="Notifications timelines"] {
+	border: none !important;
+}
+nav [role="presentation"]:first-child a {
+	border-bottom-left-radius: 6px !important;
+}
+nav [role="presentation"]:last-child a {
+	border-bottom-right-radius: 6px !important;
+}
+/* TAB WRAPPER */
+[data-testid="primaryColumn"] > div:first-child > div:first-child > div:nth-child(2) {
+	background-color: transparent !important;
+}
+[role="tabs"] {
+	border-bottom-left-radius: 6px !important;
+}
+/* INDIVIDUAL TAB */
+[role="tab"]:hover {
+	background-color: var(--hover) !important;
+}
+
+/* PROFILE PAGE TABS */
+nav[aria-label="Profile timelines"] [role="tablist"] {
+	border-top: 1px solid var(--accent);
+	border-bottom: 1px solid var(--accent);
+}
+nav[aria-label="Profile timelines"] [role="tablist"] a:first-child {
+	border-bottom-left-radius: 0px !important;
+	border-bottom-right-radius: 0px !important;
+}
+[role="progressbar"] {
+	display: none !important;
+}
+/* NOTIFICATION TABS */
+[aria-label="Timeline: Notifications"] > div:first-child > div:first-child > div:first-child article {
+	border-top-right-radius: 6px !important;
+	border-top-left-radius: 6px !important;
+}
+
+
+
+/******************************************************************
+ ***************                MESSAGES           ****************
+ ******************************************************************/
+/* DESKTOP MESSAGES WRAPPER */
+main > div:first-child > div:first-child > div:first-child > section:first-child {
+    background-color: var(--card) !important;
+    border-radius: 6px;
+}
+main > div:first-child > div:first-child > div:first-child > section:nth-child(2) {
+    background-color: var(--card) !important;
+    border-radius: 6px;
+}
+ /* MESSAGE */
+ [data-testid="conversation"] {
+ 	background-color: transparent !important;
+ 	border-bottom: 1px solid var(--accent) !important;
+ }
+ [data-testid="conversation"]:hover {
+ 	background-color: var(--hover) !important;
+ }
+ /* MESSAGES REQUESTS AND SEARCH */
+ main > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div {
+ 	background-color: transparent !important;
+ 	border-bottom: 1px solid var(--accent) !important;
+ }
+ main > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div:first-child a:hover {
+ 	background-color: var(--hover) !important;
+ }
+
+/* MAIN PAGES TOP BAR CHILD */
+main > div:first-child > div:first-child > div:first-child > div[data-testid="primaryColumn"] > div:first-child > div:first-child > div:first-child {
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+}
+
+/* REMOVE WHITE BG FROM ELEMENTS */
+main > div:first-child > div:first-child > div:first-child > div:first-child, [data-testid="primaryColumn"] > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
+	background-color: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	margin: 0 !important;
+}
+
+/* PROFILE BUTTON */
+header > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
+    background-color: transparent !important;
+}
+[data-testid="SideNav_AccountSwitcher_Button"] {
+    border-radius: 4px !important;
+}
+
+
+
+/* MESSAGES CARD */
+main > div:first-child {
+    margin-top: 8px !important;
+}
+
+/******************************************************************
+ ***************          POPUPS AND MENUS         ****************
+ ******************************************************************/
+[aria-modal="true"] {
+	overflow: visible !important;
+}
+[aria-modal="true"] > div:first-child {
+	box-shadow: rgba(0, 0, 0, 1) 10px 25px 80px 0px;
+	position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    margin: 8px 0;
+    border: none;
+}
+[aria-modal="true"] > div:first-child > div:nth-child(3) > div:first-child > div:first-child > div:first-child, [aria-modal="true"] > div:first-child > div:nth-child(2) > div:first-child > div:first-child {
+	background-color: transparent !important;
+}
+/* MENU POPUP */
+[role="menu"] {
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 1) 10px 25px 80px 0px;
+    margin: 8px 0;
+    border: none;
+    background-color: var(--card) !important;	
+}
+[role="menu"] a[role="link"]:hover {
+	background-color: var(--hover) !important;
+}
+
+/* PROFILE POPUP */
+.css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child {
+    position: relative;
+    background-color: var(--card) !important;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 1) 10px 25px 80px 0px;
+    margin: 8px 0;
+    border: none;
+    background-color: var(--card) !important;
+}
+/* PROFILE POPUP LINKS */
+.css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child a:hover {
+	background-color: var(--hover) !important;
+}
+/* PROFILE POPUP BORDER */
+.css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child .css-1dbjc4n.r-e84r5y.r-109y4c4 {
+	background-color: var(--accent);
+}
+.css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child li {
+	border-bottom: 1px solid var(--accent) !important;
+}
+
