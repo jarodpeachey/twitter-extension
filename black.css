@@ -24,6 +24,15 @@ body {
 		margin-right: 24px !important;
 	}
 }
+@media(min-width: 1004px) {
+	main {
+		margin-left: 36px !important;
+		margin-right: 36px !important;
+	}
+	body {
+		max-width: 960px !important;
+	}
+}
 .r-hkyrab {
 	color: var(--text) !important;
 }
@@ -433,6 +442,20 @@ main > div:first-child > div:first-child > div:first-child > section:nth-child(2
  main > div:first-child > div:first-child > div:first-child > div:nth-child(2) > div:first-child a:hover {
  	background-color: var(--hover) !important;
  }
+ 
+ @media(min-width: 1004px) {
+ 	[aria-label="Section navigation"] {
+ 		max-width: 40% !important;
+ 		min-width: 40% !important;
+ 	}
+ 	[aria-label="Section details"] {
+ 		max-width: 60% !important;
+ 		min-width: 60% !important;
+ 	}
+ }
+ 
+ 
+ 
 
 /* MAIN PAGES TOP BAR CHILD */
 main > div:first-child > div:first-child > div:first-child > div[data-testid="primaryColumn"] > div:first-child > div:first-child > div:first-child {
