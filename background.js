@@ -1,7 +1,27 @@
-document.addEventListener("DOMContentLoaded", () => {
- var button = document.getElementById("submit")
+// document.addEventListener("DOMContentLoaded", () => {
+(function () {
+  const getCookie = (cookieName) => {
+    const name = `${cookieName}=`;
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
 
- button.addEventListener("click", (e) => {
-   console.log(e)
- })
-})
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) === 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+
+    return '';
+  };
+  const backgroundColor = getCookie('backgroundcolor');
+
+  document.documentElement.style.setProperty(
+    '--background',
+    backgroundColor,
+  );
+})();
+// })

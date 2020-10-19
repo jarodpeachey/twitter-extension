@@ -4,12 +4,109 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
   </head>
 
   <body>
-    <button id="submit" value="Submit">Submit</button>
-    <script src="background.js"></script>
+    <h2>Material Twitter</h2>
+    <div class="collapse" id='color'>
+      <h3 class='collapse__title color__title'>
+        <span>Color</span>
+        <span>+</span>
+      </h3>
+      <div class='collapse__content color__content'>
+        <div>
+          <label class="flex">
+            Background color
+            <input type="color" id="backgroundColor" placeholder="Enter color...">
+          </label>
+          <label class="flex">
+            Hover color
+            <input type="color" placeholder="Enter color...">
+          </label>
+          <label class="flex">
+            Accent color
+            <input type="color" placeholder="Enter color...">
+          </label>
+          <label class="flex">
+            Text color
+            <input type="color" placeholder="Enter color...">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="collapse" id='card'>
+      <h3 class='collapse__title card__title'>
+        <span>Card Styles</span>
+        <span>+</span>
+      </h3>
+      <div class='collapse__content card__content'>
+        <div>
+          <label class="flex">
+            Card background
+            <input type="color" placeholder="Enter color...">
+          </label>
+          <label>
+            Card radius
+            <input type="text" placeholder="Enter value (i.e 12px)">
+          </label>
+          <label>
+            Card shadow
+            <input type="text" placeholder="Enter value...">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="collapse" id='input'>
+      <h3 class='collapse__title input__title'>
+        <span>Input Styles</span>
+        <span>+</span>
+      </h3>
+      <div class='collapse__content input__content'>
+        <div>
+          <label>
+            Border radius
+            <input type="text" placeholder="Enter value (i.e 12px)">
+          </label>
+          <label>
+            Background color
+            <input type="color" placeholder="Enter color...">
+          </label>
+          <label>
+            Border color
+            <input type="color" placeholder="Enter color...">
+          </label>
+          <label>
+            Hover border color
+            <input type="color" placeholder="Enter color...">
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="button-container">
+      <button id="submit">Save</button>
+    </div>
+    <script src="index.js"></script>
+    <!-- 
+
+  --background: #f7f7f7;
+	--hover: #fafafa;        
+	--card: #ffffff;         
+	--accent: #e8e8e8;
+	--text: #444444;         
+	--buttonRadius: 12px;    
+	--profileRadius: 24px;   
+	--cardRadius: 12px;      
+	--inputRadius: 4px;
+	--inputBorder: #d8d8d8;
+	--inputBorderHover: #c8c8c8;
+	--inputBackground: #ffffff;
+	--cardShadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
+  --scrollbarBackground: #565f65;
+	--scrollbarColor: #aaaaaa; 
+  
+  -->
   </body>
 
 </html>
