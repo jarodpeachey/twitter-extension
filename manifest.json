@@ -1,30 +1,23 @@
 {
-  "manifest_version": 2,
-  "name": "Material Twitter",
-  "title": "Material Twitter",
-  "version": "1.0.0",
-  "description": "A simple theme for Twitter based off of Google's Material Design System",
-  "short_name": "Material Twitter",
-  "permissions": ["activeTab", "declarativeContent", "tabs"],
-  "content_scripts": [
-    {
-      "matches": ["https://twitter.com/*"],
-      "css": ["override.css"],
-      "js": ["override.js"]
-    }
-  ],
-  "page_action": {
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "32": "icons/icon32.png"
-    }
-  },
-  "browser_action": {
-  "default_title": "Customize Material Twitter",
-  "default_popup": "popup.html",
-  "default_icon": {
-    "16": "icons/icon16.png",
-    "32": "icons/icon32.png"
-  }
-}
+ "manifest_version": 2,
+ "name": "Material Twitter",
+ "version": "1.0.0",
+ "description": "This is a sample description",
+ "short_name": "Material Twitter",
+ "permissions": ["activeTab", "declarativeContent", "storage"],
+ "content_scripts": [
+   {
+     "matches": ["https://twitter.com"],
+     "css": ["override.css"],
+     "js": ["background.js"]
+   }
+ ],
+ "browser_action": {
+   "default_title": "Customize Twitter",
+   "default_popup": "popup.html",
+   "default_icon": {
+     "16": "icons/icon16.png",
+     "32": "icons/icon32.png"
+   }
+ }
 }
