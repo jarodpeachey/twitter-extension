@@ -3,7 +3,7 @@
  ******************************************************************/
 :root {
 	--background: #f7f7f7;   /* CONTROLS MAIN BACKGROUND COLOR */
-	--hover: #fafafa;        /* CONTROLS MAIN HOVER COLOR */
+	--hover: #edf0f2;        /* CONTROLS MAIN HOVER COLOR */
 	--card: #ffffff;         /* CONTROLS MAIN CARD COLOR */
 	--accent: #e8e8e8;       /* CONTROLS BORDER/SEPERATOR COLOR */
 	--text: #444444;         /* CONTROLS TEXT COLOR */
