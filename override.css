@@ -2,20 +2,20 @@
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
 :root {
-	--background: #f7f7f7;   /* CONTROLS MAIN BACKGROUND COLOR */
-	--hover: #edf0f2;        /* CONTROLS MAIN HOVER COLOR */
-	--card: #ffffff;         /* CONTROLS MAIN CARD COLOR */
-	--accent: #e8e8e8;       /* CONTROLS BORDER/SEPERATOR COLOR */
-	--text: #444444;         /* CONTROLS TEXT COLOR */
+	--background: #1a1e21;   /* CONTROLS MAIN BACKGROUND COLOR */
+	--hover: #273036;        /* CONTROLS MAIN HOVER COLOR */
+	--cardBackground: rgb(44, 54, 60); /* CONTROLS MAIN CARD COLOR */
+	--accent: #565f65;       /* CONTROLS BORDER/SEPERATOR COLOR */
+	--text: #fcfcfc;         /* CONTROLS TEXT COLOR */
 	--buttonRadius: 12px;    /* CONTROLS BUTTON RADIUS */
 	--profileRadius: 24px;   /* CONTROLS BUTTON RADIUS */
 	--cardRadius: 12px;      /* CONTROLS BUTTON RADIUS */
-	--inputRadius: 4px;
+  --inputRadius: 4px;
 	--inputBorder: #d8d8d8;
 	--inputBorderHover: #c8c8c8;
 	--inputBackground: #ffffff;
-	--cardShadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
-  --scrollbarBackground: #565f65;
+	--cardShadow: 0px 2px 3px -1px rgba(0,0,0,0.4),0px 1px 4px 0px rgba(0,0,0,0.2),0px 1px 5px 0px rgba(0,0,0,0.2); /* CONTROLS CARD BOX SHADOW */
+	--scrollbarBackground: #565f65;
 	--scrollbarColor: #aaaaaa;
 }
 
@@ -113,7 +113,7 @@ a[href*="/settings/about"] {
 }
 /* TWEET BOX TOOLBAR */
 [data-testid="toolBar"] {
-	background-color: transparent;
+	background-color: transparent !important;
 }
 [data-testid="toolBar"] svg {
 	color: var(--text) !important;
@@ -224,7 +224,7 @@ header > div:first-child > div:first-child > div:first-child > div:first-child >
 /* NAVIGATION CARD WRAPPER */
 header > div > div > div > div:first-child {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
@@ -251,10 +251,7 @@ header > div:first-child > div:first-child > div:first-child {
  	border-top-right-radius: var(--cardRadius) !important;
  	border-top-left-radius: var(--cardRadius) !important;
  }
- a[href$="/photo"],  a[href$="/photo"] div {
- 	border-radius: var(--profileRadius) !important;
- }
- a[href$="header_photo"] .r-1adg3ll.r-13qz1uu {
+ a[href$="header_photo"] div {
  	border-top-right-radius: var(--cardRadius) !important;
  	border-top-left-radius: var(--cardRadius) !important;
  }
@@ -346,7 +343,7 @@ header > div:first-child > div:first-child > div:first-child > div:first-child >
  ******************************************************************/
 /* PAGE INDICATOR CARD */
 [data-testid="primaryColumn"] > div:first-child > div:first-child {
-	background-color: var(--card) !important;
+	background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin:0 0 8px 0 !important;
@@ -356,7 +353,7 @@ header > div:first-child > div:first-child > div:first-child > div:first-child >
 /* MESSAGES INDICATOR CARD */
 main > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
@@ -366,7 +363,7 @@ main > div:first-child > div:first-child > div:first-child > div:first-child > d
 /* PROFILE BUTTON CARD */
 header > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
@@ -376,7 +373,7 @@ header > div:first-child > div:first-child > div:first-child > div:nth-child(2) 
 /* TWEET BOX CARD */
 [data-testid="primaryColumn"] > div > div:nth-child(2) {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
@@ -386,7 +383,7 @@ header > div:first-child > div:first-child > div:first-child > div:nth-child(2) 
 /* MESSAGES SEARCH AND DISPLAY CARD */
 main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 16px 0 8px 0 !important;
@@ -396,7 +393,7 @@ main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
 /* MAIN FEED CARD */
 [data-testid="primaryColumn"] > div > div:nth-child(4) {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 8px 0;
@@ -461,12 +458,12 @@ nav[aria-label="Profile timelines"] [role="tablist"] a:first-child {
  ******************************************************************/
 /* DESKTOP MESSAGES WRAPPER */
 main > div:first-child > div:first-child > div:first-child > section:first-child {
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     border: none !important;
 }
 main > div:first-child > div:first-child > div:first-child > section:nth-child(2) {
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     border: none !important;
 }
@@ -584,7 +581,7 @@ main > div:first-child {
 [aria-modal="true"] > div:first-child {
 	box-shadow: rgba(0, 0, 0, .2) 10px 25px 80px 0px;
 	position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     margin: 8px 0;
     border: none;
@@ -594,12 +591,12 @@ main > div:first-child {
 }
 /* MENU POPUP */
 [role="menu"] {
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: rgba(0, 0, 0, .2) 10px 25px 80px 0px;
     margin: 8px 0;
     border: none;
-    background-color: var(--card) !important;	
+    background-color: var(--cardBackground) !important;	
 }
 [role="menu"] a[role="link"]:hover {
 	background-color: var(--hover) !important;
@@ -608,12 +605,12 @@ main > div:first-child {
 /* PROFILE POPUP */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
     border-radius: var(--cardRadius) !important;
     box-shadow: rgba(0, 0, 0, .2) 10px 25px 80px 0px;
     margin: 8px 0;
     border: none;
-    background-color: var(--card) !important;
+    background-color: var(--cardBackground) !important;
 }
 /* PROFILE POPUP LINKS */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam > div:first-child > div:nth-child(2)[data-focusable="true"] > div:first-child > div:first-child > div:first-child a:hover {
