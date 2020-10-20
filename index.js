@@ -20,52 +20,80 @@ const getCookie = (cookieName) => {
 (function () {
   const backgroundColorInput = document.getElementById('backgroundColor');
   backgroundColorInput.addEventListener('change', updateBackground);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'backgroundcolor'}, function (cookie) {
-    console.log(cookie);
-    backgroundColorInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'backgroundcolor' },
+    function (cookie) {
+      if (cookie.value) {
+        backgroundColorInput.value = cookie.value;
+      }
+    },
+  );
 
   const hoverColorInput = document.getElementById('hoverColor');
   hoverColorInput.addEventListener('change', updateHover);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'hovercolor'}, function (cookie) {
-    console.log(cookie);
-    hoverColorInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'hovercolor' },
+    function (cookie) {
+      if (cookie.value) {
+        hoverColorInput.value = cookie.value;
+      }
+    },
+  );
 
   const accentColorInput = document.getElementById('accentColor');
   accentColorInput.addEventListener('change', updateAccent);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'accentcolor'}, function (cookie) {
-    console.log(cookie);
-    accentColorInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'accentcolor' },
+    function (cookie) {
+      if (cookie.value) {
+        accentColorInput.value = cookie.value;
+      }
+    },
+  );
 
   const textColorInput = document.getElementById('textColor');
   textColorInput.addEventListener('change', updateText);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'textcolor'}, function (cookie) {
-    console.log(cookie);
-    textColorInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'textcolor' },
+    function (cookie) {
+      if (cookie.value) {
+        textColorInput.value = cookie.value;
+      }
+    },
+  );
 
   const cardBackgroundInput = document.getElementById('cardBackground');
   cardBackgroundInput.addEventListener('change', updateCardBackground);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'cardbackground'}, function (cookie) {
-    console.log(cookie);
-    cardBackgroundInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'cardbackground' },
+    function (cookie) {
+      if (cookie.value) {
+        cardBackgroundInput.value = cookie.value;
+      }
+    },
+  );
 
   const cardRadiusInput = document.getElementById('cardRadius');
   cardRadiusInput.addEventListener('change', updateCardRadius);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'cardradius'}, function (cookie) {
-    console.log(cookie);
-    cardRadiusInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'cardradius' },
+    function (cookie) {
+      if (cookie.value) {
+        cardRadiusInput.value = cookie.value;
+      }
+    },
+  );
 
   const cardShadowInput = document.getElementById('cardShadow');
   cardShadowInput.addEventListener('change', updateCardShadow);
-  chrome.cookies.get({url: 'https://twitter.com', name: 'cardshadow'}, function (cookie) {
-    console.log(cookie);
-    cardShadowInput.value = cookie.value;
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'cardshadow' },
+    function (cookie) {
+      if (cookie.value) {
+        cardShadowInput.value = cookie.value;
+      }
+    },
+  );
 
   function updateBackground(e) {
     chrome.cookies.set(

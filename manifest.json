@@ -1,7 +1,6 @@
 {
   "manifest_version": 2,
   "name": "Material Twitter",
-  "title": "Material Twitter",
   "version": "1.0.0",
   "description": "A simple theme for Twitter based off of Google's Material Design System",
   "short_name": "Material Twitter",
