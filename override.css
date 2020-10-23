@@ -35,6 +35,33 @@
 /******************************************************************
  ***************             MAIN LAYOUT           ****************
  ******************************************************************/
+
+/* REMOVE WHITE BG FROM ELEMENTS */
+main > div:first-child > div:first-child > div:first-child > div:first-child,
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+
 body {
   background-color: var(--background) !important;
   padding-top: 30px !important;
@@ -304,7 +331,7 @@ header > div > div > div > div:first-child {
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
 }
 
@@ -398,8 +425,8 @@ nav[aria-label='Primary'] > div:hover > div,
 }
 
 /* HIDE EXPLORE TAB */
-nav[aria-label="Primary"] > a:nth-child(2) {
-	display: none !important;
+nav[aria-label='Primary'] > a:nth-child(2) {
+  display: none !important;
 }
 
 @media (min-width: 1280px) {
@@ -460,11 +487,19 @@ header
  ***************                CARDS              ****************
  ******************************************************************/
 /* PAGE INDICATOR CARD */
-[data-testid='primaryColumn'] > div:first-child > div:first-child {
+[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-0'], [data-testid='primaryColumn'] section[aria-labelledby='accessible-list-1'] {
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
-  margin: 0 0 8px 0 !important;
+  margin: 0px 0px 16px 0px !important;
+  border: none !important;
+}
+
+[role='progressbar'] ~ div {
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px !important;
   border: none !important;
 }
 
@@ -481,7 +516,7 @@ main
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
 }
 
@@ -495,7 +530,7 @@ header
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
 }
 
@@ -505,7 +540,7 @@ header
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
 }
 
@@ -525,7 +560,7 @@ main > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
 }
 
@@ -779,7 +814,7 @@ main
 }
 
 /* MAIN PAGES TOP BAR CHILD */
-main
+/* main
   > div:first-child
   > div:first-child
   > div:first-child
@@ -791,22 +826,7 @@ main
   border: none !important;
   box-shadow: none !important;
   margin: 0 !important;
-}
-
-/* REMOVE WHITE BG FROM ELEMENTS */
-main > div:first-child > div:first-child > div:first-child > div:first-child,
-[data-testid='primaryColumn']
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:first-child {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  margin: 0 !important;
-}
+} */
 
 /* PROFILE BUTTON */
 header
@@ -823,9 +843,9 @@ header
 }
 
 /* MESSAGES CARD */
-main > div:first-child {
+/* main > div:first-child {
   margin-top: 8px !important;
-}
+} */
 
 /******************************************************************
  ***************            SETTINGS PAGES         ****************
@@ -871,7 +891,7 @@ main > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
 }
 [aria-modal='true']
@@ -892,7 +912,7 @@ main > div:first-child {
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
   background-color: var(--cardBackground) !important;
 }
@@ -911,7 +931,7 @@ main > div:first-child {
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
-  margin: 8px 0;
+  margin: 0px 0px 16px 0px;
   border: none;
   background-color: var(--cardBackground) !important;
 }
