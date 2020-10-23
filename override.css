@@ -134,6 +134,7 @@ main > div:first-child > div:first-child > div:first-child {
 /* MAIN SECTION SEPERATORS */
 .css-1dbjc4n.r-e84r5y.r-1or9b2r {
   background-color: var(--accent) !important;
+  display: none;
 }
 /* SETTINGS LINKS */
 a[href*='/settings'] {
@@ -487,7 +488,11 @@ header
  ***************                CARDS              ****************
  ******************************************************************/
 /* PAGE INDICATOR CARD */
-[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-0'], [data-testid='primaryColumn'] section[aria-labelledby='accessible-list-1'] {
+[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-0'],
+[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-1'],
+[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-4'],
+[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-3'],
+[data-testid='primaryColumn'] section[aria-labelledby='accessible-list-2'] {
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
