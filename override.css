@@ -2,21 +2,21 @@
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
 :root {
-  --background: #1a1e21; /* CONTROLS MAIN BACKGROUND COLOR */
-  --hover: #273036; /* CONTROLS MAIN HOVER COLOR */
-  --cardBackground: rgb(44, 54, 60); /* CONTROLS MAIN CARD COLOR */
-  --accent: #565f65; /* CONTROLS BORDER/SEPERATOR COLOR */
-  --text: #fcfcfc; /* CONTROLS TEXT COLOR */
-  --buttonRadius: 12px; /* CONTROLS BUTTON RADIUS */
-  --profileRadius: 24px; /* CONTROLS BUTTON RADIUS */
-  --cardRadius: 12px; /* CONTROLS BUTTON RADIUS */
+  --background: #1a1e21;
+  --hover: #273036;
+  --cardBackground: rgb(44, 54, 60);
+  --accent: #565f65;
+  --text: #fcfcfc;
+  --buttonRadius: 12px;
+  --profileRadius: 24px;
+  --cardRadius: 12px;
   --inputRadius: 4px;
   --inputBorder: #d8d8d8;
   --inputBorderHover: #c8c8c8;
   --inputBackground: #ffffff;
   --inputColor: #444444;
   --cardShadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.4),
-    0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2); /* CONTROLS CARD BOX SHADOW */
+    0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
   --scrollbarBackground: #565f65;
   --scrollbarColor: #aaaaaa;
 }
@@ -398,9 +398,9 @@ nav[aria-label='Primary'] > div:hover > div,
 }
 
 /* HIDE EXPLORE TAB */
-/* nav[aria-label="Primary"] > a:nth-child(2) {
+nav[aria-label="Primary"] > a:nth-child(2) {
 	display: none !important;
-} */
+}
 
 @media (min-width: 1280px) {
   /* DESKTOP NAV COLUMN */
@@ -557,13 +557,15 @@ nav [role='presentation']:last-child a {
 }
 /* INDIVIDUAL TAB */
 html body main a[role='tab'] {
+  transition: all 0.1s !important;
   background-color: transparent !important;
 }
 html body main a[role='tab']:hover,
 html body main div[role='tab']:hover {
   background-color: var(--hover) !important;
 }
-html body main a[role='tab'][aria-selected='true'], html body main a[role="tab"][aria-selected="true"]:hover {
+html body main a[role='tab'][aria-selected='true'],
+html body main a[role='tab'][aria-selected='true']:hover {
   background-color: var(--background) !important;
 }
 

@@ -9,81 +9,103 @@
   </head>
 
   <body>
-    <h2>Material Twitter</h2>
-    <div class="collapse" id='color'>
-      <h3 class='collapse__title color__title'>
-        <span>Color</span>
-        <span>+</span>
-      </h3>
-      <div class='collapse__content color__content'>
-        <div>
-          <label class="flex">
-            Background color
-            <input type="color" id="backgroundColor" placeholder="Enter color..." value="#123fab">
-          </label>
-          <label class="flex">
-            Hover color
-            <input type="color" id="hoverColor" placeholder="Enter color...">
-          </label>
-          <label class="flex">
-            Accent color
-            <input type="color" id="accentColor" placeholder="Enter color...">
-          </label>
-          <label class="flex">
-            Text color
-            <input type="color" id="textColor" placeholder="Enter color...">
-          </label>
+    <div class="container">
+      <h2>Material Twitter</h2>
+      <div id="toggle-items" class="toggle-items">
+        <div id="toggle__preset" class="toggle active">Preset</div>
+        <div id="toggle__custom" class="toggle">Custom</div>
+        <div id="toggle__indicator" class="indicator"></div>
+      </div>
+    </div>
+
+    <div id="main-content">
+      <div class="preset container">
+        <p class="small">Choose a theme</p>
+        <div class="grid">
+          <div id="preset-light" class="preset__item active">Light</div>
+          <div id="preset-dark" class="preset__item">Dark</div>
+          <div id="preset-solarized" class="preset__item">Solarized</div>
+          <div id="preset-sepia" class="preset__item">Sepia</div>
+        </div>
+      </div>
+      <div class="custom container">
+        <div class="collapse" id='color'>
+          <h3 class='collapse__title color__title'>
+            <span>Color</span>
+            <span>+</span>
+          </h3>
+          <div class='collapse__content color__content'>
+            <div>
+              <label class="flex">
+                Background color
+                <input type="color" id="backgroundColor" placeholder="Enter color..." value="#123fab">
+              </label>
+              <label class="flex">
+                Hover color
+                <input type="color" id="hoverColor" placeholder="Enter color...">
+              </label>
+              <label class="flex">
+                Accent color
+                <input type="color" id="accentColor" placeholder="Enter color...">
+              </label>
+              <label class="flex">
+                Text color
+                <input type="color" id="textColor" placeholder="Enter color...">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="collapse" id='card'>
+          <h3 class='collapse__title card__title'>
+            <span>Card Styles</span>
+            <span>+</span>
+          </h3>
+          <div class='collapse__content card__content'>
+            <div>
+              <label class="flex">
+                Card background
+                <input type="color" id="cardBackground" placeholder="Enter color...">
+              </label>
+              <label>
+                Card radius
+                <input type="text" id="cardRadius" placeholder="Enter value (i.e 12px)">
+              </label>
+              <label>
+                Card shadow
+                <input type="text" id="cardShadow" placeholder="Enter value...">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="collapse" id='input'>
+          <h3 class='collapse__title input__title'>
+            <span>Input Styles</span>
+            <span>+</span>
+          </h3>
+          <div class='collapse__content input__content'>
+            <div>
+              <label>
+                Border radius
+                <input type="text" placeholder="Enter value (i.e 12px)">
+              </label>
+              <label>
+                Background color
+                <input type="color" placeholder="Enter color...">
+              </label>
+              <label>
+                Border color
+                <input type="color" placeholder="Enter color...">
+              </label>
+              <label>
+                Hover border color
+                <input type="color" placeholder="Enter color...">
+              </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="collapse" id='card'>
-      <h3 class='collapse__title card__title'>
-        <span>Card Styles</span>
-        <span>+</span>
-      </h3>
-      <div class='collapse__content card__content'>
-        <div>
-          <label class="flex">
-            Card background
-            <input type="color" id="cardBackground" placeholder="Enter color...">
-          </label>
-          <label>
-            Card radius
-            <input type="text" id="cardRadius" placeholder="Enter value (i.e 12px)">
-          </label>
-          <label>
-            Card shadow
-            <input type="text" id="cardShadow" placeholder="Enter value...">
-          </label>
-        </div>
-      </div>
-    </div>
-    <div class="collapse" id='input'>
-      <h3 class='collapse__title input__title'>
-        <span>Input Styles</span>
-        <span>+</span>
-      </h3>
-      <div class='collapse__content input__content'>
-        <div>
-          <label>
-            Border radius
-            <input type="text" placeholder="Enter value (i.e 12px)">
-          </label>
-          <label>
-            Background color
-            <input type="color" placeholder="Enter color...">
-          </label>
-          <label>
-            Border color
-            <input type="color" placeholder="Enter color...">
-          </label>
-          <label>
-            Hover border color
-            <input type="color" placeholder="Enter color...">
-          </label>
-        </div>
-      </div>
-    </div>
+
     <div class="button-container">
       <button id="submit">Save</button>
     </div>
