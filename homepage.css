@@ -1,0 +1,238 @@
+/******************************************************************
+ ***************             MAIN LAYOUT           ****************
+ ******************************************************************/
+
+/* MAIN COLUMN BACKGROUND */
+[data-testid='primaryColumn'] {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+/* TITLE AREA CARD */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+/* TITLE AREA INNER */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+
+/* TWEET BOX CARD */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+/* TWEET BOX INNER W/ PADDING */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child {
+  padding: 0;
+}
+
+/* TWEET BOX INNER */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+  padding: 15px 0 !important;
+}
+
+/* TWEET BOX PROFILE IMAGE WRAPPER */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  padding: 0 !important;
+}
+
+/* MAIN TIMELINE CARD */
+[aria-label='Timeline: Your Home Timeline'] {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+  overflow: hidden;
+}
+
+/* MAIN TWEET WRAPPERS */
+[aria-label='Timeline: Your Home Timeline'] > div:first-child div {
+  border-bottom-width: 0px !important;
+  border-bottom-color: transparent !important;
+  /* background-color: orange !important; */
+}
+
+/* TWEET LINKS */
+[aria-label='Timeline: Your Home Timeline'] article {
+  border: none !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--accent) !important;
+}
+/* TWEET WRAPPER HOVER */
+[aria-label='Timeline: Your Home Timeline'] article[role='article']:hover {
+  background-color: var(--hover) !important;
+}
+
+/* TWEET ORIGINAL PADDING */
+[aria-label='Timeline: Your Home Timeline']
+  article
+  > div:first-child
+  > div:first-child {
+  padding: 0 !important;
+}
+
+/* TWEET NEW PADDING */
+[aria-label='Timeline: Your Home Timeline'] article [data-testid='tweet'] {
+  padding: 16px !important;
+}
+
+/* [aria-label='Timeline: Your Home Timeline']
+  > div:first-child
+  > div:first-child
+  > div
+  > div:first-child:empty {
+  padding: 40px !important;
+  background-color: pink !important;
+} */
+
+/* TWEET THREAD CONNECTOR */
+[data-testid='tweet'] > div:first-child > div:nth-child(2) {
+  background-color: var(--accent) !important;
+  position: relative;
+  bottom: -16px !important;
+}
+
+/* SMALL TOP TWEET CONNECTOR */
+[aria-label='Timeline: Your Home Timeline']
+  article
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child.css-1dbjc4n.r-vrwoeq.r-1p0dtai.r-1d2f490.r-1jgb5lz.r-u8s1d.r-zchlnj.r-ipm5af.r-m5arl1 {
+  background-color: var(--accent) !important;
+  left: 32px !important;
+  height: 200% !important;
+}
+
+/* RETWEET INDICATOR */
+[aria-label='Timeline: Your Home Timeline']
+  article
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child.css-1dbjc4n.r-18u37iz {
+  display: flex;
+  width: fit-content;
+  border-radius: var(--buttonRadius);
+  padding: 3px 12px;
+  background-color: var(--background) !important;
+  margin-left: 16px;
+}
+
+/* RETWEET INDICATOR INNER DIVS */
+[aria-label='Timeline: Your Home Timeline']
+  article
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child.css-1dbjc4n.r-18u37iz
+  * {
+  flex: none !important;
+}
+
+/* TWEET ACTIONS BAR */
+[aria-label="Timeline: Your Home Timeline"] article [role="group"] {
+  margin-top: 16px !important;
+}
+
+/* TWEET ACTION */
+[aria-label="Timeline: Your Home Timeline"] article [role="group"] [dir="ltr"] > div:first-child > div:first-child {
+  border-radius: var(--buttonRadius) !important;
+}
+
+/* TWEET IMAGE */
+[data-testid='tweet'] > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:first-child > div:first-child > div:first-child {
+  border: 1px solid var(--accent) !important;
+  border-radius: var(--cardRadius) !important;
+}
+
+/* TWEET RETWEET */
+[data-testid='tweet'] > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:first-child > div:nth-child(2) > div:first-child > div:nth-child(2)[data-focusable="true"] {
+  border: 1px solid var(--accent) !important;
+  border-radius: var(--cardRadius) !important;
+}
+
+/* OLD RETWEET BORDER */
+[data-testid='tweet'] > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
+  border: none !important;
+}
+
+/* PROFILE IMAGE HOVER MODAL */
+#layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+#layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background: var(--cardBackground) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
