@@ -98,7 +98,6 @@ main > div:first-child > div:first-child > div:first-child {
   > div:nth-child(2)
   > div:first-child
   > div:first-child {
-  /*background-color: orange !important;*/
   border-bottom: 1px solid var(--accent) !important;
 }
 /* RANDOM MENU ITEM SEPERATOR */
@@ -557,8 +556,15 @@ nav [role='presentation']:last-child a {
   border-bottom-left-radius: var(--cardRadius) !important;
 }
 /* INDIVIDUAL TAB */
-[role='tab']:hover {
+html body main a[role='tab'] {
+  background-color: transparent !important;
+}
+html body main a[role='tab']:hover,
+html body main div[role='tab']:hover {
   background-color: var(--hover) !important;
+}
+html body main a[role='tab'][aria-selected='true'], html body main a[role="tab"][aria-selected="true"]:hover {
+  background-color: var(--background) !important;
 }
 
 /* PROFILE PAGE TABS */
@@ -721,8 +727,10 @@ main
   background-color: var(--background) !important;
 }
 /* ACTIVE MESSAGE CARD THING */
-.css-1dbjc4n.r-1u4rsef {
-  background: var(--background) !important;
+
+[aria-label='Timeline: Messages'] .css-1dbjc4n.r-1u4rsef,
+[aria-label='Timeline: Messages'] .css-1dbjc4n.r-1u4rsef:hover {
+  background-color: var(--background) !important;
 }
 /* MESSAGE */
 [data-testid='conversation'] {
@@ -815,6 +823,39 @@ header
 /* MESSAGES CARD */
 main > div:first-child {
   margin-top: 8px !important;
+}
+
+/******************************************************************
+ ***************            SETTINGS PAGES         ****************
+ ******************************************************************/
+
+/* DESKTOP SETTIGNS MENU BG */
+[aria-labelledby='root-header'][aria-label='Section navigation']
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+/* DESKTOP SETTIGNS MENU SECONDARY BG */
+[aria-labelledby='detail-header'][aria-label='Section details']
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+
+/* PASSWORD RESET THING */
+[aria-labelledby='detail-header'][aria-label='Section details']
+  > div:nth-child(2)
+  > div:nth-child(2),
+[aria-labelledby='detail-header'][aria-label='Section details']
+  > div:nth-child(2)
+  > div:first-child {
+  background-color: transparent !important;
+  border: none;
+}
+
+[aria-labelledby='detail-header'][aria-label='Section details']
+  > div:nth-child(2)
+  > div:first-child {
+  padding-bottom: 0 !important;
+  margin-bottom: -8px !important;
 }
 
 /******************************************************************
@@ -919,7 +960,23 @@ main
   > div:first-child {
   margin-top: 0px !important;
 }
-/* PROFILE IMAGE POPUP */
-#layers .css-1dbjc4n.r-18u37iz.r-1wtj0ep, #layers .css-1dbjc4n.r-18u37iz.r-1wtj0ep div  {
-  background-color: orange !important;
+
+/* PROFILE IMAGE HOVER MODAL */
+#layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+#layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background: var(--cardBackground) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
 }
