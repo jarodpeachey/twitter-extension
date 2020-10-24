@@ -83,6 +83,28 @@
   padding: 0 !important;
 }
 
+/* TWEET BOX TOOLBAR */
+[data-testid='primaryColumn'] div[data-testid='toolBar'] {
+  background-color: transparent !important;
+}
+
+[data-testid='primaryColumn']
+  div[data-testid='toolBar']
+  [role='button'][data-focusable='true'] {
+  border-radius: var(--buttonRadius) !important;
+}
+
+/* BORDER BOTTOM SEPERATOR FOR ACTIVE TWEET */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)
+  .css-1dbjc4n.r-e84r5y.r-109y4c4.r-13qz1uu {
+  background-color: var(--accent) !important;
+}
+
 /* MAIN TIMELINE CARD */
 [aria-label='Timeline: Your Home Timeline'] {
   position: relative;
@@ -95,7 +117,7 @@
 }
 
 /* MAIN TWEET WRAPPERS */
-[aria-label='Timeline: Your Home Timeline'] > div:first-child div {
+[aria-label='Timeline: Your Home Timeline'] > div:first-child > div:first-child > div:first-child {
   border-bottom-width: 0px !important;
   border-bottom-color: transparent !important;
   /* background-color: orange !important; */
@@ -191,29 +213,54 @@
 }
 
 /* TWEET ACTIONS BAR */
-[aria-label="Timeline: Your Home Timeline"] article [role="group"] {
+[aria-label='Timeline: Your Home Timeline'] article [role='group'] {
   margin-top: 16px !important;
 }
 
 /* TWEET ACTION */
-[aria-label="Timeline: Your Home Timeline"] article [role="group"] [dir="ltr"] > div:first-child > div:first-child {
+[aria-label='Timeline: Your Home Timeline']
+  article
+  [role='group']
+  [dir='ltr']
+  > div:first-child
+  > div:first-child {
   border-radius: var(--buttonRadius) !important;
 }
 
 /* TWEET IMAGE */
-[data-testid='tweet'] > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:first-child > div:first-child > div:first-child {
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
   border: 1px solid var(--accent) !important;
   border-radius: var(--cardRadius) !important;
 }
 
 /* TWEET RETWEET */
-[data-testid='tweet'] > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:first-child > div:nth-child(2) > div:first-child > div:nth-child(2)[data-focusable="true"] {
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)[data-focusable='true'] {
   border: 1px solid var(--accent) !important;
   border-radius: var(--cardRadius) !important;
 }
 
 /* OLD RETWEET BORDER */
-[data-testid='tweet'] > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:nth-child(2) {
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
   border: none !important;
 }
 

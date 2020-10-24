@@ -89,12 +89,6 @@ header > div > div > div > div:first-child {
   padding: 8px;
 }
 
-@media(min-width: 769px) {
-  header > div > div > div > div:first-child {
-    padding: 16px !important;
-  }
-}
-
 /* PROFILE CLICK SIDEBAR BUTTON */
 header > div > div > div > div:nth-child(2) {
   position: relative;
@@ -206,7 +200,7 @@ header
 }
 /* OTHER */
 [role='button'] {
-  border-radius: var(--buttonRadius);
+  border-radius: var(--buttonRadius) !important;
 }
 
 /******************************************************************
