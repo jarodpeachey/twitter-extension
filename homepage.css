@@ -105,6 +105,15 @@
   background-color: var(--accent) !important;
 }
 
+/* WEIRD SEPERATOR */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3) {
+  background-color: transparent !important;
+  height: 0px !important;
+}
+
 /* MAIN TIMELINE CARD */
 [aria-label='Timeline: Your Home Timeline'] {
   position: relative;
@@ -117,7 +126,15 @@
 }
 
 /* MAIN TWEET WRAPPERS */
-[aria-label='Timeline: Your Home Timeline'] > div:first-child > div:first-child > div:first-child {
+[aria-label='Timeline: Your Home Timeline']
+  > div:first-child
+  > div
+  > div:first-child,
+[aria-label='Timeline: Your Home Timeline']
+  > div:first-child
+  > div
+  > div:first-child
+  > div {
   border-bottom-width: 0px !important;
   border-bottom-color: transparent !important;
   /* background-color: orange !important; */

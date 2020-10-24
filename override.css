@@ -40,8 +40,29 @@ body {
 }
 
 header {
-  flex: none !important;
+  flex: 1 1 0 !important;
   margin-right: 16px !important;
+  max-width: 68px !important;
+}
+
+header > div:first-child > div:first-child,
+header > div:first-child > div:first-child > div:first-child {
+  max-width: 68px !important;
+}
+
+header > div:first-child {
+  width: 100% !important;
+  display: block !important;
+  position: static !important;
+  visibility: visible !important;
+}
+
+@media (min-width: 1273px) {
+  header,
+  header > div:first-child > div:first-child,
+  header > div:first-child > div:first-child > div:first-child {
+    max-width: 999px !important;
+  }
 }
 
 main {
@@ -97,6 +118,77 @@ header > div > div > div > div:nth-child(2) {
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
+}
+
+/* TWITTER ICON ON NAVBAR */
+header > div > div > div > div:first-child > div:first-child {
+  padding: 0;
+  width: 50px;
+  height: 50px;
+}
+
+/* MAIN NAV ITEMS FLEX */
+header > div > div > div > div:first-child > div:nth-child(2) {
+  margin: 0 !important;
+}
+
+nav[aria-label='Primary'] a {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: var(--buttonRadius) !important;
+  transition: 0.1s;
+  padding: 0 !important;
+  margin: 4px 0 !important;
+}
+
+@media (min-width: 1273px) {
+  nav[aria-label='Primary'] a {
+    width: 100%;
+    text-align: left !important;
+  }
+
+  nav[aria-label='Primary'] a * {
+    text-align: left !important;
+  }
+}
+
+nav[aria-label='Primary'] a:hover {
+  background: rgb(29, 161, 242, 0.1) !important;
+}
+
+nav[aria-label='Primary'] a div {
+  background: transparent !important;
+}
+
+/* TWEET BUTTON WRAPPER */
+header
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  display: block;
+  padding: 0px !important;
+  margin: 4px 0 0 0 !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type {
+  width: 50px;
+  height: 50px;
+  display: block;
+  padding: 0px !important;
+  margin: 4px 0 !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type:hover {
+  background: rgb(29, 161, 242, 0.1) !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type div {
+  background: transparent !important;
 }
 
 /* MESSAGES DRAWER */
@@ -246,4 +338,9 @@ header > div:first-child > div:first-child,
 [data-testid='sidebarColumn'] > div:first-child > div:nth-child(2) {
   top: 30px !important;
   position: fixed !important;
+}
+
+/* TWEET BORDERS */
+article div {
+  border-color: var(--accent) !important;
 }
