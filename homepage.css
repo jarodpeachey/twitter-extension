@@ -10,17 +10,30 @@
   margin: 0 !important;
 }
 
+/* REMOVE BG */
+[data-testid='primaryColumn'] > div:first-child > div:first-child,
+[data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
+  background-color: transparent !important;
+}
+
 /* TITLE AREA CARD */
-[data-testid='primaryColumn']
-  > div:first-child
-  > div:first-child
-  > div:first-child {
+[data-testid='primaryColumn'] > div:first-child > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
+}
+
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
 }
 
 /* TITLE AREA INNER */
@@ -36,10 +49,7 @@
 }
 
 /* TWEET BOX CARD */
-[data-testid='primaryColumn']
-  > div:first-child
-  > div:first-child
-  > div:nth-child(2) {
+[data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
@@ -51,10 +61,10 @@
 /* TWEET BOX INNER W/ PADDING */
 [data-testid='primaryColumn']
   > div:first-child
-  > div:first-child
   > div:nth-child(2)
-  > div:first-child {
-  padding: 0;
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
 }
 
 /* TWEET BOX INNER */
@@ -115,7 +125,7 @@
 }
 
 /* MAIN TIMELINE CARD */
-[aria-label='Timeline: Your Home Timeline'] {
+[aria-label*='Timeline'] {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
@@ -126,45 +136,41 @@
 }
 
 /* MAIN TWEET WRAPPERS */
-[aria-label='Timeline: Your Home Timeline']
-  > div:first-child
-  > div
-  > div:first-child,
-[aria-label='Timeline: Your Home Timeline']
-  > div:first-child
-  > div
-  > div:first-child
-  > div {
+[aria-label*='Timeline'] > div:first-child > div > div:first-child,
+[aria-label*='Timeline'] > div:first-child > div > div:first-child > div {
   border-bottom-width: 0px !important;
   border-bottom-color: transparent !important;
   /* background-color: orange !important; */
 }
 
 /* TWEET LINKS */
-[aria-label='Timeline: Your Home Timeline'] article {
+[aria-label*='Timeline'] article {
   border: none !important;
   padding: 0 !important;
   border-bottom: 1px solid var(--accent) !important;
 }
 /* TWEET WRAPPER HOVER */
-[aria-label='Timeline: Your Home Timeline'] article[role='article']:hover {
+[aria-label*='Timeline'] article[role='article']:hover {
   background-color: var(--hover) !important;
 }
 
 /* TWEET ORIGINAL PADDING */
-[aria-label='Timeline: Your Home Timeline']
-  article
-  > div:first-child
-  > div:first-child {
+[aria-label*='Timeline'] article > div:first-child > div:first-child {
   padding: 0 !important;
 }
 
 /* TWEET NEW PADDING */
-[aria-label='Timeline: Your Home Timeline'] article [data-testid='tweet'] {
+[aria-label*='Timeline'] article [data-testid='tweet'],
+[aria-label*='Timeline: Conversation'] article [data-testid='tweet'] + div,
+[aria-label*='Timeline: Notifications'] article {
   padding: 16px !important;
 }
 
-/* [aria-label='Timeline: Your Home Timeline']
+[aria-label*='Timeline: Notifications'] article [data-testid='tweet'] {
+  padding: 0 !important;
+}
+
+/* [aria-label*='Timeline']
   > div:first-child
   > div:first-child
   > div
@@ -181,22 +187,21 @@
 }
 
 /* SMALL TOP TWEET CONNECTOR */
-[aria-label='Timeline: Your Home Timeline']
-  article
+article
   > div:first-child
   > div:first-child
   > div:first-child
   > div:first-child
   > div:first-child
-  > div:first-child
-  > div:first-child.css-1dbjc4n.r-vrwoeq.r-1p0dtai.r-1d2f490.r-1jgb5lz.r-u8s1d.r-zchlnj.r-ipm5af.r-m5arl1 {
+  > div:first-child[style='flex-basis: 49px;']
+  > div:first-child {
   background-color: var(--accent) !important;
   left: 32px !important;
   height: 200% !important;
 }
 
 /* RETWEET INDICATOR */
-[aria-label='Timeline: Your Home Timeline']
+[aria-label*='Timeline']
   article
   > div:first-child
   > div:first-child
@@ -215,7 +220,7 @@
 }
 
 /* RETWEET INDICATOR INNER DIVS */
-[aria-label='Timeline: Your Home Timeline']
+[aria-label*='Timeline']
   article
   > div:first-child
   > div:first-child
@@ -230,12 +235,12 @@
 }
 
 /* TWEET ACTIONS BAR */
-[aria-label='Timeline: Your Home Timeline'] article [role='group'] {
+[aria-label*='Timeline'] article [role='group'] {
   margin-top: 16px !important;
 }
 
 /* TWEET ACTION */
-[aria-label='Timeline: Your Home Timeline']
+[aria-label*='Timeline']
   article
   [role='group']
   [dir='ltr']
@@ -252,8 +257,69 @@
   > div:first-child
   > div:first-child
   > div:first-child {
-  border: 1px solid var(--accent) !important;
+  border: none !important;
   border-radius: var(--cardRadius) !important;
+  background-color: var(--background) !important;
+}
+
+/* TWEET POLL OPTIONS WRAPPER */
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div {
+  margin: 10px 10px 0 !important;
+}
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:last-child {
+  margin-bottom: 10px !important;
+}
+
+/* TWEET OPTION INDICATOR */
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div
+  > div:first-child
+  > div:first-child {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  background: var(--cardBackground) !important;
+}
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  border-top-left-radius: 4px !important;
 }
 
 /* TWEET RETWEET */
@@ -299,4 +365,66 @@
   > div:first-child {
   background: var(--cardBackground) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+
+/* NOTIFICATIONS TABS WRAPPER */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+/* NOTIFICATIONS TABS BORDER NAV ELEMENT */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav {
+  border-bottom: none !important;
+}
+
+/* TAB */
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav
+  [role='tablist']
+  > div
+  > a:hover {
+  background-color: var(--hover) !important;
+}
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav
+  [role='tablist']
+  > div:first-child
+  > a {
+  border-bottom-left-radius: var(--cardRadius);
+}
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav
+  [role='tablist']
+  > div:nth-child(2)
+  > a {
+  border-bottom-right-radius: var(--cardRadius);
+}
+
+/* NOTIFICATIONS TIMELINE FIRST ARTICLE */
+[aria-label='Timeline: Notifications']
+  > div:first-child
+  > div:first-child
+  article {
+  border-top-left-radius: var(--cardRadius) !important;
+  border-top-right-radius: var(--cardRadius) !important;
+}
+
+/* NOTIFICATIONS TIMELINE ARTICLE */
+[aria-label='Timeline: Notifications'] > div:first-child > div article:hover {
+  background-color: var(--hover) !important;
 }

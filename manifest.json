@@ -18,12 +18,8 @@
       "js": ["background.js"]
     },
     {
-      "matches": ["*://twitter.com/home"],
+      "matches": ["*://twitter.com/home", "*://twitter.com/notifications"],
       "css": ["homepage.css"]
-    },
-    {
-      "matches": ["*://twitter.com/notifications"],
-      "css": ["notifications.css"]
     }
   ],
   "browser_action": {
