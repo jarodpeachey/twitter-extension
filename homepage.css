@@ -256,10 +256,35 @@ article
   > div:nth-child(2)
   > div:first-child
   > div:first-child
-  > div:first-child {
+  > div:nth-child(3),
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child,
+[data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: var(--background) !important;
   border: none !important;
   border-radius: var(--cardRadius) !important;
+}
+
+[data-testid='tweet'] [data-testid='card.wrapper'] {
   background-color: var(--background) !important;
+  border: none !important;
+}
+
+[data-testid='tweet'] [data-testid='card.wrapper']:hover {
+  background-color: var(--background) !important;
+  border: none !important;
 }
 
 /* TWEET POLL OPTIONS WRAPPER */

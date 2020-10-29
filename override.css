@@ -140,6 +140,9 @@ header > div > div > div > div:first-child > div:first-child {
   width: 50px;
   height: 50px;
 }
+header > div > div > div > div:first-child > div:first-child a:hover {
+  background: var(--hover) !important;
+}
 
 /* MAIN NAV ITEMS FLEX */
 header > div > div > div > div:first-child > div:nth-child(2) {
@@ -187,11 +190,21 @@ nav[aria-label='Primary'] > div:last-of-type {
 }
 
 nav[aria-label='Primary'] > div:last-of-type:hover {
-  background: rgb(29, 161, 242, 0.1) !important;
+  background: var(--hover) !important;
 }
 
 nav[aria-label='Primary'] > div:last-of-type div {
   background: transparent !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type div svg {
+  position: relative !important;
+  top: 2px !important;
+}
+
+nav[aria-label='Primary'] a svg {
+  position: relative !important;
+  top: 2px !important;
 }
 
 @media (min-width: 1273px) {
@@ -372,14 +385,13 @@ header > div:first-child > div:first-child,
 [aria-modal='true'] {
   overflow: visible !important;
 }
-[aria-modal='true'] > div:first-child {
+/* [aria-modal='true'] > div:first-child {
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
-  margin: 0px 0px 16px 0px;
   border: none;
-}
+} */
 [aria-modal='true']
   > div:first-child
   > div:nth-child(3)
@@ -487,4 +499,42 @@ main
   > div:first-child {
   background: var(--cardBackground) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+
+/* INFO MODAL */
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true'] {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  border: none;
+}
+
+/* FIRST CHILD */
+[aria-labelledby='modal-header'] > div:first-child {
+  background-color: transparent !important;
+}
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
 }
