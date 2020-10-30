@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "description": "A simple theme for Twitter based off of Google's Material Design System",
   "short_name": "Material Twitter",
+  "background": {
+    "scripts": ["background.js"]
+  },
   "permissions": [
     "activeTab",
     "declarativeContent",
@@ -14,16 +17,8 @@
   "content_scripts": [
     {
       "matches": ["*://twitter.com/*"],
-      "css": ["override.css"],
-      "js": ["background.js"]
-    },
-    {
-      "matches": ["*://twitter.com/home", "*://twitter.com/notifications"],
-      "css": ["homepage.css"]
-    },
-    {
-      "matches": ["*://twitter.com/messages/*", "*://twitter.com/messages"],
-      "css": ["messages.css"]
+      "css": ["css/override.css"],
+      "js": ["js/twitter.js"]
     }
   ],
   "browser_action": {

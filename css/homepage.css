@@ -3,7 +3,7 @@
  ******************************************************************/
 
 /* MAIN COLUMN BACKGROUND */
-[data-testid='primaryColumn'] {
+body.home [data-testid='primaryColumn'] {
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -11,13 +11,13 @@
 }
 
 /* REMOVE BG */
-[data-testid='primaryColumn'] > div:first-child > div:first-child,
-[data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
+body.home [data-testid='primaryColumn'] > div:first-child > div:first-child,
+body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
   background-color: transparent !important;
 }
 
 /* TITLE AREA CARD */
-[data-testid='primaryColumn'] > div:first-child > div:first-child {
+body.home [data-testid='primaryColumn'] > div:first-child > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
@@ -26,7 +26,7 @@
   border: none;
 }
 
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:first-child
@@ -37,7 +37,7 @@
 }
 
 /* TITLE AREA INNER */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:first-child
@@ -49,7 +49,7 @@
 }
 
 /* TWEET BOX CARD */
-[data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
+body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
@@ -59,7 +59,7 @@
 }
 
 /* TWEET BOX INNER W/ PADDING */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:nth-child(2)
   > div:first-child
@@ -68,7 +68,7 @@
 }
 
 /* TWEET BOX INNER */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -79,7 +79,7 @@
 }
 
 /* TWEET BOX PROFILE IMAGE WRAPPER */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -94,34 +94,34 @@
 }
 
 /* TWEET BOX TOOLBAR */
-[data-testid='primaryColumn'] div[data-testid='toolBar'] {
+body.home [data-testid='primaryColumn'] div[data-testid='toolBar'] {
   background-color: transparent !important;
 }
 
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   div[data-testid='toolBar']
   [role='button'][data-focusable='true'] {
   border-radius: var(--buttonRadius) !important;
 }
 
 /* ADD POLL OPTION BUTTON */
-[aria-label="Add a choice"] {
+body.home [aria-label="Add a choice"] {
   position: relative !important;
   top: 2px !important;
 }
 
 /* INPUTS FOR POLLS */
-[data-testid="attachments"] label [dir="auto"], [data-testid="attachments"] label input[name*="Choice"] {
+body.home [data-testid="attachments"] label [dir="auto"], [data-testid="attachments"] label input[name*="Choice"] {
   margin: 0 !important;
 }
 
 /* SELECT INPUTS */
-[data-testid="attachments"] [dir="auto"] + div > div {
+body.home [data-testid="attachments"] [dir="auto"] + div > div {
   background-color: transparent !important;
 }
 
 /* BORDER BOTTOM SEPERATOR FOR ACTIVE TWEET */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -132,7 +132,7 @@
 }
 
 /* WEIRD SEPERATOR */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(3) {
@@ -141,7 +141,7 @@
 }
 
 /* MAIN TIMELINE CARD */
-[aria-label*='Timeline'] {
+body.home [aria-label*='Timeline'] {
   position: relative;
   background-color: var(--cardBackground) !important;
   border-radius: var(--cardRadius) !important;
@@ -152,37 +152,37 @@
 }
 
 /* MAIN TWEET WRAPPERS */
-[aria-label*='Timeline'] > div:first-child > div > div:first-child,
-[aria-label*='Timeline'] > div:first-child > div > div:first-child > div {
+body.home [aria-label*='Timeline'] > div:first-child > div > div:first-child,
+body.home [aria-label*='Timeline'] > div:first-child > div > div:first-child > div {
   border-bottom-width: 0px !important;
   border-bottom-color: transparent !important;
   /* background-color: orange !important; */
 }
 
 /* TWEET LINKS */
-[aria-label*='Timeline'] article {
+body.home [aria-label*='Timeline'] article {
   border: none !important;
   padding: 0 !important;
   border-bottom: 1px solid var(--accent) !important;
 }
 /* TWEET WRAPPER HOVER */
-[aria-label*='Timeline'] article[role='article']:hover {
+body.home [aria-label*='Timeline'] article[role='article']:hover {
   background-color: var(--hover) !important;
 }
 
 /* TWEET ORIGINAL PADDING */
-[aria-label*='Timeline'] article > div:first-child > div:first-child {
+body.home [aria-label*='Timeline'] article > div:first-child > div:first-child {
   padding: 0 !important;
 }
 
 /* TWEET NEW PADDING */
-[aria-label*='Timeline'] article [data-testid='tweet'],
-[aria-label*='Timeline: Conversation'] article [data-testid='tweet'] + div,
-[aria-label*='Timeline: Notifications'] article {
+body.home [aria-label*='Timeline'] article [data-testid='tweet'],
+body.home [aria-label*='Timeline: Conversation'] article [data-testid='tweet'] + div,
+body.home [aria-label*='Timeline: Notifications'] article {
   padding: 16px !important;
 }
 
-[aria-label*='Timeline: Notifications'] article [data-testid='tweet'] {
+body.home [aria-label*='Timeline: Notifications'] article [data-testid='tweet'] {
   padding: 0 !important;
 }
 
@@ -196,14 +196,14 @@
 } */
 
 /* TWEET THREAD CONNECTOR */
-[data-testid='tweet'] > div:first-child > div:nth-child(2) {
+body.home [data-testid='tweet'] > div:first-child > div:nth-child(2) {
   background-color: var(--accent) !important;
   position: relative;
   bottom: -16px !important;
 }
 
 /* SMALL TOP TWEET CONNECTOR */
-article
+body.home article
   > div:first-child
   > div:first-child
   > div:first-child
@@ -217,7 +217,7 @@ article
 }
 
 /* RETWEET INDICATOR */
-[aria-label*='Timeline']
+body.home [aria-label*='Timeline']
   article
   > div:first-child
   > div:first-child
@@ -236,7 +236,7 @@ article
 }
 
 /* RETWEET INDICATOR INNER DIVS */
-[aria-label*='Timeline']
+body.home [aria-label*='Timeline']
   article
   > div:first-child
   > div:first-child
@@ -251,12 +251,12 @@ article
 }
 
 /* TWEET ACTIONS BAR */
-[aria-label*='Timeline'] article [role='group'] {
+body.home [aria-label*='Timeline'] article [role='group'] {
   margin-top: 16px !important;
 }
 
 /* TWEET ACTION */
-[aria-label*='Timeline']
+body.home [aria-label*='Timeline']
   article
   [role='group']
   [dir='ltr']
@@ -266,21 +266,21 @@ article
 }
 
 /* TWEET IMAGE */
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
   > div:first-child
   > div:first-child
   > div:nth-child(3),
-  [data-testid='tweet']
+  body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
   > div:first-child
   > div:first-child
   > div:first-child,
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -293,18 +293,18 @@ article
   border-radius: var(--cardRadius) !important;
 }
 
-[data-testid='tweet'] [data-testid='card.wrapper'] {
+body.home [data-testid='tweet'] [data-testid='card.wrapper'] {
   background-color: var(--background) !important;
   border: none !important;
 }
 
-[data-testid='tweet'] [data-testid='card.wrapper']:hover {
+body.home [data-testid='tweet'] [data-testid='card.wrapper']:hover {
   background-color: var(--background) !important;
   border: none !important;
 }
 
 /* TWEET POLL OPTIONS WRAPPER */
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -316,7 +316,7 @@ article
   > div {
   margin: 10px 10px 0 !important;
 }
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -330,7 +330,7 @@ article
 }
 
 /* TWEET OPTION INDICATOR */
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -348,7 +348,7 @@ article
   border-bottom-right-radius: 4px !important;
   background: var(--cardBackground) !important;
 }
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -364,7 +364,7 @@ article
 }
 
 /* TWEET RETWEET */
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -377,7 +377,7 @@ article
 }
 
 /* OLD RETWEET BORDER */
-[data-testid='tweet']
+body.home [data-testid='tweet']
   > div:nth-child(2)
   > div:nth-child(2)
   > div:nth-child(2)
@@ -389,14 +389,14 @@ article
 }
 
 /* PROFILE IMAGE HOVER MODAL */
-#layers
+body.home #layers
   > div:nth-child(2)
   > div:first-child
   > div:first-child
   > div:first-child {
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
 }
-#layers
+body.home #layers
   > div:nth-child(2)
   > div:first-child
   > div:first-child
@@ -409,14 +409,14 @@ article
 }
 
 /* NOTIFICATIONS TABS WRAPPER */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2) {
   background-color: transparent !important;
 }
 /* NOTIFICATIONS TABS BORDER NAV ELEMENT */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -425,7 +425,7 @@ article
 }
 
 /* TAB */
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -435,7 +435,7 @@ article
   > a:hover {
   background-color: var(--hover) !important;
 }
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -445,7 +445,7 @@ article
   > a {
   border-bottom-left-radius: var(--cardRadius);
 }
-[data-testid='primaryColumn']
+body.home [data-testid='primaryColumn']
   > div:first-child
   > div:first-child
   > div:nth-child(2)
@@ -457,7 +457,7 @@ article
 }
 
 /* NOTIFICATIONS TIMELINE FIRST ARTICLE */
-[aria-label='Timeline: Notifications']
+body.home [aria-label='Timeline: Notifications']
   > div:first-child
   > div:first-child
   article {
@@ -466,7 +466,7 @@ article
 }
 
 /* NOTIFICATIONS TIMELINE ARTICLE */
-[aria-label='Timeline: Notifications'] > div:first-child > div article:hover {
+body.home [aria-label='Timeline: Notifications'] > div:first-child > div article:hover {
   background-color: var(--hover) !important;
 }
 

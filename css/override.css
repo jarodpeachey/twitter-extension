@@ -1,0 +1,1407 @@
+/******************************************************************
+ ***************         MAIN LAYOUT STUFF         ****************
+ ******************************************************************/
+:root {
+  --background: #1a1e21;
+  --hover: #273036;
+  --cardBackground: rgb(44, 54, 60);
+  --accent: #565f65;
+  --text: #fcfcfc;
+  --buttonRadius: 12px;
+  --profileRadius: 24px;
+  --cardRadius: 12px;
+  --inputRadius: 4px;
+  --inputBorder: #d8d8d8;
+  --inputBorderHover: #c8c8c8;
+  --inputBackground: #ffffff;
+  --inputColor: #444444;
+  --cardShadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.4),
+    0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+  --scrollbarBackground: #565f65;
+  --scrollbarColor: #aaaaaa;
+}
+
+*::-webkit-scrollbar {
+  background: var(--scrollbarBackground) !important;
+  width: 8px;
+  border-radius: var(--cardRadius) !important;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbarColor) !important;
+  border-radius: var(--cardRadius) !important;
+}
+
+.r-1ye8kvj {
+  max-width: 99999px !important;
+}
+
+body {
+  background-color: var(--background) !important;
+  padding-top: 30px !important;
+  max-width: 769px !important;
+  margin: 0 auto !important;
+}
+
+header {
+  flex: 1 1 0 !important;
+  margin-right: 16px !important;
+  max-width: 68px !important;
+  margin-left: 16px !important;
+}
+
+header > div:first-child > div:first-child,
+header > div:first-child > div:first-child > div:first-child {
+  max-width: 68px !important;
+}
+
+header > div:first-child {
+  width: 100% !important;
+  display: block !important;
+  position: static !important;
+  visibility: visible !important;
+}
+
+main {
+  margin-right: 16px !important;
+  margin-left: 16px !important;
+  flex: 1 1 0 !important;
+}
+
+@media (min-width: 1273px) {
+  header {
+    flex: none !important;
+    width: calc(25% - 16px);
+  }
+
+  main {
+    flex: none !important;
+    width: calc(75% - 16px);
+  }
+
+  header,
+  header > div:first-child > div:first-child,
+  header > div:first-child > div:first-child > div:first-child {
+    max-width: 999px !important;
+  }
+}
+
+/* MAIN CONTAINER */
+main > div:first-child,
+[data-testid='primaryColumn']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+main > div:first-child > div:first-child > div:first-child {
+  border: none !important;
+}
+[data-testid='primaryColumn'],
+[data-testid='primaryColumn'] div:first-child > div:nth-child(4),
+[data-testid='primaryColumn'] div:first-child > div:nth-child(2) {
+  max-width: 9999px !important;
+}
+[data-testid='primaryColumn'] > div > div:nth-child(3) {
+  display: none !important;
+}
+
+/* LEFT SIDEBAR FLEX WRAPPER */
+header > div:first-child > div:first-child > div:first-child {
+  justify-content: flex-start !important;
+  padding: 0 !important;
+}
+
+/* NAVIGATION CARD */
+header > div > div > div > div:first-child {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+  padding: 8px;
+}
+
+/* PROFILE CLICK SIDEBAR BUTTON */
+header > div > div > div > div:nth-child(2) {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+/* TWITTER ICON ON NAVBAR */
+header > div > div > div > div:first-child > div:first-child {
+  padding: 0;
+  width: 50px;
+  height: 50px;
+}
+header > div > div > div > div:first-child > div:first-child svg {
+  color: rgb(29, 161, 242) !important;
+}
+header > div > div > div > div:first-child > div:first-child a:hover {
+  background: var(--hover) !important;
+}
+
+/* MAIN NAV ITEMS FLEX */
+header > div > div > div > div:first-child > div:nth-child(2) {
+  margin: 0 !important;
+}
+
+nav[aria-label='Primary'] a {
+  width: 50px;
+  height: 50px;
+  display: block;
+  border-radius: var(--buttonRadius) !important;
+  transition: 0.1s;
+  padding: 0 !important;
+  margin: 4px 0 !important;
+}
+
+nav[aria-label='Primary'] a:hover {
+  background: var(--hover) !important;
+}
+
+nav[aria-label='Primary'] a > div {
+  background: transparent !important;
+}
+
+/* TWEET BUTTON WRAPPER */
+header
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3) {
+  width: 50px;
+  height: 50px;
+  display: block;
+  padding: 0px !important;
+  margin: 4px 0 0 0 !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type {
+  width: 50px;
+  height: 50px;
+  display: block;
+  padding: 0px !important;
+  margin: 4px 0 !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type:hover {
+  background: var(--hover) !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type div {
+  background: transparent !important;
+}
+
+nav[aria-label='Primary'] > div:last-of-type div svg {
+  position: relative !important;
+  top: 2px !important;
+}
+
+nav[aria-label='Primary'] a svg {
+  position: relative !important;
+  top: 2px !important;
+}
+
+@media (min-width: 1273px) {
+  /* MAIN NAV CARD */
+  header > div > div > div > div:first-child {
+    padding: 16px;
+  }
+
+  nav[aria-label='Primary'] a,
+  nav[aria-label='Primary'] > div:last-of-type,
+  header
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:nth-child(3) {
+    width: 100%;
+    text-align: left !important;
+  }
+
+  nav[aria-label='Primary'] a *,
+  nav[aria-label='Primary'] > div:last-of-type * {
+    text-align: left !important;
+  }
+
+  nav[aria-label='Primary'] a > div,
+  nav[aria-label='Primary'] > div:last-of-type div {
+    justify-content: flex-start !important;
+  }
+}
+
+/* MESSAGES DRAWER */
+[data-testid='DMDrawer'] {
+  display: none !important;
+}
+@media (min-width: 1004px) {
+  body {
+    max-width: 1200px !important;
+    width: 90%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .r-hkyrab {
+    color: var(--text) !important;
+  }
+  .r-1re7ezh {
+    color: var(--text) !important;
+  }
+}
+
+.r-hkyrab {
+  color: var(--text) !important;
+}
+.r-1re7ezh {
+  color: var(--text) !important;
+}
+
+/******************************************************************
+ ***************          GLOBAL BUTTONS           ****************
+ ******************************************************************/
+[aria-labelledby='modal-header']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3)
+  [role='button'],
+[aria-labelledby='modal-header']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3)
+  [role='button']
+  span,
+[aria-labelledby='modal-header']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:nth-child(9)
+  [role='button'],
+[aria-labelledby='modal-header']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:nth-child(9)
+  [role='button']
+  span {
+  background-color: rgb(29, 161, 242) !important;
+  color: white !important;
+  opacity: 1 !important;
+  border-radius: var(--buttonRadius) !important;
+  color: white !important;
+}
+[aria-labelledby='modal-header']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3)
+  [role='button']:hover,
+[aria-labelledby='modal-header']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:nth-child(9)
+  [role='button']:hover,
+[data-testid='SideNav_NewTweet_Button']:hover {
+  cursor: pointer !important;
+  background-color: rgb(26, 145, 218) !important;
+  color: white !important;
+}
+/* MOBILE TWEET BUTTON */
+[data-testid='SideNav_NewTweet_Button'],
+[data-testid='SideNav_NewTweet_Button'] span {
+  background-color: rgb(29, 161, 242) !important;
+  color: white !important;
+  opacity: 1 !important;
+  border-radius: var(--buttonRadius) !important;
+  color: white !important;
+}
+/* NAVIGATION TWEET BUTTON */
+header
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:last-child
+  > a {
+  border-radius: var(--buttonRadius) !important;
+}
+/* TWEET BUTTON */
+[data-testid='tweetButtonInline'],
+[data-testid='tweetButtonInline'] span,
+[data-testid='tweetButton'],
+[data-testid='tweetButton'] span {
+  background-color: rgb(29, 161, 242) !important;
+  color: white !important;
+  opacity: 1 !important;
+  border-radius: var(--buttonRadius) !important;
+}
+[data-testid='tweetButtonInline']:hover,
+[data-testid='tweetButton']:hover {
+  cursor: pointer !important;
+  background-color: rgb(26, 145, 218) !important;
+}
+/* OTHER */
+[role='button'] {
+  border-radius: var(--buttonRadius) !important;
+}
+
+/******************************************************************
+ ***************           GLOBAL INPUTS           ****************
+ ******************************************************************/
+label {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+}
+label [dir='auto'] {
+  padding-left: 0 !important;
+  margin-bottom: 8px !important;
+}
+input[type='password'],
+input[type='text'] {
+  border-radius: var(--inputRadius) !important;
+  background-color: var(--inputBackground) !important;
+  border: 1px solid var(--inputBorder) !important;
+  color: var(--inputColor) !important;
+  padding: 12px 10px !important;
+  font-size: 16px !important;
+}
+input[type='password']:focus,
+input[type='text']:focus {
+  border: 1px solid var(--inputBorderHover) !important;
+}
+input[type='password']:focus,
+input[type='text']:focus {
+  border: 1px solid rgb(29, 161, 242) !important;
+}
+
+/******************************************************************
+ ***************              SIDEBARS             ****************
+ ******************************************************************/
+/* HIDE RIGHT SIDEBAR */
+[data-testid='primaryColumn'] ~ div {
+  display: none !important;
+}
+
+/* LEFT/RIGHT FIXED SIDEBAR WRAPPER */
+header > div:first-child > div:first-child,
+[data-testid='sidebarColumn'] > div:first-child > div:nth-child(2) {
+  top: 30px !important;
+  position: fixed !important;
+}
+
+/******************************************************************
+ ***************          POPUPS AND MENUS         ****************
+ ******************************************************************/
+[aria-modal='true'] {
+  overflow: visible !important;
+}
+/* [aria-modal='true'] > div:first-child {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  border: none;
+} */
+[aria-modal='true']
+  > div:first-child
+  > div:nth-child(3)
+  > div:first-child
+  > div:first-child
+  > div:first-child,
+[aria-modal='true']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+/* MENU POPUP */
+[role='menu'] {
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+  background-color: var(--cardBackground) !important;
+}
+[role='menu'] a[role='link']:hover {
+  background-color: var(--hover) !important;
+}
+
+/* PROFILE POPUP */
+.css-1dbjc4n.r-aqfbo4.r-1xcajam
+  > div:first-child
+  > div:nth-child(2)[data-focusable='true']
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+  background-color: var(--cardBackground) !important;
+}
+/* PROFILE POPUP LINKS */
+.css-1dbjc4n.r-aqfbo4.r-1xcajam
+  > div:first-child
+  > div:nth-child(2)[data-focusable='true']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  a:hover {
+  background-color: var(--hover) !important;
+}
+/* PROFILE POPUP BORDER */
+.css-1dbjc4n.r-aqfbo4.r-1xcajam
+  > div:first-child
+  > div:nth-child(2)[data-focusable='true']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  .css-1dbjc4n.r-e84r5y.r-109y4c4 {
+  background-color: var(--accent);
+}
+.css-1dbjc4n.r-aqfbo4.r-1xcajam
+  > div:first-child
+  > div:nth-child(2)[data-focusable='true']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  li {
+  border-bottom: 1px solid var(--accent) !important;
+}
+/* FEED WRAPPER */
+main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child,
+[data-testid='primaryColumn'] > div > div:nth-child(1),
+main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(1)
+  > div:first-child {
+  margin-top: 0px !important;
+}
+
+/* PROFILE IMAGE HOVER MODAL */
+#layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+#layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background: var(--cardBackground) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+
+/* INFO MODAL */
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true'] {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  border: none;
+}
+
+/* FIRST CHILD */
+[aria-labelledby='modal-header'] > div:first-child {
+  background-color: transparent !important;
+}
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+
+/* MAIN PANELS CARDS */
+body.messages main > div:first-child > div:first-child > div:first-child > div {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+/* TOP BAR INNER BG CHILD */
+body.messages
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* REQUESTS BUTTON AND SEARCH BG WRAPPER */
+body.messages
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div {
+  background-color: transparent !important;
+  border-color: var(--accent) !important;
+}
+
+/* MESSAGES REQUEST LINK */
+body.messages
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  a:hover {
+  background-color: var(--hover) !important;
+  border-top-right-radius: var(--cardRadius) !important;
+  border-top-left-radius: var(--cardRadius) !important;
+}
+
+/* SEARCH BACKGROUND THING */
+body.messages
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* SVG */
+body.messages
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  svg {
+  display: none !important;
+}
+
+/* SEARCH WRAPPER */
+body.messages
+  .css-1dbjc4n.r-e84r5y.r-42olwf.r-sdzlij.r-1phboty.r-rs99b7.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-1777fci,
+.css-1dbjc4n.r-1niwhzg.r-p1n3y5.r-sdzlij.r-1phboty.r-rs99b7.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-1777fci {
+  background-color: orange !important;
+  border: none !important;
+  padding: 0 !important;
+}
+/* SEARCH ICON */
+body.messages
+  .css-1dbjc4n.r-e84r5y.r-42olwf.r-sdzlij.r-1phboty.r-rs99b7.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-1777fci
+  svg,
+body.messages
+  .css-1dbjc4n.r-1niwhzg.r-p1n3y5.r-sdzlij.r-1phboty.r-rs99b7.r-eqz5dr.r-16y2uox.r-1wbh5a2.r-1777fci
+  svg {
+  display: none !important;
+}
+body.messages
+  .css-18t94o4.css-1dbjc4n.r-urgr8i.r-42olwf.r-sdzlij.r-1phboty.r-1yadl64.r-1w2pmg.r-zso239.r-1pnlsgv.r-sgu980.r-1ny4l3l.r-mk0yit.r-o7ynqc.r-6416eg.r-lrvibr {
+  display: none !important;
+}
+
+/* MESSAGE ITEM */
+body.messages [data-testid='conversation'] {
+  background-color: transparent !important;
+  padding: 16px !important;
+  border-bottom-color: var(--accent) !important;
+}
+body.messages [data-testid='conversation']:hover {
+  background-color: var(--hover) !important;
+}
+
+/* MOBILE MESSAGE THREAD INNER PANEL */
+body.messages
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+
+/* START NEW MESSAGE BG WRAPPER */
+body.messages aside[aria-label='Start a new message'] {
+  background-color: transparent !important;
+  border-top-color: var(--accent) !important;
+  border-bottom-color: var(--accent) !important;
+}
+
+/* INPUT STYLES */
+body.messages
+  aside[aria-label='Start a new message']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  border-radius: var(--inputRadius) !important;
+  background-color: var(--inputBackground) !important;
+  border: 1px solid var(--inputBorder) !important;
+  color: var(--inputColor) !important;
+  font-size: 16px !important;
+}
+
+body.messages
+  aside[aria-label='Start a new message']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  div {
+  color: var(--inputColor) !important;
+}
+
+/* MESSAGE ENTRY */
+body.messages
+  [data-testid='messageEntry']
+  > .css-1dbjc4n.r-1euycsn.r-17s6mgv.r-1qfoi16.r-1nwbi2h
+  > div:nth-child(2)
+  > div:first-child[role='presentation'] {
+  background-color: var(--background) !important;
+}
+
+@media (min-width: 996px) {
+  /* MAIN PANELS CARDS */
+  body.messages
+    main
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div {
+    position: relative;
+    background-color: var(--cardBackground) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
+    margin: 0px 0px 16px 0px;
+    border: none;
+  }
+
+  /* MAIN DESKTOP WRAPPER */
+  body.messages main > div:first-child > div:first-child > div:first-child {
+    position: relative;
+    background-color: var(--cardBackground) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
+    margin: 0px 0px 16px 0px;
+    border: none;
+  }
+
+  /* DESKTOP LEFT */
+  body.messages section[aria-label='Section navigation'] {
+    margin: 0px 0px 16px 0px;
+    border: none;
+    width: 40%;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-color: transparent !important;
+  }
+
+  /* LEFT MESSAGES TOPBAR INNER */
+  body.messages
+    section[aria-label='Section navigation']
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+  }
+
+  /* LEFT MESSAGES CONTAINER */
+  body.messages
+    section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+    border-top-color: var(--accent) !important;
+  }
+
+  /* MESSAGE REQUESTS WRAPPER */
+  body.messages
+    section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+    border-top-color: var(--accent) !important;
+  }
+
+  /* MESSAGE REQUESTS BUTTON HOVER */
+  body.messages
+    section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    a:hover {
+    background-color: var(--hover) !important;
+  }
+
+  /* INPUT */
+  body.messages
+    section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:nth-child(2)
+    > div:first-child {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  body.messages
+    section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:nth-child(2)
+    > div:first-child
+    svg {
+    display: none !important;
+  }
+
+  /* DESKTOP RIGHT */
+  body.messages section[aria-label='Section details'] {
+    width: 60%;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-color: transparent !important;
+  }
+
+  /* FIRST BACKGROUND */
+  body.messages section[aria-label='Section details'] > div:first-child {
+    background-color: transparent !important;
+  }
+
+  /* TITLE SECTION BG */
+  body.messages
+    section[aria-label='Section details']
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+    border-top-color: var(--accent) !important;
+  }
+
+  /* SECOND BACKGROUND */
+  body.messages
+    section[aria-label='Section details']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+  }
+}
+
+/******************************************************************
+ ***************             MAIN LAYOUT           ****************
+ ******************************************************************/
+
+/* MAIN COLUMN BACKGROUND */
+body.home [data-testid='primaryColumn'] {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+/* REMOVE BG */
+body.home [data-testid='primaryColumn'] > div:first-child > div:first-child,
+body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
+  background-color: transparent !important;
+}
+
+/* TITLE AREA CARD */
+body.home [data-testid='primaryColumn'] > div:first-child > div:first-child {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+
+/* TITLE AREA INNER */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background-color: transparent !important;
+}
+
+/* TWEET BOX CARD */
+body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+/* TWEET BOX INNER W/ PADDING */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+
+/* TWEET BOX INNER */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+  padding: 15px 0 !important;
+}
+
+/* TWEET BOX PROFILE IMAGE WRAPPER */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  padding: 0 !important;
+}
+
+/* TWEET BOX TOOLBAR */
+body.home [data-testid='primaryColumn'] div[data-testid='toolBar'] {
+  background-color: transparent !important;
+}
+
+body.home
+  [data-testid='primaryColumn']
+  div[data-testid='toolBar']
+  [role='button'][data-focusable='true'] {
+  border-radius: var(--buttonRadius) !important;
+}
+
+/* ADD POLL OPTION BUTTON */
+body.home [aria-label='Add a choice'] {
+  position: relative !important;
+  top: 2px !important;
+}
+
+/* INPUTS FOR POLLS */
+body.home [data-testid='attachments'] label [dir='auto'],
+[data-testid='attachments'] label input[name*='Choice'] {
+  margin: 0 !important;
+}
+
+/* SELECT INPUTS */
+body.home [data-testid='attachments'] [dir='auto'] + div > div {
+  background-color: transparent !important;
+}
+
+/* BORDER BOTTOM SEPERATOR FOR ACTIVE TWEET */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)
+  .css-1dbjc4n.r-e84r5y.r-109y4c4.r-13qz1uu {
+  background-color: var(--accent) !important;
+}
+
+/* WEIRD SEPERATOR */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3) {
+  background-color: transparent !important;
+  height: 0px !important;
+}
+
+/* MAIN TIMELINE CARD */
+body.home [aria-label*='Timeline'] {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+  overflow: hidden;
+}
+
+/* MAIN TWEET WRAPPERS */
+body.home [aria-label*='Timeline'] > div:first-child > div > div:first-child,
+body.home
+  [aria-label*='Timeline']
+  > div:first-child
+  > div
+  > div:first-child
+  > div {
+  border-bottom-width: 0px !important;
+  border-bottom-color: transparent !important;
+  /* background-color: orange !important; */
+}
+
+/* TWEET LINKS */
+body.home [aria-label*='Timeline'] article {
+  border: none !important;
+  padding: 0 !important;
+  border-bottom: 1px solid var(--accent) !important;
+}
+/* TWEET WRAPPER HOVER */
+body.home [aria-label*='Timeline'] article[role='article']:hover {
+  background-color: var(--hover) !important;
+}
+
+/* TWEET ORIGINAL PADDING */
+body.home [aria-label*='Timeline'] article > div:first-child > div:first-child {
+  padding: 0 !important;
+}
+
+/* TWEET NEW PADDING */
+body.home [aria-label*='Timeline'] article [data-testid='tweet'],
+body.home
+  [aria-label*='Timeline: Conversation']
+  article
+  [data-testid='tweet']
+  + div,
+body.home [aria-label*='Timeline: Notifications'] article {
+  padding: 16px !important;
+}
+
+body.home
+  [aria-label*='Timeline: Notifications']
+  article
+  [data-testid='tweet'] {
+  padding: 0 !important;
+}
+
+/* [aria-label*='Timeline']
+  > div:first-child
+  > div:first-child
+  > div
+  > div:first-child:empty {
+  padding: 40px !important;
+  background-color: pink !important;
+} */
+
+/* TWEET THREAD CONNECTOR */
+body.home [data-testid='tweet'] > div:first-child > div:nth-child(2) {
+  background-color: var(--accent) !important;
+  position: relative;
+  bottom: -16px !important;
+}
+
+/* SMALL TOP TWEET CONNECTOR */
+body.home
+  article
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child[style='flex-basis: 49px;']
+  > div:first-child {
+  background-color: var(--accent) !important;
+  left: 32px !important;
+  height: 200% !important;
+}
+
+/* RETWEET INDICATOR */
+body.home
+  [aria-label*='Timeline']
+  article
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child.css-1dbjc4n.r-18u37iz {
+  display: flex;
+  width: fit-content;
+  border-radius: var(--buttonRadius);
+  padding: 3px 12px;
+  background-color: var(--background) !important;
+  margin-left: 16px;
+}
+
+/* RETWEET INDICATOR INNER DIVS */
+body.home
+  [aria-label*='Timeline']
+  article
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child.css-1dbjc4n.r-18u37iz
+  * {
+  flex: none !important;
+}
+
+/* TWEET ACTIONS BAR */
+body.home [aria-label*='Timeline'] article [role='group'] {
+  margin-top: 16px !important;
+}
+
+/* TWEET ACTION */
+body.home
+  [aria-label*='Timeline']
+  article
+  [role='group']
+  [dir='ltr']
+  > div:first-child
+  > div:first-child {
+  border-radius: var(--buttonRadius) !important;
+}
+
+/* TWEET IMAGE */
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3),
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child,
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: var(--background) !important;
+  border: none !important;
+  border-radius: var(--cardRadius) !important;
+}
+
+body.home [data-testid='tweet'] [data-testid='card.wrapper'] {
+  background-color: var(--background) !important;
+  border: none !important;
+}
+
+body.home [data-testid='tweet'] [data-testid='card.wrapper']:hover {
+  background-color: var(--background) !important;
+  border: none !important;
+}
+
+/* TWEET POLL OPTIONS WRAPPER */
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div {
+  margin: 10px 10px 0 !important;
+}
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:last-child {
+  margin-bottom: 10px !important;
+}
+
+/* TWEET OPTION INDICATOR */
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div
+  > div:first-child
+  > div:first-child {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 4px !important;
+  border-bottom-right-radius: 4px !important;
+  background: var(--cardBackground) !important;
+}
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  border-top-left-radius: 4px !important;
+}
+
+/* TWEET RETWEET */
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)[data-focusable='true'] {
+  border: 1px solid var(--accent) !important;
+  border-radius: var(--cardRadius) !important;
+}
+
+/* OLD RETWEET BORDER */
+body.home
+  [data-testid='tweet']
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  border: none !important;
+}
+
+/* PROFILE IMAGE HOVER MODAL */
+body.home
+  #layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+body.home
+  #layers
+  > div:nth-child(2)
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  background: var(--cardBackground) !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+}
+
+/* NOTIFICATIONS TABS WRAPPER */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2) {
+  background-color: transparent !important;
+}
+/* NOTIFICATIONS TABS BORDER NAV ELEMENT */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav {
+  border-bottom: none !important;
+}
+
+/* TAB */
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav
+  [role='tablist']
+  > div
+  > a:hover {
+  background-color: var(--hover) !important;
+}
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav
+  [role='tablist']
+  > div:first-child
+  > a {
+  border-bottom-left-radius: var(--cardRadius);
+}
+body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  nav
+  [role='tablist']
+  > div:nth-child(2)
+  > a {
+  border-bottom-right-radius: var(--cardRadius);
+}
+
+/* NOTIFICATIONS TIMELINE FIRST ARTICLE */
+body.home
+  [aria-label='Timeline: Notifications']
+  > div:first-child
+  > div:first-child
+  article {
+  border-top-left-radius: var(--cardRadius) !important;
+  border-top-right-radius: var(--cardRadius) !important;
+}
+
+/* NOTIFICATIONS TIMELINE ARTICLE */
+body.home
+  [aria-label='Timeline: Notifications']
+  > div:first-child
+  > div
+  article:hover {
+  background-color: var(--hover) !important;
+}
+
+html body.loading main {
+  opacity: 0;
+}

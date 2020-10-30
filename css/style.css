@@ -93,7 +93,7 @@ p.small {
   position: relative;
   cursor: pointer;
   color: var(--lighter);
-  transition: 0.1s;
+  transition: 0.2s;
   font-size: 14px;
   /* background: #565f65; */
 }
@@ -111,7 +111,7 @@ p.small {
   top: 5px;
   height: calc(100% - 10px);
   z-index: 0;
-  transition: 0.1s;
+  transition: 0.2s;
 }
 
 #main-content {
