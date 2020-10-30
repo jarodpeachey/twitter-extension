@@ -20,6 +20,10 @@
     {
       "matches": ["*://twitter.com/home", "*://twitter.com/notifications"],
       "css": ["homepage.css"]
+    },
+    {
+      "matches": ["*://twitter.com/messages/*", "*://twitter.com/messages"],
+      "css": ["messages.css"]
     }
   ],
   "browser_action": {

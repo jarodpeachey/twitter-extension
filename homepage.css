@@ -104,6 +104,22 @@
   border-radius: var(--buttonRadius) !important;
 }
 
+/* ADD POLL OPTION BUTTON */
+[aria-label="Add a choice"] {
+  position: relative !important;
+  top: 2px !important;
+}
+
+/* INPUTS FOR POLLS */
+[data-testid="attachments"] label [dir="auto"], [data-testid="attachments"] label input[name*="Choice"] {
+  margin: 0 !important;
+}
+
+/* SELECT INPUTS */
+[data-testid="attachments"] [dir="auto"] + div > div {
+  background-color: transparent !important;
+}
+
 /* BORDER BOTTOM SEPERATOR FOR ACTIVE TWEET */
 [data-testid='primaryColumn']
   > div:first-child
@@ -453,3 +469,11 @@ article
 [aria-label='Timeline: Notifications'] > div:first-child > div article:hover {
   background-color: var(--hover) !important;
 }
+
+/*****************************************************************************
+******************************************************************************
+********************          MESSAGES PAGES        **************************
+******************************************************************************
+*****************************************************************************/
+
+

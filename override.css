@@ -47,6 +47,7 @@ header {
   flex: 1 1 0 !important;
   margin-right: 16px !important;
   max-width: 68px !important;
+  margin-left: 16px !important;
 }
 
 header > div:first-child > div:first-child,
@@ -62,7 +63,7 @@ header > div:first-child {
 }
 
 main {
-  margin-right: 0 !important;
+  margin-right: 16px !important;
   margin-left: 16px !important;
   flex: 1 1 0 !important;
 }
@@ -351,9 +352,9 @@ input[type='text'] {
   border-radius: var(--inputRadius) !important;
   background-color: var(--inputBackground) !important;
   border: 1px solid var(--inputBorder) !important;
+  color: var(--inputColor) !important;
   padding: 12px 10px !important;
   font-size: 16px !important;
-  color: var(--inputColor) !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
