@@ -149,71 +149,131 @@ aside[aria-label='Start a new message']
   background-color: var(--background) !important;
 }
 
-/* MAIN DESKTOP WRAPPER */
-main > div:first-child > div:first-child > div:first-child {
-  position: relative;
-  background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
-  box-shadow: var(--cardShadow) !important;
-  margin: 0px 0px 16px 0px;
-  border: none;
-}
+@media (min-width: 996px) {
+  /* MAIN PANELS CARDS */
+  main > div:first-child > div:first-child > div:first-child > div {
+    position: relative;
+    background-color: var(--cardBackground) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
+    margin: 0px 0px 16px 0px;
+    border: none;
+  }
 
-/* DESKTOP LEFT */
-section[aria-label='Section navigation'] {
-  margin: 0px 0px 16px 0px;
-  border: none;
-  width: 40%;
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  border-color: transparent !important;
-}
+  /* MAIN DESKTOP WRAPPER */
+  main > div:first-child > div:first-child > div:first-child {
+    position: relative;
+    background-color: var(--cardBackground) !important;
+    border-radius: var(--cardRadius) !important;
+    box-shadow: var(--cardShadow) !important;
+    margin: 0px 0px 16px 0px;
+    border: none;
+  }
 
-/* DESKTOP RIGHT */
-section[aria-label='Section details'] {
-  width: 60%;
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-  border-color: transparent !important;
-}
+  /* DESKTOP LEFT */
+  section[aria-label='Section navigation'] {
+    margin: 0px 0px 16px 0px;
+    border: none;
+    width: 40%;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    border-color: transparent !important;
+  }
 
-/* LEFT MESSAGES TOPBAR INNER */
-section[aria-label='Section navigation']
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:first-child {
-  background-color: transparent !important;
-  border-bottom-color: var(--accent) !important;
-}
+  /* LEFT MESSAGES TOPBAR INNER */
+  section[aria-label='Section navigation']
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+  }
 
-/* LEFT MESSAGES CONTAINER */
-section[aria-label='Section navigation']
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child {
-  background-color: transparent !important;
-  border-bottom-color:var(--accent) !important;
-  border-top-color:var(--accent) !important;
-}
+  /* LEFT MESSAGES CONTAINER */
+  section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+    border-top-color: var(--accent) !important;
+  }
 
-/* MESSAGE REQUESTS WRAPPER */
-section[aria-label='Section navigation']
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child
-  > div {
-  background-color: transparent !important;
-  border-bottom-color:var(--accent) !important;
-  border-top-color:var(--accent) !important;
-}
+  /* MESSAGE REQUESTS WRAPPER */
+  section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+    border-top-color: var(--accent) !important;
+  }
 
-/* MESSAGE REQUESTS BUTTON HOVER */
-section[aria-label='Section navigation']
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  a:hover {
-  background-color: var(--hover) !important;
+  /* MESSAGE REQUESTS BUTTON HOVER */
+  section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    a:hover {
+    background-color: var(--hover) !important;
+  }
+
+  /* INPUT */
+  section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:nth-child(2)
+    > div:first-child {
+    background-color: transparent !important;
+    border: none !important;
+  }
+  section[aria-label='Section navigation']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:nth-child(2)
+    > div:first-child
+    svg {
+    display: none !important;
+  }
+
+  /* DESKTOP RIGHT */
+  section[aria-label='Section details'] {
+    width: 60%;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    border-color: transparent !important;
+  }
+
+  /* FIRST BACKGROUND */
+  section[aria-label='Section details'] > div:first-child {
+    background-color: transparent !important;
+  }
+
+  /* TITLE SECTION BG */
+  section[aria-label='Section details']
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+    border-bottom-color: var(--accent) !important;
+    border-top-color: var(--accent) !important;
+  }
+
+  /* SECOND BACKGROUND */
+  section[aria-label='Section details']
+    > div:nth-child(2)
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child
+    > div:first-child {
+    background-color: transparent !important;
+  }
 }
