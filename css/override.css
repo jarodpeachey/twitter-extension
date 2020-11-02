@@ -17,19 +17,20 @@
   --inputColor: #444444;
   --cardShadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.4),
     0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-  --scrollbarBackground: #565f65;
-  --scrollbarColor: #aaaaaa;
+  --scrollbarBackground: transparent;
+  --scrollbarColor: #ffffff;
 }
 
 *::-webkit-scrollbar {
   background: var(--scrollbarBackground) !important;
-  width: 8px;
+  width: 4px;
   border-radius: var(--cardRadius) !important;
 }
 
 *::-webkit-scrollbar-thumb {
   background: var(--scrollbarColor) !important;
   border-radius: var(--cardRadius) !important;
+  border: 2px solid var(--scrollbarBackground) !important;
 }
 
 .r-1ye8kvj {
@@ -418,19 +419,18 @@ header > div:first-child > div:first-child,
   position: fixed !important;
 }
 
-/******************************************************************
- ***************          POPUPS AND MENUS         ****************
- ******************************************************************/
+[data-testid='toolBar'] {
+  background-color: transparent !important;
+}
+
+/************************************************************************************
+*************************************************************************************
+*************************            MODALS          ********************************
+*************************************************************************************
+************************************************************************************/
 [aria-modal='true'] {
   overflow: visible !important;
 }
-/* [aria-modal='true'] > div:first-child {
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
-  position: relative;
-  background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
-  border: none;
-} */
 [aria-modal='true']
   > div:first-child
   > div:nth-child(3)
@@ -577,6 +577,25 @@ main
   > div:first-child {
   background-color: transparent !important;
 }
+
+/* CLOSE BUTTON TITLE AREA */
+[aria-labelledby='modal-header'][role='dialog'][aria-modal='true']
+  [role='progressbar']
+  + div
+  > div:first-child
+  > div:first-child {
+  border-bottom-color: var(--accent) !important;
+}
+
+.r-vrwoeq {
+  background-color: var(--accent) !important;
+}
+
+/************************************************************************************
+*************************************************************************************
+**********************           MESSAGES PAGE         ******************************
+*************************************************************************************
+************************************************************************************/
 
 /* MAIN PANELS CARDS */
 body.messages main > div:first-child > div:first-child > div:first-child > div {
@@ -884,9 +903,11 @@ body.messages
   }
 }
 
-/******************************************************************
- ***************             MAIN LAYOUT           ****************
- ******************************************************************/
+/************************************************************************************
+*************************************************************************************
+**********************       HOME/NOTIFICATIONS PAGES      **************************
+*************************************************************************************
+************************************************************************************/
 
 /* MAIN COLUMN BACKGROUND */
 body.home [data-testid='primaryColumn'] {
