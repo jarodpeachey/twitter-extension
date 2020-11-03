@@ -49,6 +49,7 @@ header {
   margin-right: 16px !important;
   max-width: 68px !important;
   margin-left: 16px !important;
+  border-radius: var(--cardRadius) !important;
 }
 
 header > div:first-child > div:first-child,
@@ -67,6 +68,7 @@ main {
   margin-right: 16px !important;
   margin-left: 16px !important;
   flex: 1 1 0 !important;
+  border-radius: var(--cardRadius) !important;
 }
 
 @media (min-width: 1273px) {
@@ -1184,6 +1186,13 @@ body.home
 /* TWEET ACTIONS BAR */
 body.home [aria-label*='Timeline'] article [role='group'] {
   margin-top: 16px !important;
+  display: flex !important;
+  justify-content: flex-start;
+}
+
+body.home [aria-label*='Timeline'] article [role='group'] > div {
+  padding: 0 !important;
+  margin-right: 12px !important;
 }
 
 /* TWEET ACTION */
@@ -1195,6 +1204,18 @@ body.home
   > div:first-child
   > div:first-child {
   border-radius: var(--buttonRadius) !important;
+}
+
+/* TWEET COUNT */
+body.home
+  [aria-label*='Timeline']
+  article
+  [role='group']
+  [dir='ltr']
+  > div:nth-child(2)
+  > span:first-child {
+  padding-left: 3px !important;
+  padding-bottom: 1px !important;
 }
 
 /* TWEET IMAGE */
@@ -1425,4 +1446,60 @@ body.home
 
 html body.loading main {
   opacity: 0;
+}
+
+/************************************************************************************
+*************************************************************************************
+**********************             STATUS PAGES            **************************
+*************************************************************************************
+************************************************************************************/
+body.status [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
+  margin: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+body.status
+  [aria-label='Timeline: Conversation']
+  > div:first-child
+  > div:first-child
+  article {
+  background-color: transparent !important;
+}
+
+body.status
+  [aria-label='Timeline: Conversation']
+  > div:first-child
+  > div:first-child
+  article
+  [role='group'] {
+  margin: 0 !important;
+  border: 0 !important;
+  /* display: flex !important;
+  justify-content: flex-start !important; */
+}
+
+body.status
+  [aria-label='Timeline: Conversation']
+  > div:first-child
+  > div:first-child
+  article
+  [role='group']
+  > div {
+  padding: 0px !important;
+  margin-right: 28px !important;
+}
+
+body.status
+  [aria-label='Timeline: Conversation']
+  > div:first-child
+  > div:first-child
+  article
+  [data-testid='tweet']
+  + div
+  > div:nth-child(4)
+  > div:first-child {
+  border-bottom: 1px solid var(--accent) !important;
+  border-top: 1px solid var(--accent) !important;
 }

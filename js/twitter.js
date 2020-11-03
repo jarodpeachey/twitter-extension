@@ -3,15 +3,16 @@
     console.log('Updating to messages');
     document.body.classList.add('messages');
     document.body.classList.remove('home');
-  }
-
-  if (
-    window.location.pathname.includes('home') ||
-    window.location.pathname.includes('notifications')
-  ) {
+    document.body.classList.remove('status');
+  } else if (window.location.pathname.includes('status')) {
+    document.body.classList.add('home');
+    document.body.classList.add('status');
+    document.body.classList.remove('message');
+  } else {
     console.log('Updating to home/notifications');
     document.body.classList.add('home');
     document.body.classList.remove('messages');
+    document.body.classList.remove('status');
   }
 
   chrome.runtime.onMessage.addListener(function (
@@ -20,8 +21,14 @@
     sendResponse,
   ) {
     console.log(getCookie('previousurl'));
+    console.log(request.url);
+    console.log(getCookie('previousurl'));
 
-    if (request.url.includes('messages') && !request.url.includes('requests') && !getCookie('previousurl').includes('requests')) {
+    if (
+      request.url.includes('messages') &&
+      !request.url.includes('requests') &&
+      !getCookie('previousurl').includes('requests')
+    ) {
       console.log('Updating to messages');
       document.body.classList.add('loading');
       setTimeout(() => {
@@ -29,9 +36,13 @@
       }, 0);
       document.body.classList.add('messages');
       document.body.classList.remove('home');
-    }
-
-    if (request.url.includes('home') || request.url.includes('notifications')) {
+      document.body.classList.remove('status');
+    } else if (request.url.includes('status')) {
+      document.body.classList.add('status');
+      document.body.classList.add('home');
+      document.body.classList.remove('messages');
+    } else if (!request.url.includes('requests') &&
+      !getCookie('previousurl').includes('requests')) {
       console.log('Updating to home/notifications');
       document.body.classList.add('loading');
       setTimeout(() => {
@@ -39,6 +50,7 @@
       }, 0);
       document.body.classList.add('home');
       document.body.classList.remove('messages');
+      document.body.classList.remove('status');
     }
   });
 
