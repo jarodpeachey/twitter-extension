@@ -4,15 +4,23 @@
     document.body.classList.add('messages');
     document.body.classList.remove('home');
     document.body.classList.remove('status');
+    document.body.classList.remove('settings');
   } else if (window.location.pathname.includes('status')) {
     document.body.classList.add('home');
     document.body.classList.add('status');
-    document.body.classList.remove('message');
+    document.body.classList.remove('messages');
+    document.body.classList.remove('settings');
+  } else if (window.location.pathname.includes('settings')) {
+    document.body.classList.add('settings');
+    document.body.classList.remove('messages');
+    document.body.classList.remove('status');
+    document.body.classList.remove('home');
   } else {
     console.log('Updating to home/notifications');
     document.body.classList.add('home');
     document.body.classList.remove('messages');
     document.body.classList.remove('status');
+    document.body.classList.remove('settings');
   }
 
   chrome.runtime.onMessage.addListener(function (
@@ -27,22 +35,29 @@
     if (
       request.url.includes('messages') &&
       !request.url.includes('requests') &&
-      !getCookie('previousurl').includes('requests')
+      !getCookie('previousurl').includes('messages')
     ) {
       console.log('Updating to messages');
-      document.body.classList.add('loading');
-      setTimeout(() => {
-        document.body.classList.remove('loading');
-      }, 0);
       document.body.classList.add('messages');
       document.body.classList.remove('home');
       document.body.classList.remove('status');
+      document.body.classList.remove('settings');
     } else if (request.url.includes('status')) {
       document.body.classList.add('status');
       document.body.classList.add('home');
       document.body.classList.remove('messages');
-    } else if (!request.url.includes('requests') &&
-      !getCookie('previousurl').includes('requests')) {
+    } else if (
+      request.url.includes('settings') &&
+      !getCookie('previousurl').includes('settings')
+    ) {
+      document.body.classList.add('settings');
+      document.body.classList.remove('messages');
+      document.body.classList.remove('home');
+      document.body.classList.remove('status');
+    } else if (
+      !request.url.includes('messages') &&
+      !request.url.includes('settings')
+    ) {
       console.log('Updating to home/notifications');
       document.body.classList.add('loading');
       setTimeout(() => {
@@ -51,6 +66,7 @@
       document.body.classList.add('home');
       document.body.classList.remove('messages');
       document.body.classList.remove('status');
+      document.body.classList.remove('settings');
     }
   });
 

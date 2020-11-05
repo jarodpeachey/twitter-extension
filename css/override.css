@@ -21,6 +21,39 @@
   --scrollbarColor: #ffffff;
 }
 
+/************************************************************************************
+*************************************************************************************
+**********************           MESSAGES PAGE         ******************************
+*************************************************************************************
+************************************************************************************/
+/* TEXT COLOR */
+@media (prefers-color-scheme: dark) {
+  .r-hkyrab {
+    color: var(--text) !important;
+  }
+  .r-1re7ezh {
+    color: var(--text) !important;
+  }
+}
+.r-hkyrab {
+  color: var(--text) !important;
+}
+.r-1re7ezh {
+  color: var(--text) !important;
+}
+
+/* BORDER COLOR */
+.r-my5ep6 {
+  border-bottom-color: var(--accent) !important;
+}
+.r-e84r5y {
+  background-color: var(--accent) !important;
+}
+.r-14lw9ot {
+  background-color: transparent !important;
+}
+
+/* SCROLLBARS */
 *::-webkit-scrollbar {
   background: var(--scrollbarBackground) !important;
   width: 4px;
@@ -252,22 +285,6 @@ nav[aria-label='Primary'] a svg {
     max-width: 1200px !important;
     width: 90%;
   }
-}
-
-@media (prefers-color-scheme: dark) {
-  .r-hkyrab {
-    color: var(--text) !important;
-  }
-  .r-1re7ezh {
-    color: var(--text) !important;
-  }
-}
-
-.r-hkyrab {
-  color: var(--text) !important;
-}
-.r-1re7ezh {
-  color: var(--text) !important;
 }
 
 /******************************************************************
@@ -706,6 +723,13 @@ body.messages [data-testid='conversation'] {
 body.messages [data-testid='conversation']:hover {
   background-color: var(--hover) !important;
 }
+body.messages
+  [aria-label='Timeline: Messages']
+  > div:first-child
+  > div
+  > div:first-child {
+  background-color: transparent !important;
+}
 
 /* MOBILE MESSAGE THREAD INNER PANEL */
 body.messages
@@ -761,6 +785,15 @@ body.messages
   > div:nth-child(2)
   > div:first-child[role='presentation'] {
   background-color: var(--background) !important;
+}
+
+/* MESSAGE PERSON TOP */
+body.messages [data-focusable='true'][role='link'] {
+  border-bottom-color: var(--accent) !important;
+}
+body.messages [data-focusable='true'][role='link'].r-1u4rsef {
+  background-color: var(--hover) !important;
+  border-bottom-color: var(--accent) !important;
 }
 
 @media (min-width: 996px) {
@@ -1502,4 +1535,67 @@ body.status
   > div:first-child {
   border-bottom: 1px solid var(--accent) !important;
   border-top: 1px solid var(--accent) !important;
+}
+
+/************************************************************************************
+*************************************************************************************
+**********************           SETTINGS PAGE         ******************************
+*************************************************************************************
+************************************************************************************/
+/* TITLE CARD */
+body.settings main > div:first-child > div:first-child > div:first-child > div {
+  position: relative;
+  background-color: var(--cardBackground) !important;
+  border-radius: var(--cardRadius) !important;
+  box-shadow: var(--cardShadow) !important;
+  margin: 0px 0px 16px 0px;
+  border: none;
+}
+
+/* TITLE CARD INNER */
+body.settings
+  main
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child {
+  border-bottom: none !important;
+}
+
+/* SETTINGS LINKS */
+body.settings a[role='tab']:hover {
+  background-color: var(--hover) !important;
+}
+
+/* MAIN PAGE LINKS */
+body.settings div[role='tablist'] > div > a[role='tab'] {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
+body.settings div[role='tablist'] > div:first-child > a[role='tab'] {
+  border-top-right-radius: var(--cardRadius) !important;
+  border-top-left-radius: var(--cardRadius) !important;
+}
+body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
+  border-bottom-right-radius: var(--cardRadius) !important;
+  border-bottom-left-radius: var(--cardRadius) !important;
+}
+body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
+  border-bottom: none !important;
+}
+
+/* BOTTOM LINKS AND STUFF */
+body.settings a[href='/settings/deactivate'],
+body.settings a[href='/settings/apps_and_sessions'],
+body.settings a[href='/settings/notifications/preferences'],
+body.settings a[href='/settings/data'],
+body.settings a[href="https://business.twitter.com"],
+body.settings a[href="https://help.twitter.com/forms/privacy"]
+{
+  border-bottom-left-radius: var(--cardRadius) !important;
+  border-bottom-right-radius: var(--cardRadius) !important;
+  border-bottom: none !important;
 }
