@@ -393,6 +393,10 @@ header
   border-radius: var(--buttonRadius) !important;
 }
 
+[aria-label="Back"]:hover {
+  background-color: var(--hover) !important;
+}
+
 /******************************************************************
  ***************           GLOBAL INPUTS           ****************
  ******************************************************************/
