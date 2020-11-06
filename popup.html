@@ -22,7 +22,7 @@
       <div class="preset container">
         <p class="small">Choose a theme</p>
         <div class="grid">
-          <div id="preset-light" class="preset__item active">Light</div>
+          <div id="preset-light" class="preset__item">Light</div>
           <div id="preset-dark" class="preset__item">Dark</div>
           <div id="preset-solarized" class="preset__item">Solarized</div>
           <div id="preset-sepia" class="preset__item">Sepia</div>
@@ -38,7 +38,11 @@
             <div>
               <label class="flex">
                 Background color
-                <input type="color" id="backgroundColor" placeholder="Enter color..." value="#123fab">
+                <input type="color" id="backgroundColor" placeholder="Enter color...">
+              </label>
+              <label class="flex">
+                Card background
+                <input type="color" id="cardBackground" placeholder="Enter color...">
               </label>
               <label class="flex">
                 Hover color
@@ -62,10 +66,6 @@
           </h3>
           <div class='collapse__content card__content'>
             <div>
-              <label class="flex">
-                Card background
-                <input type="color" id="cardBackground" placeholder="Enter color...">
-              </label>
               <label>
                 Card radius
                 <input type="text" id="cardRadius" placeholder="Enter value (i.e 12px)">

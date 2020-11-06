@@ -1,13 +1,13 @@
 *::-webkit-scrollbar {
-  background: white !important;
+  background: transparent !important;
   width: 8px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background: rgb(44, 54, 60) !important;
+  background: rgba(255, 255, 255, 0.795) !important;
   width: 8px;
   margin-left: 1px;
-  border: 2px solid white;
+  border: 3px solid #1a1e21;
   border-radius: 4px !important;
 }
 
@@ -173,10 +173,11 @@ p.small {
 }
 
 label {
-  padding: 12px 12px;
+  padding: 10px 12px;
   border-bottom: 1px solid #565f65;
   display: block;
   line-height: 16px;
+  font-size: 15px;
 }
 
 input[type='text'] {
@@ -200,30 +201,40 @@ label.flex {
   justify-content: space-between;
 }
 
+.collapse {
+  border-radius: 6px;
+  border: 1px solid rgb(44, 54, 60);
+  margin-bottom: 1rem;
+}
+
 /* COLLAPSE STYLING */
 .collapse__title {
   font-size: 18px;
-  border-bottom: 1px solid #565f65;
   margin: 0;
+  transition: all 0.3s ease-in-out;
   font-weight: 600;
   color: #fcfcfc;
-  padding: 10px 0;
+  padding: 10px;
   cursor: pointer;
-  transition: all 0.1s;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
 }
 
+.collapse__title * {
+  transition: all 0.3s ease-in-out;
+}
+
 .collapse__title span:nth-child(2) {
-  transition: 0.15s;
+  transition: all 0.3s ease-in-out;
   transform: none;
   margin-left: auto;
   font-size: 24px;
   color: #ffffff90;
   position: relative;
   left: 0;
+  top: -2px;
 }
 
 .collapse__title:hover span:nth-child(2) {
@@ -235,7 +246,10 @@ label.flex {
   overflow: hidden;
   position: relative;
   max-height: 0px;
-  background: rgb(44, 54, 60);
+  background: transparent;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .collapse__content > div:first-child {
@@ -253,16 +267,17 @@ label.flex {
   border-bottom: 0;
 }
 
+.collapse.open .collapse__content {
+  background: rgb(44, 54, 60);
+}
+
 .collapse.open .collapse__title {
   font-weight: 600;
-  border-bottom: 1px solid rgb(44, 54, 60);
+  background: rgb(44, 54, 60);
 }
 
 .collapse.open .collapse__title span:nth-child(2) {
-  transform: rotate(45deg);
-  left: 2px;
-  top: 1px;
-  font-size: 24px;
+  transform: rotate(-45deg);
 }
 
 .button-container {

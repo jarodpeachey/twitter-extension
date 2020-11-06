@@ -58,6 +58,13 @@ const darkTheme = {
 
 (function () {
   const backgroundColorInput = document.getElementById('backgroundColor');
+  const hoverColorInput = document.getElementById('hoverColor');
+  const accentColorInput = document.getElementById('accentColor');
+  const textColorInput = document.getElementById('textColor');
+  const cardBackgroundInput = document.getElementById('cardBackground');
+  const cardRadiusInput = document.getElementById('cardRadius');
+  const cardShadowInput = document.getElementById('cardShadow');
+
   backgroundColorInput.addEventListener('change', (e) =>
     updateBackground(e.target.value),
   );
@@ -70,7 +77,6 @@ const darkTheme = {
     },
   );
 
-  const hoverColorInput = document.getElementById('hoverColor');
   hoverColorInput.addEventListener('change', (e) =>
     updateHover(e.target.value),
   );
@@ -83,7 +89,6 @@ const darkTheme = {
     },
   );
 
-  const accentColorInput = document.getElementById('accentColor');
   accentColorInput.addEventListener('change', (e) =>
     updateAccent(e.target.value),
   );
@@ -96,7 +101,6 @@ const darkTheme = {
     },
   );
 
-  const textColorInput = document.getElementById('textColor');
   textColorInput.addEventListener('change', (e) => updateText(e.target.value));
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'textcolor' },
@@ -107,7 +111,6 @@ const darkTheme = {
     },
   );
 
-  const cardBackgroundInput = document.getElementById('cardBackground');
   cardBackgroundInput.addEventListener('change', (e) =>
     updateCardBackground(e.target.value),
   );
@@ -120,7 +123,6 @@ const darkTheme = {
     },
   );
 
-  const cardRadiusInput = document.getElementById('cardRadius');
   cardRadiusInput.addEventListener('change', (e) =>
     updateCardRadius(e.target.value),
   );
@@ -133,7 +135,6 @@ const darkTheme = {
     },
   );
 
-  const cardShadowInput = document.getElementById('cardShadow');
   cardShadowInput.addEventListener('change', (e) =>
     updateCardShadow(e.target.value),
   );
@@ -255,6 +256,32 @@ const darkTheme = {
   const presetSolarized = document.getElementById('preset-solarized');
   const presetSepia = document.getElementById('preset-sepia');
 
+  chrome.cookies.get({ url: 'https://twitter.com', name: 'theme' }, function (
+    cookie,
+  ) {
+    if (cookie.value === 'light') {
+      presetLight.classList.add('active');
+      presetDark.classList.remove('active');
+      presetSolarized.classList.remove('active');
+      presetSepia.classList.remove('active');
+    } else if (cookie.value === 'dark') {
+      presetDark.classList.add('active');
+      presetLight.classList.remove('active');
+      presetSolarized.classList.remove('active');
+      presetSepia.classList.remove('active');
+    } else if (cookie.value === 'solarized') {
+      presetSolarized.classList.add('active');
+      presetLight.classList.remove('active');
+      presetDark.classList.remove('active');
+      presetSepia.classList.remove('active');
+    } else if (cookie.value === 'sepia') {
+      presetSepia.classList.add('active');
+      presetLight.classList.remove('active');
+      presetDark.classList.remove('active');
+      presetSolarized.classList.remove('active');
+    }
+  });
+
   presetLight.addEventListener('click', (e) => {
     updateBackground(lightTheme.background);
     updateHover(lightTheme.hover);
@@ -268,6 +295,16 @@ const darkTheme = {
     presetDark.classList.remove('active');
     presetSolarized.classList.remove('active');
     presetSepia.classList.remove('active');
+
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'theme',
+        value: 'light',
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
   });
 
   presetSolarized.addEventListener('click', (e) => {
@@ -283,6 +320,16 @@ const darkTheme = {
     presetDark.classList.remove('active');
     presetSolarized.classList.add('active');
     presetSepia.classList.remove('active');
+
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'theme',
+        value: 'solarized',
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
   });
 
   presetDark.addEventListener('click', (e) => {
@@ -298,6 +345,16 @@ const darkTheme = {
     presetDark.classList.add('active');
     presetSolarized.classList.remove('active');
     presetSepia.classList.remove('active');
+
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'theme',
+        value: 'dark',
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
   });
 
   const submitButton = document.getElementById('submit');
@@ -306,6 +363,18 @@ const darkTheme = {
       var code = 'window.location.reload();';
       chrome.tabs.executeScript(tab.id, { code: code });
     });
+
+    if (customButton.classList.includes('active')) {
+      chrome.cookies.set(
+        {
+          url: 'https://twitter.com',
+          name: 'theme',
+          value: 'custom',
+          expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+        },
+        function () {},
+      );
+    }
   });
 
   chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
