@@ -158,6 +158,7 @@ main > div:first-child > div:first-child > div:first-child {
 header > div:first-child > div:first-child > div:first-child {
   justify-content: flex-start !important;
   padding: 0 !important;
+  overflow: visible !important;
 }
 
 /* NAVIGATION CARD */
