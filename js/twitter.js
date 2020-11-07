@@ -93,17 +93,17 @@
   const textColor = getCookie('textcolor');
 
   const cardBackground = getCookie('cardbackground');
-  const cardRadius = getCookie('cardradius');
+  const radius = getCookie('radius');
   const cardShadow = getCookie('cardshadow');
 
-  document.documentElement.style.setProperty('--background', backgroundColor);
-  document.documentElement.style.setProperty('--hover', hoverColor);
-  document.documentElement.style.setProperty('--accent', accentColor);
-  document.documentElement.style.setProperty('--text', textColor);
+  document.documentElement.style.setProperty('--backgroundColor', backgroundColor);
+  document.documentElement.style.setProperty('--hoverColor', hoverColor);
+  document.documentElement.style.setProperty('--accentColor', accentColor);
+  document.documentElement.style.setProperty('--textColor', textColor);
   document.documentElement.style.setProperty(
     '--cardBackground',
     cardBackground,
   );
-  document.documentElement.style.setProperty('--cardRadius', cardRadius);
+  document.documentElement.style.setProperty('--radius', radius);
   document.documentElement.style.setProperty('--cardShadow', cardShadow);
 })();

@@ -1,12 +1,10 @@
 const lightTheme = {
-  background: '#f7f7f7',
-  hover: '#fafafa',
+  background: '#f1f1f1',
+  hover: '#f7f7f7',
   cardBackground: '#ffffff',
-  accent: '#e8e8e8',
-  text: '#444444',
-  buttonRadius: '12px',
-  profileRadius: '24px',
-  cardRadius: '12px',
+  accent: '#f1f1f1',
+  text: '#222222',
+  radius: '12px',
   inputRadius: '4px',
   inputBorder: '#d8d8d8',
   inputBorderHover: '#c8c8c8',
@@ -23,9 +21,7 @@ const solarizedTheme = {
   cardBackground: '#2c363c',
   accent: '#565f65',
   text: '#fcfcfc',
-  buttonRadius: '12px',
-  profileRadius: '24px',
-  cardRadius: '12px',
+  radius: '12px',
   inputRadius: '4px',
   inputBorder: '#d8d8d8',
   inputBorderHover: '#c8c8c8',
@@ -43,9 +39,7 @@ const darkTheme = {
   cardBackground: '#232323',
   accent: '#ffffff20',
   text: '#fbfbfb',
-  buttonRadius: '999px',
-  profileRadius: '24px',
-  cardRadius: '6px',
+  radius: '6px',
   inputRadius: '4px',
   inputBorder: '#d8d8d8',
   inputBorderHover: '#c8c8c8',
@@ -56,13 +50,30 @@ const darkTheme = {
   scrollbarColor: '#aaaaaa',
 };
 
+const invertedTheme = {
+  background: '#1da1f2',
+  hover: '#e8f1f7',
+  cardBackground: '#ffffff',
+  accent: '#cdddee',
+  text: '#303030',
+  radius: '6px',
+  inputRadius: '4px',
+  inputBorder: '#1da1f2',
+  inputBorderHover: '#1da1f2',
+  inputBackground: '#ffffff',
+  cardShadow:
+    '0px 0px 30px 0px #44444420',
+  scrollbarBackground: '#565f65',
+  scrollbarColor: '#aaaaaa',
+};
+
 (function () {
   const backgroundColorInput = document.getElementById('backgroundColor');
   const hoverColorInput = document.getElementById('hoverColor');
   const accentColorInput = document.getElementById('accentColor');
   const textColorInput = document.getElementById('textColor');
   const cardBackgroundInput = document.getElementById('cardBackground');
-  const cardRadiusInput = document.getElementById('cardRadius');
+  const radiusInput = document.getElementById('radius');
   const cardShadowInput = document.getElementById('cardShadow');
 
   backgroundColorInput.addEventListener('change', (e) =>
@@ -123,14 +134,14 @@ const darkTheme = {
     },
   );
 
-  cardRadiusInput.addEventListener('change', (e) =>
-    updateCardRadius(e.target.value),
+  radiusInput.addEventListener('change', (e) =>
+    updateRadius(e.target.value),
   );
   chrome.cookies.get(
-    { url: 'https://twitter.com', name: 'cardradius' },
+    { url: 'https://twitter.com', name: 'radius' },
     function (cookie) {
       if (cookie.value) {
-        cardRadiusInput.value = cookie.value;
+        radiusInput.value = cookie.value;
       }
     },
   );
@@ -207,11 +218,11 @@ const darkTheme = {
       function () {},
     );
   }
-  function updateCardRadius(value) {
+  function updateRadius(value) {
     chrome.cookies.set(
       {
         url: 'https://twitter.com',
-        name: 'cardradius',
+        name: 'radius',
         value: value,
         expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
       },
@@ -254,7 +265,7 @@ const darkTheme = {
   const presetLight = document.getElementById('preset-light');
   const presetDark = document.getElementById('preset-dark');
   const presetSolarized = document.getElementById('preset-solarized');
-  const presetSepia = document.getElementById('preset-sepia');
+  const presetInverted = document.getElementById('preset-inverted');
 
   chrome.cookies.get({ url: 'https://twitter.com', name: 'theme' }, function (
     cookie,
@@ -263,19 +274,19 @@ const darkTheme = {
       presetLight.classList.add('active');
       presetDark.classList.remove('active');
       presetSolarized.classList.remove('active');
-      presetSepia.classList.remove('active');
+      presetInverted.classList.remove('active');
     } else if (cookie.value === 'dark') {
       presetDark.classList.add('active');
       presetLight.classList.remove('active');
       presetSolarized.classList.remove('active');
-      presetSepia.classList.remove('active');
+      presetInverted.classList.remove('active');
     } else if (cookie.value === 'solarized') {
       presetSolarized.classList.add('active');
       presetLight.classList.remove('active');
       presetDark.classList.remove('active');
-      presetSepia.classList.remove('active');
-    } else if (cookie.value === 'sepia') {
-      presetSepia.classList.add('active');
+      presetInverted.classList.remove('active');
+    } else if (cookie.value === 'inverted') {
+      presetInverted.classList.add('active');
       presetLight.classList.remove('active');
       presetDark.classList.remove('active');
       presetSolarized.classList.remove('active');
@@ -288,13 +299,13 @@ const darkTheme = {
     updateAccent(lightTheme.accent);
     updateText(lightTheme.text);
     updateCardBackground(lightTheme.cardBackground);
-    updateCardRadius(lightTheme.cardRadius);
+    updateRadius(lightTheme.radius);
     updateCardShadow(lightTheme.cardShadow);
 
     presetLight.classList.add('active');
     presetDark.classList.remove('active');
     presetSolarized.classList.remove('active');
-    presetSepia.classList.remove('active');
+    presetInverted.classList.remove('active');
 
     chrome.cookies.set(
       {
@@ -313,13 +324,13 @@ const darkTheme = {
     updateAccent(solarizedTheme.accent);
     updateText(solarizedTheme.text);
     updateCardBackground(solarizedTheme.cardBackground);
-    updateCardRadius(solarizedTheme.cardRadius);
+    updateRadius(solarizedTheme.radius);
     updateCardShadow(solarizedTheme.cardShadow);
 
     presetLight.classList.remove('active');
     presetDark.classList.remove('active');
     presetSolarized.classList.add('active');
-    presetSepia.classList.remove('active');
+    presetInverted.classList.remove('active');
 
     chrome.cookies.set(
       {
@@ -338,19 +349,44 @@ const darkTheme = {
     updateAccent(darkTheme.accent);
     updateText(darkTheme.text);
     updateCardBackground(darkTheme.cardBackground);
-    updateCardRadius(darkTheme.cardRadius);
+    updateRadius(darkTheme.radius);
     updateCardShadow(darkTheme.cardShadow);
 
     presetLight.classList.remove('active');
     presetDark.classList.add('active');
     presetSolarized.classList.remove('active');
-    presetSepia.classList.remove('active');
+    presetInverted.classList.remove('active');
 
     chrome.cookies.set(
       {
         url: 'https://twitter.com',
         name: 'theme',
         value: 'dark',
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  });
+
+  presetInverted.addEventListener('click', (e) => {
+    updateBackground(invertedTheme.background);
+    updateHover(invertedTheme.hover);
+    updateAccent(invertedTheme.accent);
+    updateText(invertedTheme.text);
+    updateCardBackground(invertedTheme.cardBackground);
+    updateRadius(invertedTheme.radius);
+    updateCardShadow(invertedTheme.cardShadow);
+
+    presetLight.classList.remove('active');
+    presetDark.classList.remove('active');
+    presetSolarized.classList.remove('active');
+    presetInverted.classList.add('active');
+
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'theme',
+        value: 'inverted',
         expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
       },
       function () {},

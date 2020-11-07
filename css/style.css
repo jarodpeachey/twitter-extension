@@ -1,6 +1,7 @@
 *::-webkit-scrollbar {
   background: transparent !important;
-  width: 8px;
+  width: 0px;
+  display: none;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -16,7 +17,7 @@
 }
 
 :root {
-  --text: #fcfcfc;
+  --textColor: #fcfcfc;
   --light: #ffffffaa;
   --lighter: #ffffff90;
 }
@@ -59,7 +60,7 @@ input {
 }
 
 h2 {
-  color: var(--text);
+  color: var(--textColor);
   margin: 0;
   width: 100%;
   border-bottom: 1px solid #565f65;
@@ -99,7 +100,7 @@ p.small {
 }
 
 .toggle.active {
-  color: var(--text);
+  color: var(--textColor);
 }
 
 .indicator {
@@ -155,8 +156,8 @@ p.small {
 }
 
 .preset__item {
-  border-radius: 5px;
-  border: 1px solid #565f65;
+  border-radius: 6px;
+  border: 1px solid rgb(44, 54, 60);
   height: 100%;
   width: 100%;
   display: flex;
@@ -169,7 +170,7 @@ p.small {
 
 .preset__item.active {
   border: 1px solid rgb(17, 163, 221);
-  color: var(--text);
+  color: var(--textColor);
 }
 
 label {

@@ -2,14 +2,12 @@
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
 :root {
-  --background: #1a1e21;
-  --hover: #273036;
+  --backgroundColor: #1a1e21;
+  --hoverColor: #273036;
   --cardBackground: rgb(44, 54, 60);
-  --accent: #565f65;
-  --text: #fcfcfc;
-  --buttonRadius: 12px;
-  --profileRadius: 24px;
-  --cardRadius: 12px;
+  --accentColor: #565f65;
+  --textColor: #fcfcfc;
+  --radius: 12px;
   --inputRadius: 4px;
   --inputBorder: #d8d8d8;
   --inputBorderHover: #c8c8c8;
@@ -29,25 +27,25 @@
 /* TEXT COLOR */
 @media (prefers-color-scheme: dark) {
   .r-hkyrab {
-    color: var(--text) !important;
+    color: var(--textColor) !important;
   }
   .r-1re7ezh {
-    color: var(--text) !important;
+    color: var(--textColor) !important;
   }
 }
 .r-hkyrab {
-  color: var(--text) !important;
+  color: var(--textColor) !important;
 }
 .r-1re7ezh {
-  color: var(--text) !important;
+  color: var(--textColor) !important;
 }
 
 /* BORDER COLOR */
 .r-my5ep6 {
-  border-bottom-color: var(--accent) !important;
+  border-bottom-color: var(--accentColor) !important;
 }
 .r-e84r5y {
-  background-color: var(--accent) !important;
+  background-color: var(--accentColor) !important;
 }
 .r-14lw9ot {
   background-color: transparent !important;
@@ -60,19 +58,19 @@ article {
 
 /* TABS */
 [role='tab']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 /* SCROLLBARS */
 *::-webkit-scrollbar {
   background: var(--scrollbarBackground) !important;
   width: 4px;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
 }
 
 *::-webkit-scrollbar-thumb {
   background: var(--scrollbarColor) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   border: 2px solid var(--scrollbarBackground) !important;
 }
 
@@ -81,7 +79,7 @@ article {
 }
 
 body {
-  background-color: var(--background) !important;
+  background-color: var(--backgroundColor) !important;
   padding-top: 30px !important;
   max-width: 769px !important;
   margin: 0 auto !important;
@@ -92,7 +90,7 @@ header {
   margin-right: 16px !important;
   max-width: 68px !important;
   margin-left: 16px !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
 }
 
 header > div:first-child > div:first-child,
@@ -111,7 +109,7 @@ main {
   margin-right: 16px !important;
   margin-left: 16px !important;
   flex: 1 1 0 !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
 }
 
 @media (min-width: 1273px) {
@@ -165,7 +163,7 @@ header > div:first-child > div:first-child > div:first-child {
 header > div > div > div > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -176,7 +174,7 @@ header > div > div > div > div:first-child {
 header > div > div > div > div:nth-child(2) {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -192,7 +190,7 @@ header > div > div > div > div:first-child > div:first-child svg {
   color: rgb(29, 161, 242) !important;
 }
 header > div > div > div > div:first-child > div:first-child a:hover {
-  background: var(--hover) !important;
+  background: var(--hoverColor) !important;
 }
 
 /* MAIN NAV ITEMS FLEX */
@@ -204,14 +202,14 @@ nav[aria-label='Primary'] a {
   width: 50px;
   height: 50px;
   display: block;
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
   transition: 0.1s;
   padding: 0 !important;
   margin: 4px 0 !important;
 }
 
 nav[aria-label='Primary'] a:hover {
-  background: var(--hover) !important;
+  background: var(--hoverColor) !important;
 }
 
 nav[aria-label='Primary'] a > div {
@@ -241,7 +239,7 @@ nav[aria-label='Primary'] > div:last-of-type {
 }
 
 nav[aria-label='Primary'] > div:last-of-type:hover {
-  background: var(--hover) !important;
+  background: var(--hoverColor) !important;
 }
 
 nav[aria-label='Primary'] > div:last-of-type div {
@@ -340,7 +338,7 @@ nav[aria-label='Primary'] a svg {
   background-color: rgb(29, 161, 242) !important;
   color: white !important;
   opacity: 1 !important;
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
   color: white !important;
   transition: 0.2s !important;
 }
@@ -393,7 +391,7 @@ nav[aria-label='Primary'] a svg {
   background-color: rgb(29, 161, 242) !important;
   color: white !important;
   opacity: 1 !important;
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
   color: white !important;
   transition: 0.2s !important;
 }
@@ -405,7 +403,7 @@ header
   > div:first-child
   > div:last-child
   > a {
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
   transition: 0.2s !important;
 }
 /* TWEET BUTTON */
@@ -416,7 +414,7 @@ header
   background-color: rgb(29, 161, 242) !important;
   color: white !important;
   opacity: 1 !important;
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
   transition: 0.2s !important;
 }
 [data-testid='tweetButtonInline']:hover,
@@ -429,12 +427,12 @@ header
 }
 /* OTHER */
 [role='button'] {
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
   transition: 0.2s !important;
 }
 
 [aria-label='Back']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 /******************************************************************
@@ -510,14 +508,14 @@ header > div:first-child > div:first-child,
 /* MENU POPUP */
 [role='menu'] {
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   margin: 0px 0px 16px 0px;
   border: none;
   background-color: var(--cardBackground) !important;
 }
 [role='menu'] a[role='link']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 /* PROFILE POPUP */
@@ -529,7 +527,7 @@ header > div:first-child > div:first-child,
   > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -543,7 +541,7 @@ header > div:first-child > div:first-child,
   > div:first-child
   > div:first-child
   a:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 /* PROFILE POPUP BORDER */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
@@ -553,7 +551,7 @@ header > div:first-child > div:first-child,
   > div:first-child
   > div:first-child
   .css-1dbjc4n.r-e84r5y.r-109y4c4 {
-  background-color: var(--accent);
+  background-color: var(--accentColor);
 }
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
   > div:first-child
@@ -562,7 +560,7 @@ header > div:first-child > div:first-child,
   > div:first-child
   > div:first-child
   li {
-  border-bottom: 1px solid var(--accent) !important;
+  border-bottom: 1px solid var(--accentColor) !important;
 }
 /* FEED WRAPPER */
 main
@@ -608,7 +606,7 @@ main
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   border: none;
 }
 
@@ -647,11 +645,11 @@ main
   + div
   > div:first-child
   > div:first-child {
-  border-bottom-color: var(--accent) !important;
+  border-bottom-color: var(--accentColor) !important;
 }
 
 .r-vrwoeq {
-  background-color: var(--accent) !important;
+  background-color: var(--accentColor) !important;
 }
 
 /************************************************************************************
@@ -664,7 +662,7 @@ main
 body.messages main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -693,7 +691,7 @@ body.messages
   > div:nth-child(2)
   > div {
   background-color: transparent !important;
-  border-color: var(--accent) !important;
+  border-color: var(--accentColor) !important;
 }
 
 /* MESSAGES REQUEST LINK */
@@ -705,9 +703,9 @@ body.messages
   > div:nth-child(2)
   > div:first-child
   a:hover {
-  background-color: var(--hover) !important;
-  border-top-right-radius: var(--cardRadius) !important;
-  border-top-left-radius: var(--cardRadius) !important;
+  background-color: var(--hoverColor) !important;
+  border-top-right-radius: var(--radius) !important;
+  border-top-left-radius: var(--radius) !important;
 }
 
 /* SEARCH BACKGROUND THING */
@@ -762,10 +760,10 @@ body.messages
 body.messages [data-testid='conversation'] {
   background-color: transparent !important;
   padding: 16px !important;
-  border-bottom-color: var(--accent) !important;
+  border-bottom-color: var(--accentColor) !important;
 }
 body.messages [data-testid='conversation']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 body.messages
   [aria-label='Timeline: Messages']
@@ -792,8 +790,8 @@ body.messages
 /* START NEW MESSAGE BG WRAPPER */
 body.messages aside[aria-label='Start a new message'] {
   background-color: transparent !important;
-  border-top-color: var(--accent) !important;
-  border-bottom-color: var(--accent) !important;
+  border-top-color: var(--accentColor) !important;
+  border-bottom-color: var(--accentColor) !important;
 }
 
 /* INPUT STYLES */
@@ -828,16 +826,16 @@ body.messages
   > .css-1dbjc4n.r-1euycsn.r-17s6mgv.r-1qfoi16.r-1nwbi2h
   > div:nth-child(2)
   > div:first-child[role='presentation'] {
-  background-color: var(--background) !important;
+  background-color: var(--accentColor) !important;
 }
 
 /* MESSAGE PERSON TOP */
 body.messages [data-focusable='true'][role='link'] {
-  border-bottom-color: var(--accent) !important;
+  border-bottom-color: var(--accentColor) !important;
 }
 body.messages [data-focusable='true'][role='link'].r-1u4rsef {
-  background-color: var(--hover) !important;
-  border-bottom-color: var(--accent) !important;
+  background-color: var(--hoverColor) !important;
+  border-bottom-color: var(--accentColor) !important;
 }
 
 @media (min-width: 996px) {
@@ -850,7 +848,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div {
     position: relative;
     background-color: var(--cardBackground) !important;
-    border-radius: var(--cardRadius) !important;
+    border-radius: var(--radius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 0px 0px 16px 0px;
     border: none;
@@ -860,7 +858,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
   body.messages main > div:first-child > div:first-child > div:first-child {
     position: relative;
     background-color: var(--cardBackground) !important;
-    border-radius: var(--cardRadius) !important;
+    border-radius: var(--radius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 0px 0px 16px 0px;
     border: none;
@@ -884,7 +882,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accent) !important;
+    border-bottom-color: var(--accentColor) !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -894,8 +892,8 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accent) !important;
-    border-top-color: var(--accent) !important;
+    border-bottom-color: var(--accentColor) !important;
+    border-top-color: var(--accentColor) !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -906,8 +904,8 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div {
     background-color: transparent !important;
-    border-bottom-color: var(--accent) !important;
-    border-top-color: var(--accent) !important;
+    border-bottom-color: var(--accentColor) !important;
+    border-top-color: var(--accentColor) !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -918,7 +916,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child
     a:hover {
-    background-color: var(--hover) !important;
+    background-color: var(--hoverColor) !important;
   }
 
   /* INPUT */
@@ -964,8 +962,8 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accent) !important;
-    border-top-color: var(--accent) !important;
+    border-bottom-color: var(--accentColor) !important;
+    border-top-color: var(--accentColor) !important;
   }
 
   /* SECOND BACKGROUND */
@@ -1006,7 +1004,7 @@ body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
 body.home [data-testid='primaryColumn'] > div:first-child > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -1040,7 +1038,7 @@ body.home
 body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -1093,7 +1091,7 @@ body.home
   [data-testid='primaryColumn']
   div[data-testid='toolBar']
   [role='button'][data-focusable='true'] {
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
 }
 
 /* ADD POLL OPTION BUTTON */
@@ -1122,7 +1120,7 @@ body.home
   > div:first-child
   > div:nth-child(2)
   .css-1dbjc4n.r-e84r5y.r-109y4c4.r-13qz1uu {
-  background-color: var(--accent) !important;
+  background-color: var(--accentColor) !important;
 }
 
 /* WEIRD SEPERATOR */
@@ -1139,7 +1137,7 @@ body.home
 body.home [aria-label*='Timeline'] {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -1163,11 +1161,11 @@ body.home
 body.home [aria-label*='Timeline'] article {
   border: none !important;
   padding: 0 !important;
-  border-bottom: 1px solid var(--accent) !important;
+  border-bottom: 1px solid var(--accentColor) !important;
 }
 /* TWEET WRAPPER HOVER */
 body.home [aria-label*='Timeline'] article[role='article']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 /* TWEET ORIGINAL PADDING */
@@ -1204,7 +1202,7 @@ body.home
 
 /* TWEET THREAD CONNECTOR */
 body.home [data-testid='tweet'] > div:first-child > div:nth-child(2) {
-  background-color: var(--accent) !important;
+  background-color: var(--accentColor) !important;
   position: relative;
   bottom: -16px !important;
 }
@@ -1219,7 +1217,7 @@ body.home
   > div:first-child
   > div:first-child[style='flex-basis: 49px;']
   > div:first-child {
-  background-color: var(--accent) !important;
+  background-color: var(--accentColor) !important;
   left: 32px !important;
   height: 200% !important;
 }
@@ -1238,9 +1236,9 @@ body.home
   > div:first-child.css-1dbjc4n.r-18u37iz {
   display: flex;
   width: fit-content;
-  border-radius: var(--buttonRadius);
+  border-radius: var(--radius);
   padding: 3px 12px;
-  background-color: var(--background) !important;
+  background-color: var(--accentColor) !important;
   margin-left: 16px;
 }
 
@@ -1280,7 +1278,7 @@ body.home
   [dir='ltr']
   > div:first-child
   > div:first-child {
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--radius) !important;
 }
 
 /* TWEET COUNT */
@@ -1321,18 +1319,18 @@ body.home
   > div:first-child
   > div:first-child
   > div:nth-child(2) {
-  background-color: var(--background) !important;
+  background-color: var(--accentColor) !important;
   border: none !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
 }
 
 body.home [data-testid='tweet'] [data-testid='card.wrapper'] {
-  background-color: var(--background) !important;
+  background-color: var(--accentColor) !important;
   border: none !important;
 }
 
 body.home [data-testid='tweet'] [data-testid='card.wrapper']:hover {
-  background-color: var(--background) !important;
+  background-color: var(--accentColor) !important;
   border: none !important;
 }
 
@@ -1410,8 +1408,8 @@ body.home
   > div:nth-child(2)
   > div:first-child
   > div:nth-child(2)[data-focusable='true'] {
-  border: 1px solid var(--accent) !important;
-  border-radius: var(--cardRadius) !important;
+  border: 1px solid var(--accentColor) !important;
+  border-radius: var(--radius) !important;
 }
 
 /* OLD RETWEET BORDER */
@@ -1477,7 +1475,7 @@ body.home
   [role='tablist']
   > div
   > a:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 body.home
   [data-testid='primaryColumn']
@@ -1488,7 +1486,7 @@ body.home
   [role='tablist']
   > div:first-child
   > a {
-  border-bottom-left-radius: var(--cardRadius);
+  border-bottom-left-radius: var(--radius);
 }
 body.home
   [data-testid='primaryColumn']
@@ -1499,7 +1497,7 @@ body.home
   [role='tablist']
   > div:nth-child(2)
   > a {
-  border-bottom-right-radius: var(--cardRadius);
+  border-bottom-right-radius: var(--radius);
 }
 
 /* NOTIFICATIONS TIMELINE FIRST ARTICLE */
@@ -1508,8 +1506,8 @@ body.home
   > div:first-child
   > div:first-child
   article {
-  border-top-left-radius: var(--cardRadius) !important;
-  border-top-right-radius: var(--cardRadius) !important;
+  border-top-left-radius: var(--radius) !important;
+  border-top-right-radius: var(--radius) !important;
 }
 
 /* NOTIFICATIONS TIMELINE ARTICLE */
@@ -1518,7 +1516,7 @@ body.home
   > div:first-child
   > div
   article:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 html body.loading main {
@@ -1574,8 +1572,8 @@ body.status
   + div
   > div:nth-child(5)
   > div:first-child {
-  border-bottom: 1px solid var(--accent) !important;
-  border-top: 1px solid var(--accent) !important;
+  border-bottom: 1px solid var(--accentColor) !important;
+  border-top: 1px solid var(--accentColor) !important;
 }
 
 body [role='button'][data-testid='UserCell'] {
@@ -1584,7 +1582,12 @@ body [role='button'][data-testid='UserCell'] {
 }
 
 body [role='button'][data-testid='UserCell']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
+}
+
+body.status [data-testid="card.wrapper"] {
+  padding: 10px !important;
+  border-radius: var(--card-radius) !important
 }
 
 /************************************************************************************
@@ -1596,7 +1599,7 @@ body [role='button'][data-testid='UserCell']:hover {
 body.settings main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
   background-color: var(--cardBackground) !important;
-  border-radius: var(--cardRadius) !important;
+  border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
@@ -1617,7 +1620,7 @@ body.settings
 
 /* SETTINGS LINKS */
 body.settings a[role='tab']:hover {
-  background-color: var(--hover) !important;
+  background-color: var(--hoverColor) !important;
 }
 
 /* MAIN PAGE LINKS */
@@ -1626,12 +1629,12 @@ body.settings div[role='tablist'] > div > a[role='tab'] {
   border-top-left-radius: 0 !important;
 }
 body.settings div[role='tablist'] > div:first-child > a[role='tab'] {
-  border-top-right-radius: var(--cardRadius) !important;
-  border-top-left-radius: var(--cardRadius) !important;
+  border-top-right-radius: var(--radius) !important;
+  border-top-left-radius: var(--radius) !important;
 }
 body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
-  border-bottom-right-radius: var(--cardRadius) !important;
-  border-bottom-left-radius: var(--cardRadius) !important;
+  border-bottom-right-radius: var(--radius) !important;
+  border-bottom-left-radius: var(--radius) !important;
 }
 body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
   border-bottom: none !important;
@@ -1646,7 +1649,7 @@ body.settings a[href="https://business.twitter.com"],
 body.settings a[href="https://help.twitter.com/forms/privacy"],
 body.settings a[href="/settings/email_notifications"],
 body.settings a[href="/settings/notifications/advanced_filters"] {
-  border-bottom-left-radius: var(--cardRadius) !important;
-  border-bottom-right-radius: var(--cardRadius) !important;
+  border-bottom-left-radius: var(--radius) !important;
+  border-bottom-right-radius: var(--radius) !important;
   border-bottom: none !important;
 }
