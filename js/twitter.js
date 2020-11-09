@@ -55,8 +55,8 @@
     } else if (
       !request.url.includes('messages') && !request.url.includes('settings') &&
       !(
-        getCookie('previousurl').includes('notifications') &&
-        request.url.includes('notifications')
+        getCookie('previousurl') === "/notifications" &&
+        request.url === "/notifications/mentions"
       )
     ) {
       console.log('Updating to home/notifications');
