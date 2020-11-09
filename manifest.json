@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Material Twitter",
+  "name": "Glitter",
   "version": "1.0.0",
-  "description": "A simple theme for Twitter based off of Google's Material Design System",
-  "short_name": "Material Twitter",
+  "description": "An all-in-one Twitter extension that allows you to fully customize your Twitter experience. Change everything from buttons to cards, inputs to colors and more.",
+  "short_name": "Glitter",
   "background": {
     "scripts": ["background.js"]
   },
@@ -22,7 +22,7 @@
     }
   ],
   "browser_action": {
-    "default_title": "Customize Material Twitter",
+    "default_title": "Customize Twitter",
     "default_popup": "popup.html"
   }
 }

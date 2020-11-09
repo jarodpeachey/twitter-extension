@@ -33,7 +33,6 @@
 
     if (
       request.url.includes('messages') &&
-      !request.url.includes('requests') &&
       !getCookie('previousurl').includes('messages')
     ) {
       console.log('Updating to messages');
@@ -54,7 +53,7 @@
       document.body.classList.remove('home');
       document.body.classList.remove('status');
     } else if (
-      !(request.url.includes('messages') && request.url.includes('settings')) ||
+      !request.url.includes('messages') && !request.url.includes('settings') &&
       !(
         getCookie('previousurl').includes('notifications') &&
         request.url.includes('notifications')
