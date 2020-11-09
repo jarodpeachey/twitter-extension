@@ -422,8 +422,15 @@ header
   transition: 0.2s !important;
 }
 
+a[href='/compose/tweet'] {
+  border-color: var(--primaryColor) !important;
+}
+
 [aria-label='Back']:hover {
   background-color: var(--hoverColor) !important;
+}
+[role="progressbar"] svg circle:last-child {
+  stroke: var(--primaryColor) !important;
 }
 
 /******************************************************************
