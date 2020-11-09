@@ -1,7 +1,8 @@
 /******************************************************************
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
-:root {
+/* :root {
+  --primaryColor: rgb(209, 98, 46);
   --backgroundColor: #1a1e21;
   --hoverColor: #273036;
   --cardBackground: rgb(44, 54, 60);
@@ -17,7 +18,7 @@
     0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
   --scrollbarBackground: transparent;
   --scrollbarColor: #ffffff;
-}
+} */
 
 /************************************************************************************
 *************************************************************************************
@@ -38,6 +39,34 @@
 }
 .r-1re7ezh {
   color: var(--textColor) !important;
+}
+
+/* PRIMARY COLOR ICONS/STUFF */
+.r-13gxpu9 {
+  color: var(--primaryColor) !important;
+}
+
+.r-zv2cs0 {
+  background-color: transparent !important;
+}
+
+a.r-zv2cs0 {
+  background-color: var(--hoverColor) !important;
+}
+
+/* PRIMARY COLOR LINKS */
+.r-1n1174f {
+  color: var(--primaryColor) !important;
+}
+
+/* PRIMARY COLOR BACKGROUNDS */
+.r-urgr8i {
+  background-color: var(--primaryColor) !important;
+}
+
+/* PRIMARY COLOR BORDERS */
+.r-18p3no4 {
+  border-bottom-color: var(--primaryColor) !important;
 }
 
 /* BORDER COLOR */
@@ -187,7 +216,7 @@ header > div > div > div > div:first-child > div:first-child {
   height: 50px;
 }
 header > div > div > div > div:first-child > div:first-child svg {
-  color: rgb(29, 161, 242) !important;
+  /* color: rgb(29, 161, 242) !important; */
 }
 header > div > div > div > div:first-child > div:first-child a:hover {
   background: var(--hoverColor) !important;
@@ -311,31 +340,12 @@ nav[aria-label='Primary'] a svg {
   [role='button'],
 [aria-labelledby='modal-header']
   > div:first-child
-  > div:first-child
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:nth-child(3)
-  [role='button']
-  span,
-[aria-labelledby='modal-header']
-  > div:first-child
   > div:nth-child(2)
   > div:first-child
   > div:first-child
   > div:nth-child(9)
-  [role='button'],
-[aria-labelledby='modal-header']
-  > div:first-child
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child
-  > div:nth-child(9)
-  [role='button']
-  span {
-  background-color: rgb(29, 161, 242) !important;
+  [role='button'] {
+  /* background-color: rgb(29, 161, 242) !important; */
   color: white !important;
   opacity: 1 !important;
   border-radius: var(--radius) !important;
@@ -354,46 +364,30 @@ nav[aria-label='Primary'] a svg {
   [role='button']:hover,
 [aria-labelledby='modal-header']
   > div:first-child
-  > div:first-child
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:first-child
-  > div:nth-child(3)
-  [role='button']:hover
-  span,
-[aria-labelledby='modal-header']
-  > div:first-child
   > div:nth-child(2)
   > div:first-child
   > div:first-child
   > div:nth-child(9)
-  [role='button']:hover,
-[aria-labelledby='modal-header']
-  > div:first-child
-  > div:nth-child(2)
-  > div:first-child
-  > div:first-child
-  > div:nth-child(9)
-  [role='button']:hover
-  span,
-[data-testid='SideNav_NewTweet_Button']:hover,
-[data-testid='SideNav_NewTweet_Button']:hover span {
+  [role='button']:hover {
   cursor: pointer !important;
-  background-color: rgb(26, 145, 218) !important;
+  /* background-color: rgb(26, 145, 218) !important; */
+  background-color: var(--primaryColor) !important;
+  filter: brightness(1.2) !important;
   color: white !important;
   transition: 0.2s !important;
 }
 /* MOBILE TWEET BUTTON */
-[data-testid='SideNav_NewTweet_Button'],
-[data-testid='SideNav_NewTweet_Button'] span {
-  background-color: rgb(29, 161, 242) !important;
+[data-testid='SideNav_NewTweet_Button'] {
+  background-color: var(--primaryColor) !important;
   color: white !important;
   opacity: 1 !important;
   border-radius: var(--radius) !important;
   color: white !important;
   transition: 0.2s !important;
+}
+[data-testid='SideNav_NewTweet_Button']:hover {
+  cursor: pointer !important;
+  filter: brightness(1.2) !important;
 }
 /* NAVIGATION TWEET BUTTON */
 header
@@ -408,21 +402,18 @@ header
 }
 /* TWEET BUTTON */
 [data-testid='tweetButtonInline'],
-[data-testid='tweetButtonInline'] span,
-[data-testid='tweetButton'],
-[data-testid='tweetButton'] span {
-  background-color: rgb(29, 161, 242) !important;
+[data-testid='tweetButton'] {
+  /* background-color: rgb(29, 161, 242) !important; */
   color: white !important;
   opacity: 1 !important;
   border-radius: var(--radius) !important;
   transition: 0.2s !important;
 }
 [data-testid='tweetButtonInline']:hover,
-[data-testid='tweetButtonInline']:hover span,
-[data-testid='tweetButton']:hover,
-[data-testid='tweetButton']:hover span {
+[data-testid='tweetButton']:hover {
   cursor: pointer !important;
-  background-color: rgb(26, 145, 218) !important;
+  background-color: var(--primaryColor) !important;
+  filter: brightness(1.2) !important;
   transition: 0.2s !important;
 }
 /* OTHER */
@@ -1585,9 +1576,9 @@ body [role='button'][data-testid='UserCell']:hover {
   background-color: var(--hoverColor) !important;
 }
 
-body.status [data-testid="card.wrapper"] {
+body.status [data-testid='card.wrapper'] {
   padding: 10px !important;
-  border-radius: var(--card-radius) !important
+  border-radius: var(--card-radius) !important;
 }
 
 /************************************************************************************
@@ -1640,6 +1631,13 @@ body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
   border-bottom: none !important;
 }
 
+/* TOP LINKS AND STUFF */
+body.settings a[href='/settings/screen_name'] {
+  border-top-left-radius: var(--radius) !important;
+  border-top-right-radius: var(--radius) !important;
+  border-bottom: none !important;
+}
+
 /* BOTTOM LINKS AND STUFF */
 body.settings a[href='/settings/deactivate'],
 body.settings a[href='/settings/apps_and_sessions'],
@@ -1648,7 +1646,8 @@ body.settings a[href='/settings/data'],
 body.settings a[href="https://business.twitter.com"],
 body.settings a[href="https://help.twitter.com/forms/privacy"],
 body.settings a[href="/settings/email_notifications"],
-body.settings a[href="/settings/notifications/advanced_filters"] {
+body.settings a[href="/settings/notifications/advanced_filters"],
+body.settings a[href="/settings/your_twitter_data/age"] {
   border-bottom-left-radius: var(--radius) !important;
   border-bottom-right-radius: var(--radius) !important;
   border-bottom: none !important;

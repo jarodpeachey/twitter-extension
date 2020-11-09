@@ -30,7 +30,6 @@
   ) {
     console.log(getCookie('previousurl'));
     console.log(request.url);
-    console.log(getCookie('previousurl'));
 
     if (
       request.url.includes('messages') &&
@@ -55,8 +54,11 @@
       document.body.classList.remove('home');
       document.body.classList.remove('status');
     } else if (
-      !request.url.includes('messages') &&
-      !request.url.includes('settings')
+      !(request.url.includes('messages') && request.url.includes('settings')) ||
+      !(
+        getCookie('previousurl').includes('notifications') &&
+        request.url.includes('notifications')
+      )
     ) {
       console.log('Updating to home/notifications');
       document.body.classList.add('loading');
@@ -87,6 +89,7 @@
 
     return '';
   };
+  const primaryColor = getCookie('primarycolor');
   const backgroundColor = getCookie('backgroundcolor');
   const hoverColor = getCookie('hovercolor');
   const accentColor = getCookie('accentcolor');
@@ -96,7 +99,11 @@
   const radius = getCookie('radius');
   const cardShadow = getCookie('cardshadow');
 
-  document.documentElement.style.setProperty('--backgroundColor', backgroundColor);
+  document.documentElement.style.setProperty('--primaryColor', primaryColor);
+  document.documentElement.style.setProperty(
+    '--backgroundColor',
+    backgroundColor,
+  );
   document.documentElement.style.setProperty('--hoverColor', hoverColor);
   document.documentElement.style.setProperty('--accentColor', accentColor);
   document.documentElement.style.setProperty('--textColor', textColor);

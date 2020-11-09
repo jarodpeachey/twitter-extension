@@ -1,9 +1,10 @@
 const lightTheme = {
-  background: '#f1f1f1',
-  hover: '#f7f7f7',
+  primaryColor: '#1DA1F2',
+  backgroundColor: '#f1f1f1',
+  hoverColor: '#f7f7f7',
   cardBackground: '#ffffff',
-  accent: '#f1f1f1',
-  text: '#222222',
+  accentColor: '#f1f1f1',
+  textColor: '#222222',
   radius: '12px',
   inputRadius: '4px',
   inputBorder: '#d8d8d8',
@@ -16,11 +17,12 @@ const lightTheme = {
 };
 
 const solarizedTheme = {
-  background: '#1a1e21',
-  hover: '#273036',
+  primaryColor: '#1DA1F2',
+  backgroundColor: '#1a1e21',
+  hoverColor: '#273036',
   cardBackground: '#2c363c',
-  accent: '#565f65',
-  text: '#fcfcfc',
+  accentColor: '#565f65',
+  textColor: '#fcfcfc',
   radius: '12px',
   inputRadius: '4px',
   inputBorder: '#d8d8d8',
@@ -34,11 +36,12 @@ const solarizedTheme = {
 };
 
 const darkTheme = {
-  background: '#000000',
-  hover: '#ffffff10',
+  primaryColor: '#1DA1F2',
+  backgroundColor: '#000000',
+  hoverColor: '#ffffff10',
   cardBackground: '#232323',
-  accent: '#ffffff20',
-  text: '#fbfbfb',
+  accentColor: '#ffffff20',
+  textColor: '#fbfbfb',
   radius: '6px',
   inputRadius: '4px',
   inputBorder: '#d8d8d8',
@@ -51,23 +54,24 @@ const darkTheme = {
 };
 
 const invertedTheme = {
-  background: '#1da1f2',
-  hover: '#e8f1f7',
+  primaryColor: '#1DA1F2',
+  backgroundColor: primaryColor,
+  hoverColor: '#e8f1f7',
   cardBackground: '#ffffff',
-  accent: '#cdddee',
-  text: '#303030',
+  accentColor: '#cdddee',
+  textColor: '#303030',
   radius: '6px',
   inputRadius: '4px',
   inputBorder: '#1da1f2',
   inputBorderHover: '#1da1f2',
   inputBackground: '#ffffff',
-  cardShadow:
-    '0px 0px 30px 0px #44444420',
+  cardShadow: '0px 0px 30px 0px #44444420',
   scrollbarBackground: '#565f65',
   scrollbarColor: '#aaaaaa',
 };
 
 (function () {
+  const primaryColorInput = document.getElementById('primaryColor');
   const backgroundColorInput = document.getElementById('backgroundColor');
   const hoverColorInput = document.getElementById('hoverColor');
   const accentColorInput = document.getElementById('accentColor');
@@ -76,47 +80,61 @@ const invertedTheme = {
   const radiusInput = document.getElementById('radius');
   const cardShadowInput = document.getElementById('cardShadow');
 
+  primaryColorInput.addEventListener('change', (e) =>
+    updatePrimaryColor(e.target.value),
+  );
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'primarycolor' },
+    function (cookie) {
+      if (cookie && cookie.value) {
+        primaryColorInput.value = cookie.value;
+      }
+    },
+  );
+
   backgroundColorInput.addEventListener('change', (e) =>
-    updateBackground(e.target.value),
+    updateBackgroundColor(e.target.value),
   );
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'backgroundcolor' },
     function (cookie) {
-      if (cookie.value) {
+      if (cookie && cookie.value) {
         backgroundColorInput.value = cookie.value;
       }
     },
   );
 
   hoverColorInput.addEventListener('change', (e) =>
-    updateHover(e.target.value),
+    updateHoverColor(e.target.value),
   );
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'hovercolor' },
     function (cookie) {
-      if (cookie.value) {
+      if (cookie && cookie.value) {
         hoverColorInput.value = cookie.value;
       }
     },
   );
 
   accentColorInput.addEventListener('change', (e) =>
-    updateAccent(e.target.value),
+    updateAccentColor(e.target.value),
   );
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'accentcolor' },
     function (cookie) {
-      if (cookie.value) {
+      if (cookie && cookie.value) {
         accentColorInput.value = cookie.value;
       }
     },
   );
 
-  textColorInput.addEventListener('change', (e) => updateText(e.target.value));
+  textColorInput.addEventListener('change', (e) =>
+    updateTextColor(e.target.value),
+  );
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'textcolor' },
     function (cookie) {
-      if (cookie.value) {
+      if (cookie && cookie.value) {
         textColorInput.value = cookie.value;
       }
     },
@@ -128,23 +146,20 @@ const invertedTheme = {
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'cardbackground' },
     function (cookie) {
-      if (cookie.value) {
+      if (cookie && cookie.value) {
         cardBackgroundInput.value = cookie.value;
       }
     },
   );
 
-  radiusInput.addEventListener('change', (e) =>
-    updateRadius(e.target.value),
-  );
-  chrome.cookies.get(
-    { url: 'https://twitter.com', name: 'radius' },
-    function (cookie) {
-      if (cookie.value) {
-        radiusInput.value = cookie.value;
-      }
-    },
-  );
+  radiusInput.addEventListener('change', (e) => updateRadius(e.target.value));
+  chrome.cookies.get({ url: 'https://twitter.com', name: 'radius' }, function (
+    cookie,
+  ) {
+    if (cookie && cookie.value) {
+      radiusInput.value = cookie.value;
+    }
+  });
 
   cardShadowInput.addEventListener('change', (e) =>
     updateCardShadow(e.target.value),
@@ -152,13 +167,27 @@ const invertedTheme = {
   chrome.cookies.get(
     { url: 'https://twitter.com', name: 'cardshadow' },
     function (cookie) {
-      if (cookie.value) {
+      if (cookie && cookie.value) {
         cardShadowInput.value = cookie.value;
       }
     },
   );
 
-  function updateBackground(value) {
+  function updatePrimaryColor(value) {
+    console.log(value);
+
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'primarycolor',
+        value: value,
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  }
+
+  function updateBackgroundColor(value) {
     console.log(value);
 
     chrome.cookies.set(
@@ -172,7 +201,7 @@ const invertedTheme = {
     );
   }
 
-  function updateHover(value) {
+  function updateHoverColor(value) {
     chrome.cookies.set(
       {
         url: 'https://twitter.com',
@@ -184,7 +213,7 @@ const invertedTheme = {
     );
   }
 
-  function updateAccent(value) {
+  function updateAccentColor(value) {
     chrome.cookies.set(
       {
         url: 'https://twitter.com',
@@ -196,7 +225,7 @@ const invertedTheme = {
     );
   }
 
-  function updateText(value) {
+  function updateTextColor(value) {
     chrome.cookies.set(
       {
         url: 'https://twitter.com',
@@ -294,10 +323,11 @@ const invertedTheme = {
   });
 
   presetLight.addEventListener('click', (e) => {
-    updateBackground(lightTheme.background);
-    updateHover(lightTheme.hover);
-    updateAccent(lightTheme.accent);
-    updateText(lightTheme.text);
+    updatePrimaryColor(lightTheme.primaryColor);
+    updateBackgroundColor(lightTheme.backgroundColor);
+    updateHoverColor(lightTheme.hoverColor);
+    updateAccentColor(lightTheme.accentColor);
+    updateTextColor(lightTheme.textColor);
     updateCardBackground(lightTheme.cardBackground);
     updateRadius(lightTheme.radius);
     updateCardShadow(lightTheme.cardShadow);
@@ -319,10 +349,11 @@ const invertedTheme = {
   });
 
   presetSolarized.addEventListener('click', (e) => {
-    updateBackground(solarizedTheme.background);
-    updateHover(solarizedTheme.hover);
-    updateAccent(solarizedTheme.accent);
-    updateText(solarizedTheme.text);
+    updatePrimaryColor(solarizedTheme.primaryColor);
+    updateBackgroundColor(solarizedTheme.backgroundColor);
+    updateHoverColor(solarizedTheme.hoverColor);
+    updateAccentColor(solarizedTheme.accentColor);
+    updateTextColor(solarizedTheme.textColor);
     updateCardBackground(solarizedTheme.cardBackground);
     updateRadius(solarizedTheme.radius);
     updateCardShadow(solarizedTheme.cardShadow);
@@ -344,10 +375,11 @@ const invertedTheme = {
   });
 
   presetDark.addEventListener('click', (e) => {
-    updateBackground(darkTheme.background);
-    updateHover(darkTheme.hover);
-    updateAccent(darkTheme.accent);
-    updateText(darkTheme.text);
+    updatePrimaryColor(darkTheme.primaryColor);
+    updateBackgroundColor(darkTheme.backgroundColor);
+    updateHoverColor(darkTheme.hoverColor);
+    updateAccentColor(darkTheme.accentColor);
+    updateTextColor(darkTheme.textColor);
     updateCardBackground(darkTheme.cardBackground);
     updateRadius(darkTheme.radius);
     updateCardShadow(darkTheme.cardShadow);
@@ -369,10 +401,11 @@ const invertedTheme = {
   });
 
   presetInverted.addEventListener('click', (e) => {
-    updateBackground(invertedTheme.background);
-    updateHover(invertedTheme.hover);
-    updateAccent(invertedTheme.accent);
-    updateText(invertedTheme.text);
+    updatePrimaryColor(invertedTheme.primaryColor);
+    updateBackgroundColor(invertedTheme.backgroundColor);
+    updateHoverColor(invertedTheme.hoverColor);
+    updateAccentColor(invertedTheme.accentColor);
+    updateTextColor(invertedTheme.textColor);
     updateCardBackground(invertedTheme.cardBackground);
     updateRadius(invertedTheme.radius);
     updateCardShadow(invertedTheme.cardShadow);
