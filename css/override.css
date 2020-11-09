@@ -54,7 +54,8 @@
   background-color: var(--hoverColor) !important;
 }
 
-a.r-zv2cs0, [role="button"].r-zv2cs0 {
+a.r-zv2cs0,
+[role='button'].r-zv2cs0 {
   background-color: var(--hoverColor) !important;
 }
 
@@ -75,7 +76,6 @@ a.r-zv2cs0, [role="button"].r-zv2cs0 {
 .r-1panhkp {
   background-color: var(--hoverColor) !important;
 }
-
 
 /* PRIMARY COLOR BORDERS */
 .r-18p3no4 {
@@ -459,10 +459,10 @@ a[href='/compose/tweet'] {
 }
 
 /* FOLLOW BUTTON */
-[role="button"][data-testid*="follow"]:hover {
+[role='button'][data-testid*='follow']:hover {
   background-color: var(--primaryColor) !important;
 }
-[role="button"][data-testid*="follow"]:hover * {
+[role='button'][data-testid*='follow']:hover * {
   color: white !important;
 }
 
@@ -480,20 +480,20 @@ label [dir='auto'] {
 }
 input[type='password'],
 input[type='text'] {
-  border-radius: var(--inputRadius) !important;
+  border-radius: var(--radius) !important;
   background-color: var(--inputBackground) !important;
-  border: 1px solid var(--inputBorder) !important;
+  border: 1px solid var(--inputBorderColor) !important;
   color: var(--inputColor) !important;
   padding: 12px 10px !important;
   font-size: 16px !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
-  border: 1px solid var(--inputBorderHover) !important;
+  border: 1px solid var(--primaryColor) !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
-  border: 1px solid rgb(29, 161, 242) !important;
+  border: 1px solid var(--primaryColor) !important;
 }
 
 /******************************************************************
@@ -852,9 +852,9 @@ body.messages
   > div:first-child
   > div:first-child
   > div:first-child {
-  border-radius: var(--inputRadius) !important;
+  border-radius: var(--radius) !important;
   background-color: var(--inputBackground) !important;
-  border: 1px solid var(--inputBorder) !important;
+  border: 1px solid var(--inputBorderColor) !important;
   color: var(--inputColor) !important;
   font-size: 16px !important;
 }
@@ -1712,7 +1712,6 @@ body.settings a[href="/settings/your_twitter_data/age"] {
   border-bottom: none !important;
 }
 
-
 @media (min-width: 996px) {
   /* MAIN PANELS CARDS */
   body.settings
@@ -1852,5 +1851,18 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
+  }
+
+  body.settings a[href='/settings/deactivate'],
+body.settings a[href='/settings/apps_and_sessions'],
+body.settings a[href='/settings/notifications/preferences'],
+body.settings a[href='/settings/data'],
+body.settings a[href="https://business.twitter.com"],
+body.settings a[href="https://help.twitter.com/forms/privacy"],
+body.settings a[href="/settings/email_notifications"],
+body.settings a[href="/settings/notifications/advanced_filters"],
+body.settings a[href="/settings/your_twitter_data/age"] {
+    border-bottom-right-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
   }
 }

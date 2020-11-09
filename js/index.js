@@ -6,9 +6,7 @@ const lightTheme = {
   accentColor: '#f1f1f1',
   textColor: '#222222',
   radius: '12px',
-  inputRadius: '4px',
-  inputBorder: '#d8d8d8',
-  inputBorderHover: '#c8c8c8',
+  inputBorderColor: '#d8d8d8',
   inputBackground: '#ffffff',
   cardShadow:
     'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
@@ -24,9 +22,7 @@ const solarizedTheme = {
   accentColor: '#565f65',
   textColor: '#fcfcfc',
   radius: '12px',
-  inputRadius: '4px',
-  inputBorder: '#d8d8d8',
-  inputBorderHover: '#c8c8c8',
+  inputBorderColor: '#d8d8d8',
   inputBackground: '#ffffff',
   inputColor: '#444444',
   cardShadow:
@@ -43,9 +39,7 @@ const darkTheme = {
   accentColor: '#ffffff20',
   textColor: '#fbfbfb',
   radius: '6px',
-  inputRadius: '4px',
-  inputBorder: '#d8d8d8',
-  inputBorderHover: '#c8c8c8',
+  inputBorderColor: '#d8d8d8',
   inputBackground: '#ffffff',
   cardShadow:
     'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
@@ -61,9 +55,7 @@ const invertedTheme = {
   accentColor: '#cdddee',
   textColor: '#303030',
   radius: '6px',
-  inputRadius: '4px',
-  inputBorder: '#1da1f2',
-  inputBorderHover: '#1da1f2',
+  inputBorderColor: '#1da1f2',
   inputBackground: '#ffffff',
   cardShadow: '0px 0px 30px 0px #44444420',
   scrollbarBackground: '#565f65',
@@ -79,6 +71,8 @@ const invertedTheme = {
   const cardBackgroundInput = document.getElementById('cardBackground');
   const radiusInput = document.getElementById('radius');
   const cardShadowInput = document.getElementById('cardShadow');
+  const inputBorderColorInput = document.getElementById('inputBorderColor');
+  const inputBackgroundInput = document.getElementById('inputBackground');
 
   primaryColorInput.addEventListener('change', (e) =>
     updatePrimaryColor(e.target.value),
@@ -169,6 +163,29 @@ const invertedTheme = {
     function (cookie) {
       if (cookie && cookie.value) {
         cardShadowInput.value = cookie.value;
+      }
+    },
+  );
+
+  inputBorderColorInput.addEventListener('change', (e) =>
+    updateInputBorderColor(e.target.value),
+  );
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'inputbordercolor' },
+    function (cookie) {
+      if (cookie && cookie.value) {
+        inputBorderColorInput.value = cookie.value;
+      }
+    },
+  );
+  inputBackgroundInput.addEventListener('change', (e) =>
+    updateInputBackground(e.target.value),
+  );
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'inputbackground' },
+    function (cookie) {
+      if (cookie && cookie.value) {
+        inputBackgroundInput.value = cookie.value;
       }
     },
   );
@@ -269,6 +286,28 @@ const invertedTheme = {
       function () {},
     );
   }
+  function updateInputBorderColor(value) {
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'inputbordercolor',
+        value: value,
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  }
+  function updateInputBackground(value) {
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'inputbackground',
+        value: value,
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  }
 
   const buttons = document.getElementById('toggle-items');
   const presetButton = document.getElementById('toggle__preset');
@@ -331,6 +370,8 @@ const invertedTheme = {
     updateCardBackground(lightTheme.cardBackground);
     updateRadius(lightTheme.radius);
     updateCardShadow(lightTheme.cardShadow);
+    updateInputBorderColor(lightTheme.inputBorderColor);
+    updateInputBackground(lightTheme.inputBackground);
 
     presetLight.classList.add('active');
     presetDark.classList.remove('active');
@@ -357,6 +398,8 @@ const invertedTheme = {
     updateCardBackground(solarizedTheme.cardBackground);
     updateRadius(solarizedTheme.radius);
     updateCardShadow(solarizedTheme.cardShadow);
+    updateInputBorderColor(solarizedTheme.inputBorderColor);
+    updateInputBackground(solarizedTheme.inputBackground);
 
     presetLight.classList.remove('active');
     presetDark.classList.remove('active');
@@ -383,6 +426,8 @@ const invertedTheme = {
     updateCardBackground(darkTheme.cardBackground);
     updateRadius(darkTheme.radius);
     updateCardShadow(darkTheme.cardShadow);
+    updateInputBorderColor(darkTheme.inputBorderColor);
+    updateInputBackground(darkTheme.inputBackground);
 
     presetLight.classList.remove('active');
     presetDark.classList.add('active');
@@ -409,6 +454,8 @@ const invertedTheme = {
     updateCardBackground(invertedTheme.cardBackground);
     updateRadius(invertedTheme.radius);
     updateCardShadow(invertedTheme.cardShadow);
+    updateInputBorderColor(invertedTheme.inputBorderColor);
+    updateInputBackground(invertedTheme.inputBackground);
 
     presetLight.classList.remove('active');
     presetDark.classList.remove('active');

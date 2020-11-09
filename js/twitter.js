@@ -98,6 +98,9 @@
   const radius = getCookie('radius');
   const cardShadow = getCookie('cardshadow');
 
+  const inputBorderColor = getCookie('inputbordercolor');
+  const inputBackground = getCookie('inputbackground');
+
   document.documentElement.style.setProperty('--primaryColor', primaryColor);
   document.documentElement.style.setProperty(
     '--backgroundColor',
@@ -112,4 +115,6 @@
   );
   document.documentElement.style.setProperty('--radius', radius);
   document.documentElement.style.setProperty('--cardShadow', cardShadow);
+  document.documentElement.style.setProperty('--inputBorderColor', inputBorderColor);
+  document.documentElement.style.setProperty('--inputBackground', inputBackground);
 })();
