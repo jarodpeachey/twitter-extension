@@ -17,9 +17,16 @@
 }
 
 :root {
-  --textColor: #fcfcfc;
-  --light: #ffffffaa;
-  --lighter: #ffffff90;
+  --textColor: #111111;
+  --light: #111111aa;
+  --lighter: #11111190;
+
+  --orange: #ff9800;
+  --orange-light: #ffb74d;
+  --pink: #f48fb1;
+  --pink-light: #f8bbd0;
+  --purple: #ba68c8;
+  --purple-light: #ce93d8;
 }
 
 html,
@@ -27,12 +34,12 @@ body {
   border: none;
   margin: 0;
   width: 300px;
-  color: #fcfcfc;
+  color: #444444;
   font-size: 16px;
 }
 
 body {
-  background: #1a1e21;
+  background: #ffffff;
   padding-top: 16px;
   padding-bottom: 78px;
   border: none;
@@ -59,13 +66,9 @@ input {
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-h2 {
-  color: var(--textColor);
-  margin: 0;
-  width: 100%;
-  border-bottom: 1px solid #565f65;
-  padding-bottom: 12px;
-  margin-bottom: 12px;
+.logo {
+  width: 40px;
+  margin-bottom: 16px;
 }
 
 p.small {
@@ -78,10 +81,11 @@ p.small {
 
 .toggle-items {
   display: flex;
-  background: #111111;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
   align-items: flex-start;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 6px;
   position: relative;
   margin-bottom: 1rem;
 }
@@ -100,11 +104,11 @@ p.small {
 }
 
 .toggle.active {
-  color: var(--textColor);
+  color: white;
 }
 
 .indicator {
-  background: #565f65;
+  background: var(--orange-light);
   border-radius: 5px;
   width: 128px;
   position: absolute;
@@ -113,6 +117,8 @@ p.small {
   height: calc(100% - 10px);
   z-index: 0;
   transition: 0.2s;
+  background: var(--orange-light);
+  padding: 5px 2px;
 }
 
 #main-content {
@@ -157,7 +163,7 @@ p.small {
 
 .preset__item {
   border-radius: 6px;
-  border: 1px solid rgb(44, 54, 60);
+  border: 1px solid #e8e8e8;
   height: 100%;
   width: 100%;
   display: flex;
@@ -169,13 +175,13 @@ p.small {
 }
 
 .preset__item.active {
-  border: 1px solid rgb(17, 163, 221);
+  border: 1px solid var(--orange-light);
   color: var(--textColor);
 }
 
 label {
   padding: 10px 12px;
-  border-bottom: 1px solid #565f65;
+  border-bottom: 1px solid #e8e8e8;
   display: block;
   line-height: 16px;
   font-size: 15px;
@@ -183,7 +189,7 @@ label {
 
 input[type='text'] {
   display: block;
-  border: 1px solid #565f65;
+  border: 1px solid #e8e8e8;
   background: #ffffff;
   color: #444;
   padding: 4px 8px;
@@ -204,17 +210,17 @@ label.flex {
 
 .collapse {
   border-radius: 6px;
-  border: 1px solid rgb(44, 54, 60);
+  border: 1px solid #e8e8e8;
   margin-bottom: 1rem;
 }
 
 /* COLLAPSE STYLING */
 .collapse__title {
-  font-size: 18px;
+  font-size: 1.1rem;
   margin: 0;
   transition: all 0.3s ease-in-out;
   font-weight: 600;
-  color: #fcfcfc;
+  color: #444444;
   padding: 10px;
   cursor: pointer;
   display: flex;
@@ -232,14 +238,14 @@ label.flex {
   transform: none;
   margin-left: auto;
   font-size: 24px;
-  color: #ffffff90;
+  color: #bbb;
   position: relative;
   left: 0;
   top: -2px;
 }
 
 .collapse__title:hover span:nth-child(2) {
-  color: #ffffff;
+  color: #999;
 }
 
 .collapse__content {
@@ -268,15 +274,6 @@ label.flex {
   border-bottom: 0;
 }
 
-.collapse.open .collapse__content {
-  background: rgb(44, 54, 60);
-}
-
-.collapse.open .collapse__title {
-  font-weight: 600;
-  background: rgb(44, 54, 60);
-}
-
 .collapse.open .collapse__title span:nth-child(2) {
   transform: rotate(-45deg);
 }
@@ -287,15 +284,21 @@ label.flex {
   left: 0;
   bottom: 0;
   width: 100%;
-  background: #1a1e21;
-  box-shadow: -16px 0 10px -2px #1a1e21;
+  background: #fff;
+  box-shadow: 0 -7px 40px -20px #acacac;
 }
 
 button {
-  padding: 6px 20px;
+  padding: 8px 20px;
   font-size: 16px;
   color: white;
-  background: rgb(17, 163, 221);
+  background: var(--orange-light);
+  background: linear-gradient(
+    to bottom right,
+    var(--purple),
+    var(--pink),
+    var(--orange)
+  );
   border-radius: 4px;
   border: none;
   cursor: pointer;
