@@ -504,7 +504,7 @@ header > div:first-child > div:first-child,
   background-color: transparent !important;
 }
 /* MENU POPUP */
-[role='menu'] {
+[role='menu'], [role="listbox"] {
   background-color: var(--cardBackground) !important;
   border-radius: var(--radius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
@@ -515,6 +515,23 @@ header > div:first-child > div:first-child,
 [role='menu'] a[role='link']:hover {
   background-color: var(--hoverColor) !important;
 }
+
+/* HASHTAG POPUP */
+[role="listbox"] [role="progressbar"] {
+  height: 0px !important;
+}
+[role='listbox'] [role="option"] [role='button'][data-focusable="true"] {
+  border-radius: 0 !important;
+  background-color: var(--cardBackground) !important;
+}
+[role='listbox'] [role="option"]:first-of-type [role='button'][data-focusable="true"] {
+  border-top-right-radius: var(--radius) !important;
+  border-top-left-radius: var(--radius) !important;
+}
+[role='listbox'] [role='button']:hover {
+  background-color: var(--hoverColor) !important;
+}
+
 
 /* PROFILE POPUP */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
