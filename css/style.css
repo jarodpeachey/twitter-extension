@@ -179,7 +179,7 @@ p.small {
   grid-area: 2 / 2 / 3 / 3;
 }
 
-.preset__item {
+.theme__item {
   border-radius: var(--radius);
   border: 1px solid #e8e8e8;
   height: 100%;
@@ -193,7 +193,7 @@ p.small {
   font-weight: 500;
 }
 
-.preset__item.active {
+.theme__item.active {
   border: 1px solid var(--pink);
   background: linear-gradient(
     to bottom right,

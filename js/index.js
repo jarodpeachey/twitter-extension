@@ -310,58 +310,58 @@ const invertedTheme = {
   }
 
   const buttons = document.getElementById('toggle-items');
-  const presetButton = document.getElementById('toggle__preset');
+  const themeButton = document.getElementById('toggle__theme');
   const customButton = document.getElementById('toggle__custom');
   const indicator = document.getElementById('toggle__indicator');
   const mainContent = document.getElementById('main-content');
 
-  presetButton.addEventListener('click', (e) => {
-    presetButton.classList.add('active');
+  themeButton.addEventListener('click', (e) => {
+    themeButton.classList.add('active');
     customButton.classList.remove('active');
     indicator.style.left = '5px';
     mainContent.classList.remove('custom');
   });
   customButton.addEventListener('click', (e) => {
     customButton.classList.add('active');
-    presetButton.classList.remove('active');
+    themeButton.classList.remove('active');
     indicator.style.left = `${
       customButton.getBoundingClientRect().x - buttons.getBoundingClientRect().x
     }px`;
     mainContent.classList.add('custom');
   });
 
-  const presetLight = document.getElementById('preset-light');
-  const presetDark = document.getElementById('preset-dark');
-  const presetSolarized = document.getElementById('preset-solarized');
-  const presetInverted = document.getElementById('preset-inverted');
+  const themeLight = document.getElementById('theme-light');
+  const themeDark = document.getElementById('theme-dark');
+  const themeSolarized = document.getElementById('theme-solarized');
+  const themeInverted = document.getElementById('theme-inverted');
 
   chrome.cookies.get({ url: 'https://twitter.com', name: 'theme' }, function (
     cookie,
   ) {
     if (cookie.value === 'light') {
-      presetLight.classList.add('active');
-      presetDark.classList.remove('active');
-      presetSolarized.classList.remove('active');
-      presetInverted.classList.remove('active');
+      themeLight.classList.add('active');
+      themeDark.classList.remove('active');
+      themeSolarized.classList.remove('active');
+      themeInverted.classList.remove('active');
     } else if (cookie.value === 'dark') {
-      presetDark.classList.add('active');
-      presetLight.classList.remove('active');
-      presetSolarized.classList.remove('active');
-      presetInverted.classList.remove('active');
+      themeDark.classList.add('active');
+      themeLight.classList.remove('active');
+      themeSolarized.classList.remove('active');
+      themeInverted.classList.remove('active');
     } else if (cookie.value === 'solarized') {
-      presetSolarized.classList.add('active');
-      presetLight.classList.remove('active');
-      presetDark.classList.remove('active');
-      presetInverted.classList.remove('active');
+      themeSolarized.classList.add('active');
+      themeLight.classList.remove('active');
+      themeDark.classList.remove('active');
+      themeInverted.classList.remove('active');
     } else if (cookie.value === 'inverted') {
-      presetInverted.classList.add('active');
-      presetLight.classList.remove('active');
-      presetDark.classList.remove('active');
-      presetSolarized.classList.remove('active');
+      themeInverted.classList.add('active');
+      themeLight.classList.remove('active');
+      themeDark.classList.remove('active');
+      themeSolarized.classList.remove('active');
     }
   });
 
-  presetLight.addEventListener('click', (e) => {
+  themeLight.addEventListener('click', (e) => {
     updatePrimaryColor(lightTheme.primaryColor);
     updateBackgroundColor(lightTheme.backgroundColor);
     updateHoverColor(lightTheme.hoverColor);
@@ -373,10 +373,10 @@ const invertedTheme = {
     updateInputBorderColor(lightTheme.inputBorderColor);
     updateInputBackground(lightTheme.inputBackground);
 
-    presetLight.classList.add('active');
-    presetDark.classList.remove('active');
-    presetSolarized.classList.remove('active');
-    presetInverted.classList.remove('active');
+    themeLight.classList.add('active');
+    themeDark.classList.remove('active');
+    themeSolarized.classList.remove('active');
+    themeInverted.classList.remove('active');
 
     chrome.cookies.set(
       {
@@ -389,7 +389,7 @@ const invertedTheme = {
     );
   });
 
-  presetSolarized.addEventListener('click', (e) => {
+  themeSolarized.addEventListener('click', (e) => {
     updatePrimaryColor(solarizedTheme.primaryColor);
     updateBackgroundColor(solarizedTheme.backgroundColor);
     updateHoverColor(solarizedTheme.hoverColor);
@@ -401,10 +401,10 @@ const invertedTheme = {
     updateInputBorderColor(solarizedTheme.inputBorderColor);
     updateInputBackground(solarizedTheme.inputBackground);
 
-    presetLight.classList.remove('active');
-    presetDark.classList.remove('active');
-    presetSolarized.classList.add('active');
-    presetInverted.classList.remove('active');
+    themeLight.classList.remove('active');
+    themeDark.classList.remove('active');
+    themeSolarized.classList.add('active');
+    themeInverted.classList.remove('active');
 
     chrome.cookies.set(
       {
@@ -417,7 +417,7 @@ const invertedTheme = {
     );
   });
 
-  presetDark.addEventListener('click', (e) => {
+  themeDark.addEventListener('click', (e) => {
     updatePrimaryColor(darkTheme.primaryColor);
     updateBackgroundColor(darkTheme.backgroundColor);
     updateHoverColor(darkTheme.hoverColor);
@@ -429,10 +429,10 @@ const invertedTheme = {
     updateInputBorderColor(darkTheme.inputBorderColor);
     updateInputBackground(darkTheme.inputBackground);
 
-    presetLight.classList.remove('active');
-    presetDark.classList.add('active');
-    presetSolarized.classList.remove('active');
-    presetInverted.classList.remove('active');
+    themeLight.classList.remove('active');
+    themeDark.classList.add('active');
+    themeSolarized.classList.remove('active');
+    themeInverted.classList.remove('active');
 
     chrome.cookies.set(
       {
@@ -445,7 +445,7 @@ const invertedTheme = {
     );
   });
 
-  presetInverted.addEventListener('click', (e) => {
+  themeInverted.addEventListener('click', (e) => {
     updatePrimaryColor(invertedTheme.primaryColor);
     updateBackgroundColor(invertedTheme.backgroundColor);
     updateHoverColor(invertedTheme.hoverColor);
@@ -457,10 +457,10 @@ const invertedTheme = {
     updateInputBorderColor(invertedTheme.inputBorderColor);
     updateInputBackground(invertedTheme.inputBackground);
 
-    presetLight.classList.remove('active');
-    presetDark.classList.remove('active');
-    presetSolarized.classList.remove('active');
-    presetInverted.classList.add('active');
+    themeLight.classList.remove('active');
+    themeDark.classList.remove('active');
+    themeSolarized.classList.remove('active');
+    themeInverted.classList.add('active');
 
     chrome.cookies.set(
       {
