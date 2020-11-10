@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap');
+
 *::-webkit-scrollbar {
   background: transparent !important;
   width: 0px;
@@ -27,6 +29,8 @@
   --pink-light: #f8bbd0;
   --purple: #ba68c8;
   --purple-light: #ce93d8;
+
+  --radius: 6px;
 }
 
 html,
@@ -36,6 +40,7 @@ body {
   width: 300px;
   color: #444444;
   font-size: 16px;
+  font-family: 'Rubik';
 }
 
 body {
@@ -43,8 +48,7 @@ body {
   padding-top: 16px;
   padding-bottom: 78px;
   border: none;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Rubik';
 }
 
 .container {
@@ -62,13 +66,19 @@ div,
 span,
 label,
 input {
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Rubik';
 }
 
 .logo {
-  width: 40px;
-  margin-bottom: 16px;
+  width: 56px;
+  margin-bottom: 12px;
+  margin-top: -4px;
+}
+
+.logo + p {
+  margin: 0;
+  color: var(--light);
+  margin-bottom: 6px;
 }
 
 p.small {
@@ -85,7 +95,7 @@ p.small {
   border: 1px solid #e8e8e8;
   align-items: flex-start;
   padding: 5px;
-  border-radius: 6px;
+  border-radius: var(--radius);
   position: relative;
   margin-bottom: 1rem;
 }
@@ -108,8 +118,7 @@ p.small {
 }
 
 .indicator {
-  background: var(--orange-light);
-  border-radius: 5px;
+  border-radius: 4px;
   width: 128px;
   position: absolute;
   left: 5px;
@@ -117,8 +126,17 @@ p.small {
   height: calc(100% - 10px);
   z-index: 0;
   transition: 0.2s;
-  background: var(--orange-light);
   padding: 5px 2px;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--purple),
+    var(--pink) 40%,
+    var(--orange)
+  );
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-size: calc(100% + 200px) 90px;
+  background-position: -200px 0;
 }
 
 #main-content {
@@ -162,7 +180,7 @@ p.small {
 }
 
 .preset__item {
-  border-radius: 6px;
+  border-radius: var(--radius);
   border: 1px solid #e8e8e8;
   height: 100%;
   width: 100%;
@@ -172,11 +190,19 @@ p.small {
   padding: 16px 8px;
   color: var(--light);
   cursor: pointer;
+  font-weight: 500;
 }
 
 .preset__item.active {
-  border: 1px solid var(--orange-light);
-  color: var(--textColor);
+  border: 1px solid var(--pink);
+  background: linear-gradient(
+    to bottom right,
+    var(--purple),
+    var(--pink),
+    var(--orange)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 label {
@@ -198,7 +224,7 @@ input[type='text'] {
 }
 
 input {
-  border-radius: 4px;
+  border-radius: var(--radius);
   outline: none;
 }
 
@@ -209,7 +235,7 @@ label.flex {
 }
 
 .collapse {
-  border-radius: 6px;
+  border-radius: var(--radius);
   border: 1px solid #e8e8e8;
   margin-bottom: 1rem;
 }
@@ -219,7 +245,7 @@ label.flex {
   font-size: 1.1rem;
   margin: 0;
   transition: all 0.3s ease-in-out;
-  font-weight: 600;
+  font-weight: 500;
   color: #444444;
   padding: 10px;
   cursor: pointer;
@@ -254,7 +280,7 @@ label.flex {
   position: relative;
   max-height: 0px;
   background: transparent;
-  border-radius: 6px;
+  border-radius: var(--radius);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -285,22 +311,44 @@ label.flex {
   bottom: 0;
   width: 100%;
   background: #fff;
-  box-shadow: 0 -7px 40px -20px #acacac;
 }
 
 button {
-  padding: 8px 20px;
-  font-size: 16px;
-  color: white;
-  background: var(--orange-light);
-  background: linear-gradient(
+  color: #ffffff;
+  border-radius: var(--radius);
+  border: none;
+  padding: 14px 24px 12px;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  text-decoration: none;
+  transition: 0.2s;
+  text-align: center;
+  letter-spacing: 1.1px;
+  width: fit-content;
+  display: inline-block;
+  margin-right: 1rem;
+  font-family: 'Rubik', 'Raleway';
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  background-image: linear-gradient(
     to bottom right,
     var(--purple),
-    var(--pink),
+    var(--pink) 40%,
     var(--orange)
   );
-  border-radius: 4px;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-size: calc(100% + 200px) 90px;
+  background-position: -200px 0;
+  border-radius: var(--radius);
   border: none;
   cursor: pointer;
   width: 100%;
+}
+
+button:hover {
+  background-position: -70px 0;
 }

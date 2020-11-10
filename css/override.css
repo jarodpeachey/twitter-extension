@@ -552,6 +552,10 @@ header > div:first-child > div:first-child,
 [role='menu'] a[role='link']:hover {
   background-color: var(--hoverColor) !important;
 }
+/* DISPLAY TAB */
+a[href="/i/display"] {
+  display: none !important;
+}
 
 /* HASHTAG POPUP */
 [role='listbox'] [role='progressbar'] {
