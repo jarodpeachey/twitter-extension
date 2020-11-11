@@ -1,13 +1,9 @@
 const collapseElements = document.querySelectorAll('.collapse');
-console.log(collapseElements);
 
 collapseElements.forEach((collapse) => {
-  console.log(collapse.id);
   // GET ELEMENTS
   const collapseTitle = collapse.children[0];
   const collapseContent = collapse.children[1];
-
-  console.log(collapseTitle, collapseContent);
 
   // ADD EVENT LISTENER
   collapseTitle.addEventListener('click', toggleCollapse);

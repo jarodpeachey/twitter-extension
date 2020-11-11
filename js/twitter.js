@@ -103,8 +103,8 @@
   const buttonTextColor = getCookie('buttontextcolor');
   const buttonRadius = getCookie('buttonradius');
 
-  const inputBorderColor = getCookie('inputbordercolor');
   const inputBackground = getCookie('inputbackground');
+  const inputTextColor = getCookie('inputtextcolor');
 
   document.documentElement.style.setProperty('--primaryColor', primaryColor);
   document.documentElement.style.setProperty(
@@ -133,8 +133,8 @@
     buttonRadius === '' ? radius : buttonRadius,
   );
   document.documentElement.style.setProperty(
-    '--inputBorderColor',
-    inputBorderColor,
+    '--inputTextColor',
+    inputTextColor,
   );
   document.documentElement.style.setProperty(
     '--inputBackground',

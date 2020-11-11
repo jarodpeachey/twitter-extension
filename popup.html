@@ -11,25 +11,29 @@
   <body>
     <div class="container">
       <img class="logo" src="img/glitter-diamond.png" />
-      <p>Choose your Twitter theme</p>
-      <div id="toggle-items" class="toggle-items">
-        <div id="toggle__theme" class="toggle active">Theme</div>
-        <div id="toggle__custom" class="toggle">Custom</div>
+      <!-- <div style="visibility: hidden; height: 0px; padding: 0; margin: 0;" id="toggle-items" class="toggle-items">
+        <div id="toggle__theme" class="toggle active">Themes</div>
+        <div id="toggle__custom" class="toggle">Edit Theme</div>
         <div id="toggle__indicator" class="indicator"></div>
+      </div> -->
+      <div class="flex">
+        <input id="title" value="Themes" />
+        <span>Theme name</span>
+        <div class="btn outlined" id="new">+ New</div>
       </div>
     </div>
 
     <div id="main-content">
       <div class="theme container">
-        <p class="small">Choose a theme</p>
-        <div class="grid">
-          <div id="theme-light" class="theme__item">Light</div>
+        <div class="row" id="presets-wrapper">
+          <!-- <div id="theme-light" class="theme__item">Light</div>
           <div id="theme-dark" class="theme__item">Dark</div>
           <div id="theme-solarized" class="theme__item">Solarized</div>
-          <div id="theme-inverted" class="theme__item">Inverted</div>
+          <div id="theme-inverted" class="theme__item">Inverted</div> -->
         </div>
       </div>
       <div class="custom container">
+        <small>Edit theme</small>
         <div class="collapse" id='color'>
           <h3 class='collapse__title color__title'>
             <span>Color</span>
@@ -90,15 +94,15 @@
           <div class='collapse__content button__content'>
             <div>
               <label class="flex">
-                Button background color
+                Background color
                 <input type="color" id="buttonBackground" placeholder="Enter color...">
               </label>
               <label class="flex">
-                Button text color
+                Text color
                 <input type="color" id="buttonTextColor" placeholder="Enter color...">
               </label>
               <label>
-                Button radius
+                Border radius
                 <input type="text" id="buttonRadius" placeholder="Enter value (i.e 12px)">
               </label>
             </div>
@@ -116,8 +120,8 @@
                 <input type="color" id="inputBackground" placeholder="Enter color...">
               </label>
               <label class="flex">
-                Border color
-                <input type="color" id="inputBorderColor" placeholder="Enter color...">
+                Text color
+                <input type="color" id="inputTextColor" placeholder="Enter color...">
               </label>
             </div>
           </div>
@@ -126,9 +130,16 @@
     </div>
 
     <div class="button-container">
-      <button id="submit">Save</button>
+      <button id="refresh" class="btn">Refresh</button>
+      <button id="edit" class="btn outlined">Edit Theme</button>
+      <button id="create" class="btn">Create</button>
+      <button id="cancel" class="btn outlined">Cancel</button>
     </div>
+
     <script src="js/index.js"></script>
+    <script src="js/presets.js"></script>
+    <script src="js/loadThemes.js"></script>
+    <script src="js/mode.js"></script>
     <script src="js/collapse.js"></script>
     <!-- 
 

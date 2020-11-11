@@ -1,79 +1,3 @@
-const lightTheme = {
-  primaryColor: '#1DA1F2',
-  backgroundColor: '#f1f1f1',
-  hoverColor: '#f7f7f7',
-  cardBackground: '#ffffff',
-  accentColor: '#f1f1f1',
-  textColor: '#222222',
-  radius: '12px',
-  inputBorderColor: '#d8d8d8',
-  inputBackground: '#ffffff',
-  cardShadow:
-    'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
-  scrollbarBackground: '#565f65',
-  scrollbarColor: '#aaaaaa',
-  buttonBackground: '#1DA1F2',
-  buttonRadius: '6px',
-  buttonTextColor: '#ffffff'
-};
-
-const solarizedTheme = {
-  primaryColor: '#1DA1F2',
-  backgroundColor: '#1a1e21',
-  hoverColor: '#273036',
-  cardBackground: '#2c363c',
-  accentColor: '#565f65',
-  textColor: '#fcfcfc',
-  radius: '12px',
-  inputBorderColor: '#d8d8d8',
-  inputBackground: '#ffffff',
-  inputColor: '#444444',
-  cardShadow:
-    '0px 2px 3px -1px rgba(0, 0, 0, 0.4), 0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2)',
-  scrollbarBackground: '#565f65',
-  scrollbarColor: '#aaaaaa',
-  buttonBackground: '#1DA1F2',
-  buttonRadius: '6px',
-  buttonTextColor: '#ffffff'
-};
-
-const darkTheme = {
-  primaryColor: '#1DA1F2',
-  backgroundColor: '#000000',
-  hoverColor: '#ffffff10',
-  cardBackground: '#232323',
-  accentColor: '#ffffff20',
-  textColor: '#fbfbfb',
-  radius: '6px',
-  inputBorderColor: '#d8d8d8',
-  inputBackground: '#ffffff',
-  cardShadow:
-    'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
-  scrollbarBackground: '#565f65',
-  scrollbarColor: '#aaaaaa',
-  buttonBackground: '#1DA1F2',
-  buttonRadius: '6px',
-  buttonTextColor: '#ffffff'
-};
-
-const invertedTheme = {
-  primaryColor: '#1DA1F2',
-  backgroundColor: primaryColor,
-  hoverColor: '#e8f1f7',
-  cardBackground: '#ffffff',
-  accentColor: '#cdddee',
-  textColor: '#303030',
-  radius: '6px',
-  inputBorderColor: '#1da1f2',
-  inputBackground: '#ffffff',
-  cardShadow: '0px 0px 30px 0px #44444420',
-  scrollbarBackground: '#565f65',
-  scrollbarColor: '#aaaaaa',
-  buttonBackground: '#1DA1F2',
-  buttonRadius: '6px',
-  buttonTextColor: '#ffffff'
-};
-
 (function () {
   const primaryColorInput = document.getElementById('primaryColor');
   const backgroundColorInput = document.getElementById('backgroundColor');
@@ -86,7 +10,7 @@ const invertedTheme = {
   const buttonBackgroundInput = document.getElementById('buttonBackground');
   const buttonTextColorInput = document.getElementById('buttonTextColor');
   const buttonRadiusInput = document.getElementById('buttonRadius');
-  const inputBorderColorInput = document.getElementById('inputBorderColor');
+  const inputTextColorInput = document.getElementById('inputTextColor');
   const inputBackgroundInput = document.getElementById('inputBackground');
 
   primaryColorInput.addEventListener('change', (e) =>
@@ -218,14 +142,14 @@ const invertedTheme = {
     },
   );
 
-  inputBorderColorInput.addEventListener('change', (e) =>
-    updateInputBorderColor(e.target.value),
+  inputTextColorInput.addEventListener('change', (e) =>
+    updateInputTextColor(e.target.value),
   );
   chrome.cookies.get(
-    { url: 'https://twitter.com', name: 'inputbordercolor' },
+    { url: 'https://twitter.com', name: 'inputtextcolor' },
     function (cookie) {
       if (cookie && cookie.value) {
-        inputBorderColorInput.value = cookie.value;
+        inputTextColorInput.value = cookie.value;
       }
     },
   );
@@ -370,11 +294,11 @@ const invertedTheme = {
       function () {},
     );
   }
-  function updateInputBorderColor(value) {
+  function updateInputTextColor(value) {
     chrome.cookies.set(
       {
         url: 'https://twitter.com',
-        name: 'inputbordercolor',
+        name: 'inputtextcolor',
         value: value,
         expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
       },
@@ -393,201 +317,51 @@ const invertedTheme = {
     );
   }
 
-  const buttons = document.getElementById('toggle-items');
-  const themeButton = document.getElementById('toggle__theme');
-  const customButton = document.getElementById('toggle__custom');
-  const indicator = document.getElementById('toggle__indicator');
-  const mainContent = document.getElementById('main-content');
+  // const saveButton = document.getElementById('save');
+  // saveButton.addEventListener('click', (e) => {
+  //   document.getElementById('themeName').classList.add('open');
+  // });
 
-  themeButton.addEventListener('click', (e) => {
-    themeButton.classList.add('active');
-    customButton.classList.remove('active');
-    indicator.style.left = '5px';
-    mainContent.classList.remove('custom');
-  });
-  customButton.addEventListener('click', (e) => {
-    customButton.classList.add('active');
-    themeButton.classList.remove('active');
-    indicator.style.left = `${
-      customButton.getBoundingClientRect().x - buttons.getBoundingClientRect().x
-    }px`;
-    mainContent.classList.add('custom');
-  });
+  // const submitButton = document.getElementById('submit');
+  // submitButton.addEventListener('click', (e) => {
+    // chrome.tabs.getSelected(null, function (tab) {
+    //   var code = 'window.location.reload();';
+    //   chrome.tabs.executeScript(tab.id, { code: code });
+    // });
+  // });
 
-  const themeLight = document.getElementById('theme-light');
-  const themeDark = document.getElementById('theme-dark');
-  const themeSolarized = document.getElementById('theme-solarized');
-  const themeInverted = document.getElementById('theme-inverted');
+  // const exportButton = document.getElementById('export');
+  // exportButton.addEventListener('click', (e) => {
+  //   chrome.cookies.getAll(
+  //     {
+  //       url: 'https://twitter.com',
+  //     },
+  //     function (array) {
+  //       const cookies = {};
+  //       array.forEach((item) => {
+  //         cookies[item.name] = item.value;
+  //       });
 
-  chrome.cookies.get({ url: 'https://twitter.com', name: 'theme' }, function (
-    cookie,
-  ) {
-    if (cookie.value === 'light') {
-      themeLight.classList.add('active');
-      themeDark.classList.remove('active');
-      themeSolarized.classList.remove('active');
-      themeInverted.classList.remove('active');
-    } else if (cookie.value === 'dark') {
-      themeDark.classList.add('active');
-      themeLight.classList.remove('active');
-      themeSolarized.classList.remove('active');
-      themeInverted.classList.remove('active');
-    } else if (cookie.value === 'solarized') {
-      themeSolarized.classList.add('active');
-      themeLight.classList.remove('active');
-      themeDark.classList.remove('active');
-      themeInverted.classList.remove('active');
-    } else if (cookie.value === 'inverted') {
-      themeInverted.classList.add('active');
-      themeLight.classList.remove('active');
-      themeDark.classList.remove('active');
-      themeSolarized.classList.remove('active');
-    }
-  });
+  //       const theme = {
+  //         primaryColor: cookies.primarycolor,
+  //         backgroundColor: cookies.backgroundcolor,
+  //         hoverColor: cookies.hovercolor,
+  //         accentColor: cookies.accentcolor,
+  //         textColor: cookies.textcolor,
+  //         cardBackground: cookies.cardbackground,
+  //         radius: cookies.radius,
+  //         cardShadow: cookies.cardshadow,
+  //         buttonBackground: cookies.buttonbackground,
+  //         buttonRadius: cookies.buttonradius,
+  //         buttonTextColor: cookies.buttontextcolor,
+  //         inputTextColor: cookies.inputtextcolor,
+  //         inputBackground: cookies.inputbackground,
+  //       };
 
-  themeLight.addEventListener('click', (e) => {
-    updatePrimaryColor(lightTheme.primaryColor);
-    updateBackgroundColor(lightTheme.backgroundColor);
-    updateHoverColor(lightTheme.hoverColor);
-    updateAccentColor(lightTheme.accentColor);
-    updateTextColor(lightTheme.textColor);
-    updateCardBackground(lightTheme.cardBackground);
-    updateRadius(lightTheme.radius);
-    updateCardShadow(lightTheme.cardShadow);
-    updateButtonBackground(lightTheme.buttonBackground);
-    updateButtonTextColor(lightTheme.buttonTextColor);
-    updateButtonRadius(lightTheme.buttonRadius);
-    updateInputBorderColor(lightTheme.inputBorderColor);
-    updateInputBackground(lightTheme.inputBackground);
-
-    themeLight.classList.add('active');
-    themeDark.classList.remove('active');
-    themeSolarized.classList.remove('active');
-    themeInverted.classList.remove('active');
-
-    chrome.cookies.set(
-      {
-        url: 'https://twitter.com',
-        name: 'theme',
-        value: 'light',
-        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
-      },
-      function () {},
-    );
-  });
-
-  themeSolarized.addEventListener('click', (e) => {
-    updatePrimaryColor(solarizedTheme.primaryColor);
-    updateBackgroundColor(solarizedTheme.backgroundColor);
-    updateHoverColor(solarizedTheme.hoverColor);
-    updateAccentColor(solarizedTheme.accentColor);
-    updateTextColor(solarizedTheme.textColor);
-    updateCardBackground(solarizedTheme.cardBackground);
-    updateRadius(solarizedTheme.radius);
-    updateCardShadow(solarizedTheme.cardShadow);
-    updateButtonBackground(solarizedTheme.buttonBackground);
-    updateButtonTextColor(solarizedTheme.buttonTextColor);
-    updateButtonRadius(solarizedTheme.buttonRadius);
-    updateInputBorderColor(solarizedTheme.inputBorderColor);
-    updateInputBackground(solarizedTheme.inputBackground);
-
-    themeLight.classList.remove('active');
-    themeDark.classList.remove('active');
-    themeSolarized.classList.add('active');
-    themeInverted.classList.remove('active');
-
-    chrome.cookies.set(
-      {
-        url: 'https://twitter.com',
-        name: 'theme',
-        value: 'solarized',
-        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
-      },
-      function () {},
-    );
-  });
-
-  themeDark.addEventListener('click', (e) => {
-    updatePrimaryColor(darkTheme.primaryColor);
-    updateBackgroundColor(darkTheme.backgroundColor);
-    updateHoverColor(darkTheme.hoverColor);
-    updateAccentColor(darkTheme.accentColor);
-    updateTextColor(darkTheme.textColor);
-    updateCardBackground(darkTheme.cardBackground);
-    updateRadius(darkTheme.radius);
-    updateCardShadow(darkTheme.cardShadow);
-    updateButtonBackground(darkTheme.buttonBackground);
-    updateButtonTextColor(darkTheme.buttonTextColor);
-    updateButtonRadius(darkTheme.buttonRadius);
-    updateInputBorderColor(darkTheme.inputBorderColor);
-    updateInputBackground(darkTheme.inputBackground);
-
-    themeLight.classList.remove('active');
-    themeDark.classList.add('active');
-    themeSolarized.classList.remove('active');
-    themeInverted.classList.remove('active');
-
-    chrome.cookies.set(
-      {
-        url: 'https://twitter.com',
-        name: 'theme',
-        value: 'dark',
-        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
-      },
-      function () {},
-    );
-  });
-
-  themeInverted.addEventListener('click', (e) => {
-    updatePrimaryColor(invertedTheme.primaryColor);
-    updateBackgroundColor(invertedTheme.backgroundColor);
-    updateHoverColor(invertedTheme.hoverColor);
-    updateAccentColor(invertedTheme.accentColor);
-    updateTextColor(invertedTheme.textColor);
-    updateCardBackground(invertedTheme.cardBackground);
-    updateRadius(invertedTheme.radius);
-    updateCardShadow(invertedTheme.cardShadow);
-    updateButtonBackground(invertedTheme.buttonBackground);
-    updateButtonTextColor(invertedTheme.buttonTextColor);
-    updateButtonRadius(invertedTheme.buttonRadius);
-    updateInputBorderColor(invertedTheme.inputBorderColor);
-    updateInputBackground(invertedTheme.inputBackground);
-
-    themeLight.classList.remove('active');
-    themeDark.classList.remove('active');
-    themeSolarized.classList.remove('active');
-    themeInverted.classList.add('active');
-
-    chrome.cookies.set(
-      {
-        url: 'https://twitter.com',
-        name: 'theme',
-        value: 'inverted',
-        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
-      },
-      function () {},
-    );
-  });
-
-  const submitButton = document.getElementById('submit');
-  submitButton.addEventListener('click', (e) => {
-    chrome.tabs.getSelected(null, function (tab) {
-      var code = 'window.location.reload();';
-      chrome.tabs.executeScript(tab.id, { code: code });
-    });
-
-    if (customButton.classList.includes('active')) {
-      chrome.cookies.set(
-        {
-          url: 'https://twitter.com',
-          name: 'theme',
-          value: 'custom',
-          expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
-        },
-        function () {},
-      );
-    }
-  });
+  //       console.log(JSON.stringify(theme));
+  //     },
+  //   );
+  // });
 
   chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     chrome.tabs.sendMessage(tabId, {
