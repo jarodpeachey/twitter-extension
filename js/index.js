@@ -12,6 +12,9 @@ const lightTheme = {
     'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
   scrollbarBackground: '#565f65',
   scrollbarColor: '#aaaaaa',
+  buttonBackground: '#1DA1F2',
+  buttonRadius: '6px',
+  buttonTextColor: '#ffffff'
 };
 
 const solarizedTheme = {
@@ -29,6 +32,9 @@ const solarizedTheme = {
     '0px 2px 3px -1px rgba(0, 0, 0, 0.4), 0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2)',
   scrollbarBackground: '#565f65',
   scrollbarColor: '#aaaaaa',
+  buttonBackground: '#1DA1F2',
+  buttonRadius: '6px',
+  buttonTextColor: '#ffffff'
 };
 
 const darkTheme = {
@@ -45,6 +51,9 @@ const darkTheme = {
     'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
   scrollbarBackground: '#565f65',
   scrollbarColor: '#aaaaaa',
+  buttonBackground: '#1DA1F2',
+  buttonRadius: '6px',
+  buttonTextColor: '#ffffff'
 };
 
 const invertedTheme = {
@@ -60,6 +69,9 @@ const invertedTheme = {
   cardShadow: '0px 0px 30px 0px #44444420',
   scrollbarBackground: '#565f65',
   scrollbarColor: '#aaaaaa',
+  buttonBackground: '#1DA1F2',
+  buttonRadius: '6px',
+  buttonTextColor: '#ffffff'
 };
 
 (function () {
@@ -71,6 +83,9 @@ const invertedTheme = {
   const cardBackgroundInput = document.getElementById('cardBackground');
   const radiusInput = document.getElementById('radius');
   const cardShadowInput = document.getElementById('cardShadow');
+  const buttonBackgroundInput = document.getElementById('buttonBackground');
+  const buttonTextColorInput = document.getElementById('buttonTextColor');
+  const buttonRadiusInput = document.getElementById('buttonRadius');
   const inputBorderColorInput = document.getElementById('inputBorderColor');
   const inputBackgroundInput = document.getElementById('inputBackground');
 
@@ -163,6 +178,42 @@ const invertedTheme = {
     function (cookie) {
       if (cookie && cookie.value) {
         cardShadowInput.value = cookie.value;
+      }
+    },
+  );
+
+  buttonBackgroundInput.addEventListener('change', (e) =>
+    updateButtonBackground(e.target.value),
+  );
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'buttonbackground' },
+    function (cookie) {
+      if (cookie && cookie.value) {
+        buttonBackgroundInput.value = cookie.value;
+      }
+    },
+  );
+
+  buttonTextColorInput.addEventListener('change', (e) =>
+    updateButtonTextColor(e.target.value),
+  );
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'buttontextcolor' },
+    function (cookie) {
+      if (cookie && cookie.value) {
+        buttonTextColorInput.value = cookie.value;
+      }
+    },
+  );
+
+  buttonRadiusInput.addEventListener('change', (e) =>
+    updateButtonRadius(e.target.value),
+  );
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: 'buttonradius' },
+    function (cookie) {
+      if (cookie && cookie.value) {
+        buttonRadiusInput.value = cookie.value;
       }
     },
   );
@@ -286,6 +337,39 @@ const invertedTheme = {
       function () {},
     );
   }
+  function updateButtonBackground(value) {
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'buttonbackground',
+        value: value,
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  }
+  function updateButtonTextColor(value) {
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'buttontextcolor',
+        value: value,
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  }
+  function updateButtonRadius(value) {
+    chrome.cookies.set(
+      {
+        url: 'https://twitter.com',
+        name: 'buttonradius',
+        value: value,
+        expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+      },
+      function () {},
+    );
+  }
   function updateInputBorderColor(value) {
     chrome.cookies.set(
       {
@@ -370,6 +454,9 @@ const invertedTheme = {
     updateCardBackground(lightTheme.cardBackground);
     updateRadius(lightTheme.radius);
     updateCardShadow(lightTheme.cardShadow);
+    updateButtonBackground(lightTheme.buttonBackground);
+    updateButtonTextColor(lightTheme.buttonTextColor);
+    updateButtonRadius(lightTheme.buttonRadius);
     updateInputBorderColor(lightTheme.inputBorderColor);
     updateInputBackground(lightTheme.inputBackground);
 
@@ -398,6 +485,9 @@ const invertedTheme = {
     updateCardBackground(solarizedTheme.cardBackground);
     updateRadius(solarizedTheme.radius);
     updateCardShadow(solarizedTheme.cardShadow);
+    updateButtonBackground(solarizedTheme.buttonBackground);
+    updateButtonTextColor(solarizedTheme.buttonTextColor);
+    updateButtonRadius(solarizedTheme.buttonRadius);
     updateInputBorderColor(solarizedTheme.inputBorderColor);
     updateInputBackground(solarizedTheme.inputBackground);
 
@@ -426,6 +516,9 @@ const invertedTheme = {
     updateCardBackground(darkTheme.cardBackground);
     updateRadius(darkTheme.radius);
     updateCardShadow(darkTheme.cardShadow);
+    updateButtonBackground(darkTheme.buttonBackground);
+    updateButtonTextColor(darkTheme.buttonTextColor);
+    updateButtonRadius(darkTheme.buttonRadius);
     updateInputBorderColor(darkTheme.inputBorderColor);
     updateInputBackground(darkTheme.inputBackground);
 
@@ -454,6 +547,9 @@ const invertedTheme = {
     updateCardBackground(invertedTheme.cardBackground);
     updateRadius(invertedTheme.radius);
     updateCardShadow(invertedTheme.cardShadow);
+    updateButtonBackground(invertedTheme.buttonBackground);
+    updateButtonTextColor(invertedTheme.buttonTextColor);
+    updateButtonRadius(invertedTheme.buttonRadius);
     updateInputBorderColor(invertedTheme.inputBorderColor);
     updateInputBackground(invertedTheme.inputBackground);
 

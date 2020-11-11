@@ -374,10 +374,10 @@ nav[aria-label='Primary'] a svg {
   > div:nth-child(9)
   [role='button'] {
   /* background-color: rgb(29, 161, 242) !important; */
-  color: white !important;
+  color: var(--buttonTextColor) !important;
   opacity: 1 !important;
-  border-radius: var(--radius) !important;
-  color: white !important;
+  border-radius: var(--buttonRadius) !important;
+  color: var(--buttonTextColor) !important;
   transition: 0.2s !important;
 }
 [aria-labelledby='modal-header']
@@ -399,18 +399,18 @@ nav[aria-label='Primary'] a svg {
   [role='button']:hover {
   cursor: pointer !important;
   /* background-color: rgb(26, 145, 218) !important; */
-  background-color: var(--primaryColor) !important;
+  background-color: var(--buttonBackground) !important;
   filter: brightness(1.2) !important;
-  color: white !important;
+  color: var(--buttonTextColor) !important;
   transition: 0.2s !important;
 }
 /* MOBILE TWEET BUTTON */
 [data-testid='SideNav_NewTweet_Button'] {
-  background-color: var(--primaryColor) !important;
-  color: white !important;
+  background-color: var(--buttonBackground) !important;
+  color: var(--buttonTextColor) !important;
   opacity: 1 !important;
-  border-radius: var(--radius) !important;
-  color: white !important;
+  border-radius: var(--buttonRadius) !important;
+  color: var(--buttonTextColor) !important;
   transition: 0.2s !important;
 }
 [data-testid='SideNav_NewTweet_Button']:hover {
@@ -425,28 +425,28 @@ header
   > div:first-child
   > div:last-child
   > a {
-  border-radius: var(--radius) !important;
+  border-radius: var(--buttonRadius) !important;
   transition: 0.2s !important;
 }
 /* TWEET BUTTON */
 [data-testid='tweetButtonInline'],
 [data-testid='tweetButton'] {
   /* background-color: rgb(29, 161, 242) !important; */
-  color: white !important;
+  color: var(--buttonTextColor) !important;
   opacity: 1 !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--buttonRadius) !important;
   transition: 0.2s !important;
 }
 [data-testid='tweetButtonInline']:hover,
 [data-testid='tweetButton']:hover {
   cursor: pointer !important;
-  background-color: var(--primaryColor) !important;
+  background-color: var(--buttonBackground) !important;
   filter: brightness(1.2) !important;
   transition: 0.2s !important;
 }
 /* OTHER */
 [role='button'] {
-  border-radius: var(--radius) !important;
+  border-radius: var(--buttonRadius) !important;
   transition: 0.2s !important;
 }
 
@@ -463,10 +463,10 @@ a[href='/compose/tweet'] {
 
 /* FOLLOW BUTTON */
 [role='button'][data-testid*='follow']:hover {
-  background-color: var(--primaryColor) !important;
+  background-color: var(--buttonBackground) !important;
 }
 [role='button'][data-testid*='follow']:hover * {
-  color: white !important;
+  color: var(--buttonTextColor) !important;
 }
 
 /******************************************************************

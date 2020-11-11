@@ -53,10 +53,11 @@
       document.body.classList.remove('home');
       document.body.classList.remove('status');
     } else if (
-      !request.url.includes('messages') && !request.url.includes('settings') &&
+      !request.url.includes('messages') &&
+      !request.url.includes('settings') &&
       !(
-        getCookie('previousurl') === "/notifications" &&
-        request.url === "/notifications/mentions"
+        getCookie('previousurl') === '/notifications' &&
+        request.url === '/notifications/mentions'
       )
     ) {
       console.log('Updating to home/notifications');
@@ -98,6 +99,10 @@
   const radius = getCookie('radius');
   const cardShadow = getCookie('cardshadow');
 
+  const buttonBackground = getCookie('buttonbackground');
+  const buttonTextColor = getCookie('buttontextcolor');
+  const buttonRadius = getCookie('buttonradius');
+
   const inputBorderColor = getCookie('inputbordercolor');
   const inputBackground = getCookie('inputbackground');
 
@@ -115,6 +120,24 @@
   );
   document.documentElement.style.setProperty('--radius', radius);
   document.documentElement.style.setProperty('--cardShadow', cardShadow);
-  document.documentElement.style.setProperty('--inputBorderColor', inputBorderColor);
-  document.documentElement.style.setProperty('--inputBackground', inputBackground);
+  document.documentElement.style.setProperty(
+    '--buttonBackground',
+    buttonBackground === '' ? primaryColor : buttonBackground,
+  );
+  document.documentElement.style.setProperty(
+    '--buttonTextColor',
+    buttonTextColor === '' ? 'white' : buttonTextColor,
+  );
+  document.documentElement.style.setProperty(
+    '--buttonRadius',
+    buttonRadius === '' ? radius : buttonRadius,
+  );
+  document.documentElement.style.setProperty(
+    '--inputBorderColor',
+    inputBorderColor,
+  );
+  document.documentElement.style.setProperty(
+    '--inputBackground',
+    inputBackground,
+  );
 })();
