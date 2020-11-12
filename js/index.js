@@ -1,82 +1,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////     DEFAULT THEMES     ////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-const lightTheme = {
-  primarycolor: '#1DA1F2',
-  backgroundcolor: '#f1f1f1',
-  hovercolor: '#f7f7f7',
-  cardbackground: '#ffffff',
-  accentcolor: '#f1f1f1',
-  textcolor: '#222222',
-  radius: '12px',
-  cardshadow:
-    'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
-  buttonbackground: '#1DA1F2',
-  buttonradius: '6px',
-  buttontextcolor: '#ffffff',
-  inputtextcolor: '#111111',
-  inputbackground: '#ffffff',
-};
-
-const solarizedTheme = {
-  primarycolor: '#1DA1F2',
-  backgroundcolor: '#1a1e21',
-  hovercolor: '#273036',
-  cardbackground: '#2c363c',
-  accentcolor: '#565f65',
-  textcolor: '#fcfcfc',
-  radius: '12px',
-  cardshadow:
-    '0px 2px 3px -1px rgba(0, 0, 0, 0.4), 0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2)',
-  buttonbackground: '#1DA1F2',
-  buttonradius: '6px',
-  buttontextcolor: '#ffffff',
-  inputtextcolor: '#111111',
-  inputbackground: '#ffffff',
-};
-
-const darkTheme = {
-  primarycolor: '#1DA1F2',
-  backgroundcolor: '#000000',
-  hovercolor: '#ffffff10',
-  cardbackground: '#232323',
-  accentcolor: '#ffffff20',
-  textcolor: '#fbfbfb',
-  radius: '6px',
-  cardshadow:
-    'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
-  buttonbackground: '#1DA1F2',
-  buttonradius: '6px',
-  buttontextcolor: '#ffffff',
-  inputtextcolor: '#111111',
-  inputbackground: '#ffffff',
-};
-
-const cleanTheme = {
-  primarycolor: '#000000',
-  backgroundcolor: '#e8e8e8',
-  hovercolor: '#f7f7f7',
-  cardbackground: '#ffffff',
-  accentcolor: '#e8e8e8',
-  textcolor: '#111111',
-  radius: '3px',
-  cardshadow: 'none',
-  buttonbackground: '#000000',
-  buttonradius: '2px',
-  buttontextcolor: '#ffffff',
-  inputtextcolor: '#111111',
-  inputbackground: '#ffffff',
-};
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////     FUNCTION DECLARATIONS     /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 const changeTheme = (themeName) => {
-  console.log(themeName);
   chrome.cookies.get(
     {
       url: 'https://twitter.com',
@@ -86,7 +13,6 @@ const changeTheme = (themeName) => {
       const newTheme = JSON.parse(cookie.value);
 
       inputs.forEach((input) => {
-        console.log(input.name, newTheme[input.name]);
         updateCookie(input.name, newTheme[input.name]);
       });
 
@@ -99,6 +25,64 @@ const changeTheme = (themeName) => {
         },
         function () {},
       );
+
+      chrome.tabs.getSelected(null, function (tab) {
+        var code = `
+          document.documentElement.style.setProperty(
+            '--primaryColor',
+            '${newTheme.primarycolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--backgroundColor',
+            '${newTheme.backgroundcolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--hoverColor',
+            '${newTheme.hovercolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--accentColor',
+            '${newTheme.accentcolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--textColor',
+            '${newTheme.textcolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--cardBackground',
+            '${newTheme.cardbackground}',
+          );
+          document.documentElement.style.setProperty(
+            '--radius',
+            '${newTheme.radius}',
+          );
+          document.documentElement.style.setProperty(
+            '--cardShadow',
+            '${newTheme.cardshadow}',
+          );
+          document.documentElement.style.setProperty(
+            '--buttonBackground',
+            '${newTheme.buttonbackground}',
+          );
+          document.documentElement.style.setProperty(
+            '--buttonTextColor',
+            '${newTheme.buttontextcolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--buttonRadius',
+            '${newTheme.buttonradius}',
+          );
+          document.documentElement.style.setProperty(
+            '--inputTextColor',
+            '${newTheme.inputtextcolor}',
+          );
+          document.documentElement.style.setProperty(
+            '--inputBackground',
+            '${newTheme.inputbackground}',
+          );
+        `;
+        chrome.tabs.executeScript(tab.id, { code: code });
+      });
     },
   );
 };
@@ -120,8 +104,6 @@ const updateInputValue = (input, value) => {
 };
 
 const updateCookie = (name, value) => {
-  console.log(value);
-
   chrome.cookies.set(
     {
       url: 'https://twitter.com',
@@ -240,25 +222,82 @@ newThemeButton.addEventListener('click', (e) => {
   title.classList.add('active');
   newThemeButton.style.display = 'none';
   title.disabled = false;
-
-  console.log(cancelButton);
 });
 
 refreshButton.addEventListener('click', (e) => {
-  changeTheme(selectedTheme);
-
-  chrome.tabs.getSelected(null, function (tab) {
-    var code = 'window.location.reload();';
-    chrome.tabs.executeScript(tab.id, { code: code });
-  });
-
-  setTimeout(() => {
-    window.location.reload();
-  }, 200);
+  // changeTheme(selectedTheme);
+  // chrome.cookies.get(
+  //   {
+  //     url: 'https://twitter.com',
+  //     name: selectedTheme,
+  //   },
+  //   function (cookie) {
+  //     const theme = JSON.parse(cookie.value);
+  //     chrome.tabs.getSelected(null, function (tab) {
+  //       var code = `
+  //         document.documentElement.style.setProperty(
+  //           '--primaryColor',
+  //           '${theme.primarycolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--backgroundColor',
+  //           '${theme.backgroundcolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--hoverColor',
+  //           '${theme.hovercolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--accentColor',
+  //           '${theme.accentcolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--textColor',
+  //           '${theme.textcolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--cardBackground',
+  //           '${theme.cardbackground}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--radius',
+  //           '${theme.radius}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--cardShadow',
+  //           '${theme.cardshadow}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--buttonBackground',
+  //           '${theme.buttonbackground}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--buttonTextColor',
+  //           '${theme.buttontextcolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--buttonRadius',
+  //           '${theme.buttonradius}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--inputTextColor',
+  //           '${theme.inputtextcolor}',
+  //         );
+  //         document.documentElement.style.setProperty(
+  //           '--inputBackground',
+  //           '${theme.inputbackground}',
+  //         );
+  //       `;
+  //       chrome.tabs.executeScript(tab.id, { code: code });
+  //     });
+  //   },
+  // );
+  // setTimeout(() => {
+  //   window.location.reload();
+  // }, 200);
 });
 
 cancelButton.addEventListener('click', (e) => {
-  console.log('CANCELLING');
   document.body.classList.remove('new');
   document.body.classList.remove('edit');
   title.value = 'Themes';
@@ -292,8 +331,6 @@ editButton.addEventListener('click', (e) => {
       inputs.forEach((input) => {
         updateInputValue(input.element, theme[input.name]);
       });
-
-      console.log('EDITING THEME: ', JSON.parse(cookie.value));
     },
   );
 });
@@ -391,28 +428,37 @@ chrome.cookies.getAll(
   },
   function (array) {
     const themes = {};
-    array.forEach((item) => {
-      if (item.name.includes('theme-')) {
-        const theme = JSON.parse(item.value);
+    const themesArray = array.filter((item) => item.name.includes('theme-'));
 
-        const title = item.name.substring(6, item.name.length);
+    themesArray
+      .sort(function (a, b) {
+        var nameA = a.name.substring(6, a.name.length).toLowerCase(),
+          nameB = b.name.substring(6, b.name.length).toLowerCase();
 
-        const themeItem = document.createElement('div');
-        themeItem.className = 'theme__item';
-        themeItem.id = item.name;
-        themeItem.innerHTML = title
-          .replace('-', ' ')
-          .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
+        if (nameA < nameB)
+          //sort string ascending
+          return -1;
+        if (nameA > nameB) return 1;
+        return 0; //default return value (no sorting)
+      })
+      .forEach((item) => {
+        if (item.name.includes('theme-')) {
+          const title = item.name.substring(6, item.name.length);
 
-        const column = document.createElement('div');
-        column.classList.add('col');
-        column.appendChild(themeItem);
+          const themeItem = document.createElement('div');
+          themeItem.className = 'theme__item';
+          themeItem.id = item.name;
+          themeItem.innerHTML = title
+            .replace('-', ' ')
+            .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
-        presetsWrapper.appendChild(column);
+          const column = document.createElement('div');
+          column.classList.add('col');
+          column.appendChild(themeItem);
 
-        console.log(themeItem);
-      }
-    });
+          presetsWrapper.appendChild(column);
+        }
+      });
 
     chrome.cookies.get(
       {
@@ -439,10 +485,11 @@ chrome.cookies.getAll(
               });
 
               document.getElementById(selectedTheme).classList.add('active');
+
+              changeTheme(presetButton.id);
             });
           });
         } else {
-          console.log('Cookie not found');
           document.getElementById('theme-light').classList.add('active');
           selectedTheme = 'theme-light';
 
@@ -457,6 +504,8 @@ chrome.cookies.getAll(
               });
 
               document.getElementById(selectedTheme).classList.add('active');
+
+              changeTheme(presetButton.id);
             });
           });
         }

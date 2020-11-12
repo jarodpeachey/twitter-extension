@@ -111,8 +111,6 @@ document.documentElement.style.setProperty(
   inputBackground || lightTheme.inputbackground,
 );
 
-console.log('RUNNING TWITTER.JS');
-
 // LOAD CURRENT PAGE STYLESHEETS
 if (window.location.pathname.includes('messages')) {
   console.log('Updating to messages');

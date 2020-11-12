@@ -379,7 +379,7 @@ label.flex {
 .collapse__title {
   font-size: 1.1rem;
   margin: 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   font-weight: 500;
   color: #444444;
   padding: 10px;
@@ -391,11 +391,11 @@ label.flex {
 }
 
 .collapse__title * {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .collapse__title span:nth-child(2) {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   transform: none;
   margin-left: auto;
   font-size: 24px;
@@ -410,7 +410,7 @@ label.flex {
 }
 
 .collapse__content {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease-in-out;
   overflow: hidden;
   position: relative;
   max-height: 0px;
@@ -450,6 +450,10 @@ label.flex {
 
 #create, #cancel, #save {
   display: none;
+}
+
+#refresh {
+  display: none !important;
 }
 
 #refresh, #edit {
