@@ -227,8 +227,9 @@ input {
   position: relative;
   justify-content: space-between;
   margin-bottom: 16px;
-  /* padding-bottom: 16px;
-  border-bottom: 1px solid #e8e8e8; */
+  /* padding: 12px; */
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .flex .btn {
@@ -241,12 +242,19 @@ input {
   padding: 7px 14px 5px;
 }
 
-small {
+small, #import {
   font-size: 15px;
   color: var(--textColor);
   font-family: 'Rubik';
   display: block;
   margin-bottom: 8px;
+}
+
+#import {
+  color: var(--purple);
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 #main-content {
@@ -347,6 +355,16 @@ label.flex {
   font-size: 16px;
 }
 
+.new-flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#import {
+
+}
+
 .collapse {
   border-radius: var(--radius);
   border: 1px solid #e8e8e8;
@@ -426,7 +444,7 @@ label.flex {
   background: #fff;
 }
 
-#create, #cancel {
+#create, #cancel, #save {
   display: none;
 }
 
@@ -438,6 +456,14 @@ body.new #create, body.new #cancel {
   display: block;
 }
 
-body.new #refresh, body.new #edit {
+body.new #refresh, body.new #edit, body.new #save {
   display: none;
+}
+
+body.edit #refresh, body.edit #edit, body.edit #create {
+  display: none;
+}
+
+body.edit #save, body.edit #cancel {
+  display: block;
 }

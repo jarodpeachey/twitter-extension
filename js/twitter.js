@@ -16,6 +16,24 @@ const getCookie = (cookieName) => {
   return '';
 };
 
+// DEFAULT THEME IF FIRST LOAD
+const lightTheme = {
+  primarycolor: '#1DA1F2',
+  backgroundcolor: '#f1f1f1',
+  hovercolor: '#f7f7f7',
+  cardbackground: '#ffffff',
+  accentcolor: '#f1f1f1',
+  textcolor: '#222222',
+  radius: '12px',
+  cardshadow:
+    'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
+  buttonbackground: '#1DA1F2',
+  buttonradius: '6px',
+  buttonTextcolor: '#ffffff',
+  inputTextcolor: '#111111',
+  inputBackground: '#ffffff',
+};
+
 // LOAD CURRENT THEME
 const primaryColor = getCookie('primarycolor');
 const backgroundColor = getCookie('backgroundcolor');
@@ -34,33 +52,63 @@ const buttonRadius = getCookie('buttonradius');
 const inputBackground = getCookie('inputbackground');
 const inputTextColor = getCookie('inputtextcolor');
 
-document.documentElement.style.setProperty('--primaryColor', primaryColor);
+document.documentElement.style.setProperty(
+  '--primaryColor',
+  primaryColor || lightTheme.primarycolor,
+);
 document.documentElement.style.setProperty(
   '--backgroundColor',
-  backgroundColor,
+  backgroundColor || lightTheme.backgroundcolor,
 );
-document.documentElement.style.setProperty('--hoverColor', hoverColor);
-document.documentElement.style.setProperty('--accentColor', accentColor);
-document.documentElement.style.setProperty('--textColor', textColor);
-document.documentElement.style.setProperty('--cardBackground', cardBackground);
-document.documentElement.style.setProperty('--radius', radius);
-document.documentElement.style.setProperty('--cardShadow', cardShadow);
+document.documentElement.style.setProperty(
+  '--hoverColor',
+  hoverColor || lightTheme.hovercolor,
+);
+document.documentElement.style.setProperty(
+  '--accentColor',
+  accentColor || lightTheme.accentcolor,
+);
+document.documentElement.style.setProperty(
+  '--textColor',
+  textColor || lightTheme.textcolor,
+);
+document.documentElement.style.setProperty(
+  '--cardBackground',
+  cardBackground || lightTheme.cardbackground,
+);
+document.documentElement.style.setProperty(
+  '--radius',
+  radius || lightTheme.radius,
+);
+document.documentElement.style.setProperty(
+  '--cardShadow',
+  cardShadow || lightTheme.cardshadow,
+);
 document.documentElement.style.setProperty(
   '--buttonBackground',
-  buttonBackground === '' ? primaryColor : buttonBackground,
+  buttonBackground === ''
+    ? primaryColor || lightTheme.primarycolor
+    : buttonBackground || lightTheme.buttonbackground,
 );
 document.documentElement.style.setProperty(
   '--buttonTextColor',
-  buttonTextColor === '' ? 'white' : buttonTextColor,
+  buttonTextColor === ''
+    ? 'white'
+    : buttonTextColor || lightTheme.buttontextcolor,
 );
 document.documentElement.style.setProperty(
   '--buttonRadius',
-  buttonRadius === '' ? radius : buttonRadius,
+  buttonRadius === ''
+    ? radius || lightTheme.radius
+    : buttonRadius || lightTheme.buttonradius,
 );
-document.documentElement.style.setProperty('--inputTextColor', inputTextColor);
+document.documentElement.style.setProperty(
+  '--inputTextColor',
+  inputTextColor || lightTheme.inputtextcolor,
+);
 document.documentElement.style.setProperty(
   '--inputBackground',
-  inputBackground,
+  inputBackground || lightTheme.inputbackground,
 );
 
 console.log('RUNNING TWITTER.JS');
