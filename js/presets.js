@@ -1,5 +1,9 @@
 const presetsWrapper = document.getElementById('presets-wrapper');
+let selectedTheme = '';
+const refreshButton = document.getElementById('refresh');
+const editButton = document.getElementById('edit');
 
+// DISPLAY ALL THEMES AND GET SELECTED THEME
 chrome.cookies.getAll(
   {
     url: 'https://twitter.com',
@@ -34,20 +38,41 @@ chrome.cookies.getAll(
       },
       function (cookie) {
         const presetButtons = document.querySelectorAll('.theme__item');
+        console.log(presetButtons);
 
         presetButtons.forEach((presetButton) => {
-          if (presetButton.id === cookie.value) {
+          if (cookie && presetButton.id === cookie.value) {
             presetButton.classList.add('active');
+            selectedTheme = presetButton.id;
           }
 
           presetButton.addEventListener('click', (e) => {
-            changeTheme(presetButton.id);
+            selectedTheme = presetButton.id;
+
+            const presetButtons = document.querySelectorAll('.theme__item');
+
+            presetButtons.forEach((presetButton) => {
+              presetButton.classList.remove('active');
+            });
+
+            document.getElementById(selectedTheme).classList.add('active');
           });
         });
       },
     );
   },
 );
+
+refreshButton.addEventListener('click', (e) => {
+  changeTheme(selectedTheme);
+
+  chrome.tabs.getSelected(null, function (tab) {
+    var code = 'window.location.reload();';
+    chrome.tabs.executeScript(tab.id, { code: code });
+  });
+
+  window.location.reload();
+});
 
 const changeTheme = (themeName) => {
   chrome.cookies.get(
@@ -83,42 +108,7 @@ const changeTheme = (themeName) => {
       );
     },
   );
-
-  const presetButtons = document.querySelectorAll('.theme__item');
-
-  presetButtons.forEach((presetButton) => {
-    const element = document.getElementById(presetButton);
-    presetButton.classList.remove('active');
-  });
-
-  document.getElementById(themeName).classList.add('active');
 };
-
-// chrome.cookies.get({ url: 'https://twitter.com', name: 'theme' }, function (
-//   cookie,
-// ) {
-//   if (cookie.value === 'light') {
-//     themeLight.classList.add('active');
-//     themeDark.classList.remove('active');
-//     themeSolarized.classList.remove('active');
-//     themeInverted.classList.remove('active');
-//   } else if (cookie.value === 'dark') {
-//     themeDark.classList.add('active');
-//     themeLight.classList.remove('active');
-//     themeSolarized.classList.remove('active');
-//     themeInverted.classList.remove('active');
-//   } else if (cookie.value === 'solarized') {
-//     themeSolarized.classList.add('active');
-//     themeLight.classList.remove('active');
-//     themeDark.classList.remove('active');
-//     themeInverted.classList.remove('active');
-//   } else if (cookie.value === 'inverted') {
-//     themeInverted.classList.add('active');
-//     themeLight.classList.remove('active');
-//     themeDark.classList.remove('active');
-//     themeSolarized.classList.remove('active');
-//   }
-// });
 
 function updatePrimaryColor(value) {
   console.log(value);

@@ -12,23 +12,12 @@ const buttonRadiusInput = document.getElementById('buttonRadius');
 const inputTextColorInput = document.getElementById('inputTextColor');
 const inputBackgroundInput = document.getElementById('inputBackground');
 
-const refreshButton = document.getElementById('refresh');
-const editButton = document.getElementById('edit');
 const createButton = document.getElementById('create');
 const cancelButton = document.getElementById('cancel');
 const newThemeButton = document.getElementById('new');
 
 const mainContent = document.getElementById('main-content');
 const title = document.getElementById('title');
-
-refreshButton.addEventListener('click', (e) => {
-  chrome.tabs.getSelected(null, function (tab) {
-    var code = 'window.location.reload();';
-    chrome.tabs.executeScript(tab.id, { code: code });
-  });
-
-  window.location.reload();
-});
 
 newThemeButton.addEventListener('click', (e) => {
   document.body.classList.add('new');

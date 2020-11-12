@@ -86,6 +86,8 @@ chrome.cookies.get(
         },
         function () {},
       );
+
+      window.location.reload();
     }
   },
 );
@@ -111,6 +113,8 @@ chrome.cookies.get(
         },
         function () {},
       );
+
+      window.location.reload();
     }
   },
 );
@@ -136,6 +140,8 @@ chrome.cookies.get(
         },
         function () {},
       );
+
+      window.location.reload();
     }
   },
 );
@@ -161,6 +167,8 @@ chrome.cookies.get(
         },
         function () {},
       );
+
+      window.location.reload();
     }
   },
 );
