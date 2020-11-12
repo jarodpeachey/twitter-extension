@@ -298,6 +298,7 @@ createButton.addEventListener('click', (e) => {
 
   inputs.forEach((input) => {
     theme[input.name] = input.element.value;
+    updateCookie(input.name, input.element.value);
   });
 
   chrome.cookies.set(
@@ -429,9 +430,10 @@ chrome.cookies.getAll(
 //////////////////////////////////////////////////////////////////////////////////////////////
 inputs.forEach((input) => {
   setInputValue(input.name, input.element);
-  input.element.addEventListener('change', (e) => {
-    updateCookie(input.name, e.target.value);
-  });
+
+  // input.element.addEventListener('change', (e) => {
+  //   updateCookie(input.name, e.target.value);
+  // });
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////
