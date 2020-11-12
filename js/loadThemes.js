@@ -80,7 +80,7 @@ chrome.cookies.get(
 );
 
 chrome.cookies.get(
-  { url: 'https://twitter.com', name: 'theme-inverted' },
+  { url: 'https://twitter.com', name: 'theme-clean' },
   function (cookie) {
     if (
       cookie &&
@@ -94,8 +94,8 @@ chrome.cookies.get(
       chrome.cookies.set(
         {
           url: 'https://twitter.com',
-          name: 'theme-inverted',
-          value: JSON.stringify(invertedTheme),
+          name: 'theme-clean',
+          value: JSON.stringify(cleanTheme),
           expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
         },
         function () {},

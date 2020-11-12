@@ -54,17 +54,17 @@ const darkTheme = {
   inputbackground: '#ffffff',
 };
 
-const invertedTheme = {
-  primarycolor: '#1DA1F2',
-  backgroundcolor: primaryColor,
-  hovercolor: '#e8f1f7',
+const cleanTheme = {
+  primarycolor: '#000000',
+  backgroundcolor: '#ffffff',
+  hovercolor: '#f7f7f7',
   cardbackground: '#ffffff',
-  accentcolor: '#cdddee',
-  textcolor: '#303030',
-  radius: '6px',
-  cardshadow: '0px 0px 30px 0px #44444420',
-  buttonbackground: '#1DA1F2',
-  buttonradius: '6px',
+  accentcolor: '#e8e8e8',
+  textcolor: '#111111',
+  radius: '3px',
+  cardshadow: '0px 0px 60px 0px #00000010',
+  buttonbackground: '#000000',
+  buttonradius: '2px',
   buttontextcolor: '#ffffff',
   inputtextcolor: '#111111',
   inputbackground: '#ffffff',
@@ -216,6 +216,7 @@ const refreshButton = document.getElementById('refresh');
 const editButton = document.getElementById('edit');
 const createButton = document.getElementById('create');
 const cancelButton = document.getElementById('cancel');
+const saveButton = document.getElementById('save');
 const newThemeButton = document.getElementById('new');
 
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -272,7 +273,8 @@ editButton.addEventListener('click', (e) => {
 
   document.body.classList.add('edit');
   title.value = themeTitle;
-  title.classList.add('active');
+  title.classList.add('width');
+  // title.style.width = '400px';
   newThemeButton.style.display = 'none';
   title.disabled = false;
 
@@ -291,6 +293,41 @@ editButton.addEventListener('click', (e) => {
       console.log('EDITING THEME: ', JSON.parse(cookie.value));
     },
   );
+});
+
+saveButton.addEventListener('click', (e) => {
+  chrome.cookies.get(
+    {
+      url: 'https://twitter.com',
+      name: selectedTheme,
+    },
+    function (cookie) {
+      const theme = JSON.parse(cookie.value);
+
+      inputs.forEach((input) => {
+        theme[input.name] = input.element.value;
+      });
+
+      chrome.cookies.set(
+        {
+          url: 'https://twitter.com',
+          name: selectedTheme,
+          value: JSON.stringify(theme),
+          expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
+        },
+        function () {},
+      );
+    },
+  );
+
+  setTimeout(() => {
+    document.body.classList.remove('new');
+    document.body.classList.remove('edit');
+    title.value = 'Themes';
+    title.classList.remove('active');
+    title.disabled = true;
+    newThemeButton.style.display = 'block';
+  }, 400);
 });
 
 createButton.addEventListener('click', (e) => {

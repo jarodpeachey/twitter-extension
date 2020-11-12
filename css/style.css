@@ -207,6 +207,10 @@ input {
   width: 100% !important;
 }
 
+#title.width {
+  width: 100% !important;
+}
+
 #title + span {
   display: none;
 }
