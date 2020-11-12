@@ -56,13 +56,13 @@ const darkTheme = {
 
 const cleanTheme = {
   primarycolor: '#000000',
-  backgroundcolor: '#ffffff',
+  backgroundcolor: '#e8e8e8',
   hovercolor: '#f7f7f7',
   cardbackground: '#ffffff',
   accentcolor: '#e8e8e8',
   textcolor: '#111111',
   radius: '3px',
-  cardshadow: '0px 0px 60px 0px #00000010',
+  cardshadow: 'none',
   buttonbackground: '#000000',
   buttonradius: '2px',
   buttontextcolor: '#ffffff',
@@ -263,13 +263,16 @@ cancelButton.addEventListener('click', (e) => {
   document.body.classList.remove('edit');
   title.value = 'Themes';
   title.classList.remove('active');
+  title.classList.remove('width');
   title.disabled = true;
   newThemeButton.style.display = 'block';
 });
 
 editButton.addEventListener('click', (e) => {
   let themeTitle = selectedTheme.substring(6, selectedTheme.length);
-  themeTitle = themeTitle.charAt(0).toUpperCase() + themeTitle.slice(1);
+  themeTitle = themeTitle
+    .replace('-', ' ')
+    .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
   document.body.classList.add('edit');
   title.value = themeTitle;
@@ -341,7 +344,7 @@ createButton.addEventListener('click', (e) => {
   chrome.cookies.set(
     {
       url: 'https://twitter.com',
-      name: `theme-${title.value.toLowerCase().replace(/ /, '')}`,
+      name: `theme-${title.value.toLowerCase().replace(/ /, '-')}`,
       value: JSON.stringify(theme),
       expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
     },
@@ -397,7 +400,9 @@ chrome.cookies.getAll(
         const themeItem = document.createElement('div');
         themeItem.className = 'theme__item';
         themeItem.id = item.name;
-        themeItem.innerHTML = title.charAt(0).toUpperCase() + title.slice(1);
+        themeItem.innerHTML = title
+          .replace('-', ' ')
+          .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
         const column = document.createElement('div');
         column.classList.add('col');
