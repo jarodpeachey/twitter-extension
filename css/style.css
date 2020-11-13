@@ -386,7 +386,7 @@ label.flex {
 .collapse {
   border-radius: var(--radius);
   border: 1px solid #e8e8e8;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
 /* COLLAPSE STYLING */
