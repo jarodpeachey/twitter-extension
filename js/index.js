@@ -92,9 +92,9 @@ const setInputValue = (name, element) => {
     cookie,
   ) {
     if (cookie) {
-      element.value = cookie.value || lightTheme[name];
+      element.value = cookie.value || themes[0][name];
     } else {
-      element.value = lightTheme[name];
+      element.value = themes[0][name];
     }
   });
 };
@@ -128,7 +128,6 @@ const textColorInput = document.getElementById('textColor');
 const cardBackgroundInput = document.getElementById('cardBackground');
 const radiusInput = document.getElementById('radius');
 const cardShadowInput = document.getElementById('cardShadow');
-const buttonBackgroundInput = document.getElementById('buttonBackground');
 const buttonTextColorInput = document.getElementById('buttonTextColor');
 const buttonRadiusInput = document.getElementById('buttonRadius');
 const inputTextColorInput = document.getElementById('inputTextColor');
@@ -166,10 +165,6 @@ const inputs = [
   {
     name: 'cardshadow',
     element: cardShadowInput,
-  },
-  {
-    name: 'buttonbackground',
-    element: buttonBackgroundInput,
   },
   {
     name: 'buttontextcolor',
@@ -222,6 +217,20 @@ newThemeButton.addEventListener('click', (e) => {
   title.classList.add('active');
   newThemeButton.style.display = 'none';
   title.disabled = false;
+
+  chrome.cookies.get(
+    {
+      url: 'https://twitter.com',
+      name: selectedTheme,
+    },
+    function (cookie) {
+      const theme = JSON.parse(cookie.value);
+
+      inputs.forEach((input) => {
+        updateInputValue(input.element, theme[input.name]);
+      });
+    },
+  );
 });
 
 refreshButton.addEventListener('click', (e) => {
@@ -318,7 +327,7 @@ editButton.addEventListener('click', (e) => {
   title.classList.add('width');
   // title.style.width = '400px';
   newThemeButton.style.display = 'none';
-  title.disabled = false;
+  title.disabled = true;
 
   chrome.cookies.get(
     {
@@ -367,11 +376,16 @@ saveButton.addEventListener('click', (e) => {
     title.classList.remove('active');
     title.disabled = true;
     newThemeButton.style.display = 'block';
+
+    changeTheme(selectedTheme);
   }, 400);
 });
 
 createButton.addEventListener('click', (e) => {
-  const theme = {};
+  const theme = {
+    name: `theme-${title.value.toLowerCase().replace(/ /, '-')}`,
+    title: title.value,
+  };
 
   inputs.forEach((input) => {
     theme[input.name] = input.element.value;
@@ -381,7 +395,7 @@ createButton.addEventListener('click', (e) => {
   chrome.cookies.set(
     {
       url: 'https://twitter.com',
-      name: `theme-${title.value.toLowerCase().replace(/ /, '-')}`,
+      name: theme.name,
       value: JSON.stringify(theme),
       expirationDate: new Date().getTime() + 10 * 365 * 24 * 60 * 60,
     },
@@ -430,35 +444,176 @@ chrome.cookies.getAll(
     const themes = {};
     const themesArray = array.filter((item) => item.name.includes('theme-'));
 
-    themesArray
-      .sort(function (a, b) {
-        var nameA = a.name.substring(6, a.name.length).toLowerCase(),
-          nameB = b.name.substring(6, b.name.length).toLowerCase();
+    categories.forEach((category) => {
+      const collapse = document.createElement('div');
+      const h3 = document.createElement('h3');
+      const spanOne = document.createElement('span');
+      const spanTwo = document.createElement('span');
+      const content = document.createElement('div');
+      const contentInner = document.createElement('div');
+      const row = document.createElement('div');
 
-        if (nameA < nameB)
-          //sort string ascending
-          return -1;
-        if (nameA > nameB) return 1;
-        return 0; //default return value (no sorting)
-      })
-      .forEach((item) => {
-        if (item.name.includes('theme-')) {
-          const title = item.name.substring(6, item.name.length);
+      collapse.className = 'collapse';
+      collapse.id = category.toLowerCase();
+      spanOne.innerHTML = category;
+      spanTwo.innerHTML = '+';
+      h3.className = `collapse__title ${category.toLowerCase()}__title`;
+      content.className = `collapse__content ${category.toLowerCase()}__content`;
+      contentInner.id = `${category.toLowerCase()}__inner`;
+      row.className = 'row padding';
+      row.id = `${category.toLowerCase()}__row`;
+
+      themesArray
+        .filter((theme) => JSON.parse(theme.value).category)
+        .filter(
+          (theme) =>
+            JSON.parse(theme.value).category.toLowerCase() ===
+            category.toLowerCase(),
+        )
+        .forEach((item) => {
+          item = JSON.parse(item.value);
 
           const themeItem = document.createElement('div');
           themeItem.className = 'theme__item';
-          themeItem.id = item.name;
-          themeItem.innerHTML = title
-            .replace('-', ' ')
-            .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
+          themeItem.id = item.name.toLowerCase();
+          themeItem.innerHTML = item.title;
 
           const column = document.createElement('div');
           column.classList.add('col');
           column.appendChild(themeItem);
 
-          presetsWrapper.appendChild(column);
+          row.appendChild(column);
+        });
+
+      h3.appendChild(spanOne);
+      h3.appendChild(spanTwo);
+      contentInner.appendChild(row);
+      content.appendChild(contentInner);
+      collapse.appendChild(h3);
+      collapse.appendChild(content);
+
+      presetsWrapper.appendChild(collapse);
+
+      // GET ELEMENTS
+      const collapseTitle = collapse.children[0];
+      const collapseContent = collapse.children[1];
+
+      // ADD EVENT LISTENER
+      collapseTitle.addEventListener('click', toggleCollapse);
+
+      // IMPORTANT VARIABLES
+      let open = false;
+      const childrenHeight = collapseContent.children[0].clientHeight + 16;
+
+      function toggleCollapse() {
+        if (open) {
+          collapse.classList.remove('open');
+          collapseContent.style.maxHeight = '0px';
+
+          open = false;
+        } else {
+          collapse.classList.add('open');
+          collapseContent.style.maxHeight = `${childrenHeight}px`;
+
+          open = true;
+
+          // collapseElements.forEach(newCollapse => {
+          //   if (newCollapse.id !== collapse.id) {
+          //     console.log('Closing');
+          //     newCollapse.classList.remove('open');
+          //     newCollapse.children[1].style.maxHeight = '0px';
+          //   }
+          // })
         }
-      });
+      }
+    });
+
+    const collapse = document.createElement('div');
+    const h3 = document.createElement('h3');
+    const spanOne = document.createElement('span');
+    const spanTwo = document.createElement('span');
+    const content = document.createElement('div');
+    const contentInner = document.createElement('div');
+    const row = document.createElement('div');
+
+    collapse.className = 'collapse';
+    collapse.id = 'custom';
+    spanOne.innerHTML = 'Custom';
+    spanTwo.innerHTML = '+';
+    h3.className = `collapse__title custom__title`;
+    content.className = `collapse__content custom__content`;
+    contentInner.id = `custom__inner`;
+    row.className = 'row padding';
+    row.id = `custom__row`;
+
+    const filteredArray = themesArray.filter(
+      (theme) =>
+        !JSON.parse(theme.value).category && JSON.parse(theme.value).name,
+    );
+
+    console.log(filteredArray.length);
+
+    if (filteredArray.length > 0) {
+      filteredArray
+        .sort(function (a, b) {
+          var nameA = JSON.parse(a.value).title.toLowerCase(),
+            nameB = JSON.parse(b.value).title.toLowerCase();
+
+          if (nameA < nameB)
+            //sort string ascending
+            return -1;
+          if (nameA > nameB) return 1;
+          return 0; //default return value (no sorting)
+        })
+        .forEach((item) => {
+          item = JSON.parse(item.value);
+
+          const themeItem = document.createElement('div');
+          themeItem.className = 'theme__item';
+          themeItem.id = item.name.toLowerCase();
+          themeItem.innerHTML = item.title;
+
+          const column = document.createElement('div');
+          column.classList.add('col');
+          column.appendChild(themeItem);
+
+          row.appendChild(column);
+        });
+
+      h3.appendChild(spanOne);
+      h3.appendChild(spanTwo);
+      contentInner.appendChild(row);
+      content.appendChild(contentInner);
+      collapse.appendChild(h3);
+      collapse.appendChild(content);
+
+      presetsWrapper.appendChild(collapse);
+
+      // GET ELEMENTS
+      const collapseTitle = collapse.children[0];
+      const collapseContent = collapse.children[1];
+
+      // ADD EVENT LISTENER
+      collapseTitle.addEventListener('click', toggleCollapse);
+
+      // IMPORTANT VARIABLES
+      let open = false;
+      const childrenHeight = collapseContent.children[0].clientHeight + 16;
+
+      function toggleCollapse() {
+        if (open) {
+          collapse.classList.remove('open');
+          collapseContent.style.maxHeight = '0px';
+
+          open = false;
+        } else {
+          collapse.classList.add('open');
+          collapseContent.style.maxHeight = `${childrenHeight}px`;
+
+          open = true;
+        }
+      }
+    }
 
     chrome.cookies.get(
       {
@@ -521,10 +676,6 @@ chrome.cookies.getAll(
 //////////////////////////////////////////////////////////////////////////////////////////////
 inputs.forEach((input) => {
   setInputValue(input.name, input.element);
-
-  // input.element.addEventListener('change', (e) => {
-  //   updateCookie(input.name, e.target.value);
-  // });
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////

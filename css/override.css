@@ -48,7 +48,7 @@
 /* PRIMARY COLOR ICONS/STUFF */
 .r-13gxpu9 {
   color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 .r-zv2cs0 {
@@ -67,17 +67,17 @@ a.r-zv2cs0,
 /* PRIMARY COLOR LINKS */
 .r-1n1174f {
   color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* PRIMARY COLOR BACKGROUNDS */
 .r-urgr8i {
   background-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 .r-1q3imqu {
   background-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* HOVER AND ACTIVE STATES */
@@ -91,32 +91,32 @@ a.r-zv2cs0,
 /* PRIMARY COLOR BORDERS */
 .r-18p3no4 {
   border-bottom-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 .r-p1n3y5 {
   border-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 .r-p1n3y5[href='/settings/profile']:hover {
   background-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 .r-p1n3y5[href='/settings/profile']:hover * {
   color: white !important;
 }
 .r-1u4rsef a + div:last-child {
   border-right-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* BORDER COLOR */
 .r-my5ep6 {
   border-bottom-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 .r-e84r5y {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 .r-14lw9ot {
   background-color: transparent !important;
@@ -124,7 +124,7 @@ a.r-zv2cs0,
 
 /* TRANSITION */
 article {
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 
 /* TABS */
@@ -151,7 +151,7 @@ article {
 
 body {
   background-color: var(--backgroundColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   padding-top: 30px !important;
   max-width: 769px !important;
   margin: 0 auto !important;
@@ -235,7 +235,7 @@ header > div:first-child > div:first-child > div:first-child {
 header > div > div > div > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -247,7 +247,7 @@ header > div > div > div > div:first-child {
 header > div > div > div > div:nth-child(2) {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -395,7 +395,7 @@ nav[aria-label='Primary'] a svg {
   opacity: 1 !important;
   border-radius: var(--buttonRadius) !important;
   color: var(--buttonTextColor) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 [aria-labelledby='modal-header']
   > div:first-child
@@ -416,19 +416,19 @@ nav[aria-label='Primary'] a svg {
   [role='button']:hover {
   cursor: pointer !important;
   /* background-color: rgb(26, 145, 218) !important; */
-  background-color: var(--buttonBackground) !important;
+  background-color: var(--primaryColor) !important;
   filter: brightness(1.2) !important;
   color: var(--buttonTextColor) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 /* MOBILE TWEET BUTTON */
 [data-testid='SideNav_NewTweet_Button'] {
-  background-color: var(--buttonBackground) !important;
+  background-color: var(--primaryColor) !important;
   color: var(--buttonTextColor) !important;
   opacity: 1 !important;
   border-radius: var(--buttonRadius) !important;
   color: var(--buttonTextColor) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 [data-testid='SideNav_NewTweet_Button']:hover {
   cursor: pointer !important;
@@ -443,7 +443,7 @@ header
   > div:last-child
   > a {
   border-radius: var(--buttonRadius) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 /* TWEET BUTTON */
 [data-testid='tweetButtonInline'],
@@ -452,24 +452,24 @@ header
   color: var(--buttonTextColor) !important;
   opacity: 1 !important;
   border-radius: var(--buttonRadius) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 [data-testid='tweetButtonInline']:hover,
 [data-testid='tweetButton']:hover {
   cursor: pointer !important;
-  background-color: var(--buttonBackground) !important;
+  background-color: var(--primaryColor) !important;
   filter: brightness(1.2) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 /* OTHER */
 [role='button'] {
   border-radius: var(--buttonRadius) !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 
 a[href='/compose/tweet'] {
   border-color: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 [aria-label='Back']:hover {
@@ -477,12 +477,12 @@ a[href='/compose/tweet'] {
 }
 [role='progressbar'] svg circle:last-child {
   stroke: var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* FOLLOW BUTTON */
 [role='button'][data-testid*='follow']:hover {
-  background-color: var(--buttonBackground) !important;
+  background-color: var(--primaryColor) !important;
 }
 [role='button'][data-testid*='follow']:hover * {
   color: var(--buttonTextColor) !important;
@@ -505,7 +505,7 @@ input[type='text'] {
   border-radius: var(--buttonRadius) !important;
   background-color: var(--inputBackground) !important;
   border: 1px solid var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   color: var(--inputTextColor) !important;
   padding: 12px 10px !important;
   font-size: 16px !important;
@@ -513,12 +513,12 @@ input[type='text'] {
 input[type='password']:focus,
 input[type='text']:focus {
   border: 1px solid var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
   border: 1px solid var(--primaryColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /******************************************************************
@@ -565,13 +565,13 @@ header > div:first-child > div:first-child,
 [role='menu'],
 [role='listbox'] {
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   margin: 0px 0px 32px 0px;
   border: none;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 [role='menu'] a[role='link']:hover {
   background-color: var(--hoverColor) !important;
@@ -588,7 +588,7 @@ a[href="/i/display"] {
 [role='listbox'] [role='option'] [role='button'][data-focusable='true'] {
   border-radius: 0 !important;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 [role='listbox']
   [role='option']:first-of-type
@@ -609,13 +609,13 @@ a[href="/i/display"] {
   > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   margin: 0px 0px 32px 0px;
   border: none;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 /* PROFILE POPUP LINKS */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
@@ -645,7 +645,7 @@ a[href="/i/display"] {
   > div:first-child
   li {
   border-bottom: 1px solid var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 /* FEED WRAPPER */
 main
@@ -691,7 +691,7 @@ main
   box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   border: none;
 }
@@ -732,12 +732,12 @@ main
   > div:first-child
   > div:first-child {
   border-bottom-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 .r-vrwoeq {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /************************************************************************************
@@ -750,7 +750,7 @@ main
 body.messages main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -781,7 +781,7 @@ body.messages
   > div {
   background-color: transparent !important;
   border-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* MESSAGES REQUEST LINK */
@@ -851,7 +851,7 @@ body.messages [data-testid='conversation'] {
   background-color: transparent !important;
   padding: 16px !important;
   border-bottom-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 body.messages [data-testid='conversation']:hover {
   background-color: var(--hoverColor) !important;
@@ -882,9 +882,9 @@ body.messages
 body.messages aside[aria-label='Start a new message'] {
   background-color: transparent !important;
   border-top-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-bottom-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* INPUT STYLES */
@@ -920,18 +920,18 @@ body.messages
   > div:nth-child(2)
   > div:first-child[role='presentation'] {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* MESSAGE PERSON TOP */
 body.messages [data-focusable='true'][role='link'] {
   border-bottom-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 body.messages [data-focusable='true'][role='link'].r-1u4rsef {
   background-color: var(--hoverColor) !important;
   border-bottom-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 @media (min-width: 996px) {
@@ -944,7 +944,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div {
     position: relative;
     background-color: var(--cardBackground) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-radius: var(--radius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 0px 0px 32px 0px;
@@ -955,7 +955,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
   body.messages main > div:first-child > div:first-child > div:first-child {
     position: relative;
     background-color: var(--cardBackground) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-radius: var(--radius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 0px 0px 32px 0px;
@@ -981,7 +981,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -992,9 +992,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-top-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -1006,9 +1006,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-top-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -1066,9 +1066,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-top-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* SECOND BACKGROUND */
@@ -1109,7 +1109,7 @@ body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
 body.home [data-testid='primaryColumn'] > div:first-child > div:first-child {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -1144,7 +1144,7 @@ body.home
 body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -1228,7 +1228,7 @@ body.home
   > div:nth-child(2)
   .css-1dbjc4n.r-e84r5y.r-109y4c4.r-13qz1uu {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 /* WEIRD SEPERATOR */
@@ -1245,7 +1245,7 @@ body.home
 body.home [aria-label*='Timeline'] {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -1271,7 +1271,7 @@ body.home [aria-label*='Timeline'] article {
   border: none !important;
   padding: 0 !important;
   border-bottom: 1px solid var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 /* TWEET WRAPPER HOVER */
 body.home [aria-label*='Timeline'] article[role='article']:hover {
@@ -1313,7 +1313,7 @@ body.home
 /* TWEET THREAD CONNECTOR */
 body.home [data-testid='tweet'] > div:first-child > div:nth-child(2) {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   position: relative;
   bottom: -16px !important;
 }
@@ -1329,7 +1329,7 @@ body.home
   > div:first-child[style='flex-basis: 49px;']
   > div:first-child {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   left: 32px !important;
   height: 200% !important;
 }
@@ -1351,7 +1351,7 @@ body.home
   border-radius: var(--radius);
   padding: 3px 12px;
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   margin-left: 16px;
 }
 
@@ -1433,20 +1433,20 @@ body.home
   > div:first-child
   > div:nth-child(2) {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border: none !important;
   border-radius: var(--radius) !important;
 }
 
 body.home [data-testid='tweet'] [data-testid='card.wrapper'] {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border: none !important;
 }
 
 body.home [data-testid='tweet'] [data-testid='card.wrapper']:hover {
   background-color: var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border: none !important;
 }
 
@@ -1525,7 +1525,7 @@ body.home
   > div:first-child
   > div:nth-child(2)[data-focusable='true'] {
   border: 1px solid var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
 }
 
@@ -1690,14 +1690,14 @@ body.status
   > div:nth-child(5)
   > div:first-child {
   border-bottom: 1px solid var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-top: 1px solid var(--accentColor) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
 }
 
 body [role='button'][data-testid='UserCell'] {
   border-radius: 0 !important;
-  transition: 0.2s !important;
+  transition: background-color 0.4s, color 0.4s !important;
 }
 
 body [role='button'][data-testid='UserCell']:hover {
@@ -1718,7 +1718,7 @@ body.status [data-testid='card.wrapper'] {
 body.settings main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
   background-color: var(--cardBackground) !important;
-  transition: .4s !important;
+  transition: color .4s, background-color .4s !important;
   border-radius: var(--radius) !important;
   box-shadow: var(--cardShadow) !important;
   margin: 0px 0px 32px 0px;
@@ -1792,7 +1792,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div {
     position: relative;
     background-color: var(--cardBackground) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-radius: var(--radius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 0px 0px 32px 0px;
@@ -1803,7 +1803,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
   body.settings main > div:first-child > div:first-child > div:first-child {
     position: relative;
     background-color: var(--cardBackground) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-radius: var(--radius) !important;
     box-shadow: var(--cardShadow) !important;
     margin: 0px 0px 32px 0px;
@@ -1829,7 +1829,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -1840,9 +1840,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-top-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -1854,9 +1854,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-top-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -1914,9 +1914,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child {
     background-color: transparent !important;
     border-bottom-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
     border-top-color: var(--accentColor) !important;
-    transition: .4s !important;
+    transition: color .4s, background-color .4s !important;
   }
 
   /* SECOND BACKGROUND */
