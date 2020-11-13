@@ -1,4 +1,4 @@
-const categories = ['Light', 'Dark', 'Neon', 'Minimal'];
+const categories = ['Light', 'Dark', 'Neon', 'Minimal', 'Flat'];
 
 const themes = [
   {
@@ -353,6 +353,108 @@ const themes = [
       '0px 0px 0px 1px #00dc5290, 0 0 0 4px #00dc5230, 0px 0px 0px 8px #00dc5212',
     buttontextcolor: '#ffffff',
     buttonradius: '6px',
+    inputtextcolor: '#111111',
+    inputbackground: '#ffffff',
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+    {
+    name: 'theme-flat',
+    title: 'Default',
+    category: 'flat',
+    primarycolor: '#1DA1F2',
+    backgroundcolor: '#ffffff',
+    hovercolor: '#e8e8e8',
+    cardbackground: '#f7f7f7',
+    accentcolor: '#dddddd',
+    textcolor: '#222222',
+    radius: '3px',
+    cardshadow:
+      '0 0 0 1px #dddddd',
+    buttonradius: '3px',
+    buttontextcolor: '#ffffff',
+    inputtextcolor: '#111111',
+    inputbackground: '#ffffff',
+  },
+  {
+    name: 'theme-flat-red',
+    title: 'Red',
+    category: 'flat',
+    primarycolor: '#ff3211',
+    backgroundcolor: '#ffffff',
+    hovercolor: '#e8e8e8',
+    cardbackground: '#f7f7f7',
+    accentcolor: '#dddddd',
+    textcolor: '#222222',
+    radius: '3px',
+    cardshadow:
+      '0 0 0 1px #dddddd',
+    buttonradius: '3px',
+    buttontextcolor: '#ffffff',
+    inputtextcolor: '#111111',
+    inputbackground: '#ffffff',
+  },
+  {
+    name: 'theme-flat-pink',
+    title: 'Pink',
+    category: 'flat',
+    primarycolor: '#f711a6',
+    backgroundcolor: '#ffffff',
+    hovercolor: '#e8e8e8',
+    cardbackground: '#f7f7f7',
+    accentcolor: '#dddddd',
+    textcolor: '#222222',
+    radius: '3px',
+    cardshadow:
+      '0 0 0 1px #dddddd',
+    buttonradius: '3px',
+    buttontextcolor: '#ffffff',
+    inputtextcolor: '#111111',
+    inputbackground: '#ffffff',
+  },
+  {
+    name: 'theme-flat-purple',
+    title: 'Purple',
+    category: 'flat',
+    primarycolor: '#7d24f3',
+    backgroundcolor: '#ffffff',
+    hovercolor: '#e8e8e8',
+    cardbackground: '#f7f7f7',
+    accentcolor: '#dddddd',
+    textcolor: '#222222',
+    radius: '3px',
+    cardshadow:
+      '0 0 0 1px #dddddd',
+    buttonradius: '3px',
+    buttontextcolor: '#ffffff',
+    inputtextcolor: '#111111',
+    inputbackground: '#ffffff',
+  },
+  {
+    name: 'theme-flat-green',
+    title: 'Green',
+    category: 'flat',
+    primarycolor: '#00dc52',
+    backgroundcolor: '#ffffff',
+    hovercolor: '#e8e8e8',
+    cardbackground: '#f7f7f7',
+    accentcolor: '#dddddd',
+    textcolor: '#222222',
+    radius: '3px',
+    cardshadow:
+      '0 0 0 1px #dddddd',
+    buttonradius: '3px',
+    buttontextcolor: '#ffffff',
     inputtextcolor: '#111111',
     inputbackground: '#ffffff',
   },
