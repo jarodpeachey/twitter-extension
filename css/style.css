@@ -19,7 +19,7 @@
 }
 
 :root {
-  --textColor: #111111;
+  --textcolor: #111111;
   --light: #111111aa;
   --lighter: #11111190;
 
@@ -30,7 +30,7 @@
   --purple: #ba68c8;
   --purple-light: #ce93d8;
 
-  --radius: 6px;
+  --cardborderradius: 6px;
 }
 
 html,
@@ -222,7 +222,7 @@ input {
   top: -12px;
   left: 0;
   font-size: 15px;
-  color: var(--textColor);
+  color: var(--textcolor);
   font-family: 'Rubik';
 }
 
@@ -252,7 +252,7 @@ input {
 small,
 #import {
   font-size: 15px;
-  color: var(--textColor);
+  color: var(--textcolor);
   font-family: 'Rubik';
   display: block;
   margin-bottom: 8px;
@@ -305,7 +305,7 @@ body.edit #main-content {
 }
 
 .theme__item {
-  border-radius: var(--radius);
+  border-radius: var(--cardborderradius);
   border: 1px solid #e8e8e8;
   height: 100%;
   width: 100%;
@@ -339,7 +339,8 @@ label {
   font-size: 15px;
 }
 
-input[type='text'] {
+input[type='text'],
+select {
   display: block;
   border: 1px solid #e8e8e8;
   background: #ffffff;
@@ -349,9 +350,33 @@ input[type='text'] {
   margin-top: 4px;
 }
 
-input {
-  border-radius: var(--radius);
+input,
+select {
+  border-radius: var(--cardborderradius);
   outline: none;
+}
+
+input[type='number'] {
+  display: block;
+  border: 1px solid #e8e8e8;
+  background: #ffffff;
+  color: #444;
+  padding: 4px 8px;
+  flex: 1 1 0;
+  max-width: 40px;
+  margin-left: auto;
+  margin-right: 2px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
 }
 
 label.flex {
@@ -360,6 +385,7 @@ label.flex {
   justify-content: space-between;
   padding: 10px 12px !important;
   margin: 0 !important;
+  position: relative;
 }
 
 .theme-name {
@@ -384,7 +410,7 @@ label.flex {
 }
 
 .collapse {
-  border-radius: var(--radius);
+  border-radius: var(--cardborderradius);
   border: 1px solid #e8e8e8;
   margin-bottom: 10px;
 }
@@ -429,7 +455,7 @@ label.flex {
   position: relative;
   max-height: 0px;
   background: transparent;
-  border-radius: var(--radius);
+  border-radius: var(--cardborderradius);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }

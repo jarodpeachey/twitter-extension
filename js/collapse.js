@@ -23,14 +23,6 @@ collapseElements.forEach((collapse) => {
       collapseContent.style.maxHeight = `${childrenHeight}px`;
 
       open = true;
-
-      // collapseElements.forEach(newCollapse => {
-      //   if (newCollapse.id !== collapse.id) {
-      //     console.log('Closing');
-      //     newCollapse.classList.remove('open');
-      //     newCollapse.children[1].style.maxHeight = '0px';
-      //   }
-      // })
     }
   }
 });

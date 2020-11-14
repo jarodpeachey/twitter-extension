@@ -42,27 +42,27 @@
             <div>
               <label class="flex">
                 Primary color
-                <input type="color" id="primaryColor" placeholder="Enter color...">
+                <input type="color" id="primarycolor">
               </label>
               <label class="flex">
                 Background color
-                <input type="color" id="backgroundColor" placeholder="Enter color...">
+                <input type="color" id="backgroundcolor">
               </label>
               <label class="flex">
                 Card background
-                <input type="color" id="cardBackground" placeholder="Enter color...">
+                <input type="color" id="cardbackground">
               </label>
               <label class="flex">
                 Hover color
-                <input type="color" id="hoverColor" placeholder="Enter color...">
+                <input type="color" id="hovercolor">
               </label>
               <label class="flex">
                 Accent color
-                <input type="color" id="accentColor" placeholder="Enter color...">
+                <input type="color" id="accentcolor">
               </label>
               <label class="flex">
                 Text color
-                <input type="color" id="textColor" placeholder="Enter color...">
+                <input type="color" id="textcolor">
               </label>
             </div>
           </div>
@@ -74,14 +74,26 @@
           </h3>
           <div class='collapse__content card__content'>
             <div>
-              <label>
-                Card radius
-                <input type="text" id="radius" placeholder="Enter value (i.e 12px)">
+              <label class="flex">
+                Border color
+                <input type="color" id="cardbordercolor">
+              </label>
+              <label class="flex">
+                Border width (1 - 10)
+                <input type="number" value="0" min="0" max="10" id="cardborderwidth">px
               </label>
               <label>
+                Border radius
+                <select name="cardborderradius" id="cardborderradius" value="small">
+                  <option value="2px">Small (2px)</option>
+                  <option value="8px">Medium (8px)</option>
+                  <option value="16px">Large (16px)</option>
+                </select>
+              </label>
+              <!-- <label class="flex">
                 Card shadow
-                <input type="text" id="cardShadow" placeholder="Enter value...">
-              </label>
+                <input type="text" id="cardshadow" placeholder="Enter value...">
+              </label> -->
             </div>
           </div>
         </div>
@@ -94,11 +106,15 @@
             <div>
               <label class="flex">
                 Text color
-                <input type="color" id="buttonTextColor" placeholder="Enter color...">
+                <input type="color" id="buttontextcolor">
               </label>
               <label>
                 Border radius
-                <input type="text" id="buttonRadius" placeholder="Enter value (i.e 12px)">
+                <select name="buttonborderradius" id="buttonborderradius" value="6px">
+                  <option value="2px">Square</option>
+                  <option value="6px">Rounded</option>
+                  <option value="999px">Circle</option>
+                </select>
               </label>
             </div>
           </div>
@@ -112,11 +128,11 @@
             <div>
               <label class="flex">
                 Background color
-                <input type="color" id="inputBackground" placeholder="Enter color...">
+                <input type="color" id="inputbackground">
               </label>
               <label class="flex">
                 Text color
-                <input type="color" id="inputTextColor" placeholder="Enter color...">
+                <input type="color" id="inputtextcolor">
               </label>
             </div>
           </div>
@@ -143,19 +159,19 @@
     <script src="js/collapse.js"></script>
     <!-- 
 
-  --backgroundColor: #f7f7f7;
-	--hoverColor: #fafafa;        
+  --backgroundcolor: #f7f7f7;
+	--hovercolor: #fafafa;        
 	--card: #ffffff;         
-	--accentColor: #e8e8e8;
-	--textColor: #444444;         
-	--radius: 12px;    
+	--accentcolor: #e8e8e8;
+	--textcolor: #444444;         
+	--cardborderradius: 12px;    
 	--profileRadius: 24px;   
-	--radius: 12px;      
+	--cardborderradius: 12px;      
 	--inputRadius: 4px;
 	--inputBorder: #d8d8d8;
 	--inputBorderHover: #c8c8c8;
-	--inputBackground: #ffffff;
-	--cardShadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
+	--inputbackground: #ffffff;
+	--cardshadow:  rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px; /* CONTROLS CARD BOX SHADOW */
   --scrollbarBackground: #565f65;
 	--scrollbarColor: #aaaaaa; 
   

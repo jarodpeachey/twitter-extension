@@ -9,7 +9,7 @@ themes.forEach((theme) => {
         cookie.value !== '' &&
         JSON.parse(cookie.value) !== {}
       ) {
-        console.log('Setting from cookies');
+        // console.log('Setting from cookies');
       } else {
         chrome.cookies.set(
           {

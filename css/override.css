@@ -2,19 +2,19 @@
  ***************         MAIN LAYOUT STUFF         ****************
  ******************************************************************/
 /* :root {
-  --primaryColor: rgb(209, 98, 46);
-  --backgroundColor: #1a1e21;
-  --hoverColor: #273036;
-  --cardBackground: rgb(44, 54, 60);
-  --accentColor: #565f65;
-  --textColor: #fcfcfc;
-  --radius: 12px;
+  --primarycolor: rgb(209, 98, 46);
+  --backgroundcolor: #1a1e21;
+  --hovercolor: #273036;
+  --cardbackground: rgb(44, 54, 60);
+  --accentcolor: #565f65;
+  --textcolor: #fcfcfc;
+  --cardborderradius: 12px;
   --inputRadius: 4px;
   --inputBorder: #d8d8d8;
   --inputBorderHover: #c8c8c8;
-  --inputBackground: #ffffff;
-  --inputTextColor: #444444;
-  --cardShadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.4),
+  --inputbackground: #ffffff;
+  --inputtextcolor: #444444;
+  --cardshadow: 0px 2px 3px -1px rgba(0, 0, 0, 0),
     0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
   --scrollbarBackground: transparent;
   --scrollbarColor: #ffffff;
@@ -28,27 +28,22 @@
 /* TEXT COLOR */
 @media (prefers-color-scheme: dark) {
   .r-hkyrab {
-    color: var(--textColor) !important;
-    transition: color 0.4s !important;
+    color: var(--textcolor) !important;
   }
   .r-1re7ezh {
-    color: var(--textColor) !important;
-    transition: color 0.4s !important;
+    color: var(--textcolor) !important;
   }
 }
 .r-hkyrab {
-  color: var(--textColor) !important;
-  transition: color 0.4s !important;
+  color: var(--textcolor) !important;
 }
 .r-1re7ezh {
-  color: var(--textColor) !important;
-  transition: color 0.4s !important;
+  color: var(--textcolor) !important;
 }
 
 /* PRIMARY COLOR ICONS/STUFF */
 .r-13gxpu9 {
-  color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  color: var(--primarycolor) !important;
 }
 
 .r-zv2cs0 {
@@ -56,71 +51,62 @@
 }
 
 .r-r72n31 {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 a.r-zv2cs0,
 [role='button'].r-zv2cs0 {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 .r-jwli3a {
-  color: var(--buttonTextColor) !important;
+  color: var(--buttontextcolor) !important;
 }
 
 /* PRIMARY COLOR LINKS */
 .r-1n1174f {
-  color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  color: var(--primarycolor) !important;
 }
 
 /* PRIMARY COLOR BACKGROUNDS */
 .r-urgr8i {
-  background-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--primarycolor) !important;
 }
 .r-1q3imqu {
-  background-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--primarycolor) !important;
 }
 
 /* HOVER AND ACTIVE STATES */
 .r-r72n31 {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 .r-1panhkp {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 /* PRIMARY COLOR BORDERS */
 .r-18p3no4 {
-  border-bottom-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom-color: var(--primarycolor) !important;
 }
 .r-p1n3y5 {
-  border-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-color: var(--primarycolor) !important;
 }
 .r-p1n3y5[href='/settings/profile']:hover {
-  background-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--primarycolor) !important;
 }
 .r-p1n3y5[href='/settings/profile']:hover * {
-  color: var(--buttonTextColor) !important;
+  color: var(--buttontextcolor) !important;
 }
 .r-1u4rsef a + div:last-child {
-  border-right-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-right-color: var(--primarycolor) !important;
 }
 
 /* BORDER COLOR */
 .r-my5ep6 {
-  border-bottom-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 .r-e84r5y {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
 }
 .r-14lw9ot {
   background-color: transparent !important;
@@ -128,24 +114,23 @@ a.r-zv2cs0,
 
 /* TRANSITION */
 article {
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
 }
 
 /* TABS */
 [role='tab']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 /* SCROLLBARS */
 *::-webkit-scrollbar {
   background: var(--scrollbarBackground) !important;
   width: 4px;
-  border-radius: var(--radius) !important;
+  border-radius: var(--cardborderradius) !important;
 }
 
 *::-webkit-scrollbar-thumb {
   background: var(--scrollbarColor) !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--cardborderradius) !important;
   border: 2px solid var(--scrollbarBackground) !important;
 }
 
@@ -154,8 +139,7 @@ article {
 }
 
 body {
-  background-color: var(--backgroundColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--backgroundcolor) !important;
   padding-top: 30px !important;
   max-width: 769px !important;
   margin: 0 auto !important;
@@ -166,7 +150,7 @@ header {
   margin-right: 32px !important;
   max-width: 68px !important;
   margin-left: 32px !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--cardborderradius) !important;
 }
 
 header > div:first-child > div:first-child,
@@ -185,7 +169,7 @@ main {
   margin-right: 16px !important;
   margin-left: 0 !important;
   flex: 1 1 0 !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--cardborderradius) !important;
 }
 
 @media (min-width: 1273px) {
@@ -238,24 +222,26 @@ header > div:first-child > div:first-child > div:first-child {
 /* NAVIGATION CARD */
 header > div > div > div > div:first-child {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
   padding: 8px;
 }
 
 /* PROFILE CLICK SIDEBAR BUTTON */
 header > div > div > div > div:nth-child(2) {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
 }
 
 /* TWITTER ICON ON NAVBAR */
@@ -266,9 +252,10 @@ header > div > div > div > div:first-child > div:first-child {
 }
 header > div > div > div > div:first-child > div:first-child svg {
   /* color: rgb(29, 161, 242) !important; */
+  color: var(--primarycolor) !important;
 }
 header > div > div > div > div:first-child > div:first-child a:hover {
-  background: var(--hoverColor) !important;
+  background: var(--hovercolor) !important;
 }
 
 /* MAIN NAV ITEMS FLEX */
@@ -280,14 +267,14 @@ nav[aria-label='Primary'] a {
   width: 50px;
   height: 50px;
   display: block;
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--buttonborderradius) !important;
   transition: 0.1s;
   padding: 0 !important;
   margin: 4px 0 !important;
 }
 
 nav[aria-label='Primary'] a:hover {
-  background: var(--hoverColor) !important;
+  background: var(--hovercolor) !important;
 }
 
 nav[aria-label='Primary'] a > div {
@@ -317,7 +304,7 @@ nav[aria-label='Primary'] > div:last-of-type {
 }
 
 nav[aria-label='Primary'] > div:last-of-type:hover {
-  background: var(--hoverColor) !important;
+  background: var(--hovercolor) !important;
 }
 
 nav[aria-label='Primary'] > div:last-of-type div {
@@ -395,11 +382,10 @@ nav[aria-label='Primary'] a svg {
   > div:nth-child(9)
   [role='button'] {
   /* background-color: rgb(29, 161, 242) !important; */
-  color: var(--buttonTextColor) !important;
+  color: var(--buttontextcolor) !important;
   opacity: 1 !important;
-  border-radius: var(--buttonRadius) !important;
-  color: var(--buttonTextColor) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+  border-radius: var(--buttonborderradius) !important;
+  color: var(--buttontextcolor) !important;
 }
 [aria-labelledby='modal-header']
   > div:first-child
@@ -420,18 +406,16 @@ nav[aria-label='Primary'] a svg {
   [role='button']:hover {
   cursor: pointer !important;
   /* background-color: rgb(26, 145, 218) !important; */
-  background-color: var(--primaryColor) !important;
+  background-color: var(--primarycolor) !important;
   filter: brightness(1.2) !important;
-  color: var(--buttonTextColor) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+  color: var(--buttontextcolor) !important;
 }
 /* MOBILE TWEET BUTTON */
 [data-testid='SideNav_NewTweet_Button'] {
-  background-color: var(--primaryColor) !important;
-  color: var(--buttonTextColor) !important;
+  background-color: var(--primarycolor) !important;
+  color: var(--buttontextcolor) !important;
   opacity: 1 !important;
-  border-radius: var(--buttonRadius) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+  border-radius: var(--buttonborderradius) !important;
 }
 [data-testid='SideNav_NewTweet_Button']:hover {
   cursor: pointer !important;
@@ -445,50 +429,46 @@ header
   > div:first-child
   > div:last-child
   > a {
-  border-radius: var(--buttonRadius) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+  border-radius: var(--buttonborderradius) !important;
+  background-color: var(--primarycolor) !important;
 }
 /* TWEET BUTTON */
 [data-testid='tweetButtonInline'],
 [data-testid='tweetButton'] {
   /* background-color: rgb(29, 161, 242) !important; */
-  color: var(--buttonTextColor) !important;
+  color: var(--buttontextcolor) !important;
   opacity: 1 !important;
-  border-radius: var(--buttonRadius) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+  border-radius: var(--buttonborderradius) !important;
 }
 [data-testid='tweetButtonInline']:hover,
 [data-testid='tweetButton']:hover {
   cursor: pointer !important;
-  background-color: var(--primaryColor) !important;
+  background-color: var(--primarycolor) !important;
   filter: brightness(1.2) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
 }
 /* OTHER */
 [role='button'] {
-  border-radius: var(--buttonRadius) !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
+  border-radius: var(--buttonborderradius) !important;
+  /* background-color: var(--primarycolor) !important; */
 }
 
 a[href='/compose/tweet'] {
-  border-color: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-color: var(--primarycolor) !important;
 }
 
 [aria-label='Back']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 [role='progressbar'] svg circle:last-child {
-  stroke: var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  stroke: var(--primarycolor) !important;
 }
 
 /* FOLLOW BUTTON */
 [role='button'][data-testid*='follow']:hover {
-  background-color: var(--primaryColor) !important;
+  background-color: var(--primarycolor) !important;
 }
 [role='button'][data-testid*='follow']:hover * {
-  color: var(--buttonTextColor) !important;
+  color: var(--buttontextcolor) !important;
 }
 
 /******************************************************************
@@ -505,23 +485,20 @@ label [dir='auto'] {
 }
 input[type='password'],
 input[type='text'] {
-  border-radius: var(--buttonRadius) !important;
-  background-color: var(--inputBackground) !important;
-  border: 1px solid var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  color: var(--inputTextColor) !important;
+  border-radius: var(--buttonborderradius) !important;
+  background-color: var(--inputbackground) !important;
+  border: 1px solid var(--accentcolor) !important;
+  color: var(--inputtextcolor) !important;
   padding: 12px 10px !important;
   font-size: 16px !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
-  border: 1px solid var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border: 1px solid var(--primarycolor) !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
-  border: 1px solid var(--primaryColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border: 1px solid var(--primarycolor) !important;
 }
 
 /******************************************************************
@@ -567,17 +544,17 @@ header > div:first-child > div:first-child,
 /* MENU POPUP */
 [role='menu'],
 [role='listbox'] {
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
   margin: 0px 0px 32px 0px;
-  border: none;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
+  background-color: var(--cardbackground) !important;
 }
 [role='menu'] a[role='link']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 /* DISPLAY TAB */
 a[href='/i/display'] {
@@ -590,17 +567,16 @@ a[href='/i/display'] {
 }
 [role='listbox'] [role='option'] [role='button'][data-focusable='true'] {
   border-radius: 0 !important;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--cardbackground) !important;
 }
 [role='listbox']
   [role='option']:first-of-type
   [role='button'][data-focusable='true'] {
-  border-top-right-radius: var(--radius) !important;
-  border-top-left-radius: var(--radius) !important;
+  border-top-right-radius: var(--cardborderradius) !important;
+  border-top-left-radius: var(--cardborderradius) !important;
 }
 [role='listbox'] [role='button']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 /* PROFILE POPUP */
@@ -611,14 +587,14 @@ a[href='/i/display'] {
   > div:first-child
   > div:first-child {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
   margin: 0px 0px 32px 0px;
-  border: none;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
+  background-color: var(--cardbackground) !important;
 }
 /* PROFILE POPUP LINKS */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
@@ -628,7 +604,7 @@ a[href='/i/display'] {
   > div:first-child
   > div:first-child
   a:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 /* PROFILE POPUP BORDER */
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
@@ -638,7 +614,7 @@ a[href='/i/display'] {
   > div:first-child
   > div:first-child
   .css-1dbjc4n.r-e84r5y.r-109y4c4 {
-  background-color: var(--accentColor);
+  background-color: var(--accentcolor);
 }
 .css-1dbjc4n.r-aqfbo4.r-1xcajam
   > div:first-child
@@ -647,8 +623,7 @@ a[href='/i/display'] {
   > div:first-child
   > div:first-child
   li {
-  border-bottom: 1px solid var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom: 1px solid var(--accentcolor) !important;
 }
 /* FEED WRAPPER */
 main
@@ -675,7 +650,7 @@ main
   > div:first-child
   > div:first-child
   > div:first-child {
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
 }
 #layers
   > div:nth-child(2)
@@ -685,18 +660,19 @@ main
   > div:first-child
   > div:first-child
   > div:first-child {
-  background: var(--cardBackground) !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  background: var(--cardbackground) !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
 }
 
 /* INFO MODAL */
 [aria-labelledby='modal-header'][role='dialog'][aria-modal='true'] {
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  border: none;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
 }
 
 /* FIRST CHILD */
@@ -734,13 +710,11 @@ main
   + div
   > div:first-child
   > div:first-child {
-  border-bottom-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 
 .r-vrwoeq {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
 }
 
 /************************************************************************************
@@ -752,12 +726,13 @@ main
 /* MAIN PANELS CARDS */
 body.messages main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
 }
 
 /* TOP BAR INNER BG CHILD */
@@ -783,8 +758,7 @@ body.messages
   > div:nth-child(2)
   > div {
   background-color: transparent !important;
-  border-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-color: var(--accentcolor) !important;
 }
 
 /* MESSAGES REQUEST LINK */
@@ -796,9 +770,9 @@ body.messages
   > div:nth-child(2)
   > div:first-child
   a:hover {
-  background-color: var(--hoverColor) !important;
-  border-top-right-radius: var(--radius) !important;
-  border-top-left-radius: var(--radius) !important;
+  background-color: var(--hovercolor) !important;
+  border-top-right-radius: var(--cardborderradius) !important;
+  border-top-left-radius: var(--cardborderradius) !important;
 }
 
 /* SEARCH BACKGROUND THING */
@@ -853,11 +827,10 @@ body.messages
 body.messages [data-testid='conversation'] {
   background-color: transparent !important;
   padding: 16px !important;
-  border-bottom-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 body.messages [data-testid='conversation']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 body.messages
   [aria-label='Timeline: Messages']
@@ -884,10 +857,8 @@ body.messages
 /* START NEW MESSAGE BG WRAPPER */
 body.messages aside[aria-label='Start a new message'] {
   background-color: transparent !important;
-  border-top-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-bottom-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-top-color: var(--accentcolor) !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 
 /* INPUT STYLES */
@@ -898,10 +869,10 @@ body.messages
   > div:first-child
   > div:first-child
   > div:first-child {
-  border-radius: var(--buttonRadius) !important;
-  background-color: var(--inputBackground) !important;
-  border: 1px solid var(--inputBorderColor) !important;
-  color: var(--inputTextColor) !important;
+  border-radius: var(--buttonborderradius) !important;
+  background-color: var(--inputbackground) !important;
+  border: 1px solid var(--inputbordercolor) !important;
+  color: var(--inputtextcolor) !important;
   font-size: 16px !important;
 }
 
@@ -913,7 +884,7 @@ body.messages
   > div:first-child
   > div:first-child
   div {
-  color: var(--inputTextColor) !important;
+  color: var(--inputtextcolor) !important;
 }
 
 /* MESSAGE ENTRY */
@@ -922,19 +893,16 @@ body.messages
   > .css-1dbjc4n.r-1euycsn.r-17s6mgv.r-1qfoi16.r-1nwbi2h
   > div:nth-child(2)
   > div:first-child[role='presentation'] {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
 }
 
 /* MESSAGE PERSON TOP */
 body.messages [data-focusable='true'][role='link'] {
-  border-bottom-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 body.messages [data-focusable='true'][role='link'].r-1u4rsef {
-  background-color: var(--hoverColor) !important;
-  border-bottom-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--hovercolor) !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 
 @media (min-width: 996px) {
@@ -946,23 +914,27 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div {
     position: relative;
-    background-color: var(--cardBackground) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-radius: var(--radius) !important;
-    box-shadow: var(--cardShadow) !important;
+    background-color: var(--cardbackground) !important;
+
+    border-radius: var(--cardborderradius) !important;
+    box-shadow: var(--cardshadow) !important;
+    border-color: var(--cardbordercolor) !important;
+    border-width: var(--cardborderwidth) !important;
+    border-style: solid !important;
     margin: 0px 0px 32px 0px;
-    border: none;
   }
 
   /* MAIN DESKTOP WRAPPER */
   body.messages main > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--cardBackground) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-radius: var(--radius) !important;
-    box-shadow: var(--cardShadow) !important;
+    background-color: var(--cardbackground) !important;
+
+    border-radius: var(--cardborderradius) !important;
+    box-shadow: var(--cardshadow) !important;
+    border-color: var(--cardbordercolor) !important;
+    border-width: var(--cardborderwidth) !important;
+    border-style: solid !important;
     margin: 0px 0px 32px 0px;
-    border: none;
   }
 
   /* DESKTOP LEFT */
@@ -983,8 +955,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -994,10 +965,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-top-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
+
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -1008,10 +978,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-top-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
+
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -1022,7 +991,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child
     a:hover {
-    background-color: var(--hoverColor) !important;
+    background-color: var(--hovercolor) !important;
   }
 
   /* INPUT */
@@ -1068,10 +1037,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-top-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
+
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* SECOND BACKGROUND */
@@ -1111,12 +1079,13 @@ body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
 /* TITLE AREA CARD */
 body.home [data-testid='primaryColumn'] > div:first-child > div:first-child {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
 }
 
 body.home
@@ -1146,12 +1115,13 @@ body.home
 /* TWEET BOX CARD */
 body.home [data-testid='primaryColumn'] > div:first-child > div:nth-child(2) {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
 }
 
 /* TWEET BOX INNER W/ PADDING */
@@ -1201,7 +1171,7 @@ body.home
   [data-testid='primaryColumn']
   div[data-testid='toolBar']
   [role='button'][data-focusable='true'] {
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--buttonborderradius) !important;
 }
 
 /* ADD POLL OPTION BUTTON */
@@ -1230,8 +1200,7 @@ body.home
   > div:first-child
   > div:nth-child(2)
   .css-1dbjc4n.r-e84r5y.r-109y4c4.r-13qz1uu {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
 }
 
 /* WEIRD SEPERATOR */
@@ -1245,15 +1214,23 @@ body.home
 }
 
 /* MAIN TIMELINE CARD */
-body.home [aria-label*='Timeline'] {
+[aria-label*='Timeline'] {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
   overflow: hidden;
+}
+
+[aria-label*='Timeline: Notifications'] {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
 }
 
 /* MAIN TWEET WRAPPERS */
@@ -1273,12 +1250,11 @@ body.home
 body.home [aria-label*='Timeline'] article {
   border: none !important;
   padding: 0 !important;
-  border-bottom: 1px solid var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom: 1px solid var(--accentcolor) !important;
 }
 /* TWEET WRAPPER HOVER */
 body.home [aria-label*='Timeline'] article[role='article']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 /* TWEET ORIGINAL PADDING */
@@ -1315,8 +1291,7 @@ body.home
 
 /* TWEET THREAD CONNECTOR */
 body.home [data-testid='tweet'] > div:first-child > div:nth-child(2) {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
   position: relative;
   bottom: -16px !important;
 }
@@ -1331,8 +1306,7 @@ body.home
   > div:first-child
   > div:first-child[style='flex-basis: 49px;']
   > div:first-child {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
   left: 32px !important;
   height: 200% !important;
 }
@@ -1351,10 +1325,9 @@ body.home
   > div:first-child.css-1dbjc4n.r-18u37iz {
   display: flex;
   width: fit-content;
-  border-radius: var(--radius);
+  border-radius: var(--cardborderradius);
   padding: 3px 12px;
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
   margin-left: 16px;
 }
 
@@ -1394,7 +1367,7 @@ body.home
   [dir='ltr']
   > div:first-child
   > div:first-child {
-  border-radius: var(--buttonRadius) !important;
+  border-radius: var(--buttonborderradius) !important;
 }
 
 /* TWEET COUNT */
@@ -1435,21 +1408,18 @@ body.home
   > div:first-child
   > div:first-child
   > div:nth-child(2) {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
   border: none !important;
-  border-radius: var(--radius) !important;
+  border-radius: var(--cardborderradius) !important;
 }
 
 body.home [data-testid='tweet'] [data-testid='card.wrapper'] {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
   border: none !important;
 }
 
 body.home [data-testid='tweet'] [data-testid='card.wrapper']:hover {
-  background-color: var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  background-color: var(--accentcolor) !important;
   border: none !important;
 }
 
@@ -1499,7 +1469,7 @@ body.home
   border-bottom-left-radius: 0 !important;
   border-top-right-radius: 4px !important;
   border-bottom-right-radius: 4px !important;
-  background: var(--cardBackground) !important;
+  background: var(--cardbackground) !important;
 }
 body.home
   [data-testid='tweet']
@@ -1527,9 +1497,8 @@ body.home
   > div:nth-child(2)
   > div:first-child
   > div:nth-child(2)[data-focusable='true'] {
-  border: 1px solid var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
+  border: 1px solid var(--accentcolor) !important;
+  border-radius: var(--cardborderradius) !important;
 }
 
 /* OLD RETWEET BORDER */
@@ -1552,7 +1521,7 @@ body.home
   > div:first-child
   > div:first-child
   > div:first-child {
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
 }
 body.home
   #layers
@@ -1563,8 +1532,8 @@ body.home
   > div:first-child
   > div:first-child
   > div:first-child {
-  background: var(--cardBackground) !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 10px 5px 80px 0px !important;
+  background: var(--cardbackground) !important;
+  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
 }
 
 /* NOTIFICATIONS TABS WRAPPER */
@@ -1595,7 +1564,7 @@ body.home
   [role='tablist']
   > div
   > a:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 body.home
   [data-testid='primaryColumn']
@@ -1606,7 +1575,7 @@ body.home
   [role='tablist']
   > div:first-child
   > a {
-  border-bottom-left-radius: var(--radius);
+  border-bottom-left-radius: var(--cardborderradius);
 }
 body.home
   [data-testid='primaryColumn']
@@ -1617,7 +1586,7 @@ body.home
   [role='tablist']
   > div:nth-child(2)
   > a {
-  border-bottom-right-radius: var(--radius);
+  border-bottom-right-radius: var(--cardborderradius);
 }
 
 /* NOTIFICATIONS TIMELINE FIRST ARTICLE */
@@ -1626,8 +1595,8 @@ body.home
   > div:first-child
   > div:first-child
   article {
-  border-top-left-radius: var(--radius) !important;
-  border-top-right-radius: var(--radius) !important;
+  border-top-left-radius: var(--cardborderradius) !important;
+  border-top-right-radius: var(--cardborderradius) !important;
 }
 
 /* NOTIFICATIONS TIMELINE ARTICLE */
@@ -1636,7 +1605,7 @@ body.home
   > div:first-child
   > div
   article:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 html body.loading main {
@@ -1692,19 +1661,16 @@ body.status
   + div
   > div:nth-child(5)
   > div:first-child {
-  border-bottom: 1px solid var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-top: 1px solid var(--accentColor) !important;
-  transition: color 0.4s, background-color 0.4s !important;
+  border-bottom: 1px solid var(--accentcolor) !important;
+  border-top: 1px solid var(--accentcolor) !important;
 }
 
 body [role='button'][data-testid='UserCell'] {
   border-radius: 0 !important;
-  transition: background-color 0.4s, color 0.4s, box-shadow 0.4s !important;
 }
 
 body [role='button'][data-testid='UserCell']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 body.status [data-testid='card.wrapper'] {
@@ -1720,12 +1686,13 @@ body.status [data-testid='card.wrapper'] {
 /* TITLE CARD */
 body.settings main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  transition: color 0.4s, background-color 0.4s !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
+  border-color: var(--cardbordercolor) !important;
+  border-width: var(--cardborderwidth) !important;
+  border-style: solid !important;
   margin: 0px 0px 32px 0px;
-  border: none;
 }
 
 /* TITLE CARD INNER */
@@ -1743,7 +1710,7 @@ body.settings
 
 /* SETTINGS LINKS */
 body.settings a[role='tab']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 /* MAIN PAGE LINKS */
@@ -1752,12 +1719,12 @@ body.settings div[role='tablist'] > div > a[role='tab'] {
   border-top-left-radius: 0 !important;
 }
 body.settings div[role='tablist'] > div:first-child > a[role='tab'] {
-  border-top-right-radius: var(--radius) !important;
-  border-top-left-radius: var(--radius) !important;
+  border-top-right-radius: var(--cardborderradius) !important;
+  border-top-left-radius: var(--cardborderradius) !important;
 }
 body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
-  border-bottom-right-radius: var(--radius) !important;
-  border-bottom-left-radius: var(--radius) !important;
+  border-bottom-right-radius: var(--cardborderradius) !important;
+  border-bottom-left-radius: var(--cardborderradius) !important;
 }
 body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
   border-bottom: none !important;
@@ -1765,8 +1732,8 @@ body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
 
 /* TOP LINKS AND STUFF */
 body.settings a[href='/settings/screen_name'] {
-  border-top-left-radius: var(--radius) !important;
-  border-top-right-radius: var(--radius) !important;
+  border-top-left-radius: var(--cardborderradius) !important;
+  border-top-right-radius: var(--cardborderradius) !important;
   border-bottom: none !important;
 }
 
@@ -1780,8 +1747,8 @@ body.settings a[href="https://help.twitter.com/forms/privacy"],
 body.settings a[href="/settings/email_notifications"],
 body.settings a[href="/settings/notifications/advanced_filters"],
 body.settings a[href="/settings/your_twitter_data/age"] {
-  border-bottom-left-radius: var(--radius) !important;
-  border-bottom-right-radius: var(--radius) !important;
+  border-bottom-left-radius: var(--cardborderradius) !important;
+  border-bottom-right-radius: var(--cardborderradius) !important;
   border-bottom: none !important;
 }
 
@@ -1794,23 +1761,27 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div {
     position: relative;
-    background-color: var(--cardBackground) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-radius: var(--radius) !important;
-    box-shadow: var(--cardShadow) !important;
+    background-color: var(--cardbackground) !important;
+
+    border-radius: var(--cardborderradius) !important;
+    box-shadow: var(--cardshadow) !important;
+    border-color: var(--cardbordercolor) !important;
+    border-width: var(--cardborderwidth) !important;
+    border-style: solid !important;
     margin: 0px 0px 32px 0px;
-    border: none;
   }
 
   /* MAIN DESKTOP WRAPPER */
   body.settings main > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--cardBackground) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-radius: var(--radius) !important;
-    box-shadow: var(--cardShadow) !important;
+    background-color: var(--cardbackground) !important;
+
+    border-radius: var(--cardborderradius) !important;
+    box-shadow: var(--cardshadow) !important;
+    border-color: var(--cardbordercolor) !important;
+    border-width: var(--cardborderwidth) !important;
+    border-style: solid !important;
     margin: 0px 0px 32px 0px;
-    border: none;
   }
 
   /* DESKTOP LEFT */
@@ -1831,8 +1802,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -1842,10 +1812,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-top-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
+
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -1856,10 +1825,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-top-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
+
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -1870,7 +1838,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child
     a:hover {
-    background-color: var(--hoverColor) !important;
+    background-color: var(--hovercolor) !important;
   }
 
   /* INPUT */
@@ -1916,10 +1884,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
-    border-top-color: var(--accentColor) !important;
-    transition: color 0.4s, background-color 0.4s !important;
+    border-bottom-color: var(--accentcolor) !important;
+
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* SECOND BACKGROUND */

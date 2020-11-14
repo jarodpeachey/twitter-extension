@@ -16,6 +16,10 @@ const changeTheme = (themeName) => {
         updateCookie(input.name, newTheme[input.name]);
       });
 
+      if (newTheme.cardshadow) {
+        updateCookie('cardshadow', newTheme.cardshadow);
+      }
+
       chrome.cookies.set(
         {
           url: 'https://twitter.com',
@@ -29,55 +33,59 @@ const changeTheme = (themeName) => {
       chrome.tabs.getSelected(null, function (tab) {
         var code = `
           document.documentElement.style.setProperty(
-            '--primaryColor',
+            '--primarycolor',
             '${newTheme.primarycolor}',
           );
           document.documentElement.style.setProperty(
-            '--backgroundColor',
+            '--backgroundcolor',
             '${newTheme.backgroundcolor}',
           );
           document.documentElement.style.setProperty(
-            '--hoverColor',
+            '--hovercolor',
             '${newTheme.hovercolor}',
           );
           document.documentElement.style.setProperty(
-            '--accentColor',
+            '--accentcolor',
             '${newTheme.accentcolor}',
           );
           document.documentElement.style.setProperty(
-            '--textColor',
+            '--textcolor',
             '${newTheme.textcolor}',
           );
           document.documentElement.style.setProperty(
-            '--cardBackground',
+            '--cardbackground',
             '${newTheme.cardbackground}',
           );
           document.documentElement.style.setProperty(
-            '--radius',
-            '${newTheme.radius}',
+            '--cardbordercolor',
+            '${newTheme.cardbordercolor}',
           );
           document.documentElement.style.setProperty(
-            '--cardShadow',
+            '--cardborderwidth',
+            '${newTheme.cardborderwidth}px',
+          );
+          document.documentElement.style.setProperty(
+            '--cardborderradius',
+            '${newTheme.cardborderradius}',
+          );
+          document.documentElement.style.setProperty(
+            '--cardshadow',
             '${newTheme.cardshadow}',
           );
           document.documentElement.style.setProperty(
-            '--buttonBackground',
-            '${newTheme.buttonbackground}',
-          );
-          document.documentElement.style.setProperty(
-            '--buttonTextColor',
+            '--buttontextcolor',
             '${newTheme.buttontextcolor}',
           );
           document.documentElement.style.setProperty(
-            '--buttonRadius',
-            '${newTheme.buttonradius}',
+            '--buttonborderradius',
+            '${newTheme.buttonborderradius}',
           );
           document.documentElement.style.setProperty(
-            '--inputTextColor',
+            '--inputtextcolor',
             '${newTheme.inputtextcolor}',
           );
           document.documentElement.style.setProperty(
-            '--inputBackground',
+            '--inputbackground',
             '${newTheme.inputbackground}',
           );
         `;
@@ -88,6 +96,9 @@ const changeTheme = (themeName) => {
 };
 
 const setInputValue = (name, element) => {
+  console.log('NAME: ', name);
+  console.log('ELEMENT VALUE: ', element.value);
+
   chrome.cookies.get({ url: 'https://twitter.com', name: name }, function (
     cookie,
   ) {
@@ -120,67 +131,77 @@ const updateCookie = (name, value) => {
 //////////////////////////////////     INPUT VARIABLES     ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
-const primaryColorInput = document.getElementById('primaryColor');
-const backgroundColorInput = document.getElementById('backgroundColor');
-const hoverColorInput = document.getElementById('hoverColor');
-const accentColorInput = document.getElementById('accentColor');
-const textColorInput = document.getElementById('textColor');
-const cardBackgroundInput = document.getElementById('cardBackground');
-const radiusInput = document.getElementById('radius');
-const cardShadowInput = document.getElementById('cardShadow');
-const buttonTextColorInput = document.getElementById('buttonTextColor');
-const buttonRadiusInput = document.getElementById('buttonRadius');
-const inputTextColorInput = document.getElementById('inputTextColor');
-const inputBackgroundInput = document.getElementById('inputBackground');
+const primarycolorInput = document.getElementById('primarycolor');
+const backgroundcolorInput = document.getElementById('backgroundcolor');
+const hovercolorInput = document.getElementById('hovercolor');
+const accentcolorInput = document.getElementById('accentcolor');
+const textcolorInput = document.getElementById('textcolor');
+const cardbackgroundInput = document.getElementById('cardbackground');
+const cardborderradiusInput = document.getElementById('cardborderradius');
+const cardbordercolorInput = document.getElementById('cardbordercolor');
+const cardborderwidthInput = document.getElementById('cardborderwidth');
+// const cardshadowInput = document.getElementById('cardshadow');
+const buttontextcolorInput = document.getElementById('buttontextcolor');
+const buttonborderradiusInput = document.getElementById('buttonborderradius');
+const inputtextcolorInput = document.getElementById('inputtextcolor');
+const inputbackgroundInput = document.getElementById('inputbackground');
 
 const inputs = [
   {
     name: 'primarycolor',
-    element: primaryColorInput,
+    element: primarycolorInput,
   },
   {
     name: 'backgroundcolor',
-    element: backgroundColorInput,
+    element: backgroundcolorInput,
   },
   {
     name: 'hovercolor',
-    element: hoverColorInput,
+    element: hovercolorInput,
   },
   {
     name: 'accentcolor',
-    element: accentColorInput,
+    element: accentcolorInput,
   },
   {
     name: 'textcolor',
-    element: textColorInput,
+    element: textcolorInput,
   },
   {
     name: 'cardbackground',
-    element: cardBackgroundInput,
+    element: cardbackgroundInput,
   },
   {
-    name: 'radius',
-    element: radiusInput,
+    name: 'cardborderradius',
+    element: cardborderradiusInput,
   },
   {
-    name: 'cardshadow',
-    element: cardShadowInput,
+    name: 'cardbordercolor',
+    element: cardbordercolorInput,
   },
+  {
+    name: 'cardborderwidth',
+    element: cardborderwidthInput,
+  },
+  // {
+  //   name: 'cardshadow',
+  //   element: cardshadowInput,
+  // },
   {
     name: 'buttontextcolor',
-    element: buttonTextColorInput,
+    element: buttontextcolorInput,
   },
   {
-    name: 'buttonradius',
-    element: buttonRadiusInput,
+    name: 'buttonborderradius',
+    element: buttonborderradiusInput,
   },
   {
     name: 'inputtextcolor',
-    element: inputTextColorInput,
+    element: inputtextcolorInput,
   },
   {
     name: 'inputbackground',
-    element: inputBackgroundInput,
+    element: inputbackgroundInput,
   },
 ];
 
@@ -245,35 +266,35 @@ refreshButton.addEventListener('click', (e) => {
   //     chrome.tabs.getSelected(null, function (tab) {
   //       var code = `
   //         document.documentElement.style.setProperty(
-  //           '--primaryColor',
+  //           '--primarycolor',
   //           '${theme.primarycolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--backgroundColor',
+  //           '--backgroundcolor',
   //           '${theme.backgroundcolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--hoverColor',
+  //           '--hovercolor',
   //           '${theme.hovercolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--accentColor',
+  //           '--accentcolor',
   //           '${theme.accentcolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--textColor',
+  //           '--textcolor',
   //           '${theme.textcolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--cardBackground',
+  //           '--cardbackground',
   //           '${theme.cardbackground}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--radius',
-  //           '${theme.radius}',
+  //           '--cardborderradius',
+  //           '${theme.cardborderradius}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--cardShadow',
+  //           '--cardshadow',
   //           '${theme.cardshadow}',
   //         );
   //         document.documentElement.style.setProperty(
@@ -281,19 +302,19 @@ refreshButton.addEventListener('click', (e) => {
   //           '${theme.buttonbackground}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--buttonTextColor',
+  //           '--buttontextcolor',
   //           '${theme.buttontextcolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--buttonRadius',
-  //           '${theme.buttonradius}',
+  //           '--buttonborderradius',
+  //           '${theme.buttonborderradius}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--inputTextColor',
+  //           '--inputtextcolor',
   //           '${theme.inputtextcolor}',
   //         );
   //         document.documentElement.style.setProperty(
-  //           '--inputBackground',
+  //           '--inputbackground',
   //           '${theme.inputbackground}',
   //         );
   //       `;
@@ -516,14 +537,6 @@ chrome.cookies.getAll(
           collapseContent.style.maxHeight = `${childrenHeight}px`;
 
           open = true;
-
-          // collapseElements.forEach(newCollapse => {
-          //   if (newCollapse.id !== collapse.id) {
-          //     console.log('Closing');
-          //     newCollapse.classList.remove('open');
-          //     newCollapse.children[1].style.maxHeight = '0px';
-          //   }
-          // })
         }
       }
     });
@@ -550,8 +563,6 @@ chrome.cookies.getAll(
       (theme) =>
         !JSON.parse(theme.value).category && JSON.parse(theme.value).name,
     );
-
-    console.log(filteredArray.length);
 
     if (filteredArray.length > 0) {
       filteredArray

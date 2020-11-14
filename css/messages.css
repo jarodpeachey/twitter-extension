@@ -1,9 +1,9 @@
 /* MAIN PANELS CARDS */
 body.messages main > div:first-child > div:first-child > div:first-child > div {
   position: relative;
-  background-color: var(--cardBackground) !important;
-  border-radius: var(--radius) !important;
-  box-shadow: var(--cardShadow) !important;
+  background-color: var(--cardbackground) !important;
+  border-radius: var(--cardborderradius) !important;
+  box-shadow: var(--cardshadow) !important;
   margin: 0px 0px 16px 0px;
   border: none;
 }
@@ -29,7 +29,7 @@ body.messages main
   > div:nth-child(2)
   > div {
   background-color: transparent !important;
-  border-color: var(--accentColor) !important;
+  border-color: var(--accentcolor) !important;
 }
 
 /* MESSAGES REQUEST LINK */
@@ -40,9 +40,9 @@ body.messages main
   > div:nth-child(2)
   > div:first-child
   a:hover {
-  background-color: var(--hoverColor) !important;
-  border-top-right-radius: var(--radius) !important;
-  border-top-left-radius: var(--radius) !important;
+  background-color: var(--hovercolor) !important;
+  border-top-right-radius: var(--cardborderradius) !important;
+  border-top-left-radius: var(--cardborderradius) !important;
 }
 
 /* SEARCH BACKGROUND THING */
@@ -91,10 +91,10 @@ body.messages .css-18t94o4.css-1dbjc4n.r-urgr8i.r-42olwf.r-sdzlij.r-1phboty.r-1y
 body.messages [data-testid='conversation'] {
   background-color: transparent !important;
   padding: 16px !important;
-  border-bottom-color: var(--accentColor) !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 body.messages [data-testid='conversation']:hover {
-  background-color: var(--hoverColor) !important;
+  background-color: var(--hovercolor) !important;
 }
 
 /* MOBILE MESSAGE THREAD INNER PANEL */
@@ -113,8 +113,8 @@ body.messages main
 /* START NEW MESSAGE BG WRAPPER */
 body.messages aside[aria-label='Start a new message'] {
   background-color: transparent !important;
-  border-top-color: var(--accentColor) !important;
-  border-bottom-color: var(--accentColor) !important;
+  border-top-color: var(--accentcolor) !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 
 /* INPUT STYLES */
@@ -125,7 +125,7 @@ body.messages aside[aria-label='Start a new message']
   > div:first-child
   > div:first-child {
   border-radius: var(--inputRadius) !important;
-  background-color: var(--inputBackground) !important;
+  background-color: var(--inputbackground) !important;
   border: 1px solid var(--inputBorder) !important;
   color: var(--inputColor) !important;
   font-size: 16px !important;
@@ -146,16 +146,16 @@ body.messages [data-testid='messageEntry']
   > .css-1dbjc4n.r-1euycsn.r-17s6mgv.r-1qfoi16.r-1nwbi2h
   > div:nth-child(2)
   > div:first-child[role='presentation'] {
-  background-color: var(--backgroundColor) !important;
+  background-color: var(--backgroundcolor) !important;
 }
 
 @media (min-width: 996px) {
   /* MAIN PANELS CARDS */
   body.messages main > div:first-child > div:first-child > div:first-child > div {
     position: relative;
-    background-color: var(--cardBackground) !important;
-    border-radius: var(--radius) !important;
-    box-shadow: var(--cardShadow) !important;
+    background-color: var(--cardbackground) !important;
+    border-radius: var(--cardborderradius) !important;
+    box-shadow: var(--cardshadow) !important;
     margin: 0px 0px 16px 0px;
     border: none;
   }
@@ -163,9 +163,9 @@ body.messages [data-testid='messageEntry']
   /* MAIN DESKTOP WRAPPER */
   body.messages main > div:first-child > div:first-child > div:first-child {
     position: relative;
-    background-color: var(--cardBackground) !important;
-    border-radius: var(--radius) !important;
-    box-shadow: var(--cardShadow) !important;
+    background-color: var(--cardbackground) !important;
+    border-radius: var(--cardborderradius) !important;
+    box-shadow: var(--cardshadow) !important;
     margin: 0px 0px 16px 0px;
     border: none;
   }
@@ -187,7 +187,7 @@ body.messages [data-testid='messageEntry']
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
+    border-bottom-color: var(--accentcolor) !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -196,8 +196,8 @@ body.messages [data-testid='messageEntry']
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    border-top-color: var(--accentColor) !important;
+    border-bottom-color: var(--accentcolor) !important;
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -207,8 +207,8 @@ body.messages [data-testid='messageEntry']
     > div:first-child
     > div {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    border-top-color: var(--accentColor) !important;
+    border-bottom-color: var(--accentcolor) !important;
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -218,7 +218,7 @@ body.messages [data-testid='messageEntry']
     > div:first-child
     > div:first-child
     a:hover {
-    background-color: var(--hoverColor) !important;
+    background-color: var(--hovercolor) !important;
   }
 
   /* INPUT */
@@ -261,8 +261,8 @@ body.messages [data-testid='messageEntry']
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentColor) !important;
-    border-top-color: var(--accentColor) !important;
+    border-bottom-color: var(--accentcolor) !important;
+    border-top-color: var(--accentcolor) !important;
   }
 
   /* SECOND BACKGROUND */

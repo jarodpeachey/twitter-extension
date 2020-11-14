@@ -18,102 +18,109 @@ const getCookie = (cookieName) => {
 
 // DEFAULT THEME IF FIRST LOAD
 const lightTheme = {
+  name: 'theme-light',
+  title: 'Default',
+  category: 'light',
   primarycolor: '#1DA1F2',
   backgroundcolor: '#f1f1f1',
   hovercolor: '#f7f7f7',
   cardbackground: '#ffffff',
   accentcolor: '#f1f1f1',
   textcolor: '#222222',
-  radius: '12px',
+  cardborderradius: '8px',
+  cardbordercolor: '#000000',
+  cardborderwidth: '0',
   cardshadow:
     'rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px',
-  buttonbackground: '#1DA1F2',
-  buttonradius: '6px',
-  buttonTextcolor: '#ffffff',
-  inputTextcolor: '#111111',
-  inputBackground: '#ffffff',
+  buttonborderradius: '6px',
+  buttontextcolor: '#ffffff',
+  inputtextcolor: '#111111',
+  inputbackground: '#ffffff',
 };
 
 // LOAD CURRENT THEME
-const primaryColor = getCookie('primarycolor');
-const backgroundColor = getCookie('backgroundcolor');
-const hoverColor = getCookie('hovercolor');
-const accentColor = getCookie('accentcolor');
-const textColor = getCookie('textcolor');
+const primarycolor = getCookie('primarycolor');
+const backgroundcolor = getCookie('backgroundcolor');
+const hovercolor = getCookie('hovercolor');
+const accentcolor = getCookie('accentcolor');
+const textcolor = getCookie('textcolor');
 
-const cardBackground = getCookie('cardbackground');
-const radius = getCookie('radius');
-const cardShadow = getCookie('cardshadow');
+const cardbackground = getCookie('cardbackground');
+const cardborderradius = getCookie('cardborderradius');
+const cardbordercolor = getCookie('cardbordercolor');
+const cardborderwidth = getCookie('cardborderwidth');
+const cardshadow = getCookie('cardshadow');
+console.log(cardshadow);
 
-const buttonBackground = getCookie('buttonbackground');
-const buttonTextColor = getCookie('buttontextcolor');
-const buttonRadius = getCookie('buttonradius');
+const buttontextcolor = getCookie('buttontextcolor');
+const buttonborderradius = getCookie('buttonborderradius');
 
-const inputBackground = getCookie('inputbackground');
-const inputTextColor = getCookie('inputtextcolor');
+const inputbackground = getCookie('inputbackground');
+const inputtextcolor = getCookie('inputtextcolor');
 
 document.documentElement.style.setProperty(
-  '--primaryColor',
-  primaryColor || lightTheme.primarycolor,
+  '--primarycolor',
+  primarycolor || lightTheme.primarycolor,
 );
 document.documentElement.style.setProperty(
-  '--backgroundColor',
-  backgroundColor || lightTheme.backgroundcolor,
+  '--backgroundcolor',
+  backgroundcolor || lightTheme.backgroundcolor,
 );
 document.documentElement.style.setProperty(
-  '--hoverColor',
-  hoverColor || lightTheme.hovercolor,
+  '--hovercolor',
+  hovercolor || lightTheme.hovercolor,
 );
 document.documentElement.style.setProperty(
-  '--accentColor',
-  accentColor || lightTheme.accentcolor,
+  '--accentcolor',
+  accentcolor || lightTheme.accentcolor,
 );
 document.documentElement.style.setProperty(
-  '--textColor',
-  textColor || lightTheme.textcolor,
+  '--textcolor',
+  textcolor || lightTheme.textcolor,
 );
 document.documentElement.style.setProperty(
-  '--cardBackground',
-  cardBackground || lightTheme.cardbackground,
+  '--cardbackground',
+  cardbackground || lightTheme.cardbackground,
 );
 document.documentElement.style.setProperty(
-  '--radius',
-  radius || lightTheme.radius,
+  '--cardborderradius',
+  cardborderradius || lightTheme.cardborderradius,
 );
 document.documentElement.style.setProperty(
-  '--cardShadow',
-  cardShadow || lightTheme.cardshadow,
+  '--cardborderwidth',
+  `${cardborderwidth || lightTheme.cardborderwidth}px`,
 );
 document.documentElement.style.setProperty(
-  '--buttonBackground',
-  buttonBackground === ''
-    ? primaryColor || lightTheme.primarycolor
-    : buttonBackground || lightTheme.buttonbackground,
+  '--cardbordercolor',
+  cardbordercolor || lightTheme.cardbordercolor,
 );
 document.documentElement.style.setProperty(
-  '--buttonTextColor',
-  buttonTextColor === ''
+  '--cardshadow',
+  cardshadow || lightTheme.cardshadow,
+);
+document.documentElement.style.setProperty(
+  '--buttontextcolor',
+  buttontextcolor === ''
     ? 'white'
-    : buttonTextColor || lightTheme.buttontextcolor,
+    : buttontextcolor || lightTheme.buttontextcolor,
 );
 document.documentElement.style.setProperty(
-  '--buttonRadius',
-  buttonRadius === ''
-    ? radius || lightTheme.radius
-    : buttonRadius || lightTheme.buttonradius,
+  '--buttonborderradius',
+  buttonborderradius === ''
+    ? cardborderradius || lightTheme.cardborderradius
+    : buttonborderradius || lightTheme.buttonborderradius,
 );
 document.documentElement.style.setProperty(
-  '--inputTextColor',
-  inputTextColor || lightTheme.inputtextcolor,
+  '--inputtextcolor',
+  inputtextcolor || lightTheme.inputtextcolor,
 );
 document.documentElement.style.setProperty(
-  '--inputBackground',
-  inputBackground || lightTheme.inputbackground,
+  '--inputbackground',
+  inputbackground || lightTheme.inputbackground,
 );
 
 // LOAD CURRENT PAGE STYLESHEETS
 if (window.location.pathname.includes('messages')) {
-  console.log('Updating to messages');
   document.body.classList.add('messages');
   document.body.classList.remove('home');
   document.body.classList.remove('status');
@@ -129,7 +136,6 @@ if (window.location.pathname.includes('messages')) {
   document.body.classList.remove('status');
   document.body.classList.remove('home');
 } else {
-  console.log('Updating to home/notifications');
   document.body.classList.add('home');
   document.body.classList.remove('messages');
   document.body.classList.remove('status');
@@ -137,14 +143,10 @@ if (window.location.pathname.includes('messages')) {
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  console.log(getCookie('previousurl'));
-  console.log(request.url);
-
   if (
     request.url.includes('messages') &&
     !getCookie('previousurl').includes('messages')
   ) {
-    console.log('Updating to messages');
     document.body.classList.add('messages');
     document.body.classList.remove('home');
     document.body.classList.remove('status');
@@ -169,7 +171,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       request.url === '/notifications/mentions'
     )
   ) {
-    console.log('Updating to home/notifications');
     document.body.classList.add('loading');
     setTimeout(() => {
       document.body.classList.remove('loading');
