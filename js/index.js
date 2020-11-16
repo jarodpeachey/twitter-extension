@@ -224,6 +224,7 @@ const newThemeButton = document.getElementById('new');
 //////////////////////////////////////////////////////////////////////////////////////////////
 const presetsWrapper = document.getElementById('presets-wrapper');
 let selectedTheme = '';
+let selectedCategory = '';
 const mainContent = document.getElementById('main-content');
 const title = document.getElementById('title');
 
@@ -233,25 +234,56 @@ const title = document.getElementById('title');
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 newThemeButton.addEventListener('click', (e) => {
-  document.body.classList.add('new');
-  title.value = 'New Theme';
-  title.classList.add('active');
-  newThemeButton.style.display = 'none';
-  title.disabled = false;
+  if (document.body.classList.contains('edit')) {
+    chrome.cookies.remove(
+      {
+        url: 'https://twitter.com',
+        name: selectedTheme,
+      },
+      function () {
+        selectedTheme = 'theme-light';
+        changeTheme('theme-light');
 
-  chrome.cookies.get(
-    {
-      url: 'https://twitter.com',
-      name: selectedTheme,
-    },
-    function (cookie) {
-      const theme = JSON.parse(cookie.value);
+        // chrome.tabs.getSelected(null, function (tab) {
+        //   var code = 'window.location.reload();';
+        //   chrome.tabs.executeScript(tab.id, { code: code });
+        // });
 
-      inputs.forEach((input) => {
-        updateInputValue(input.element, theme[input.name]);
-      });
-    },
-  );
+        setTimeout(() => {
+          document.body.classList.remove('new');
+          document.body.classList.remove('edit');
+          title.value = 'Themes';
+          title.classList.remove('active');
+          title.disabled = true;
+          newThemeButton.style.display = 'block';
+
+          setTimeout(() => {
+            window.location.reload();
+          }, 200);
+        }, 400);
+      },
+    );
+  } else {
+    document.body.classList.add('new');
+    title.value = 'New Theme';
+    title.classList.add('active');
+    newThemeButton.style.display = 'none';
+    title.disabled = false;
+
+    chrome.cookies.get(
+      {
+        url: 'https://twitter.com',
+        name: selectedTheme,
+      },
+      function (cookie) {
+        const theme = JSON.parse(cookie.value);
+
+        inputs.forEach((input) => {
+          updateInputValue(input.element, theme[input.name]);
+        });
+      },
+    );
+  }
 });
 
 refreshButton.addEventListener('click', (e) => {
@@ -334,6 +366,7 @@ cancelButton.addEventListener('click', (e) => {
   title.classList.remove('active');
   title.classList.remove('width');
   title.disabled = true;
+  newThemeButton.innerHTML = '+ NEW';
   newThemeButton.style.display = 'block';
 });
 
@@ -347,7 +380,12 @@ editButton.addEventListener('click', (e) => {
   title.value = themeTitle;
   title.classList.add('width');
   // title.style.width = '400px';
-  newThemeButton.style.display = 'none';
+
+  if (selectedCategory.includes('custom')) {
+    newThemeButton.innerHTML = 'DELETE';
+  } else {
+    newThemeButton.style.display = 'none';
+  }
   title.disabled = true;
 
   chrome.cookies.get(
@@ -433,10 +471,10 @@ createButton.addEventListener('click', (e) => {
     function () {},
   );
 
-  chrome.tabs.getSelected(null, function (tab) {
-    var code = 'window.location.reload();';
-    chrome.tabs.executeScript(tab.id, { code: code });
-  });
+  // chrome.tabs.getSelected(null, function (tab) {
+  //   var code = 'window.location.reload();';
+  //   chrome.tabs.executeScript(tab.id, { code: code });
+  // });
 
   setTimeout(() => {
     document.body.classList.remove('new');
@@ -639,10 +677,40 @@ chrome.cookies.getAll(
             if (cookie && presetButton.id === cookie.value) {
               presetButton.classList.add('active');
               selectedTheme = presetButton.id;
+              chrome.cookies.get(
+                {
+                  url: 'https://twitter.com',
+                  name: presetButton.id,
+                },
+                function (newCookie) {
+                  const newCookieValue = JSON.parse(newCookie.value);
+
+                  if (newCookieValue.category) {
+                    selectedCategory = newCookieValue.category;
+                  } else {
+                    selectedCategory = 'custom';
+                  }
+                },
+              );
             }
 
             presetButton.addEventListener('click', (e) => {
               selectedTheme = presetButton.id;
+              chrome.cookies.get(
+                {
+                  url: 'https://twitter.com',
+                  name: presetButton.id,
+                },
+                function (newCookie) {
+                  const newCookieValue = JSON.parse(newCookie.value);
+
+                  if (newCookieValue.category) {
+                    selectedCategory = newCookieValue.category;
+                  } else {
+                    selectedCategory = 'custom';
+                  }
+                },
+              );
 
               const presetButtons = document.querySelectorAll('.theme__item');
 
@@ -662,6 +730,21 @@ chrome.cookies.getAll(
           presetButtons.forEach((presetButton) => {
             presetButton.addEventListener('click', (e) => {
               selectedTheme = presetButton.id;
+              chrome.cookies.get(
+                {
+                  url: 'https://twitter.com',
+                  name: presetButton.id,
+                },
+                function (newCookie) {
+                  const newCookieValue = JSON.parse(newCookie.value);
+
+                  if (newCookieValue.category) {
+                    selectedCategory = newCookieValue.category;
+                  } else {
+                    selectedCategory = 'custom';
+                  }
+                },
+              );
 
               const presetButtons = document.querySelectorAll('.theme__item');
 
