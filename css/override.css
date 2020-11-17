@@ -1226,7 +1226,8 @@ body.home
   overflow: hidden;
 }
 
-[aria-label*='Timeline: Notifications'] {
+[aria-label*='Timeline: Notifications'],
+[aria-label='Timeline: Bookmarks'], [aria-label="Timeline: Your Lists"], [aria-label*="’s Tweets"], [aria-label="Timeline: Explore"] {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
