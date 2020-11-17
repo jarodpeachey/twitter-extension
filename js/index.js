@@ -435,6 +435,7 @@ saveButton.addEventListener('click', (e) => {
     title.classList.remove('active');
     title.disabled = true;
     newThemeButton.style.display = 'block';
+    newThemeButton.innerHTML = '+ New';
 
     changeTheme(selectedTheme);
   }, 400);
@@ -486,6 +487,8 @@ createButton.addEventListener('click', (e) => {
 
     setTimeout(() => {
       window.location.reload();
+      selectedTheme = theme.name;
+      changeTheme(selectedTheme);
     }, 200);
   }, 400);
 });
