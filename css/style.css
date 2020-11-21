@@ -331,7 +331,7 @@ body.edit #main-content {
   -webkit-text-fill-color: transparent;
 }
 
-label {
+.option {
   padding: 10px 12px;
   border-bottom: 1px solid #e8e8e8;
   display: block;
@@ -379,7 +379,7 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-label.flex {
+.option.flex {
   display: flex;
   align-items: center;
   justify-content: space-between;

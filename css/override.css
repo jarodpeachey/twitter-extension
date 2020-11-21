@@ -33,11 +33,23 @@
   .r-1re7ezh {
     color: var(--textcolor) !important;
   }
+  .r-18jsvk2 {
+    color: var(--textcolor) !important;
+  }
+  .r-m0bqgq {
+    color: var(--textcolor) !important;
+  }
 }
 .r-hkyrab {
   color: var(--textcolor) !important;
 }
 .r-1re7ezh {
+  color: var(--textcolor) !important;
+}
+.r-18jsvk2 {
+  color: var(--textcolor) !important;
+}
+.r-m0bqgq {
   color: var(--textcolor) !important;
 }
 
@@ -110,6 +122,14 @@ a.r-zv2cs0,
 }
 .r-14lw9ot {
   background-color: transparent !important;
+}
+* {
+  border-bottom-color: var(--accentcolor);
+}
+
+/* BACKGROUNDS */
+.r-1ihkh82 {
+  background-color: var(--accentcolor) !important;
 }
 
 /* TRANSITION */
@@ -1227,7 +1247,10 @@ body.home
 }
 
 [aria-label*='Timeline: Notifications'],
-[aria-label='Timeline: Bookmarks'], [aria-label="Timeline: Your Lists"], [aria-label*="’s Tweets"], [aria-label="Timeline: Explore"] {
+[aria-label='Timeline: Bookmarks'],
+[aria-label='Timeline: Your Lists'],
+[aria-label*='’s Tweets'],
+[aria-label='Timeline: Explore'] {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
@@ -1710,8 +1733,12 @@ body.settings
 }
 
 /* SETTINGS LINKS */
+body.settings a[role='tab'] {
+  border-bottom-color: var(--accentcolor) !important;
+}
 body.settings a[role='tab']:hover {
   background-color: var(--hovercolor) !important;
+  border-bottom-color: var(--accentcolor) !important;
 }
 
 /* MAIN PAGE LINKS */
