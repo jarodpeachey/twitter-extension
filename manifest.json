@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Glitter",
+  "name": "Glitter: Twitter Themes",
   "version": "1.0.0",
-  "description": "An all-in-one Twitter extension that allows you to fully customize your Twitter experience. Change everything from buttons to cards, inputs to colors and more.",
+  "description": "25+ customizable themes and presets for Twitter",
   "short_name": "Glitter",
   "icons": {
     "16": "img/icon.png",
@@ -12,13 +12,7 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "permissions": [
-    "activeTab",
-    "declarativeContent",
-    "tabs",
-    "cookies",
-    "*://*.twitter.com/*"
-  ],
+  "permissions": ["activeTab", "tabs", "cookies", "*://twitter.com/*"],
   "content_scripts": [
     {
       "matches": ["*://twitter.com/*"],
