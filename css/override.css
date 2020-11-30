@@ -1742,18 +1742,21 @@ body.settings a[role='tab']:hover {
 }
 
 /* MAIN PAGE LINKS */
-body.settings div[role='tablist'] > div > a[role='tab'] {
-  border-top-right-radius: 0 !important;
-  border-top-left-radius: 0 !important;
+@media (max-width: 995px) {
+  body.settings div[role='tablist'] > div > a[role='tab'] {
+    border-top-right-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+  }
+  body.settings div[role='tablist'] > div:first-child > a[role='tab'] {
+    border-top-right-radius: var(--cardborderradius) !important;
+    border-top-left-radius: var(--cardborderradius) !important;
+  }
+  body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
+    border-bottom-right-radius: var(--cardborderradius) !important;
+    border-bottom-left-radius: var(--cardborderradius) !important;
+  }
 }
-body.settings div[role='tablist'] > div:first-child > a[role='tab'] {
-  border-top-right-radius: var(--cardborderradius) !important;
-  border-top-left-radius: var(--cardborderradius) !important;
-}
-body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
-  border-bottom-right-radius: var(--cardborderradius) !important;
-  border-bottom-left-radius: var(--cardborderradius) !important;
-}
+
 body.settings div[role='tablist'] > div:last-child > a[role='tab'] {
   border-bottom: none !important;
 }
@@ -1930,15 +1933,15 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     background-color: transparent !important;
   }
 
-  body.settings a[href='/settings/deactivate'],
-body.settings a[href='/settings/apps_and_sessions'],
-body.settings a[href='/settings/notifications/preferences'],
-body.settings a[href='/settings/data'],
-body.settings a[href="https://business.twitter.com"],
-body.settings a[href="https://help.twitter.com/forms/privacy"],
-body.settings a[href="/settings/email_notifications"],
-body.settings a[href="/settings/notifications/advanced_filters"],
-body.settings a[href="/settings/your_twitter_data/age"] {
+  body.settings a[role="tab"][href='/settings/deactivate'],
+body.settings a[role="tab"][href='/settings/apps_and_sessions'],
+body.settings a[role="tab"][href='/settings/notifications/preferences'],
+body.settings a[role="tab"][href='/settings/data'],
+body.settings a[role="tab"][href="https://business.twitter.com"],
+body.settings a[role="tab"][href="https://help.twitter.com/forms/privacy"],
+body.settings a[role="tab"][href="/settings/email_notifications"],
+body.settings a[role="tab"][href="/settings/notifications/advanced_filters"],
+body.settings a[role="tab"][href="/settings/your_twitter_data/age"] {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }

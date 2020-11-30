@@ -1,9 +1,42 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////     BUTTON/ACTION VARIABLES     ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+const refreshButton = document.getElementById('refresh');
+const editButton = document.getElementById('edit');
+const createButton = document.getElementById('create');
+const cancelButton = document.getElementById('cancel');
+const saveButton = document.getElementById('save');
+const newThemeButton = document.getElementById('new');
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////     MISCELLANEOUS VARIABLES     ///////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
+const presetsWrapper = document.getElementById('presets-wrapper');
+let selectedTheme = '';
+let selectedThemeTitle = '';
+let selectedCategory = '';
+const mainContent = document.getElementById('main-content');
+const title = document.getElementById('title');
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////     FUNCTION DECLARATIONS     /////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 const changeTheme = (themeName) => {
+  console.log(selectedTheme);
+  console.log(selectedThemeTitle);
+  console.log(selectedCategory);
+  if (selectedCategory.toLowerCase() !== 'custom') {
+    editButton.innerHTML = `Clone ${selectedCategory} ${selectedThemeTitle} Theme`;
+  } else {
+    editButton.innerHTML = `Edit ${selectedThemeTitle} Theme`;
+  }
+
   chrome.cookies.get(
     {
       url: 'https://twitter.com',
@@ -99,15 +132,16 @@ const setInputValue = (name, element) => {
   console.log('NAME: ', name);
   console.log('ELEMENT VALUE: ', element.value);
 
-  chrome.cookies.get({ url: 'https://twitter.com', name: name }, function (
-    cookie,
-  ) {
-    if (cookie) {
-      element.value = cookie.value || themes[0][name];
-    } else {
-      element.value = themes[0][name];
-    }
-  });
+  chrome.cookies.get(
+    { url: 'https://twitter.com', name: name },
+    function (cookie) {
+      if (cookie) {
+        element.value = cookie.value || themes[0][name];
+      } else {
+        element.value = themes[0][name];
+      }
+    },
+  );
 };
 
 const updateInputValue = (input, value) => {
@@ -207,29 +241,6 @@ const inputs = [
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////     BUTTON/ACTION VARIABLES     ///////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-const refreshButton = document.getElementById('refresh');
-const editButton = document.getElementById('edit');
-const createButton = document.getElementById('create');
-const cancelButton = document.getElementById('cancel');
-const saveButton = document.getElementById('save');
-const newThemeButton = document.getElementById('new');
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////     MISCELLANEOUS VARIABLES     ///////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
-const presetsWrapper = document.getElementById('presets-wrapper');
-let selectedTheme = '';
-let selectedCategory = '';
-const mainContent = document.getElementById('main-content');
-const title = document.getElementById('title');
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////     BUTTON EVENTS LISTENERS     ///////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -242,6 +253,7 @@ newThemeButton.addEventListener('click', (e) => {
       },
       function () {
         selectedTheme = 'theme-light';
+        selectedThemeTitle = 'Light';
         changeTheme('theme-light');
 
         // chrome.tabs.getSelected(null, function (tab) {
@@ -286,79 +298,6 @@ newThemeButton.addEventListener('click', (e) => {
   }
 });
 
-refreshButton.addEventListener('click', (e) => {
-  // changeTheme(selectedTheme);
-  // chrome.cookies.get(
-  //   {
-  //     url: 'https://twitter.com',
-  //     name: selectedTheme,
-  //   },
-  //   function (cookie) {
-  //     const theme = JSON.parse(cookie.value);
-  //     chrome.tabs.getSelected(null, function (tab) {
-  //       var code = `
-  //         document.documentElement.style.setProperty(
-  //           '--primarycolor',
-  //           '${theme.primarycolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--backgroundcolor',
-  //           '${theme.backgroundcolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--hovercolor',
-  //           '${theme.hovercolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--accentcolor',
-  //           '${theme.accentcolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--textcolor',
-  //           '${theme.textcolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--cardbackground',
-  //           '${theme.cardbackground}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--cardborderradius',
-  //           '${theme.cardborderradius}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--cardshadow',
-  //           '${theme.cardshadow}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--buttonBackground',
-  //           '${theme.buttonbackground}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--buttontextcolor',
-  //           '${theme.buttontextcolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--buttonborderradius',
-  //           '${theme.buttonborderradius}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--inputtextcolor',
-  //           '${theme.inputtextcolor}',
-  //         );
-  //         document.documentElement.style.setProperty(
-  //           '--inputbackground',
-  //           '${theme.inputbackground}',
-  //         );
-  //       `;
-  //       chrome.tabs.executeScript(tab.id, { code: code });
-  //     });
-  //   },
-  // );
-  // setTimeout(() => {
-  //   window.location.reload();
-  // }, 200);
-});
-
 cancelButton.addEventListener('click', (e) => {
   document.body.classList.remove('new');
   document.body.classList.remove('edit');
@@ -371,36 +310,52 @@ cancelButton.addEventListener('click', (e) => {
 });
 
 editButton.addEventListener('click', (e) => {
-  let themeTitle = selectedTheme.substring(6, selectedTheme.length);
-  themeTitle = themeTitle
-    .replace('-', ' ')
-    .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
+  if (selectedCategory.toLowerCase() === 'custom') {
+    let themeTitle = selectedTheme.substring(6, selectedTheme.length);
+    themeTitle = themeTitle
+      .replace('-', ' ')
+      .replace(/(?:^|\s)\S/g, (a) => a.toUpperCase());
 
-  document.body.classList.add('edit');
-  title.value = themeTitle;
-  title.classList.add('width');
-  // title.style.width = '400px';
+    document.body.classList.add('edit');
+    title.value = themeTitle;
+    title.classList.add('width');
+    title.disabled = true;
+    newThemeButton.innerHTML = `Delete`;
 
-  if (selectedCategory.includes('custom')) {
-    newThemeButton.innerHTML = 'DELETE';
+    chrome.cookies.get(
+      {
+        url: 'https://twitter.com',
+        name: selectedTheme,
+      },
+      function (cookie) {
+        const theme = JSON.parse(cookie.value);
+
+        inputs.forEach((input) => {
+          updateInputValue(input.element, theme[input.name]);
+        });
+      },
+    );
   } else {
+    document.body.classList.add('new');
+    title.value = `${selectedCategory} ${selectedThemeTitle} Copy`;
+    title.classList.add('active');
     newThemeButton.style.display = 'none';
+    title.disabled = false;
+
+    chrome.cookies.get(
+      {
+        url: 'https://twitter.com',
+        name: selectedTheme,
+      },
+      function (cookie) {
+        const theme = JSON.parse(cookie.value);
+
+        inputs.forEach((input) => {
+          updateInputValue(input.element, theme[input.name]);
+        });
+      },
+    );
   }
-  title.disabled = true;
-
-  chrome.cookies.get(
-    {
-      url: 'https://twitter.com',
-      name: selectedTheme,
-    },
-    function (cookie) {
-      const theme = JSON.parse(cookie.value);
-
-      inputs.forEach((input) => {
-        updateInputValue(input.element, theme[input.name]);
-      });
-    },
-  );
 });
 
 saveButton.addEventListener('click', (e) => {
@@ -488,6 +443,7 @@ createButton.addEventListener('click', (e) => {
     setTimeout(() => {
       window.location.reload();
       selectedTheme = theme.name;
+      selectedThemeTitle = theme.title;
       changeTheme(selectedTheme);
     }, 200);
   }, 400);
@@ -680,6 +636,7 @@ chrome.cookies.getAll(
             if (cookie && presetButton.id === cookie.value) {
               presetButton.classList.add('active');
               selectedTheme = presetButton.id;
+
               chrome.cookies.get(
                 {
                   url: 'https://twitter.com',
@@ -691,8 +648,12 @@ chrome.cookies.getAll(
                   if (newCookieValue.category) {
                     selectedCategory = newCookieValue.category;
                   } else {
-                    selectedCategory = 'custom';
+                    selectedCategory = 'Custom';
                   }
+
+                  selectedThemeTitle = newCookieValue.title;
+
+                  changeTheme(presetButton.id);
                 },
               );
             }
@@ -710,8 +671,12 @@ chrome.cookies.getAll(
                   if (newCookieValue.category) {
                     selectedCategory = newCookieValue.category;
                   } else {
-                    selectedCategory = 'custom';
+                    selectedCategory = 'Custom';
                   }
+
+                  selectedThemeTitle = newCookieValue.title;
+
+                  changeTheme(presetButton.id);
                 },
               );
 
@@ -722,13 +687,13 @@ chrome.cookies.getAll(
               });
 
               document.getElementById(selectedTheme).classList.add('active');
-
-              changeTheme(presetButton.id);
             });
           });
         } else {
           document.getElementById('theme-light').classList.add('active');
           selectedTheme = 'theme-light';
+          selectedThemeTitle = 'Light';
+          editButton.innerHTML = `Clone Light Default Theme`;
 
           presetButtons.forEach((presetButton) => {
             presetButton.addEventListener('click', (e) => {
@@ -744,8 +709,12 @@ chrome.cookies.getAll(
                   if (newCookieValue.category) {
                     selectedCategory = newCookieValue.category;
                   } else {
-                    selectedCategory = 'custom';
+                    selectedCategory = 'Custom';
                   }
+
+                  selectedThemeTitle = newCookieValue.title;
+
+                  changeTheme(presetButton.id);
                 },
               );
 
@@ -756,8 +725,6 @@ chrome.cookies.getAll(
               });
 
               document.getElementById(selectedTheme).classList.add('active');
-
-              changeTheme(presetButton.id);
             });
           });
         }
