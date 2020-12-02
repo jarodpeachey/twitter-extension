@@ -112,9 +112,15 @@ a.r-zv2cs0,
 .r-1u4rsef a + div:last-child {
   border-right-color: var(--primarycolor) !important;
 }
+.r-4rwt92 {
+  border-right-color: var(--primarycolor) !important;
+}
 
 /* BORDER COLOR */
 .r-my5ep6 {
+  border-bottom-color: var(--accentcolor) !important;
+}
+.r-j7yic {
   border-bottom-color: var(--accentcolor) !important;
 }
 .r-e84r5y {

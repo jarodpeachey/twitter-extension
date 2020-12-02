@@ -28,9 +28,6 @@ const title = document.getElementById('title');
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////////
 const changeTheme = (themeName) => {
-  console.log(selectedTheme);
-  console.log(selectedThemeTitle);
-  console.log(selectedCategory);
   if (selectedCategory.toLowerCase() !== 'custom') {
     editButton.innerHTML = `Clone ${selectedCategory} ${selectedThemeTitle} Theme`;
   } else {
