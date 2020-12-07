@@ -1252,7 +1252,7 @@ body.home
   overflow: hidden;
 }
 
-[aria-label*='Timeline: Notifications'],
+[aria-label*='Timeline: Notifications'],[aria-label*='Timeline: Messages'],
 [aria-label='Timeline: Bookmarks'],
 [aria-label='Timeline: Your Lists'],
 [aria-label*='’s Tweets'],
