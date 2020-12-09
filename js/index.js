@@ -79,6 +79,10 @@ const changeTheme = (themeName) => {
             '${newTheme.accentcolor}',
           );
           document.documentElement.style.setProperty(
+            '--bordercolor',
+            '${newTheme.bordercolor}',
+          );
+          document.documentElement.style.setProperty(
             '--textcolor',
             '${newTheme.textcolor}',
           );
@@ -166,6 +170,7 @@ const primarycolorInput = document.getElementById('primarycolor');
 const backgroundcolorInput = document.getElementById('backgroundcolor');
 const hovercolorInput = document.getElementById('hovercolor');
 const accentcolorInput = document.getElementById('accentcolor');
+const bordercolorInput = document.getElementById('bordercolor');
 const textcolorInput = document.getElementById('textcolor');
 const cardbackgroundInput = document.getElementById('cardbackground');
 const cardborderradiusInput = document.getElementById('cardborderradius');
@@ -193,6 +198,10 @@ const inputs = [
   {
     name: 'accentcolor',
     element: accentcolorInput,
+  },
+  {
+    name: 'bordercolor',
+    element: bordercolorInput,
   },
   {
     name: 'textcolor',

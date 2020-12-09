@@ -26,6 +26,7 @@ const lightTheme = {
   hovercolor: '#f7f7f7',
   cardbackground: '#ffffff',
   accentcolor: '#f1f1f1',
+  bordercolor: '#bbbbbb',
   textcolor: '#222222',
   cardborderradius: '8px',
   cardbordercolor: '#000000',
@@ -43,6 +44,7 @@ const primarycolor = getCookie('primarycolor');
 const backgroundcolor = getCookie('backgroundcolor');
 const hovercolor = getCookie('hovercolor');
 const accentcolor = getCookie('accentcolor');
+const bordercolor = getCookie('bordercolor');
 const textcolor = getCookie('textcolor');
 
 const cardbackground = getCookie('cardbackground');
@@ -50,7 +52,6 @@ const cardborderradius = getCookie('cardborderradius');
 const cardbordercolor = getCookie('cardbordercolor');
 const cardborderwidth = getCookie('cardborderwidth');
 const cardshadow = getCookie('cardshadow');
-console.log(cardshadow);
 
 const buttontextcolor = getCookie('buttontextcolor');
 const buttonborderradius = getCookie('buttonborderradius');
@@ -73,6 +74,10 @@ document.documentElement.style.setProperty(
 document.documentElement.style.setProperty(
   '--accentcolor',
   accentcolor || lightTheme.accentcolor,
+);
+document.documentElement.style.setProperty(
+  '--bordercolor',
+  bordercolor || lightTheme.bordercolor,
 );
 document.documentElement.style.setProperty(
   '--textcolor',

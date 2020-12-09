@@ -1,25 +1,3 @@
-/******************************************************************
- ***************         MAIN LAYOUT STUFF         ****************
- ******************************************************************/
-/* :root {
-  --primarycolor: rgb(209, 98, 46);
-  --backgroundcolor: #1a1e21;
-  --hovercolor: #273036;
-  --cardbackground: rgb(44, 54, 60);
-  --accentcolor: #565f65;
-  --textcolor: #fcfcfc;
-  --cardborderradius: 12px;
-  --inputRadius: 4px;
-  --inputBorder: #d8d8d8;
-  --inputBorderHover: #c8c8c8;
-  --inputbackground: #ffffff;
-  --inputtextcolor: #444444;
-  --cardshadow: 0px 2px 3px -1px rgba(0, 0, 0, 0),
-    0px 1px 4px 0px rgba(0, 0, 0, 0.2), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
-  --scrollbarBackground: transparent;
-  --scrollbarColor: #ffffff;
-} */
-
 /************************************************************************************
 *************************************************************************************
 **********************         UTILITIES and MISC      ******************************
@@ -118,10 +96,10 @@ a.r-zv2cs0,
 
 /* BORDER COLOR */
 .r-my5ep6 {
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 .r-j7yic {
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 .r-e84r5y {
   background-color: var(--accentcolor) !important;
@@ -129,8 +107,11 @@ a.r-zv2cs0,
 .r-14lw9ot {
   background-color: transparent !important;
 }
+.r-z1a2ur {
+  background-color: var(--bordercolor) !important;
+}
 * {
-  border-bottom-color: var(--accentcolor);
+  border-bottom-color: var(--bordercolor);
 }
 
 /* BACKGROUNDS */
@@ -387,6 +368,41 @@ nav[aria-label='Primary'] a svg {
   }
 }
 
+/* TWEET POLL OPTIONS */
+[data-testid='attachments'] > div:first-child {
+  border-color: var(--bordercolor) !important;
+}
+
+[data-testid='attachments'] > div:first-child > div:nth-child(2) {
+  border-color: var(--bordercolor) !important;
+}
+
+[data-testid='attachments'] [aria-label='Add a choice'] {
+  margin-bottom: 8px !important;
+}
+
+/* [data-testid='attachments']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > label {
+  background-color: pink !important;
+} */
+
+/* INPUTS FOR POLLS */
+[data-testid='attachments'] label [dir='auto'],
+[data-testid='attachments'] label input[name*='Choice'] {
+  margin: 0 !important;
+}
+
+/* SELECT INPUTS */
+[data-testid='attachments'] [dir='auto'] + div > div {
+  background-color: transparent !important;
+  border-color: var(--bordercolor) !important;
+}
+
 /******************************************************************
  ***************          GLOBAL BUTTONS           ****************
  ******************************************************************/
@@ -504,6 +520,7 @@ label {
   border: none !important;
   background: transparent !important;
   padding: 0 !important;
+  box-shadow: none !important;
 }
 label [dir='auto'] {
   padding-left: 0 !important;
@@ -513,7 +530,7 @@ input[type='password'],
 input[type='text'] {
   border-radius: var(--buttonborderradius) !important;
   background-color: var(--inputbackground) !important;
-  border: 1px solid var(--accentcolor) !important;
+  border: 1px solid var(--bordercolor) !important;
   color: var(--inputtextcolor) !important;
   padding: 12px 10px !important;
   font-size: 16px !important;
@@ -569,10 +586,16 @@ header > div:first-child > div:first-child,
 }
 /* MENU POPUP */
 [role='menu'],
-[role='listbox'] {
+[role='listbox'],
+[aria-describedby='conversation-controls-details'],
+[role='alertdialog']
+  div:first-child
+  > div:first-child
+  > div:nth-child(2)
+  > div:nth-child(2) {
   background-color: var(--cardbackground) !important;
   border-radius: var(--cardborderradius) !important;
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
   margin: 0px 0px 32px 0px;
   border-color: var(--cardbordercolor) !important;
   border-width: var(--cardborderwidth) !important;
@@ -615,7 +638,7 @@ a[href='/i/display'] {
   position: relative;
   background-color: var(--cardbackground) !important;
   border-radius: var(--cardborderradius) !important;
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
   margin: 0px 0px 32px 0px;
   border-color: var(--cardbordercolor) !important;
   border-width: var(--cardborderwidth) !important;
@@ -649,7 +672,7 @@ a[href='/i/display'] {
   > div:first-child
   > div:first-child
   li {
-  border-bottom: 1px solid var(--accentcolor) !important;
+  border-bottom: 1px solid var(--bordercolor) !important;
 }
 /* FEED WRAPPER */
 main
@@ -676,7 +699,7 @@ main
   > div:first-child
   > div:first-child
   > div:first-child {
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
 }
 #layers
   > div:nth-child(2)
@@ -687,12 +710,12 @@ main
   > div:first-child
   > div:first-child {
   background: var(--cardbackground) !important;
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
 }
 
 /* INFO MODAL */
 [aria-labelledby='modal-header'][role='dialog'][aria-modal='true'] {
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
   position: relative;
   background-color: var(--cardbackground) !important;
   border-radius: var(--cardborderradius) !important;
@@ -736,7 +759,7 @@ main
   + div
   > div:first-child
   > div:first-child {
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 
 .r-vrwoeq {
@@ -784,7 +807,7 @@ body.messages
   > div:nth-child(2)
   > div {
   background-color: transparent !important;
-  border-color: var(--accentcolor) !important;
+  border-color: var(--bordercolor) !important;
 }
 
 /* MESSAGES REQUEST LINK */
@@ -853,7 +876,7 @@ body.messages
 body.messages [data-testid='conversation'] {
   background-color: transparent !important;
   padding: 16px !important;
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 body.messages [data-testid='conversation']:hover {
   background-color: var(--hovercolor) !important;
@@ -884,7 +907,7 @@ body.messages
 body.messages aside[aria-label='Start a new message'] {
   background-color: transparent !important;
   border-top-color: var(--accentcolor) !important;
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 
 /* INPUT STYLES */
@@ -924,11 +947,11 @@ body.messages
 
 /* MESSAGE PERSON TOP */
 body.messages [data-focusable='true'][role='link'] {
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 body.messages [data-focusable='true'][role='link'].r-1u4rsef {
   background-color: var(--hovercolor) !important;
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 
 @media (min-width: 996px) {
@@ -981,7 +1004,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -991,9 +1014,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
 
-    border-top-color: var(--accentcolor) !important;
+    border-top-color: var(--bordercolor) !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -1004,9 +1027,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
 
-    border-top-color: var(--accentcolor) !important;
+    border-top-color: var(--bordercolor) !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -1063,9 +1086,9 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
 
-    border-top-color: var(--accentcolor) !important;
+    border-top-color: var(--bordercolor) !important;
   }
 
   /* SECOND BACKGROUND */
@@ -1206,17 +1229,6 @@ body.home [aria-label='Add a choice'] {
   top: 2px !important;
 }
 
-/* INPUTS FOR POLLS */
-body.home [data-testid='attachments'] label [dir='auto'],
-[data-testid='attachments'] label input[name*='Choice'] {
-  margin: 0 !important;
-}
-
-/* SELECT INPUTS */
-body.home [data-testid='attachments'] [dir='auto'] + div > div {
-  background-color: transparent !important;
-}
-
 /* BORDER BOTTOM SEPERATOR FOR ACTIVE TWEET */
 body.home
   [data-testid='primaryColumn']
@@ -1252,7 +1264,8 @@ body.home
   overflow: hidden;
 }
 
-[aria-label*='Timeline: Notifications'],[aria-label*='Timeline: Messages'],
+[aria-label*='Timeline: Notifications'],
+[aria-label*='Timeline: Messages'],
 [aria-label='Timeline: Bookmarks'],
 [aria-label='Timeline: Your Lists'],
 [aria-label*='’s Tweets'],
@@ -1280,7 +1293,7 @@ body.home
 body.home [aria-label*='Timeline'] article {
   border: none !important;
   padding: 0 !important;
-  border-bottom: 1px solid var(--accentcolor) !important;
+  border-bottom: 1px solid var(--bordercolor) !important;
 }
 /* TWEET WRAPPER HOVER */
 body.home [aria-label*='Timeline'] article[role='article']:hover {
@@ -1527,7 +1540,7 @@ body.home
   > div:nth-child(2)
   > div:first-child
   > div:nth-child(2)[data-focusable='true'] {
-  border: 1px solid var(--accentcolor) !important;
+  border: 1px solid var(--bordercolor) !important;
   border-radius: var(--cardborderradius) !important;
 }
 
@@ -1551,7 +1564,7 @@ body.home
   > div:first-child
   > div:first-child
   > div:first-child {
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
 }
 body.home
   #layers
@@ -1563,7 +1576,7 @@ body.home
   > div:first-child
   > div:first-child {
   background: var(--cardbackground) !important;
-  box-shadow: var(--primarycolor) 10px 5px 180px -80px !important;
+  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
 }
 
 /* NOTIFICATIONS TABS WRAPPER */
@@ -1606,6 +1619,7 @@ body.home
   > div:first-child
   > a {
   border-bottom-left-radius: var(--cardborderradius);
+  position: relative !important;
 }
 body.home
   [data-testid='primaryColumn']
@@ -1691,8 +1705,8 @@ body.status
   + div
   > div:nth-child(5)
   > div:first-child {
-  border-bottom: 1px solid var(--accentcolor) !important;
-  border-top: 1px solid var(--accentcolor) !important;
+  border-bottom: 1px solid var(--bordercolor) !important;
+  border-top: 1px solid var(--bordercolor) !important;
 }
 
 body [role='button'][data-testid='UserCell'] {
@@ -1740,11 +1754,11 @@ body.settings
 
 /* SETTINGS LINKS */
 body.settings a[role='tab'] {
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 body.settings a[role='tab']:hover {
   background-color: var(--hovercolor) !important;
-  border-bottom-color: var(--accentcolor) !important;
+  border-bottom-color: var(--bordercolor) !important;
 }
 
 /* MAIN PAGE LINKS */
@@ -1839,7 +1853,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
   }
 
   /* LEFT MESSAGES CONTAINER */
@@ -1849,9 +1863,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
 
-    border-top-color: var(--accentcolor) !important;
+    border-top-color: var(--bordercolor) !important;
   }
 
   /* MESSAGE REQUESTS WRAPPER */
@@ -1862,9 +1876,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
 
-    border-top-color: var(--accentcolor) !important;
+    border-top-color: var(--bordercolor) !important;
   }
 
   /* MESSAGE REQUESTS BUTTON HOVER */
@@ -1921,9 +1935,9 @@ body.settings a[href="/settings/your_twitter_data/age"] {
     > div:first-child
     > div:first-child {
     background-color: transparent !important;
-    border-bottom-color: var(--accentcolor) !important;
+    border-bottom-color: var(--bordercolor) !important;
 
-    border-top-color: var(--accentcolor) !important;
+    border-top-color: var(--bordercolor) !important;
   }
 
   /* SECOND BACKGROUND */
