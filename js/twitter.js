@@ -129,6 +129,7 @@ if (window.location.pathname.includes('messages')) {
   document.body.classList.add('messages');
   document.body.classList.remove('home');
   document.body.classList.remove('status');
+  document.body.classList.remove('login');
   document.body.classList.remove('settings');
 } else if (window.location.pathname.includes('status')) {
   document.body.classList.add('home');
@@ -139,11 +140,22 @@ if (window.location.pathname.includes('messages')) {
   document.body.classList.add('settings');
   document.body.classList.remove('messages');
   document.body.classList.remove('status');
+  document.body.classList.remove('login');
+  document.body.classList.remove('home');
+} else if (
+  window.location.pathname.includes('login') ||
+  window.location.pathname.includes('signup')
+) {
+  document.body.classList.add('login');
+  document.body.classList.remove('messages');
+  document.body.classList.remove('status');
+  document.body.classList.remove('settings');
   document.body.classList.remove('home');
 } else {
   document.body.classList.add('home');
   document.body.classList.remove('messages');
   document.body.classList.remove('status');
+  document.body.classList.remove('login');
   document.body.classList.remove('settings');
 }
 
@@ -155,6 +167,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     document.body.classList.add('messages');
     document.body.classList.remove('home');
     document.body.classList.remove('status');
+    document.body.classList.remove('login');
     document.body.classList.remove('settings');
   } else if (request.url.includes('status')) {
     document.body.classList.add('status');
@@ -168,6 +181,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     document.body.classList.remove('messages');
     document.body.classList.remove('home');
     document.body.classList.remove('status');
+    document.body.classList.remove('login');
   } else if (
     !request.url.includes('messages') &&
     !request.url.includes('settings') &&
@@ -176,13 +190,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       request.url === '/notifications/mentions'
     )
   ) {
-    document.body.classList.add('loading');
-    setTimeout(() => {
-      document.body.classList.remove('loading');
-    }, 0);
     document.body.classList.add('home');
     document.body.classList.remove('messages');
     document.body.classList.remove('status');
+    document.body.classList.remove('login');
     document.body.classList.remove('settings');
   }
 });

@@ -400,7 +400,26 @@ nav[aria-label='Primary'] a svg {
 /* SELECT INPUTS */
 [data-testid='attachments'] [dir='auto'] + div > div {
   background-color: transparent !important;
-  border-color: var(--bordercolor) !important;
+  border: none !important;
+}
+
+/* INPUT FOR SEARCH */
+[aria-label='Search Twitter'] {
+  background-color: transparent !important;
+  border: none !important;
+}
+[aria-label='Search Twitter'] > div:first-child > div:first-child {
+  background-color: transparent !important;
+  border: none !important;
+}
+[aria-label='Search Twitter'] svg {
+  display: none !important;
+}
+[aria-label='Search Twitter'] div input[aria-label='Search query'] {
+  padding: 6px 10px !important;
+}
+[aria-label='Search Twitter'] [role='button'] {
+  display: none !important;
 }
 
 /******************************************************************
@@ -527,7 +546,8 @@ label [dir='auto'] {
   margin-bottom: 8px !important;
 }
 input[type='password'],
-input[type='text'] {
+input[type='text'],
+select {
   border-radius: var(--buttonborderradius) !important;
   background-color: var(--inputbackground) !important;
   border: 1px solid var(--bordercolor) !important;
@@ -536,12 +556,22 @@ input[type='text'] {
   font-size: 16px !important;
 }
 input[type='password']:focus,
-input[type='text']:focus {
+input[type='text']:focus,
+select:focus {
   border: 1px solid var(--primarycolor) !important;
 }
 input[type='password']:focus,
 input[type='text']:focus {
   border: 1px solid var(--primarycolor) !important;
+}
+select {
+  padding-top: 16px !important;
+}
+option {
+  color: var(--textcolor) !important;
+}
+.r-1bih22f {
+  box-shadow: none !important;
 }
 
 /******************************************************************
@@ -593,14 +623,22 @@ header > div:first-child > div:first-child,
   > div:first-child
   > div:nth-child(2)
   > div:nth-child(2) {
-  background-color: var(--cardbackground) !important;
   border-radius: var(--cardborderradius) !important;
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
   margin: 0px 0px 32px 0px;
-  border-color: var(--cardbordercolor) !important;
-  border-width: var(--cardborderwidth) !important;
+  border-color: var(--bordercolor) !important;
+  border-width: 1px !important;
   border-style: solid !important;
   background-color: var(--cardbackground) !important;
+  box-shadow: var(--bordercolor) 10px 5px 50px -10px !important;
+}
+[aria-label='Search Twitter'] > div:nth-child(2) > div:first-child {
+  border-radius: var(--cardborderradius) !important;
+  margin: 0px 0px 32px 0px;
+  border-color: var(--bordercolor) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  background-color: var(--cardbackground) !important;
+  box-shadow: var(--bordercolor) 10px 5px 50px -10px !important;
 }
 [role='menu'] a[role='link']:hover {
   background-color: var(--hovercolor) !important;
@@ -638,7 +676,7 @@ a[href='/i/display'] {
   position: relative;
   background-color: var(--cardbackground) !important;
   border-radius: var(--cardborderradius) !important;
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
+  box-shadow: var(--bordercolor) 10px 5px 130px -50px !important;
   margin: 0px 0px 32px 0px;
   border-color: var(--cardbordercolor) !important;
   border-width: var(--cardborderwidth) !important;
@@ -699,7 +737,7 @@ main
   > div:first-child
   > div:first-child
   > div:first-child {
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
+  box-shadow: var(--bordercolor) 10px 5px 130px -50px !important;
 }
 #layers
   > div:nth-child(2)
@@ -710,12 +748,12 @@ main
   > div:first-child
   > div:first-child {
   background: var(--cardbackground) !important;
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
+  box-shadow: var(--bordercolor) 10px 5px 130px -50px !important;
 }
 
 /* INFO MODAL */
 [aria-labelledby='modal-header'][role='dialog'][aria-modal='true'] {
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
+  box-shadow: var(--bordercolor) 10px 5px 130px -50px !important;
   position: relative;
   background-color: var(--cardbackground) !important;
   border-radius: var(--cardborderradius) !important;
@@ -1334,7 +1372,7 @@ body.home
 
 /* TWEET THREAD CONNECTOR */
 body.home [data-testid='tweet'] > div:first-child > div:nth-child(2) {
-  background-color: var(--accentcolor) !important;
+  background-color: var(--bordercolor) !important;
   position: relative;
   bottom: -16px !important;
 }
@@ -1349,7 +1387,7 @@ body.home
   > div:first-child
   > div:first-child[style='flex-basis: 49px;']
   > div:first-child {
-  background-color: var(--accentcolor) !important;
+  background-color: var(--bordercolor) !important;
   left: 32px !important;
   height: 200% !important;
 }
@@ -1395,6 +1433,7 @@ body.home [aria-label*='Timeline'] article [role='group'] {
   margin-top: 16px !important;
   display: flex !important;
   justify-content: flex-start;
+  /* background: pink !important; */
 }
 
 body.home [aria-label*='Timeline'] article [role='group'] > div {
@@ -1564,7 +1603,7 @@ body.home
   > div:first-child
   > div:first-child
   > div:first-child {
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
+  box-shadow: var(--bordercolor) 10px 5px 130px -50px !important;
 }
 body.home
   #layers
@@ -1576,7 +1615,7 @@ body.home
   > div:first-child
   > div:first-child {
   background: var(--cardbackground) !important;
-  box-shadow: var(--accentcolor) 10px 5px 130px -50px !important;
+  box-shadow: var(--bordercolor) 10px 5px 130px -50px !important;
 }
 
 /* NOTIFICATIONS TABS WRAPPER */
@@ -1693,6 +1732,17 @@ body.status [aria-label='Timeline: Conversation'] article [role='group'] {
   border: none !important;
 }
 
+body.status
+  [aria-label='Timeline: Conversation']
+  article
+  [data-testid='tweet']
+  [role='group'] {
+  margin-top: 16px !important;
+  display: flex !important;
+  justify-content: flex-start;
+  /* background: orange !important; */
+}
+
 body.status [aria-label='Timeline: Conversation'] article [role='group'] > div {
   padding: 0px !important;
   margin-right: 28px !important;
@@ -1705,8 +1755,7 @@ body.status
   + div
   > div:nth-child(5)
   > div:first-child {
-  border-bottom: 1px solid var(--bordercolor) !important;
-  border-top: 1px solid var(--bordercolor) !important;
+  display: none !important;
 }
 
 body [role='button'][data-testid='UserCell'] {
@@ -1965,4 +2014,48 @@ body.settings a[role="tab"][href="/settings/your_twitter_data/age"] {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
+}
+
+/************************************************************************************
+*************************************************************************************
+**********************              LOGIN PAGES            **************************
+*************************************************************************************
+************************************************************************************/
+
+body.login {
+  /* margin: 0 !important; */
+  padding-top: 0 !important;
+  /* width: 100vw !important; */
+}
+
+body.login main {
+  margin: 0 auto !important;
+  max-width: 769px !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* padding: 84px 0 !important; */
+}
+
+body.login main > div:first-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: fit-content !important;
+  width: 100% !important;
+}
+
+body.login main > div:first-child > div:first-child {
+  padding: 32px !important;
+  box-shadow: var(--bordercolor) 10px 5px 140px -50px !important;
+  border-radius: var(--cardborderradius) !important;
+  height: fit-content !important;
+  width: 100% !important;
+}
+
+body.login main div {
+  /* min-height: 0px !important; */
+  /* max-height: 100% !important; */
 }
