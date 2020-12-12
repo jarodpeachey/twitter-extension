@@ -403,6 +403,17 @@ nav[aria-label='Primary'] a svg {
   border: none !important;
 }
 
+/* INPUT FOR SCHEDULE */
+[aria-label='Time'] > div:nth-child(2) > div,
+[aria-label='Date'] > div {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+select ~ svg {
+  margin-top: -8px !important; 
+}
+
 /* INPUT FOR SEARCH */
 [aria-label='Search Twitter'] {
   background-color: transparent !important;
@@ -1217,9 +1228,18 @@ body.home
   > div:first-child
   > div:nth-child(2)
   > div:first-child
-  > div:nth-child(2) {
+  > [role="progressbar"] + div {
   background-color: transparent !important;
 }
+
+/* body.home
+  [data-testid='primaryColumn']
+  > div:first-child
+  > div:nth-child(2)
+  > div:first-child
+  > div:nth-child(2)[role="button"] {
+    
+  } */
 
 /* TWEET BOX INNER */
 body.home

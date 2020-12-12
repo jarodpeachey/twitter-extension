@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Glitter: Twitter Themes",
+  "name": "Glitter",
   "version": "1.0.0",
-  "description": "25+ customizable themes and presets for Twitter",
+  "description": "25+ customizable themes for Twitter. Add your own flair to Twitter with an easy-to-use theme editor.",
   "short_name": "Glitter",
   "icons": {
     "16": "img/icon.png",
