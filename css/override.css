@@ -411,7 +411,7 @@ nav[aria-label='Primary'] a svg {
 }
 
 select ~ svg {
-  margin-top: -8px !important; 
+  margin-top: -8px !important;
 }
 
 /* INPUT FOR SEARCH */
@@ -1228,7 +1228,8 @@ body.home
   > div:first-child
   > div:nth-child(2)
   > div:first-child
-  > [role="progressbar"] + div {
+  > [role='progressbar']
+  + div {
   background-color: transparent !important;
 }
 
@@ -1327,7 +1328,8 @@ body.home
 [aria-label='Timeline: Bookmarks'],
 [aria-label='Timeline: Your Lists'],
 [aria-label*='’s Tweets'],
-[aria-label='Timeline: Explore'] {
+[aria-label='Timeline: Explore'],
+[aria-label='Timeline: Message requests'] {
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
