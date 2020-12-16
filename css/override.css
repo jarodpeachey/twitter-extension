@@ -17,6 +17,9 @@
   .r-m0bqgq {
     color: var(--textcolor) !important;
   }
+  .r-m0bqgq {
+    color: var(--textcolor) !important;
+  }
 }
 .r-hkyrab {
   color: var(--textcolor) !important;
@@ -25,6 +28,9 @@
   color: var(--textcolor) !important;
 }
 .r-18jsvk2 {
+  color: var(--textcolor) !important;
+}
+.r-m0bqgq {
   color: var(--textcolor) !important;
 }
 .r-m0bqgq {
@@ -104,7 +110,7 @@ a.r-zv2cs0,
 .r-e84r5y {
   background-color: var(--accentcolor) !important;
 }
-.r-14lw9ot {
+[data-testid='attachments'] > div:first-child > div:nth-child(3) > div:first-child.r-14lw9ot {
   background-color: transparent !important;
 }
 .r-z1a2ur {
@@ -378,7 +384,7 @@ nav[aria-label='Primary'] a svg {
 }
 
 [data-testid='attachments'] [aria-label='Add a choice'] {
-  margin-bottom: 8px !important;
+  margin-bottom: 12ypx !important;
 }
 
 /* [data-testid='attachments']
@@ -574,12 +580,6 @@ select:focus {
 input[type='password']:focus,
 input[type='text']:focus {
   border: 1px solid var(--primarycolor) !important;
-}
-select {
-  padding-top: 16px !important;
-}
-option {
-  color: var(--textcolor) !important;
 }
 .r-1bih22f {
   box-shadow: none !important;
@@ -2080,4 +2080,12 @@ body.login main > div:first-child > div:first-child {
 body.login main div {
   /* min-height: 0px !important; */
   /* max-height: 100% !important; */
+}
+
+html body div select {
+  padding-top: 16px !important;
+}
+html body div option {
+  color: var(--inputtextcolor) !important;
+  background-color: var(--inputbackground) !important;
 }
