@@ -160,6 +160,7 @@ if (window.location.pathname.includes('messages')) {
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  console.log(request.url);
   if (
     request.url.includes('messages') &&
     !getCookie('previousurl').includes('messages')

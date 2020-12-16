@@ -5,9 +5,9 @@
   "description": "25+ customizable themes for Twitter. Add your own flair to Twitter with an easy-to-use theme editor.",
   "short_name": "Glitter",
   "icons": {
-    "16": "img/icon.png",
-    "48": "img/icon.png",
-    "128": "img/icon.png"
+    "16": "img/glitter.png",
+    "48": "img/glitter.png",
+    "128": "img/glitter.png"
   },
   "background": {
     "scripts": ["background.js"]

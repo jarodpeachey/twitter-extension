@@ -110,7 +110,10 @@ a.r-zv2cs0,
 .r-e84r5y {
   background-color: var(--accentcolor) !important;
 }
-[data-testid='attachments'] > div:first-child > div:nth-child(3) > div:first-child.r-14lw9ot {
+[data-testid='attachments']
+  > div:first-child
+  > div:nth-child(3)
+  > div:first-child.r-14lw9ot {
   background-color: transparent !important;
 }
 .r-z1a2ur {
@@ -1414,6 +1417,18 @@ body.home
   height: 200% !important;
 }
 
+[style='flex-basis: 49px;'] > div:first-child {
+  background-color: var(--bordercolor) !important;
+}
+
+[data-testid='tweet'] > [style='flex-basis: 49px;'] > div:first-child {
+  background-color: transparent !important;
+}
+
+a > div:first-child > [style='flex-basis: 49px;'] > div:first-child {
+  background-color: transparent !important;
+}
+
 /* RETWEET INDICATOR */
 body.home
   [aria-label*='Timeline']
@@ -1777,7 +1792,8 @@ body.status
   + div
   > div:nth-child(5)
   > div:first-child {
-  display: none !important;
+  /* display: none !important; */
+  /* background: orange !important; */
 }
 
 body [role='button'][data-testid='UserCell'] {
@@ -2071,9 +2087,10 @@ body.login main > div:first-child {
 
 body.login main > div:first-child > div:first-child {
   padding: 32px !important;
-  box-shadow: var(--bordercolor) 10px 5px 140px -50px !important;
+  box-shadow: var(--cardshadow) !important;
   border-radius: var(--cardborderradius) !important;
   height: fit-content !important;
+  background-color: var(--cardbackground) !important;
   width: 100% !important;
 }
 
