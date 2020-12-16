@@ -100,17 +100,7 @@ input {
   font-weight: 600;
   letter-spacing: 1px;
   transition: 0.2s;
-  background-image: linear-gradient(
-    to bottom right,
-    #81338f,
-    #e76e9b 30%,
-    #faaf40
-  );
-  background-image: linear-gradient(
-    to bottom right,
-    #913ea0,
-    #e76e9b 40% #faaf40
-  );
+  background-image: linear-gradient(to bottom right, #e34e9a, #f4aa5a);
   background-repeat: repeat-x;
   background-repeat: repeat-y;
   background-size: calc(100% + 200px) 90px;
@@ -126,11 +116,7 @@ input {
   left: 2px;
   padding: 11px 8px 8px;
   margin-bottom: 0;
-  background-image: linear-gradient(
-    to bottom right,
-    #913ea0,
-    #e76e9b 40% #faaf40
-  );
+  background-image: linear-gradient(to bottom right, #e34e9a, #f4aa5a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -151,12 +137,7 @@ input {
   /* !importanté */
   border-radius: inherit;
   /* !importanté */
-  background-image: linear-gradient(
-    to bottom right,
-    #913ea0,
-    #e76e9b 40%,
-    #faaf40
-  );
+  background-image: linear-gradient(to bottom right, #e34e9a, #f4aa5a);
   background-repeat: repeat-x;
   background-repeat: repeat-y;
   background-size: calc(100% + 200px) 90px;
@@ -184,7 +165,7 @@ input {
 }
 
 .logo {
-  width: 56px;
+  width: 120px;
   margin-bottom: 12px;
   margin-top: -4px;
 }
