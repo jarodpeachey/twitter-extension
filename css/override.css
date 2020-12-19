@@ -116,9 +116,9 @@ a.r-zv2cs0,
   > div:first-child.r-14lw9ot {
   background-color: transparent !important;
 }
-.r-z1a2ur {
+/* .r-z1a2ur {
   background-color: var(--bordercolor) !important;
-}
+} */
 * {
   border-bottom-color: var(--bordercolor);
 }
@@ -438,7 +438,12 @@ select ~ svg {
 [aria-label='Search Twitter'] div input[aria-label='Search query'] {
   padding: 6px 10px !important;
 }
-[aria-label='Search Twitter'] [role='button'] {
+[aria-label='Search Twitter']
+  > div:first-child
+  > div:first-child
+  > div:first-child
+  > div:nth-child(3)
+  > [role='button'] {
   display: none !important;
 }
 
@@ -1426,6 +1431,13 @@ body.home
 }
 
 a > div:first-child > [style='flex-basis: 49px;'] > div:first-child {
+  background-color: transparent !important;
+}
+
+[data-testid='UserCell']
+  > div:nth-child(2)
+  > div:first-child[style='flex-basis: 49px;']
+  > div:first-child {
   background-color: transparent !important;
 }
 
