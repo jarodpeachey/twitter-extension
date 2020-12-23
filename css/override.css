@@ -42,7 +42,7 @@
   color: var(--primarycolor) !important;
 }
 
-.r-zv2cs0 {
+.r-zv2cs0, .r-14lw9ot {
   background-color: transparent !important;
 }
 
@@ -1011,7 +1011,7 @@ body.messages [data-focusable='true'][role='link'].r-1u4rsef {
   border-bottom-color: var(--bordercolor) !important;
 }
 
-@media (min-width: 996px) {
+@media (min-width: 992px) {
   /* MAIN PANELS CARDS */
   body.messages
     main
@@ -1902,7 +1902,7 @@ body.settings a[href="/settings/your_twitter_data/age"] {
   border-bottom: none !important;
 }
 
-@media (min-width: 996px) {
+@media (min-width: 992px) {
   /* MAIN PANELS CARDS */
   body.settings
     main
